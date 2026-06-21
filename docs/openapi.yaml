@@ -1,0 +1,282 @@
+openapi: 3.0.3
+info:
+  title: Answer with Books API
+  version: 0.1.0
+  description: REST API for book-grounded answer generation using source toggles and demand signals.
+servers:
+  - url: http://127.0.0.1:8787
+paths:
+  /health:
+    get:
+      summary: Health check
+      responses:
+        '200':
+          description: Service is healthy
+  /v1/sources:
+    get:
+      summary: List source toggles
+      responses:
+        '200':
+          description: Sources
+  /v1/sources/toggle:
+    post:
+      summary: Enable selected sources
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [enabled]
+              properties:
+                enabled:
+                  type: array
+                  items:
+                    type: string
+                    enum: [books, crowdlisten, top_of_mind, clicked_questions]
+      responses:
+        '200':
+          description: Updated source state
+  /v1/books:
+    get:
+      summary: List books
+      responses:
+        '200':
+          description: Book source records
+    post:
+      summary: Add a book source record
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [title, author]
+              properties:
+                id:
+                  type: string
+                title:
+                  type: string
+                author:
+                  type: string
+                concepts:
+                  type: array
+                  items:
+                    type: string
+                quotes:
+                  type: array
+                  items:
+                    type: string
+                applications:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '201':
+          description: Created book
+  /v1/books/retrieve:
+    post:
+      summary: Retrieve relevant books or create a missing catalog record
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                question:
+                  type: string
+                title:
+                  type: string
+                limit:
+                  type: integer
+                min_score:
+                  type: integer
+                create_if_missing:
+                  type: boolean
+                book:
+                  type: object
+                  required: [title, author]
+                  properties:
+                    id:
+                      type: string
+                    title:
+                      type: string
+                    author:
+                      type: string
+                    concepts:
+                      type: array
+                      items:
+                        type: string
+                    quotes:
+                      type: array
+                      items:
+                        type: string
+                    applications:
+                      type: array
+                      items:
+                        type: string
+      responses:
+        '200':
+          description: Book retrieval hit or miss
+        '201':
+          description: Missing book created
+  /v1/questions:
+    get:
+      summary: List captured questions
+      responses:
+        '200':
+          description: Questions
+    post:
+      summary: Capture a user question
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [question]
+              properties:
+                question:
+                  type: string
+                sources:
+                  type: array
+                  items:
+                    type: string
+                clicked:
+                  type: boolean
+                context:
+                  type: string
+      responses:
+        '201':
+          description: Captured question
+  /v1/signals/top-of-mind:
+    post:
+      summary: Add top-of-mind demand signals
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [items]
+              properties:
+                items:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '201':
+          description: Created signals
+  /v1/signals/clicked-question:
+    post:
+      summary: Add clicked-question signal
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [question]
+              properties:
+                question:
+                  type: string
+                user_id:
+                  type: string
+      responses:
+        '201':
+          description: Created signal
+  /v1/crowdlisten/sync:
+    post:
+      summary: Ingest CrowdListen demand signals
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                signals:
+                  type: array
+                  items:
+                    type: string
+                questions:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '201':
+          description: Created demand signals
+  /v1/content:
+    get:
+      summary: List generated drafts
+      responses:
+        '200':
+          description: Generated content drafts
+  /v1/content/generate:
+    post:
+      summary: Generate a book-grounded content draft
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                question_id:
+                  type: string
+                question:
+                  type: string
+                sources:
+                  type: array
+                  items:
+                    type: string
+                format:
+                  type: string
+                  enum: [article, brief, script, card]
+                audience:
+                  type: string
+      responses:
+        '201':
+          description: Generated content draft
+  /v1/answers/query:
+    post:
+      summary: Retrieve similar answers or generate and cache on miss
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                question_id:
+                  type: string
+                question:
+                  type: string
+                sources:
+                  type: array
+                  items:
+                    type: string
+                generate_if_missing:
+                  type: boolean
+                  default: true
+                limit:
+                  type: integer
+                min_score:
+                  type: integer
+                book_limit:
+                  type: integer
+                book_min_score:
+                  type: integer
+                format:
+                  type: string
+                  enum: [article, brief, script, card]
+                audience:
+                  type: string
+      responses:
+        '200':
+          description: Similar answer found or cache miss returned
+        '201':
+          description: New answer generated and cached

@@ -1,0 +1,25 @@
+{
+  "name": "@crowdlisten/answer-with-books",
+  "version": "0.1.0",
+  "description": "Open-source REST API and agent skill for turning books plus demand signals into book-grounded answers.",
+  "type": "module",
+  "private": false,
+  "license": "MIT",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "node src/server.js",
+    "test": "node --test",
+    "check": "node --check src/server.js && node --check src/app.js && node --check src/generator.js"
+  },
+  "keywords": [
+    "books",
+    "crowdlisten",
+    "rest-api",
+    "agent-skill",
+    "content-strategy",
+    "knowledge"
+  ],
+  "engines": {
+    "node": ">=20"
+  }
+}
