@@ -56,7 +56,7 @@ Capture a clicked question:
 ```http
 POST /v1/signals/clicked-question
 {
-  "question": "Why do smart teams make dumb decisions?"
+  "question": "How to keep a smart team from making a dumb decision"
 }
 ```
 
@@ -65,7 +65,7 @@ Retrieve or generate an answer:
 ```http
 POST /v1/answers/query
 {
-  "question": "Why do smart teams make dumb decisions?",
+  "question": "How to keep a smart team from making a dumb decision",
   "sources": ["books", "clicked_questions", "crowdlisten"],
   "format": "article",
   "audience": "curious reader"
@@ -101,7 +101,7 @@ Generate content directly only when bypassing cache:
 ```http
 POST /v1/content/generate
 {
-  "question": "Why do smart teams make dumb decisions?",
+  "question": "How to keep a smart team from making a dumb decision",
   "sources": ["books", "clicked_questions", "crowdlisten"],
   "format": "article",
   "audience": "curious reader"

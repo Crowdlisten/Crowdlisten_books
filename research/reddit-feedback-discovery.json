@@ -1,0 +1,149 @@
+{
+  "generated_at": "2026-06-21T23:06:08.232Z",
+  "method": {
+    "source": "Arctic Shift Reddit archive",
+    "note": "Focused CrowdListen-style question discovery for Answer with Books. Scores favor explicit user questions, confusion, frustration, and engagement; final content still requires editorial review against books.",
+    "after": "2024-01-01",
+    "per_query_limit": 8
+  },
+  "clusters": [
+    {
+      "id": "turn-feedback-into-signal",
+      "working_title": "How to turn messy feedback into a real signal",
+      "books": [
+        "the-mom-test",
+        "the-wisdom-of-crowds"
+      ],
+      "evidence": [
+        {
+          "reddit_id": "1o88qz4",
+          "title": "How do you actually *use* customer feedback to make your business better?",
+          "body_excerpt": "I'm always asking for customer feedback, but I'm not sure I'm doing a great job of actually *using* it. I get surveys, read reviews, and sometimes even have direct conversations. But turning that into actionable improvements feels like a struggle. What are your best practices for making sure customer feedback drives real changes in your services? * Do you have a system for categorizing different types of feedback? * How do you prioritize which issues to address first? * What tools or processes do you use to track progress and ensure changes are effective? Looking for advice from anyone who has successfully used customer feedback to significantly improve their business. Any tips or resources are greatly appreciated!",
+          "url": "https://www.reddit.com/r/Entrepreneur/comments/1o88qz4/how_do_you_actually_use_customer_feedback_to_make/",
+          "subreddit": "Entrepreneur",
+          "author": "NorthExcitement4890",
+          "published_at": "2025-10-16T15:10:27.000Z",
+          "score": 1,
+          "num_comments": 16,
+          "discovered_by": {
+            "subreddit": "Entrepreneur",
+            "term": "customer feedback"
+          },
+          "discovery_score": 6.29
+        },
+        {
+          "reddit_id": "1e738yr",
+          "title": "How do you prioritize feature requests when building your product?",
+          "body_excerpt": "I’m working on a SaaS solution right now for businesses, and I have a few early users who came in organically. I’ve also convinced a couple of companies I know well to use it actively and provide feedback. The problem I’m facing now is that I’m bombarded with feature requests. I’m aware there’s a lot more I need to build in it to make it fully suitable for day-to-day ops, but I’m not sure how to prioritise. For some items, it’s indeed a lot of engineering effort. I feel like I need to be counting the number of requests for the same feature before deciding to build or not. Can I get some advice?",
+          "url": "https://www.reddit.com/r/startups/comments/1e738yr/how_do_you_prioritize_feature_requests_when/",
+          "subreddit": "startups",
+          "author": "AverageJoe185",
+          "published_at": "2024-07-19T13:04:09.000Z",
+          "score": 15,
+          "num_comments": 36,
+          "discovered_by": {
+            "subreddit": "startups",
+            "term": "feature requests"
+          },
+          "discovery_score": 5.35
+        },
+        {
+          "reddit_id": "1u9u4eh",
+          "title": "Guys how do u all handle customer feedback or feature requests?",
+          "body_excerpt": "Like, I wonder what your feedback/feature request handling workflow is.",
+          "url": "https://www.reddit.com/r/SaaS/comments/1u9u4eh/guys_how_do_u_all_handle_customer_feedback_or/",
+          "subreddit": "SaaS",
+          "author": "hope_to_be_in_US",
+          "published_at": "2026-06-19T06:18:34.000Z",
+          "score": 1,
+          "num_comments": 16,
+          "discovered_by": {
+            "subreddit": "SaaS",
+            "term": "customer feedback"
+          },
+          "discovery_score": 3.74
+        },
+        {
+          "reddit_id": "1u9995y",
+          "title": "How are you handling customer feedback and feature requests for your SaaS?",
+          "body_excerpt": "I'm curious how other founders are doing this, especially solo founders and small teams. Right now it seems like feedback comes from everywhere: * Email * Discord * Support chat * X/Twitter * Reddit * Feature request forms And then roadmap updates live somewhere else. For those of you with active users: 1. Where do most feature requests come from? 2. Have you ever had users avoid joining your Discord/community just to submit feedback? Would love to hear how you're handling it.",
+          "url": "https://www.reddit.com/r/SaaS/comments/1u9995y/how_are_you_handling_customer_feedback_and/",
+          "subreddit": "SaaS",
+          "author": "Excellent_Group_6486",
+          "published_at": "2026-06-18T15:23:01.000Z",
+          "score": 1,
+          "num_comments": 1,
+          "discovered_by": {
+            "subreddit": "SaaS",
+            "term": "customer feedback"
+          },
+          "discovery_score": 2.84
+        },
+        {
+          "reddit_id": "1hb229q",
+          "title": "How does your startup streamline feature requests?",
+          "body_excerpt": "We are a newly found SaaS and have been looking for ways to streamline feature requests from customers to our Jira and preferably Slack. Right now we only have a \"Request a feature\" page on our site that leads to sending an email to us, but I feel like it would be better to have some type of board where customers can post their features and then this is synced to our Jira. I have found some services out there but most are pretty expensive (80$/month) for a small startup of 2 people. How does your startup handle this?",
+          "url": "https://www.reddit.com/r/startups/comments/1hb229q/how_does_your_startup_streamline_feature_requests/",
+          "subreddit": "startups",
+          "author": "WillNo774",
+          "published_at": "2024-12-10T13:45:06.000Z",
+          "score": 2,
+          "num_comments": 14,
+          "discovered_by": {
+            "subreddit": "startups",
+            "term": "feature requests"
+          },
+          "discovery_score": 2.82
+        },
+        {
+          "reddit_id": "1twf9vc",
+          "title": "Nobody shows up to customer interviews. What's actually working for getting real qualitative feedback?",
+          "body_excerpt": "[removed]",
+          "url": "https://www.reddit.com/r/SaaS/comments/1twf9vc/nobody_shows_up_to_customer_interviews_whats/",
+          "subreddit": "SaaS",
+          "author": "Effective_Usual_895",
+          "published_at": "2026-06-04T06:21:45.000Z",
+          "score": 1,
+          "num_comments": 1,
+          "discovered_by": {
+            "subreddit": "SaaS",
+            "term": "customer feedback"
+          },
+          "discovery_score": 2.59
+        },
+        {
+          "reddit_id": "1tifib2",
+          "title": "No User Research team, but need real customer feedback across markets. What's actually worked for you?",
+          "body_excerpt": "[removed]",
+          "url": "https://www.reddit.com/r/Entrepreneur/comments/1tifib2/no_user_research_team_but_need_real_customer/",
+          "subreddit": "Entrepreneur",
+          "author": "Remarkable-Bet-7867",
+          "published_at": "2026-05-20T08:34:39.000Z",
+          "score": 1,
+          "num_comments": 1,
+          "discovered_by": {
+            "subreddit": "Entrepreneur",
+            "term": "customer feedback"
+          },
+          "discovery_score": 2.59
+        },
+        {
+          "reddit_id": "1uaykn1",
+          "title": "How do you explain feature requests to your dev without it turning into a mess? I will not promote",
+          "body_excerpt": "Genuinely curious how other founders handle this. Every time I talk to non-technical founders they say the same thing. They explain what they want, dev builds something completely different, then there’s a week of back and forth fixing it. How do you guys actually handle this? What works?",
+          "url": "https://www.reddit.com/r/startups/comments/1uaykn1/how_do_you_explain_feature_requests_to_your_dev/",
+          "subreddit": "startups",
+          "author": "Significant-Type6778",
+          "published_at": "2026-06-20T14:53:39.000Z",
+          "score": 1,
+          "num_comments": 0,
+          "discovered_by": {
+            "subreddit": "startups",
+            "term": "feature requests"
+          },
+          "discovery_score": 2.54
+        }
+      ]
+    }
+  ]
+}

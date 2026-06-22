@@ -152,6 +152,30 @@ paths:
       responses:
         '201':
           description: Captured question
+  /v1/concerns:
+    get:
+      summary: List demand concerns
+      responses:
+        '200':
+          description: Demand concerns synced from CrowdListen or local fixtures
+  /v1/concerns/sync:
+    post:
+      summary: Ingest enriched concern objects
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [concerns]
+              properties:
+                concerns:
+                  type: array
+                  items:
+                    type: object
+      responses:
+        '201':
+          description: Created or updated concerns
   /v1/signals/top-of-mind:
     post:
       summary: Add top-of-mind demand signals
@@ -190,7 +214,7 @@ paths:
           description: Created signal
   /v1/crowdlisten/sync:
     post:
-      summary: Ingest CrowdListen demand signals
+      summary: Ingest CrowdListen demand packets, concerns, insights, questions, and signals
       requestBody:
         required: true
         content:
@@ -198,17 +222,28 @@ paths:
             schema:
               type: object
               properties:
-                signals:
+                demand_packets:
                   type: array
                   items:
-                    type: string
+                    type: object
+                concerns:
+                  type: array
+                  items:
+                    type: object
+                insights:
+                  type: array
+                  items:
+                    type: object
+                signals:
+                  type: array
+                  items: {}
                 questions:
                   type: array
                   items:
                     type: string
       responses:
         '201':
-          description: Created demand signals
+          description: Created demand signals and concerns
   /v1/content:
     get:
       summary: List generated drafts
@@ -228,6 +263,8 @@ paths:
                 question_id:
                   type: string
                 question:
+                  type: string
+                concern_id:
                   type: string
                 sources:
                   type: array

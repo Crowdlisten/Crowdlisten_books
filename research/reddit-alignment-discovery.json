@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-06-21T23:07:02.236Z",
+  "method": {
+    "source": "Arctic Shift Reddit archive",
+    "note": "Focused CrowdListen-style question discovery for Answer with Books. Scores favor explicit user questions, confusion, frustration, and engagement; final content still requires editorial review against books.",
+    "after": "2024-01-01",
+    "per_query_limit": 8
+  },
+  "clusters": [
+    {
+      "id": "align-stakeholders-without-consensus-theater",
+      "working_title": "How to align stakeholders without consensus theater",
+      "books": [
+        "the-wisdom-of-crowds",
+        "good-strategy-bad-strategy"
+      ],
+      "evidence": []
+    }
+  ]
+}

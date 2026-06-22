@@ -27,14 +27,14 @@ test('toggles sources and generates a book-grounded content draft', async () => 
 
   const clicked = await app.route(
     req('POST', '/v1/signals/clicked-question', {
-      question: 'How do I know if my startup idea is any good?',
+      question: 'How to validate an idea without fooling yourself',
     })
   );
   assert.equal(clicked.status, 201);
 
   const generated = await app.route(
     req('POST', '/v1/content/generate', {
-      question: 'How do I know if my startup idea is any good?',
+      question: 'How to validate an idea without fooling yourself',
       format: 'article',
       audience: 'early-stage founder',
     })
@@ -67,6 +67,99 @@ test('captures CrowdListen signals for later generation', async () => {
 
   const body = parse(generated);
   assert.match(body.content.body, /Founders are asking/);
+});
+
+test('ingests CrowdListen demand packets as concerns', async () => {
+  const app = createApp();
+
+  const synced = await app.route(
+    req('POST', '/v1/crowdlisten/sync', {
+      demand_packets: [
+        {
+          app_id: 'answerwithbooks',
+          topic_id: 'career-switch-without-starting-over',
+          working_title: 'How to change careers without starting over',
+          audience: 'mid-career operator',
+          question_cluster: [
+            'How do I switch careers without throwing away my experience?',
+          ],
+          pain: ['career_uncertainty', 'identity_risk'],
+          books: ['designing-your-life', 'so-good-they-cant-ignore-you'],
+          evidence: [
+            {
+              platform: 'reddit',
+              url: 'https://www.reddit.com/example',
+              quote: 'I want to change careers but I do not want to start from zero.',
+              engagement: { score: 42, comments: 18 },
+            },
+          ],
+          publish_recommendation: {
+            status: 'needs_source_review',
+            score: 0.72,
+            reason: 'Repeated career-switching demand with clear book fit.',
+          },
+        },
+      ],
+    })
+  );
+  const syncedBody = parse(synced);
+
+  assert.equal(synced.status, 201);
+  assert.equal(syncedBody.concerns[0].id, 'career-switch-without-starting-over');
+  assert.equal(syncedBody.signals.length, 3);
+
+  const generated = await app.route(
+    req('POST', '/v1/content/generate', {
+      concern_id: 'career-switch-without-starting-over',
+      sources: ['books', 'crowdlisten'],
+    })
+  );
+  const body = parse(generated);
+
+  assert.equal(generated.status, 201);
+  assert.equal(body.content.books[0].id, 'designing-your-life');
+  assert.match(body.content.body, /change careers/);
+});
+
+test('syncs enriched concerns and generates from the matched book lenses', async () => {
+  const app = createApp();
+
+  const synced = await app.route(
+    req('POST', '/v1/concerns/sync', {
+      concerns: [
+        {
+          id: 'prioritize-without-loudest-voice',
+          title: 'How to prioritize when every request sounds urgent',
+          audience: 'product leader',
+          books: ['good-strategy-bad-strategy', 'the-wisdom-of-crowds'],
+          pain_points: ['stakeholder_pressure', 'planning_breakdown'],
+          evidence: [
+            {
+              title: 'How do you prioritize customer requests vs roadmap goals?',
+              url: 'https://www.reddit.com/example',
+            },
+          ],
+        },
+      ],
+    })
+  );
+  const syncedBody = parse(synced);
+
+  assert.equal(synced.status, 201);
+  assert.equal(syncedBody.concerns[0].id, 'prioritize-without-loudest-voice');
+
+  const generated = await app.route(
+    req('POST', '/v1/content/generate', {
+      concern_id: 'prioritize-without-loudest-voice',
+      sources: ['books', 'crowdlisten'],
+    })
+  );
+  const body = parse(generated);
+
+  assert.equal(generated.status, 201);
+  assert.equal(body.content.concern_id, 'prioritize-without-loudest-voice');
+  assert.equal(body.content.books[0].id, 'good-strategy-bad-strategy');
+  assert.match(body.content.body, /prioritize customer requests/);
 });
 
 test('queries the answer cache before generating a new answer', async () => {
@@ -114,13 +207,14 @@ test('retrieves relevant books or creates a missing catalog record', async () =>
 
   const created = await app.route(
     req('POST', '/v1/books/retrieve', {
-      query: 'strategy kernels and diagnosis',
+      query: 'rogo herbie drum buffer rope manufacturing novel',
+      min_score: 2,
       create_if_missing: true,
       book: {
-        title: 'Good Strategy Bad Strategy',
-        author: 'Richard Rumelt',
-        concepts: ['diagnosis', 'guiding policy', 'coherent action'],
-        applications: ['strategy', 'planning'],
+        title: 'The Goal',
+        author: 'Eliyahu M. Goldratt',
+        concepts: ['bottlenecks', 'throughput', 'constraints'],
+        applications: ['operations', 'process improvement'],
       },
     })
   );
@@ -128,7 +222,25 @@ test('retrieves relevant books or creates a missing catalog record', async () =>
 
   assert.equal(created.status, 201);
   assert.equal(createdBody.status, 'created');
-  assert.equal(createdBody.matches[0].book.id, 'good-strategy-bad-strategy');
+  assert.equal(createdBody.matches[0].book.id, 'the-goal');
+});
+
+test('uses backend-only book corpus for matching without exposing full text', async () => {
+  const app = createApp();
+
+  const hit = await app.route(
+    req('POST', '/v1/books/retrieve', {
+      query: 'gravity problem prototype conversation odyssey plans',
+    })
+  );
+  const body = parse(hit);
+
+  assert.equal(hit.status, 200);
+  assert.equal(body.status, 'hit');
+  assert.equal(body.matches[0].book.id, 'designing-your-life');
+  assert.equal('knowledge_text' in body.matches[0].book, false);
+  assert.equal('knowledge_chunks' in body.matches[0].book, false);
+  assert.equal(body.matches[0].book.knowledge_visibility, 'backend_only');
 });
 
 function req(method, path, body) {

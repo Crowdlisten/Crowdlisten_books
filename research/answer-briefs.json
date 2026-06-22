@@ -1,0 +1,1145 @@
+{
+  "generated_at": "2026-06-22T03:54:26.916Z",
+  "source": "/Users/terry/Desktop/crowdlisten_files/applications/answerwithbooks/core/research/concern-seeds.json",
+  "briefs": [
+    {
+      "id": "validate-without-fooling-yourself",
+      "title": "How to validate an idea without fooling yourself",
+      "format": "how_to_guide",
+      "audience": "product leader",
+      "user_problem": "People are trying to validate an idea without fooling yourself, but the social evidence suggests uncertainty, wasted building, bad evidence, stakeholder pressure, planning breakdown, decision fatigue are getting in the way.",
+      "social_evidence": [
+        {
+          "title": "How do you do user research in fintech when compliance rules and limited access to users make interviews hard?",
+          "url": "https://www.reddit.com/r/ProductManagement/comments/1pmyck9/how_do_you_do_user_research_in_fintech_when/",
+          "subreddit": "ProductManagement",
+          "comments": 21
+        },
+        {
+          "title": "The Customer Discovery Trap: What’s the Actual Most Productive Way to Talk to Users? “I will not promote”",
+          "url": "https://www.reddit.com/r/startups/comments/1q1yqwl/the_customer_discovery_trap_whats_the_actual_most/",
+          "subreddit": "startups",
+          "comments": 23
+        },
+        {
+          "title": "I’ll help 3 founders with customer discovery ( I will not promote)",
+          "url": "https://www.reddit.com/r/startups/comments/1nezfqn/ill_help_3_founders_with_customer_discovery_i/",
+          "subreddit": "startups",
+          "comments": 16
+        },
+        {
+          "title": "Help me validate an idea: would this actually be useful for ecommerce stores? (i will not promote)",
+          "url": "https://www.reddit.com/r/startups/comments/1tqhzih/help_me_validate_an_idea_would_this_actually_be/",
+          "subreddit": "startups",
+          "comments": 13
+        }
+      ],
+      "book_lenses": [
+        {
+          "book_id": "the-mom-test",
+          "use_for": "separate polite encouragement from evidence of real behavior and commitment"
+        },
+        {
+          "book_id": "thinking-fast-and-slow",
+          "use_for": "detect overconfidence, substitution, inside-view planning, and misleading intuition"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    },
+    {
+      "id": "repair-user-interviews",
+      "title": "How to fix user interviews that are not teaching you anything",
+      "format": "how_to_guide",
+      "audience": "product leader",
+      "user_problem": "People are trying to fix user interviews that are not teaching you anything, but the social evidence suggests wasted building, bad evidence, stakeholder pressure, decision fatigue are getting in the way.",
+      "social_evidence": [
+        {
+          "title": "How do you do user research in fintech when compliance rules and limited access to users make interviews hard?",
+          "url": "https://www.reddit.com/r/ProductManagement/comments/1pmyck9/how_do_you_do_user_research_in_fintech_when/",
+          "subreddit": "ProductManagement",
+          "comments": 21
+        },
+        {
+          "title": "User Interviews are not going well, are there any workarounds?",
+          "url": "https://www.reddit.com/r/ProductManagement/comments/1thb1vp/user_interviews_are_not_going_well_are_there_any/",
+          "subreddit": "ProductManagement",
+          "comments": 42
+        },
+        {
+          "title": "Do I need user interviews in my case study? How to find users without a budget?",
+          "url": "https://www.reddit.com/r/UXResearch/comments/1rjx746/do_i_need_user_interviews_in_my_case_study_how_to/",
+          "subreddit": "UXResearch",
+          "comments": 10
+        },
+        {
+          "title": "Ran a poll asking PMs what's hardest about user interviews. The answer surprised me.",
+          "url": "https://www.reddit.com/r/ProductManagement/comments/1s4z6mi/ran_a_poll_asking_pms_whats_hardest_about_user/",
+          "subreddit": "ProductManagement",
+          "comments": 17
+        }
+      ],
+      "book_lenses": [
+        {
+          "book_id": "the-mom-test",
+          "use_for": "separate polite encouragement from evidence of real behavior and commitment"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    },
+    {
+      "id": "trust-gut-or-check-it",
+      "title": "How to know when to trust your gut",
+      "format": "how_to_guide",
+      "audience": "product leader",
+      "user_problem": "People are trying to know when to trust your gut, but the social evidence suggests uncertainty, wasted building, bad evidence, stakeholder pressure, planning breakdown, communication gap, decision fatigue are getting in the way.",
+      "social_evidence": [
+        {
+          "title": "How to deal with an impulsive PM who launches features based on intuition without data?",
+          "url": "https://www.reddit.com/r/ProductManagement/comments/1bnw293/how_to_deal_with_an_impulsive_pm_who_launches/",
+          "subreddit": "ProductManagement",
+          "comments": 22
+        },
+        {
+          "title": "How do I navigate my current situation to be working on what that matters vs doing what my gut feeling tells me? I have been working with the same employer for past six years",
+          "url": "https://www.reddit.com/r/cscareerquestions/comments/1otvrwv/how_do_i_navigate_my_current_situation_to_be/",
+          "subreddit": "cscareerquestions",
+          "comments": 1
+        },
+        {
+          "title": "'Data Intuition' gap",
+          "url": "https://www.reddit.com/r/ProductManagement/comments/1qgel2c/data_intuition_gap/",
+          "subreddit": "ProductManagement",
+          "comments": 33
+        },
+        {
+          "title": "Trust my gut or give it more time? New role, less impressive team",
+          "url": "https://www.reddit.com/r/careerguidance/comments/1tq83hs/trust_my_gut_or_give_it_more_time_new_role_less/",
+          "subreddit": "careerguidance",
+          "comments": 1
+        }
+      ],
+      "book_lenses": [
+        {
+          "book_id": "thinking-fast-and-slow",
+          "use_for": "detect overconfidence, substitution, inside-view planning, and misleading intuition"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    },
+    {
+      "id": "prevent-smart-team-bad-decision",
+      "title": "How to keep a smart team from making a dumb decision",
+      "format": "how_to_guide",
+      "audience": "product leader",
+      "user_problem": "People are trying to keep a smart team from making a dumb decision, but the social evidence suggests wasted building, bad evidence, stakeholder pressure, planning breakdown, communication gap, decision fatigue are getting in the way.",
+      "social_evidence": [
+        {
+          "title": "How do you handle making endless choices without giving into decision fatigue?",
+          "url": "https://www.reddit.com/r/Leadership/comments/1lcuw90/how_do_you_handle_making_endless_choices_without/",
+          "subreddit": "Leadership",
+          "comments": 24
+        },
+        {
+          "title": "How do you let go and move on when the company makes a bad decision that negatively impacts your team member?",
+          "url": "https://www.reddit.com/r/managers/comments/1pcjqsl/how_do_you_let_go_and_move_on_when_the_company/",
+          "subreddit": "managers",
+          "comments": 26
+        },
+        {
+          "title": "How do you rebuild trust with a team after a bad leadership decision?",
+          "url": "https://www.reddit.com/r/managers/comments/1tgxek3/how_do_you_rebuild_trust_with_a_team_after_a_bad/",
+          "subreddit": "managers",
+          "comments": 77
+        },
+        {
+          "title": "How management tools can help improve decision making for small teams?",
+          "url": "https://www.reddit.com/r/Leadership/comments/1smzbpg/how_management_tools_can_help_improve_decision/",
+          "subreddit": "Leadership",
+          "comments": 18
+        }
+      ],
+      "book_lenses": [
+        {
+          "book_id": "the-wisdom-of-crowds",
+          "use_for": "protect independent judgment and aggregate diverse evidence instead of loud opinions"
+        },
+        {
+          "book_id": "thinking-fast-and-slow",
+          "use_for": "detect overconfidence, substitution, inside-view planning, and misleading intuition"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    },
+    {
+      "id": "pivot-without-panicking",
+      "title": "How to tell whether to pivot or keep going",
+      "format": "how_to_guide",
+      "audience": "product leader",
+      "user_problem": "People are trying to tell whether to pivot or keep going, but the social evidence suggests uncertainty, wasted building, bad evidence, stakeholder pressure, planning breakdown, communication gap, decision fatigue are getting in the way.",
+      "social_evidence": [
+        {
+          "title": "How many times did you pivot before finding product-market fit and first users? I will not promote.",
+          "url": "https://www.reddit.com/r/startups/comments/1sh30jf/how_many_times_did_you_pivot_before_finding/",
+          "subreddit": "startups",
+          "comments": 47
+        },
+        {
+          "title": "How do I raise a pre-seed round when there is little traction and we need to pivot? (i will not promote)",
+          "url": "https://www.reddit.com/r/startups/comments/1tbgyak/how_do_i_raise_a_preseed_round_when_there_is/",
+          "subreddit": "startups",
+          "comments": 20
+        },
+        {
+          "title": "How did i pivot / change your business when things get bad?",
+          "url": "https://www.reddit.com/r/Entrepreneur/comments/1sl29gg/how_did_i_pivot_change_your_business_when_things/",
+          "subreddit": "Entrepreneur",
+          "comments": 71
+        },
+        {
+          "title": "Even with vibe-coding, is it worth it to talk with customers anymore, or should a SaaS founder just build and launch and pivot?",
+          "url": "https://www.reddit.com/r/SaaS/comments/1u7hd02/even_with_vibecoding_is_it_worth_it_to_talk_with/",
+          "subreddit": "SaaS",
+          "comments": 15
+        }
+      ],
+      "book_lenses": [
+        {
+          "book_id": "the-structure-of-scientific-revolutions",
+          "use_for": "tell normal friction from a framework-level crisis"
+        },
+        {
+          "book_id": "thinking-fast-and-slow",
+          "use_for": "detect overconfidence, substitution, inside-view planning, and misleading intuition"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    },
+    {
+      "id": "plan-that-survives-reality",
+      "title": "How to make a plan that survives contact with reality",
+      "format": "how_to_guide",
+      "audience": "product leader",
+      "user_problem": "People are trying to make a plan that survives contact with reality, but the social evidence suggests wasted building, bad evidence, stakeholder pressure, planning breakdown, communication gap, decision fatigue are getting in the way.",
+      "social_evidence": [
+        {
+          "title": "Too large career gap after previous job reorg layoff (too much time/focus on pet portfolio project) - any advice as I apply to jobs w/o any portfolio pieces in prod?",
+          "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1jrnvhj/too_large_career_gap_after_previous_job_reorg/",
+          "subreddit": "ExperiencedDevs",
+          "comments": 21
+        },
+        {
+          "title": "Thoughts on QB Enterprise migration plan?",
+          "url": "https://www.reddit.com/r/sysadmin/comments/1aeqpg4/thoughts_on_qb_enterprise_migration_plan/",
+          "subreddit": "sysadmin",
+          "comments": 12
+        },
+        {
+          "title": "How to handle a high-power stakeholder who keeps bypassing the change process?",
+          "url": "https://www.reddit.com/r/managers/comments/1o2dah7/how_to_handle_a_highpower_stakeholder_who_keeps/",
+          "subreddit": "managers",
+          "comments": 9
+        },
+        {
+          "title": "Developers reporting to product owners after reorg?",
+          "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1iwp29x/developers_reporting_to_product_owners_after_reorg/",
+          "subreddit": "ExperiencedDevs",
+          "comments": 46
+        }
+      ],
+      "book_lenses": [
+        {
+          "book_id": "seeing-like-a-state",
+          "use_for": "notice what plans and dashboards delete from messy local reality"
+        },
+        {
+          "book_id": "the-wisdom-of-crowds",
+          "use_for": "protect independent judgment and aggregate diverse evidence instead of loud opinions"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    },
+    {
+      "id": "strategy-without-slogans",
+      "title": "How to turn a vague goal into an actual strategy",
+      "format": "how_to_guide",
+      "audience": "early-stage founder",
+      "user_problem": "People are trying to turn a vague goal into an actual strategy, but the social evidence suggests wasted building, planning breakdown, communication gap, decision fatigue are getting in the way.",
+      "social_evidence": [
+        {
+          "title": "Is it normal to change commercial strategy wildly after a bad VC meeting? I will not promote",
+          "url": "https://www.reddit.com/r/startups/comments/1tl9wsb/is_it_normal_to_change_commercial_strategy_wildly/",
+          "subreddit": "startups",
+          "comments": 33
+        },
+        {
+          "title": "I will not promote - tell me if I am missing anything else on my GTM app strategy",
+          "url": "https://www.reddit.com/r/startups/comments/1tzwlbi/i_will_not_promote_tell_me_if_i_am_missing/",
+          "subreddit": "startups",
+          "comments": 11
+        },
+        {
+          "title": "CTO in 2026: you code, you mentor, you do ops, you own AI strategy, same salary, no sleep (i will not promote)",
+          "url": "https://www.reddit.com/r/startups/comments/1tf3rjo/cto_in_2026_you_code_you_mentor_you_do_ops_you/",
+          "subreddit": "startups",
+          "comments": 12
+        }
+      ],
+      "book_lenses": [
+        {
+          "book_id": "good-strategy-bad-strategy",
+          "use_for": "turn vague goals into diagnosis, guiding policy, and coherent action"
+        },
+        {
+          "book_id": "seeing-like-a-state",
+          "use_for": "notice what plans and dashboards delete from messy local reality"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    },
+    {
+      "id": "test-risk-before-building",
+      "title": "How to test a risky idea before you build too much",
+      "format": "how_to_guide",
+      "audience": "product leader",
+      "user_problem": "People are trying to test a risky idea before you build too much, but the social evidence suggests wasted building, bad evidence, stakeholder pressure, communication gap, decision fatigue are getting in the way.",
+      "social_evidence": [
+        {
+          "title": "How do you validate a b2b saas idea before building mvp?",
+          "url": "https://www.reddit.com/r/SaaS/comments/1svkmbf/how_do_you_validate_a_b2b_saas_idea_before/",
+          "subreddit": "SaaS",
+          "comments": 13
+        },
+        {
+          "title": "First-time founder here — how would you validate this MVP and get first users?",
+          "url": "https://www.reddit.com/r/SaaS/comments/1quepl2/firsttime_founder_here_how_would_you_validate/",
+          "subreddit": "SaaS",
+          "comments": 3
+        },
+        {
+          "title": "How to test and validate startup idea with a mvp without wasting months?",
+          "url": "https://www.reddit.com/r/SaaS/comments/1r7cq2q/how_to_test_and_validate_startup_idea_with_a_mvp/",
+          "subreddit": "SaaS",
+          "comments": 2
+        },
+        {
+          "title": "What would the MVP for this transportation startup actually be? [I will not promote]",
+          "url": "https://www.reddit.com/r/startups/comments/1thy7ex/what_would_the_mvp_for_this_transportation/",
+          "subreddit": "startups",
+          "comments": 12
+        }
+      ],
+      "book_lenses": [
+        {
+          "book_id": "the-lean-startup",
+          "use_for": "test the riskiest assumption with the smallest useful experiment"
+        },
+        {
+          "book_id": "the-mom-test",
+          "use_for": "separate polite encouragement from evidence of real behavior and commitment"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    },
+    {
+      "id": "make-confusing-page-clear",
+      "title": "How to make a confusing page easier to use",
+      "format": "how_to_guide",
+      "audience": "team leader",
+      "user_problem": "People are trying to make a confusing page easier to use, but the social evidence suggests wasted building, bad evidence, stakeholder pressure, planning breakdown, communication gap are getting in the way.",
+      "social_evidence": [
+        {
+          "title": "Struggling to improve conversion rate on my landing page what am I missing?",
+          "url": "https://www.reddit.com/r/SaaS/comments/1stag7o/struggling_to_improve_conversion_rate_on_my/",
+          "subreddit": "SaaS",
+          "comments": 1
+        },
+        {
+          "title": "Added a \"this product isn't for you if...\" section to our landing page. Signups dropped 15%. Trial conversion nearly doubled.",
+          "url": "https://www.reddit.com/r/SaaS/comments/1s69rux/added_a_this_product_isnt_for_you_if_section_to/",
+          "subreddit": "SaaS",
+          "comments": 5
+        },
+        {
+          "title": "The most useless homepage ever?",
+          "url": "https://i.redd.it/3437uuvmf9pg1.png",
+          "subreddit": "UXDesign",
+          "comments": 3
+        },
+        {
+          "title": "Feedback on our Apogee Watcher (Automated PageSpeed Monitoring for agencies and solopreneurs) homepage",
+          "url": "https://www.reddit.com/r/UXDesign/comments/1sbgw9i/feedback_on_our_apogee_watcher_automated/",
+          "subreddit": "UXDesign",
+          "comments": 0
+        }
+      ],
+      "book_lenses": [
+        {
+          "book_id": "dont-make-me-think",
+          "use_for": "remove decoding work so users can understand and act quickly"
+        },
+        {
+          "book_id": "thinking-fast-and-slow",
+          "use_for": "detect overconfidence, substitution, inside-view planning, and misleading intuition"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    },
+    {
+      "id": "make-idea-stick",
+      "title": "How to explain an idea so people remember it",
+      "format": "how_to_guide",
+      "audience": "product leader",
+      "user_problem": "People are trying to explain an idea so people remember it, but the social evidence suggests uncertainty, wasted building, bad evidence, stakeholder pressure, planning breakdown, communication gap are getting in the way.",
+      "social_evidence": [
+        {
+          "title": "(B2B Ecommerce SaaS) How do you determine whether low pipeline is caused by positioning, ICP, or channel execution?",
+          "url": "https://www.reddit.com/r/ProductMarketing/comments/1tvvfco/b2b_ecommerce_saas_how_do_you_determine_whether/",
+          "subreddit": "ProductMarketing",
+          "comments": 13
+        },
+        {
+          "title": "Anyone else realize halfway through production that the explainer video still doesn't explain the product?",
+          "url": "https://www.reddit.com/r/marketing/comments/1tat6xx/anyone_else_realize_halfway_through_production/",
+          "subreddit": "marketing",
+          "comments": 6
+        },
+        {
+          "title": "Most startup founders know their product. Fewer know how to explain it.(I will not promote)",
+          "url": "https://www.reddit.com/r/startups/comments/1l7smve/most_startup_founders_know_their_product_fewer/",
+          "subreddit": "startups",
+          "comments": 26
+        },
+        {
+          "title": "What do you guys think about the concept of \"the elevator pitch\"? How should workers, future founders learn this?",
+          "url": "https://www.reddit.com/r/Entrepreneur/comments/1f86hq6/what_do_you_guys_think_about_the_concept_of_the/",
+          "subreddit": "Entrepreneur",
+          "comments": 14
+        }
+      ],
+      "book_lenses": [
+        {
+          "book_id": "made-to-stick",
+          "use_for": "make the core idea concrete, memorable, and easy to retell"
+        },
+        {
+          "book_id": "the-wisdom-of-crowds",
+          "use_for": "protect independent judgment and aggregate diverse evidence instead of loud opinions"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    },
+    {
+      "id": "prioritize-without-loudest-voice",
+      "title": "How to prioritize when every request sounds urgent",
+      "format": "how_to_guide",
+      "audience": "product leader",
+      "user_problem": "People are trying to prioritize when every request sounds urgent, but the social evidence suggests wasted building, bad evidence, stakeholder pressure, planning breakdown, communication gap, decision fatigue are getting in the way.",
+      "social_evidence": [
+        {
+          "title": "How do you prioritize features for your product roadmap?",
+          "url": "https://www.reddit.com/r/ProductManagement/comments/1ggdzb9/how_do_you_prioritize_features_for_your_product/",
+          "subreddit": "ProductManagement",
+          "comments": 39
+        },
+        {
+          "title": "How do you prioritize customer requests vs roadmap goals?",
+          "url": "https://www.reddit.com/r/ProductManagement/comments/1o794f4/how_do_you_prioritize_customer_requests_vs/",
+          "subreddit": "ProductManagement",
+          "comments": 17
+        },
+        {
+          "title": "Best ways to consolidate user feature requests and feedback?",
+          "url": "https://www.reddit.com/r/ProductManagement/comments/1sqw9z3/best_ways_to_consolidate_user_feature_requests/",
+          "subreddit": "ProductManagement",
+          "comments": 18
+        },
+        {
+          "title": "Guys how do u all handle customer feedback or feature requests?",
+          "url": "https://www.reddit.com/r/SaaS/comments/1u9u4eh/guys_how_do_u_all_handle_customer_feedback_or/",
+          "subreddit": "SaaS",
+          "comments": 16
+        }
+      ],
+      "book_lenses": [
+        {
+          "book_id": "good-strategy-bad-strategy",
+          "use_for": "turn vague goals into diagnosis, guiding policy, and coherent action"
+        },
+        {
+          "book_id": "the-wisdom-of-crowds",
+          "use_for": "protect independent judgment and aggregate diverse evidence instead of loud opinions"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    },
+    {
+      "id": "make-estimates-less-fictional",
+      "title": "How to make project estimates less fictional",
+      "format": "how_to_guide",
+      "audience": "product leader",
+      "user_problem": "People are trying to make project estimates less fictional, but the social evidence suggests wasted building, bad evidence, stakeholder pressure, planning breakdown are getting in the way.",
+      "social_evidence": [
+        {
+          "title": "Project managers: Where do time estimates go wrong?",
+          "url": "https://www.reddit.com/r/projectmanagement/comments/1khsamo/project_managers_where_do_time_estimates_go_wrong/",
+          "subreddit": "projectmanagement",
+          "comments": 14
+        },
+        {
+          "title": "How do you estimate time for a project when you use AI Code?",
+          "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1s9o8an/how_do_you_estimate_time_for_a_project_when_you/",
+          "subreddit": "ExperiencedDevs",
+          "comments": 17
+        },
+        {
+          "title": "How are you managing capacity without time tracking or reliable effort estimates?",
+          "url": "https://www.reddit.com/r/projectmanagement/comments/1th37wy/how_are_you_managing_capacity_without_time/",
+          "subreddit": "projectmanagement",
+          "comments": 20
+        },
+        {
+          "title": "This could be the most noob question but, here I go. I suck at estimation and costing of cloud infrastructure and relevant resources. Suggest me tips and tricks. How to be better at it?",
+          "url": "https://www.reddit.com/r/devops/comments/1b0qkwc/this_could_be_the_most_noob_question_but_here_i/",
+          "subreddit": "devops",
+          "comments": 18
+        }
+      ],
+      "book_lenses": [
+        {
+          "book_id": "thinking-fast-and-slow",
+          "use_for": "detect overconfidence, substitution, inside-view planning, and misleading intuition"
+        },
+        {
+          "book_id": "seeing-like-a-state",
+          "use_for": "notice what plans and dashboards delete from messy local reality"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    },
+    {
+      "id": "turn-feedback-into-signal",
+      "title": "How to turn messy feedback into a real signal",
+      "format": "how_to_guide",
+      "audience": "product leader",
+      "user_problem": "People are trying to turn messy feedback into a real signal, but the social evidence suggests uncertainty, wasted building, bad evidence, stakeholder pressure, planning breakdown, communication gap, decision fatigue are getting in the way.",
+      "social_evidence": [
+        {
+          "title": "How do you actually *use* customer feedback to make your business better?",
+          "url": "https://www.reddit.com/r/Entrepreneur/comments/1o88qz4/how_do_you_actually_use_customer_feedback_to_make/",
+          "subreddit": "Entrepreneur",
+          "comments": 16
+        },
+        {
+          "title": "How do you prioritize feature requests when building your product?",
+          "url": "https://www.reddit.com/r/startups/comments/1e738yr/how_do_you_prioritize_feature_requests_when/",
+          "subreddit": "startups",
+          "comments": 36
+        },
+        {
+          "title": "How do you track user feedback when testing new UI interactions?",
+          "url": "https://www.reddit.com/r/ProductManagement/comments/1rta1bk/how_do_you_track_user_feedback_when_testing_new/",
+          "subreddit": "ProductManagement",
+          "comments": 4
+        },
+        {
+          "title": "Best ways to consolidate user feature requests and feedback?",
+          "url": "https://www.reddit.com/r/ProductManagement/comments/1sqw9z3/best_ways_to_consolidate_user_feature_requests/",
+          "subreddit": "ProductManagement",
+          "comments": 18
+        }
+      ],
+      "book_lenses": [
+        {
+          "book_id": "the-mom-test",
+          "use_for": "separate polite encouragement from evidence of real behavior and commitment"
+        },
+        {
+          "book_id": "the-wisdom-of-crowds",
+          "use_for": "protect independent judgment and aggregate diverse evidence instead of loud opinions"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    },
+    {
+      "id": "avoid-vanity-metric-trap",
+      "title": "How to know whether your metrics are lying to you",
+      "format": "how_to_guide",
+      "audience": "busy operator",
+      "user_problem": "People are trying to know whether your metrics are lying to you, but the social evidence suggests practical confusion are getting in the way.",
+      "social_evidence": [],
+      "book_lenses": [
+        {
+          "book_id": "the-lean-startup",
+          "use_for": "test the riskiest assumption with the smallest useful experiment"
+        },
+        {
+          "book_id": "thinking-fast-and-slow",
+          "use_for": "detect overconfidence, substitution, inside-view planning, and misleading intuition"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    },
+    {
+      "id": "align-stakeholders-without-consensus-theater",
+      "title": "How to align stakeholders without consensus theater",
+      "format": "how_to_guide",
+      "audience": "product leader",
+      "user_problem": "People are trying to align stakeholders without consensus theater, but the social evidence suggests practical confusion are getting in the way.",
+      "social_evidence": [],
+      "book_lenses": [
+        {
+          "book_id": "the-wisdom-of-crowds",
+          "use_for": "protect independent judgment and aggregate diverse evidence instead of loud opinions"
+        },
+        {
+          "book_id": "good-strategy-bad-strategy",
+          "use_for": "turn vague goals into diagnosis, guiding policy, and coherent action"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    },
+    {
+      "id": "work-deeply-without-constant-interruptions",
+      "title": "How to work deeply when everything keeps interrupting you",
+      "format": "how_to_guide",
+      "audience": "busy operator",
+      "user_problem": "People are trying to work deeply when everything keeps interrupting you, but the social evidence suggests practical confusion are getting in the way.",
+      "social_evidence": [],
+      "book_lenses": [
+        {
+          "book_id": "deep-work",
+          "use_for": "protect long stretches of attention from shallow-work fragmentation"
+        },
+        {
+          "book_id": "getting-things-done",
+          "use_for": "turn open loops into captured next actions inside a trusted system"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    },
+    {
+      "id": "stop-procrastinating-important-work",
+      "title": "How to stop procrastinating when the task actually matters",
+      "format": "how_to_guide",
+      "audience": "busy operator",
+      "user_problem": "People are trying to stop procrastinating when the task actually matters, but the social evidence suggests practical confusion are getting in the way.",
+      "social_evidence": [],
+      "book_lenses": [
+        {
+          "book_id": "atomic-habits",
+          "use_for": "make behavior change depend on identity, environment, and small repeatable cues"
+        },
+        {
+          "book_id": "four-thousand-weeks",
+          "use_for": "choose what deserves finite attention instead of optimizing every obligation"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    },
+    {
+      "id": "escape-task-overwhelm",
+      "title": "How to get out of task overwhelm without reorganizing your whole life",
+      "format": "how_to_guide",
+      "audience": "product leader",
+      "user_problem": "People are trying to get out of task overwhelm without reorganizing your whole life, but the social evidence suggests wasted building, bad evidence, stakeholder pressure, decision fatigue are getting in the way.",
+      "social_evidence": [
+        {
+          "title": "How do you project managers handle email overload and task tracking in Gmail?",
+          "url": "https://www.reddit.com/r/projectmanagement/comments/1fqxrty/how_do_you_project_managers_handle_email_overload/",
+          "subreddit": "projectmanagement",
+          "comments": 19
+        },
+        {
+          "title": "Nonprofit program staff task overload, how do you prioritize when everything is urgent?",
+          "url": "https://www.reddit.com/r/projectmanagement/comments/1rtpz8y/nonprofit_program_staff_task_overload_how_do_you/",
+          "subreddit": "projectmanagement",
+          "comments": 15
+        },
+        {
+          "title": "One of my direct reports is lying about his work time (works way too much)",
+          "url": "https://www.reddit.com/r/managers/comments/1rzapoq/one_of_my_direct_reports_is_lying_about_his_work/",
+          "subreddit": "managers",
+          "comments": 157
+        },
+        {
+          "title": "I can't get to sleep and I'll simply be much too tired to work tomorrow. Is it morally wrong to lie in the morning and tell my manager I'm vomiting and ill?",
+          "url": "https://www.reddit.com/r/managers/comments/1hxz26p/i_cant_get_to_sleep_and_ill_simply_be_much_too/",
+          "subreddit": "managers",
+          "comments": 68
+        }
+      ],
+      "book_lenses": [
+        {
+          "book_id": "getting-things-done",
+          "use_for": "turn open loops into captured next actions inside a trusted system"
+        },
+        {
+          "book_id": "four-thousand-weeks",
+          "use_for": "choose what deserves finite attention instead of optimizing every obligation"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    },
+    {
+      "id": "hard-conversation-without-making-it-worse",
+      "title": "How to have a hard conversation without making it worse",
+      "format": "how_to_guide",
+      "audience": "team leader",
+      "user_problem": "People are trying to have a hard conversation without making it worse, but the social evidence suggests uncertainty, wasted building, bad evidence, stakeholder pressure, communication gap, decision fatigue are getting in the way.",
+      "social_evidence": [
+        {
+          "title": "What's the best way you've found to train someone for a difficult conversation?",
+          "url": "https://www.reddit.com/r/managers/comments/1teqemb/whats_the_best_way_youve_found_to_train_someone/",
+          "subreddit": "managers",
+          "comments": 12
+        },
+        {
+          "title": "Job offer followed by difficult conversation with HR.. what should i do?",
+          "url": "https://www.reddit.com/r/careerguidance/comments/1kfx6za/job_offer_followed_by_difficult_conversation_with/",
+          "subreddit": "careerguidance",
+          "comments": 13
+        },
+        {
+          "title": "How do i handle a difficult conversation with a manager?",
+          "url": "https://www.reddit.com/r/work/comments/1anmgb0/how_do_i_handle_a_difficult_conversation_with_a/",
+          "subreddit": "work",
+          "comments": 10
+        },
+        {
+          "title": "Tips on difficult conversation",
+          "url": "https://www.reddit.com/r/managers/comments/1sh76ux/tips_on_difficult_conversation/",
+          "subreddit": "managers",
+          "comments": 33
+        }
+      ],
+      "book_lenses": [
+        {
+          "book_id": "crucial-conversations",
+          "use_for": "restore safety and mutual purpose before trying to solve the disagreement"
+        },
+        {
+          "book_id": "thinking-fast-and-slow",
+          "use_for": "detect overconfidence, substitution, inside-view planning, and misleading intuition"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    },
+    {
+      "id": "negotiate-salary-without-guessing",
+      "title": "How to negotiate salary without guessing your worth",
+      "format": "how_to_guide",
+      "audience": "product leader",
+      "user_problem": "People are trying to negotiate salary without guessing your worth, but the social evidence suggests uncertainty, wasted building, bad evidence, stakeholder pressure, communication gap, decision fatigue are getting in the way.",
+      "social_evidence": [
+        {
+          "title": "Salary Negotiation - can I negotiate if offered the highest salary in the range?",
+          "url": "https://www.reddit.com/r/careerguidance/comments/1taddrl/salary_negotiation_can_i_negotiate_if_offered_the/",
+          "subreddit": "careerguidance",
+          "comments": 2
+        },
+        {
+          "title": "Should I negotiate salary for a role after a 7-stage process? Never done it before and feeling nervous about it",
+          "url": "https://www.reddit.com/r/jobs/comments/1tih2g7/should_i_negotiate_salary_for_a_role_after_a/",
+          "subreddit": "jobs",
+          "comments": 7
+        },
+        {
+          "title": "Salary negotiation before job offer. How do I go about responding?",
+          "url": "https://www.reddit.com/r/careerguidance/comments/1to6xkz/salary_negotiation_before_job_offer_how_do_i_go/",
+          "subreddit": "careerguidance",
+          "comments": 5
+        },
+        {
+          "title": "How to negotiate a better salary here?",
+          "url": "https://www.reddit.com/r/jobs/comments/1trytme/how_to_negotiate_a_better_salary_here/",
+          "subreddit": "jobs",
+          "comments": 14
+        }
+      ],
+      "book_lenses": [
+        {
+          "book_id": "never-split-the-difference",
+          "use_for": "use tactical empathy, labels, and calibrated questions before bargaining"
+        },
+        {
+          "book_id": "thinking-fast-and-slow",
+          "use_for": "detect overconfidence, substitution, inside-view planning, and misleading intuition"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    },
+    {
+      "id": "delegate-without-losing-control",
+      "title": "How to delegate without losing control",
+      "format": "how_to_guide",
+      "audience": "product leader",
+      "user_problem": "People are trying to delegate without losing control, but the social evidence suggests wasted building, bad evidence, stakeholder pressure, planning breakdown, communication gap, decision fatigue are getting in the way.",
+      "social_evidence": [
+        {
+          "title": "How to delegate better?",
+          "url": "https://www.reddit.com/r/projectmanagement/comments/1kt6mzy/how_to_delegate_better/",
+          "subreddit": "projectmanagement",
+          "comments": 11
+        },
+        {
+          "title": "Do you use any frameworks to make decisions and delegate faster? I need to do these earlier and with confidence…",
+          "url": "https://www.reddit.com/r/managers/comments/1pzqbgz/do_you_use_any_frameworks_to_make_decisions_and/",
+          "subreddit": "managers",
+          "comments": 10
+        },
+        {
+          "title": "How to become comfortable with delegation (and not feel like you're just dumping work off)?",
+          "url": "https://www.reddit.com/r/Leadership/comments/1df9kb2/how_to_become_comfortable_with_delegation_and_not/",
+          "subreddit": "Leadership",
+          "comments": 35
+        },
+        {
+          "title": "Delegating sounds peaceful until you actually try it",
+          "url": "https://www.reddit.com/r/Entrepreneur/comments/1of0jts/delegating_sounds_peaceful_until_you_actually_try/",
+          "subreddit": "Entrepreneur",
+          "comments": 18
+        }
+      ],
+      "book_lenses": [
+        {
+          "book_id": "high-output-management",
+          "use_for": "increase managerial leverage through clear outputs, delegation, and one-on-ones"
+        },
+        {
+          "book_id": "the-effective-executive",
+          "use_for": "audit time and contribution before adding more managerial activity"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    },
+    {
+      "id": "prevent-obvious-mistakes",
+      "title": "How to prevent obvious mistakes without adding bureaucracy",
+      "format": "how_to_guide",
+      "audience": "team leader",
+      "user_problem": "People are trying to prevent obvious mistakes without adding bureaucracy, but the social evidence suggests stakeholder pressure, planning breakdown, decision fatigue are getting in the way.",
+      "social_evidence": [
+        {
+          "title": "Post-earthquake Basic Damage Assessment Checklist of Computer equipment",
+          "url": "https://www.reddit.com/r/sysadmin/comments/1u10g22/postearthquake_basic_damage_assessment_checklist/",
+          "subreddit": "sysadmin",
+          "comments": 16
+        },
+        {
+          "title": "VMware migration checklist. We still have people migrating and this comes up constantly in the sub",
+          "url": "https://www.reddit.com/r/sysadmin/comments/1sm5hjr/vmware_migration_checklist_we_still_have_people/",
+          "subreddit": "sysadmin",
+          "comments": 3
+        }
+      ],
+      "book_lenses": [
+        {
+          "book_id": "the-checklist-manifesto",
+          "use_for": "use simple pause-point checklists to prevent avoidable failures in complex work"
+        },
+        {
+          "book_id": "thinking-fast-and-slow",
+          "use_for": "detect overconfidence, substitution, inside-view planning, and misleading intuition"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    },
+    {
+      "id": "decide-career-next-step",
+      "title": "How to decide what to do with your career next",
+      "format": "how_to_guide",
+      "audience": "product designer",
+      "user_problem": "People are trying to decide what to do with your career next, but the social evidence suggests uncertainty, wasted building, bad evidence, planning breakdown, decision fatigue are getting in the way.",
+      "social_evidence": [
+        {
+          "title": "23M, Huge Study Gap, No Clear Career Option — How Do I Restart My Life?",
+          "url": "https://www.reddit.com/r/findapath/comments/1ubdics/23m_huge_study_gap_no_clear_career_option_how_do/",
+          "subreddit": "findapath",
+          "comments": 1
+        },
+        {
+          "title": "What should I do with my career path?",
+          "url": "https://www.reddit.com/r/careerguidance/comments/1tuto3d/what_should_i_do_with_my_career_path/",
+          "subreddit": "careerguidance",
+          "comments": 2
+        },
+        {
+          "title": "Career Change, Not sure where to start?",
+          "url": "https://www.reddit.com/r/careerguidance/comments/1u9d3xm/career_change_not_sure_where_to_start/",
+          "subreddit": "careerguidance",
+          "comments": 3
+        },
+        {
+          "title": "How do you know if a career is actually for you vs just chasing stability/money?",
+          "url": "https://www.reddit.com/r/findapath/comments/1ubprkz/how_do_you_know_if_a_career_is_actually_for_you/",
+          "subreddit": "findapath",
+          "comments": 1
+        }
+      ],
+      "book_lenses": [
+        {
+          "book_id": "designing-your-life",
+          "use_for": "prototype multiple possible paths before treating a career choice as a single leap"
+        },
+        {
+          "book_id": "so-good-they-cant-ignore-you",
+          "use_for": "build career capital before expecting autonomy, mission, or rare opportunities"
+        }
+      ],
+      "answer_shape": [
+        "Start with the user confusion in plain language.",
+        "Name the mechanism the books reveal.",
+        "Use one book as the primary lens and one book as the correction or operating constraint.",
+        "End with a checklist or decision rule the reader can use immediately."
+      ],
+      "quality_bar": [
+        "Do not publish if the answer can be written from generic advice alone.",
+        "Use exact quotes only from verified notes, PDFs, or a quote ledger.",
+        "Preserve the social evidence trail in research files even when the public page stays clean.",
+        "Keep the public title as a how-to guide, not a book-title reference."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "generated_at": "2026-06-21T23:07:41.296Z",
+  "method": {
+    "source": "Arctic Shift Reddit archive",
+    "note": "Focused CrowdListen-style question discovery for Answer with Books. Scores favor explicit user questions, confusion, frustration, and engagement; final content still requires editorial review against books.",
+    "after": "2024-01-01",
+    "per_query_limit": 8
+  },
+  "clusters": [
+    {
+      "id": "make-idea-stick",
+      "working_title": "How to explain an idea so people remember it",
+      "books": [
+        "made-to-stick",
+        "the-wisdom-of-crowds"
+      ],
+      "evidence": [
+        {
+          "reddit_id": "1tvvfco",
+          "title": "(B2B Ecommerce SaaS) How do you determine whether low pipeline is caused by positioning, ICP, or channel execution?",
+          "body_excerpt": "joined a B2B ecommerce SaaS company recently and I'm struggling to identify where the actual bottleneck is. We're actively running outbound campaigns through cold email, LinkedIn outreach, webinars, and paid ads. We send roughly 20k cold emails per month and over 1k LinkedIn outbound messages, but we're generating only around 5 leads per month. What's making this harder is that website traffic itself is also very low, so I'm not even seeing enough visitors to diagnose conversion issues. Our competitors appear to be growing and generating awareness, which makes me wonder whether we're dealing with a positioning problem, an ICP problem, weak channel execution, or something more fundamental like product-market fit. For those who have faced a similar situation, what framework would you use to diagnose the root cause before making major changes to messaging or GTM strategy?",
+          "url": "https://www.reddit.com/r/ProductMarketing/comments/1tvvfco/b2b_ecommerce_saas_how_do_you_determine_whether/",
+          "subreddit": "ProductMarketing",
+          "author": "Smart-Ad-66",
+          "published_at": "2026-06-03T16:56:59.000Z",
+          "score": 1,
+          "num_comments": 13,
+          "discovered_by": {
+            "subreddit": "ProductMarketing",
+            "term": "positioning"
+          },
+          "discovery_score": 4.66
+        },
+        {
+          "reddit_id": "1l7smve",
+          "title": "Most startup founders know their product. Fewer know how to explain it.(I will not promote)",
+          "body_excerpt": "I’ve spent the last month working on how I explain what I’m building. Not just for investors or customers , for myself. It’s surprisingly hard. I knew what I was building, but I didn’t know how to talk about it clearly. My sentences would drift. I'd say “AI” and “feedback loop” and “founder coaching,” but none of it stuck. So I changed how I worked. Every morning, I’d pitch out loud like I was explaining it to a really impatient friend. That process helped me rewrite the pitch, the landing page, even some of the product. I used to think clarity came from writing. But now I think it comes from talking. And being forced to say it out loud ,every day ,has helped me get honest about what I’m actually building. what’s helped you explain your idea better?",
+          "url": "https://www.reddit.com/r/startups/comments/1l7smve/most_startup_founders_know_their_product_fewer/",
+          "subreddit": "startups",
+          "author": "masterbutters",
+          "published_at": "2025-06-10T07:30:40.000Z",
+          "score": 35,
+          "num_comments": 26,
+          "discovered_by": {
+            "subreddit": "startups",
+            "term": "explain startup"
+          },
+          "discovery_score": 3.7
+        },
+        {
+          "reddit_id": "1n7rfzk",
+          "title": "How do you explain startup monetization to users who expect AI/tech tools to be free forever?(i will not promote)",
+          "body_excerpt": "I've been thinking a lot lately about how users often expect tech products, especially AI tools, to be completely free forever. They don't always realize the huge backend costs involved, like servers, energy, and ongoing development. Recently, I came across this hilarious exchange where someone asked an AI why it's not free for everyone, and the response basically boiled down to stuff like paying electricity bills and keeping the lights on. For those of you building or running startups, particularly in AI or SaaS, how do you handle explaining your monetization model to users who push back on subscriptions or paywalls? Got any favorite analogies or strategies that help them get the realities without turning them off? I'm really curious to hear your experiences and what's worked (or totally flopped) for you!",
+          "url": "https://www.reddit.com/r/startups/comments/1n7rfzk/how_do_you_explain_startup_monetization_to_users/",
+          "subreddit": "startups",
+          "author": "AskGpts",
+          "published_at": "2025-09-03T21:23:54.000Z",
+          "score": 1,
+          "num_comments": 2,
+          "discovered_by": {
+            "subreddit": "startups",
+            "term": "explain startup"
+          },
+          "discovery_score": 2.44
+        },
+        {
+          "reddit_id": "1jze4j3",
+          "title": "How do you explain what you do when people just don’t “get” the startup life? [I will not promote]",
+          "body_excerpt": "[removed]",
+          "url": "https://www.reddit.com/r/startups/comments/1jze4j3/how_do_you_explain_what_you_do_when_people_just/",
+          "subreddit": "startups",
+          "author": "Educational_Till_703",
+          "published_at": "2025-04-15T00:10:30.000Z",
+          "score": 1,
+          "num_comments": 1,
+          "discovered_by": {
+            "subreddit": "startups",
+            "term": "explain startup"
+          },
+          "discovery_score": 2.44
+        },
+        {
+          "reddit_id": "1iuoux0",
+          "title": "An AI recruiting startup raised $100m at a $2b valuation - someone explain (I will not promote)",
+          "body_excerpt": "An AI recruiter startup just raised $100m at a $2b valuation while the founders have not built and scaled something before and are 21-years old. Is this 2022? Someone please help me understand this, this company is a little over 2 years old and 2 of the 3 founders have never built something before. The other founder has, but it never scaled or got acquired (what I can find). No pristine universities (one from Harvard but dropped out in first year?) and one followed 50% of the Thiel Fellowship. I cannot find a single top voice ridiculing this raise so can someone help me understand why this makes sense. I am aware of their 70m ARR but in a second year, is that really ARR? Also that is still an almost 28x revenue multiple, the median valuation multiple for public SaaS companies stands at **7.0x** current run-rate annualized revenue.",
+          "url": "https://www.reddit.com/r/startups/comments/1iuoux0/an_ai_recruiting_startup_raised_100m_at_a_2b/",
+          "subreddit": "startups",
+          "author": "Sudden-Material-2569",
+          "published_at": "2025-02-21T11:36:33.000Z",
+          "score": 215,
+          "num_comments": 131,
+          "discovered_by": {
+            "subreddit": "startups",
+            "term": "explain startup"
+          },
+          "discovery_score": 2.3
+        },
+        {
+          "reddit_id": "1rphb9l",
+          "title": "Explain your startup in 1 sentence 🫶🏻 I will not promote",
+          "body_excerpt": "Curious how founders here describe their startups in the simplest way possible. Sometimes a single sentence explains the whole idea better than a long pitch. They say if you can’t explain your startup in a small elevator pitch in one sentence, the idea probably isn’t clear enough yet. It’s a useful exercise because it forces you to reduce the concept to its core value.",
+          "url": "https://www.reddit.com/r/startups/comments/1rphb9l/explain_your_startup_in_1_sentence_i_will_not/",
+          "subreddit": "startups",
+          "author": "biomclub",
+          "published_at": "2026-03-10T00:01:11.000Z",
+          "score": 11,
+          "num_comments": 35,
+          "discovered_by": {
+            "subreddit": "startups",
+            "term": "explain startup"
+          },
+          "discovery_score": 2.3
+        }
+      ]
+    }
+  ]
+}

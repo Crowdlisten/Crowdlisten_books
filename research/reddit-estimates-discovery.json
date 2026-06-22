@@ -1,0 +1,117 @@
+{
+  "generated_at": "2026-06-21T23:06:08.063Z",
+  "method": {
+    "source": "Arctic Shift Reddit archive",
+    "note": "Focused CrowdListen-style question discovery for Answer with Books. Scores favor explicit user questions, confusion, frustration, and engagement; final content still requires editorial review against books.",
+    "after": "2024-01-01",
+    "per_query_limit": 8
+  },
+  "clusters": [
+    {
+      "id": "make-estimates-less-fictional",
+      "working_title": "How to make project estimates less fictional",
+      "books": [
+        "thinking-fast-and-slow",
+        "seeing-like-a-state"
+      ],
+      "evidence": [
+        {
+          "reddit_id": "1khsamo",
+          "title": "Project managers: Where do time estimates go wrong?",
+          "body_excerpt": "Hey all! I’m an engineer and ex-agency owner exploring a SaaS idea in project management and would love some honest input. The problem: Accurately estimating how long development tasks will take is *hard*. We’ve all been burned by the classic “oh, that’ll take 2 days” → turns into 2 weeks. Agencies struggle to set good client expectations, teams overcommit, freelancers underquote. The idea: A tool that helps break down tasks, estimates each subtask, and rolls up a realistic overall time estimate - including confidence ranges (best/worst/most likely). 👉 **My questions for PMs and project leads here:** * Is inaccurate estimation something you actively struggle with? * Where do you usually go wrong when scoping or estimating software work? * Would you *pay* for a tool that improves this? Why or why not? Appreciate any thoughts or feedback! Not selling anything yet, just in discovery phase…",
+          "url": "https://www.reddit.com/r/projectmanagement/comments/1khsamo/project_managers_where_do_time_estimates_go_wrong/",
+          "subreddit": "projectmanagement",
+          "author": "guiltyguy_",
+          "published_at": "2025-05-08T15:02:07.000Z",
+          "score": 3,
+          "num_comments": 14,
+          "discovered_by": {
+            "subreddit": "projectmanagement",
+            "term": "estimates"
+          },
+          "discovery_score": 4.93
+        },
+        {
+          "reddit_id": "1s9o8an",
+          "title": "How do you estimate time for a project when you use AI Code?",
+          "body_excerpt": "Hi guys. Recently I started new position for a outsource company ( my first time, i have always work for product company and its so chill) . Time for a project is expected to be less than a month for a mvp version. Its quite new to me but im still adapting that I dont code anymore. All I do I review code and brainstorm with AI and testing. I use Claude Code and found it quite smart. But my problem is because Im quite new to this so estimate time might be difficult to me. Now before start the project. Me along with AI brainstorm to create docs like BA, plan, design, task... hour-level detail instead of days or week. Because sometimes issue happen when testing (that AI even not anticipated). And need more time handle that. But for outsource, time is fixed in proposal but I dont want to work overtime for something that I commited. Anyone else faces the same issue?",
+          "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1s9o8an/how_do_you_estimate_time_for_a_project_when_you/",
+          "subreddit": "ExperiencedDevs",
+          "author": "BackgroundLow3793",
+          "published_at": "2026-04-01T15:43:40.000Z",
+          "score": 0,
+          "num_comments": 17,
+          "discovered_by": {
+            "subreddit": "ExperiencedDevs",
+            "term": "estimate project"
+          },
+          "discovery_score": 4.25
+        },
+        {
+          "reddit_id": "1th37wy",
+          "title": "How are you managing capacity without time tracking or reliable effort estimates?",
+          "body_excerpt": "I’m looking for advice from people who have managed resource capacity across multiple projects in a relatively low-maturity PM environment. I work in a niche HR function in the public sector. Our team supports thousands of employees across dozens of departments. I was hired in part to help establish more formal PMO/project portfolio practices for the unit. One of the recurring problems we run into is predictable resource constraints causing delivery delays across the portfolio. Right now, we do not track time to projects (nor do we track time at all), and we also are not at a level where I reliable effort estimation is realistic or feasible (yet). I’m trying to identify an approach that gives us a more realistic and usable picture of resource availability and portfolio capacity using the tools we already have (MS Project, excell, Power BI, etc.). What I’m really curious about is: Have a…",
+          "url": "https://www.reddit.com/r/projectmanagement/comments/1th37wy/how_are_you_managing_capacity_without_time/",
+          "subreddit": "projectmanagement",
+          "author": "RombaQueenofDust",
+          "published_at": "2026-05-18T22:13:23.000Z",
+          "score": 16,
+          "num_comments": 20,
+          "discovered_by": {
+            "subreddit": "projectmanagement",
+            "term": "estimates"
+          },
+          "discovery_score": 4.07
+        },
+        {
+          "reddit_id": "1b0qkwc",
+          "title": "This could be the most noob question but, here I go. I suck at estimation and costing of cloud infrastructure and relevant resources. Suggest me tips and tricks. How to be better at it?",
+          "body_excerpt": "Context: I am working for a company which is not totally dependent on single cloud provider. We use AWS, Google Cloud Platform, DigitalOcean and some on prem servers. We have many clients and depending upon their needs and budget the projects are deployed on a platform. After the resignation of my supervisor I am being queried for the estimation and cost to the company. I have tried aws and gcp cost calculator but looking at old reports of my supervisor the estimates I have calculated is no where accurate. **I want some suggestions and tips from this community about this topic**",
+          "url": "https://www.reddit.com/r/devops/comments/1b0qkwc/this_could_be_the_most_noob_question_but_here_i/",
+          "subreddit": "devops",
+          "author": "Cross_Whales",
+          "published_at": "2024-02-26T19:41:18.000Z",
+          "score": 18,
+          "num_comments": 18,
+          "discovered_by": {
+            "subreddit": "devops",
+            "term": "estimation"
+          },
+          "discovery_score": 3.64
+        },
+        {
+          "reddit_id": "1ikskmo",
+          "title": "hi guys, do you maybe use somekind of a ticket estimation tool?",
+          "body_excerpt": "Hi guys, do you maybe use a ticket estimation tool? Cause I remember using it when I was working as an python developer. But never used it in a devops role before. Thanks, Tom",
+          "url": "https://www.reddit.com/r/devops/comments/1ikskmo/hi_guys_do_you_maybe_use_somekind_of_a_ticket/",
+          "subreddit": "devops",
+          "author": "thomsterm",
+          "published_at": "2025-02-08T17:29:53.000Z",
+          "score": 3,
+          "num_comments": 10,
+          "discovered_by": {
+            "subreddit": "devops",
+            "term": "estimation"
+          },
+          "discovery_score": 2.73
+        },
+        {
+          "reddit_id": "1cqarfk",
+          "title": "How do you guys estimate task breakdown for a project?",
+          "body_excerpt": "[removed]",
+          "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1cqarfk/how_do_you_guys_estimate_task_breakdown_for_a/",
+          "subreddit": "ExperiencedDevs",
+          "author": "BigBoyCenturian",
+          "published_at": "2024-05-12T15:44:37.000Z",
+          "score": 1,
+          "num_comments": 1,
+          "discovered_by": {
+            "subreddit": "ExperiencedDevs",
+            "term": "estimate project"
+          },
+          "discovery_score": 2.69
+        }
+      ]
+    }
+  ]
+}

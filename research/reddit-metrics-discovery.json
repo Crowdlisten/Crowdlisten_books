@@ -1,0 +1,85 @@
+{
+  "generated_at": "2026-06-21T23:06:35.304Z",
+  "method": {
+    "source": "Arctic Shift Reddit archive",
+    "note": "Focused CrowdListen-style question discovery for Answer with Books. Scores favor explicit user questions, confusion, frustration, and engagement; final content still requires editorial review against books.",
+    "after": "2024-01-01",
+    "per_query_limit": 8
+  },
+  "clusters": [
+    {
+      "id": "avoid-vanity-metric-trap",
+      "working_title": "How to know whether your metrics are lying to you",
+      "books": [
+        "the-lean-startup",
+        "thinking-fast-and-slow"
+      ],
+      "evidence": [
+        {
+          "reddit_id": "1bwaeoi",
+          "title": "North Star metric for Ad experience on a social app?",
+          "body_excerpt": "I am currently managing Ads experience for a medium sized social App, we generate revenue by running Ads in the feed. We currently use Ad engagement rate as the North Star, i.e true click rate + like/share/comment, and I pair this with other guardrails like block rate, repetition rate, quality score, etc. But one thing this North Star does not cover is how Ads impact users who never interact with any Ads, which is likely more than half of the users. Just wanted to compare notes, how do you or your team set the North Star metrics and guardrails for Ad experience for your product if you monetize with Ads? Thank you!",
+          "url": "https://www.reddit.com/r/ProductManagement/comments/1bwaeoi/north_star_metric_for_ad_experience_on_a_social/",
+          "subreddit": "ProductManagement",
+          "author": "sleepymonkey2",
+          "published_at": "2024-04-05T05:40:48.000Z",
+          "score": 8,
+          "num_comments": 11,
+          "discovered_by": {
+            "subreddit": "ProductManagement",
+            "term": "north star metric"
+          },
+          "discovery_score": 4.53
+        },
+        {
+          "reddit_id": "1k1m33g",
+          "title": "How do you define a fair North Star Metric when user activity varies wildly?",
+          "body_excerpt": "Hi all, I’m working on a B2B SaaS product where some accounts are **super active** (doing thousands of actions a month), while others use the product more lightly. I’m trying to define a meaningful **North Star Metric**—currently leaning toward something like: **“Number of key actions performed per month.”** The challenge is that this gets **heavily skewed by a few power users**, which makes it hard to track real, broad-based product health. Please note that our **pricing is seat-based**, not tied to usage or actions I’ve thought about: * Tracking **median usage per account** (The average won't do here) * Using a **log-weighted metric** to normalize extremes. But it might be harder to understand by the entire organization. * Segmenting accounts into usage tiers (light / medium / heavy) Anyone else run into this problem? How do you define a North Star that reflects both **adoption** and…",
+          "url": "https://www.reddit.com/r/ProductManagement/comments/1k1m33g/how_do_you_define_a_fair_north_star_metric_when/",
+          "subreddit": "ProductManagement",
+          "author": "AdFit1933",
+          "published_at": "2025-04-17T19:56:09.000Z",
+          "score": 11,
+          "num_comments": 22,
+          "discovered_by": {
+            "subreddit": "ProductManagement",
+            "term": "north star metric"
+          },
+          "discovery_score": 3.9
+        },
+        {
+          "reddit_id": "1lwh9q1",
+          "title": "Just synergized our north star metric with a cross-functional OKR cascade to unlock net-new customer LTV via scalable friction points.",
+          "body_excerpt": "Spent the day aligning on our Q3 GTM enablement strategy through a bottoms-up, async-first working session. We’re operationalizing value delivery by co-creating a feedback flywheel rooted in continuous discovery. Here’s the TL;DR: * We’re sunsetting legacy workflows to double down on scalable personalization. * MVP scope was reframed as a test-and-learn pilot backed by directional data. * Created a decisioning matrix to resolve the stakeholder gridlock on roadmap re-sequencing. * Updated our value prop narrative in the pitch deck to resonate with mid-funnel ICPs. * Re-baselined our story points to account for “narrative debt.” * Leveraged OKR heatmaps to identify underperforming epics and reallocate sprint-level resourcing. Action item: Align on a single source of truth for the enablement backlog before the cross-functional cadence check-in next Tuesday. If not, let’s escalate to the st…",
+          "url": "https://www.reddit.com/r/ProductManagement/comments/1lwh9q1/just_synergized_our_north_star_metric_with_a/",
+          "subreddit": "ProductManagement",
+          "author": "thebipolarironman",
+          "published_at": "2025-07-10T16:33:01.000Z",
+          "score": 22,
+          "num_comments": 18,
+          "discovered_by": {
+            "subreddit": "ProductManagement",
+            "term": "north star metric"
+          },
+          "discovery_score": 3.83
+        },
+        {
+          "reddit_id": "1goo8pg",
+          "title": "How to set a north star metric for an internal platform product",
+          "body_excerpt": "How to set a north star metric for an internal platform product?",
+          "url": "https://www.reddit.com/r/ProductManagement/comments/1goo8pg/how_to_set_a_north_star_metric_for_an_internal/",
+          "subreddit": "ProductManagement",
+          "author": "ActivePresentation55",
+          "published_at": "2024-11-11T09:17:07.000Z",
+          "score": 23,
+          "num_comments": 17,
+          "discovered_by": {
+            "subreddit": "ProductManagement",
+            "term": "north star metric"
+          },
+          "discovery_score": 2.49
+        }
+      ]
+    }
+  ]
+}

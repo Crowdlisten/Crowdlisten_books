@@ -31,6 +31,7 @@ export function selectRelevantBooks({ question, books, limit = 3 }) {
   return [...books.values()]
     .map((book) => {
       const haystack = [book.title, book.author, ...(book.concepts ?? []), ...(book.applications ?? [])]
+        .concat([book.knowledge_text ?? ''])
         .join(' ')
         .toLowerCase();
       const score = scoreText(question, haystack);
@@ -50,13 +51,24 @@ export function retrieveBooks({ query, books, limit = 5, minScore = 1 }) {
         ...(book.concepts ?? []),
         ...(book.quotes ?? []),
         ...(book.applications ?? []),
+        book.knowledge_text ?? '',
       ].join(' ');
-      return { book, score: scoreText(query, haystack) };
+      return { book: publicBook(book), score: scoreText(query, haystack) };
     })
     .filter((item) => item.score >= minScore)
     .sort((a, b) => b.score - a.score || a.book.title.localeCompare(b.book.title))
     .slice(0, limit)
     .map(({ book, score }) => ({ score, book }));
+}
+
+function publicBook(book) {
+  const {
+    knowledge_text,
+    knowledge_chunks,
+    knowledge_sections,
+    ...safeBook
+  } = book;
+  return safeBook;
 }
 
 export function retrieveContent({ query, content, limit = 5, minScore = 2 }) {
@@ -93,12 +105,17 @@ export function scoreText(query, text) {
 export function generateContentCandidate({
   question,
   books,
+  preferredBookIds = [],
   sourceIds,
   demandSignals,
   format = 'article',
   audience = 'curious reader',
 }) {
-  const selectedBooks = selectRelevantBooks({ question, books });
+  const preferred = preferredBookIds.map((id) => books.get(id)).filter(Boolean);
+  const selectedBooks = uniqueBooks([
+    ...preferred,
+    ...selectRelevantBooks({ question, books, limit: Math.max(3, 3 - preferred.length) }),
+  ]).slice(0, 3);
   const primary = selectedBooks[0] ?? [...books.values()][0];
   const supporting = selectedBooks.slice(1);
   const signalSummary = summarizeSignals(demandSignals);
@@ -143,6 +160,15 @@ export function generateContentCandidate({
     concepts: conceptList,
     body,
   };
+}
+
+function uniqueBooks(items) {
+  const seen = new Set();
+  return items.filter((book) => {
+    if (!book || seen.has(book.id)) return false;
+    seen.add(book.id);
+    return true;
+  });
 }
 
 function summarizeSignals(signals) {

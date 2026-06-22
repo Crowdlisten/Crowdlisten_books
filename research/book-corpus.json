@@ -1,0 +1,1068 @@
+{
+  "generated_at": "2026-06-22T04:20:15.773Z",
+  "source": "web/src/content/books/",
+  "visibility": "backend_only",
+  "note": "Generated from public book Markdown for backend retrieval and matching. This corpus is not rendered directly in the UI.",
+  "books": [
+    {
+      "id": "atomic-habits",
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "year": 2018,
+      "tags": [
+        "habits",
+        "behavior-change",
+        "productivity"
+      ],
+      "one_liner": "A behavior-change playbook built around small repeatable actions, identity, cues, and environment design.",
+      "read_if": "You keep trying to change by motivation alone and then blaming yourself when the system around the behavior stays the same.",
+      "source_path": "web/src/content/books/atomic-habits.md",
+      "visibility": "backend_only",
+      "text_file": "research/book-text/atomic-habits.txt",
+      "sections": [
+        {
+          "heading": "Core mental models",
+          "text": "Core mental models\n\n1. Habits compound.\nClear frames habits as small actions that matter because they repeat. A single action is tiny; the trajectory is the point.\n\n2. Identity drives consistency.\nThe strongest habits are not only about outcomes. They become votes for the kind of person you are trying to become.\n\n3. Behavior follows the cue.\nHabits have a loop: cue, craving, response, reward. If the cue and reward are poorly designed, motivation has to do too much work.\n\n4. Environment beats willpower.\nMake good behaviors obvious, attractive, easy, and satisfying. Make bad behaviors hidden, unattractive, difficult, and unsatisfying."
+        },
+        {
+          "heading": "Key frameworks",
+          "text": "Key frameworks\n\nThe four laws. Make it obvious, attractive, easy, and satisfying.\n\nHabit stacking. Attach a new behavior to a stable existing behavior: after I do X, I will do Y.\n\nTwo-minute version. Shrink the first action until starting becomes easy enough to repeat."
+        },
+        {
+          "heading": "When to reach for this book",
+          "text": "When to reach for this book\n- When procrastination is framed as a character flaw.\n- When a desired behavior depends on repeated follow-through.\n- When the current environment makes the bad behavior frictionless.\n- When a team wants a behavior change, not just a new rule."
+        },
+        {
+          "heading": "Memorable ideas",
+          "text": "Memorable ideas\n\nThe practical test is whether the environment makes the desired action easy to start on a normal day, not an inspired one."
+        },
+        {
+          "heading": "How I've applied it",
+          "text": "How I've applied it\n\nAnswer with Books can use Atomic Habits for concerns where the user's problem is not knowledge but repeatability: writing, focusing, reviewing, exercising, saving, studying, or shipping."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chunk_1",
+          "text": "Core mental models\n\n1. Habits compound.\nClear frames habits as small actions that matter because they repeat. A single action is tiny; the trajectory is the point.\n\n2. Identity drives consistency.\nThe strongest habits are not only about outcomes. They become votes for the kind of person you are trying to become.\n\n3. Behavior follows the cue.\nHabits have a loop: cue, craving, response, reward. If the cue and reward are poorly designed, motivation has to do too much work.\n\n4. Environment beats willpower.\nMake good behaviors obvious, attractive, easy, and satisfying. Make bad behaviors hidden, unattractive, difficult, and unsatisfying.\n\nKey frameworks\n\nThe four laws. Make it obvious, attractive, easy, and satisfying.\n\nHabit stacking. Attach a new behavior to a stable existing behavior: after I do X, I will do Y.\n\nTwo-minute version. Shrink the first action until starting becomes easy enough to repeat.\n\nWhen to reach for this book\n- When procrastination is framed as a character flaw.\n- When a desired behavior depends on repeated follow-through.\n- When the current environment makes the bad behavior frictionless.\n- When a team wants a behavior change, not just a new rule."
+        },
+        {
+          "id": "chunk_2",
+          "text": "Memorable ideas\n\nThe practical test is whether the environment makes the desired action easy to start on a normal day, not an inspired one.\n\nHow I've applied it\n\nAnswer with Books can use Atomic Habits for concerns where the user's problem is not knowledge but repeatability: writing, focusing, reviewing, exercising, saving, studying, or shipping."
+        }
+      ],
+      "full_text": "A behavior-change playbook built around small repeatable actions, identity, cues, and environment design.\n\nYou keep trying to change by motivation alone and then blaming yourself when the system around the behavior stays the same.\n\nCore mental models\n\n1. Habits compound.\nClear frames habits as small actions that matter because they repeat. A single action is tiny; the trajectory is the point.\n\n2. Identity drives consistency.\nThe strongest habits are not only about outcomes. They become votes for the kind of person you are trying to become.\n\n3. Behavior follows the cue.\nHabits have a loop: cue, craving, response, reward. If the cue and reward are poorly designed, motivation has to do too much work.\n\n4. Environment beats willpower.\nMake good behaviors obvious, attractive, easy, and satisfying. Make bad behaviors hidden, unattractive, difficult, and unsatisfying.\n\nKey frameworks\n\nThe four laws. Make it obvious, attractive, easy, and satisfying.\n\nHabit stacking. Attach a new behavior to a stable existing behavior: after I do X, I will do Y.\n\nTwo-minute version. Shrink the first action until starting becomes easy enough to repeat.\n\nWhen to reach for this book\n- When procrastination is framed as a character flaw.\n- When a desired behavior depends on repeated follow-through.\n- When the current environment makes the bad behavior frictionless.\n- When a team wants a behavior change, not just a new rule.\n\nMemorable ideas\n\nThe practical test is whether the environment makes the desired action easy to start on a normal day, not an inspired one.\n\nHow I've applied it\n\nAnswer with Books can use Atomic Habits for concerns where the user's problem is not knowledge but repeatability: writing, focusing, reviewing, exercising, saving, studying, or shipping."
+    },
+    {
+      "id": "crucial-conversations",
+      "title": "Crucial Conversations",
+      "author": "Kerry Patterson, Joseph Grenny, Ron McMillan, and Al Switzler",
+      "year": 2002,
+      "tags": [
+        "communication",
+        "conflict",
+        "management"
+      ],
+      "one_liner": "A practical framework for conversations where stakes are high, opinions differ, and emotions can derail the outcome.",
+      "read_if": "You need to talk about conflict, feedback, performance, money, trust, or expectations without turning the conversation into avoidance or a fight.",
+      "source_path": "web/src/content/books/crucial-conversations.md",
+      "visibility": "backend_only",
+      "text_file": "research/book-text/crucial-conversations.txt",
+      "sections": [
+        {
+          "heading": "Core mental models",
+          "text": "Core mental models\n\n1. Safety precedes substance.\nWhen people feel unsafe, they move to silence or violence: withholding, masking, attacking, controlling, or defensiveness. The conversation cannot improve until safety returns.\n\n2. Shared meaning is the goal.\nThe point is not to win the exchange. It is to get more accurate information into the shared pool so the decision or relationship can improve.\n\n3. Stories create emotions.\nPeople react not only to facts but to the story they tell about those facts. Slowing down enough to separate observation from interpretation changes the conversation.\n\n4. Mutual purpose keeps the door open.\nHard messages land better when both sides can see the larger aim they still share."
+        },
+        {
+          "heading": "Key frameworks",
+          "text": "Key frameworks\n\nSTATE. Share your facts, tell your story, ask for others' paths, talk tentatively, and encourage testing.\n\nReturn to safety. When the conversation gets defensive, pause the content and repair mutual purpose or mutual respect.\n\nStart with heart. Know what you really want before your ego starts optimizing for being right."
+        },
+        {
+          "heading": "When to reach for this book",
+          "text": "When to reach for this book\n- Before performance feedback or conflict conversations.\n- When avoidance has become expensive.\n- When a team keeps confusing politeness with alignment.\n- When a conversation needs both honesty and relationship protection."
+        },
+        {
+          "heading": "Memorable ideas",
+          "text": "Memorable ideas\n\nThe central discipline is to protect the conditions under which truth can enter the room."
+        },
+        {
+          "heading": "How I've applied it",
+          "text": "How I've applied it\n\nCrowdListen demand often contains conflict language: managers asking how to give feedback, employees asking whether to confront a boss, founders avoiding a cofounder issue. This book gives those questions a usable sequence."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chunk_1",
+          "text": "Core mental models\n\n1. Safety precedes substance.\nWhen people feel unsafe, they move to silence or violence: withholding, masking, attacking, controlling, or defensiveness. The conversation cannot improve until safety returns.\n\n2. Shared meaning is the goal.\nThe point is not to win the exchange. It is to get more accurate information into the shared pool so the decision or relationship can improve.\n\n3. Stories create emotions.\nPeople react not only to facts but to the story they tell about those facts. Slowing down enough to separate observation from interpretation changes the conversation.\n\n4. Mutual purpose keeps the door open.\nHard messages land better when both sides can see the larger aim they still share.\n\nKey frameworks\n\nSTATE. Share your facts, tell your story, ask for others' paths, talk tentatively, and encourage testing.\n\nReturn to safety. When the conversation gets defensive, pause the content and repair mutual purpose or mutual respect.\n\nStart with heart. Know what you really want before your ego starts optimizing for being right."
+        },
+        {
+          "id": "chunk_2",
+          "text": "When to reach for this book\n- Before performance feedback or conflict conversations.\n- When avoidance has become expensive.\n- When a team keeps confusing politeness with alignment.\n- When a conversation needs both honesty and relationship protection.\n\nMemorable ideas\n\nThe central discipline is to protect the conditions under which truth can enter the room.\n\nHow I've applied it\n\nCrowdListen demand often contains conflict language: managers asking how to give feedback, employees asking whether to confront a boss, founders avoiding a cofounder issue. This book gives those questions a usable sequence."
+        }
+      ],
+      "full_text": "A practical framework for conversations where stakes are high, opinions differ, and emotions can derail the outcome.\n\nYou need to talk about conflict, feedback, performance, money, trust, or expectations without turning the conversation into avoidance or a fight.\n\nCore mental models\n\n1. Safety precedes substance.\nWhen people feel unsafe, they move to silence or violence: withholding, masking, attacking, controlling, or defensiveness. The conversation cannot improve until safety returns.\n\n2. Shared meaning is the goal.\nThe point is not to win the exchange. It is to get more accurate information into the shared pool so the decision or relationship can improve.\n\n3. Stories create emotions.\nPeople react not only to facts but to the story they tell about those facts. Slowing down enough to separate observation from interpretation changes the conversation.\n\n4. Mutual purpose keeps the door open.\nHard messages land better when both sides can see the larger aim they still share.\n\nKey frameworks\n\nSTATE. Share your facts, tell your story, ask for others' paths, talk tentatively, and encourage testing.\n\nReturn to safety. When the conversation gets defensive, pause the content and repair mutual purpose or mutual respect.\n\nStart with heart. Know what you really want before your ego starts optimizing for being right.\n\nWhen to reach for this book\n- Before performance feedback or conflict conversations.\n- When avoidance has become expensive.\n- When a team keeps confusing politeness with alignment.\n- When a conversation needs both honesty and relationship protection.\n\nMemorable ideas\n\nThe central discipline is to protect the conditions under which truth can enter the room.\n\nHow I've applied it\n\nCrowdListen demand often contains conflict language: managers asking how to give feedback, employees asking whether to confront a boss, founders avoiding a cofounder issue. This book gives those questions a usable sequence."
+    },
+    {
+      "id": "deep-work",
+      "title": "Deep Work",
+      "author": "Cal Newport",
+      "year": 2016,
+      "tags": [
+        "focus",
+        "productivity",
+        "work"
+      ],
+      "one_liner": "A practical argument that valuable work increasingly depends on protecting long, undistracted stretches of attention.",
+      "read_if": "Your day is full of Slack, email, meetings, and context switching, and the work that actually moves your life or company forward keeps getting postponed.",
+      "source_path": "web/src/content/books/deep-work.md",
+      "visibility": "backend_only",
+      "text_file": "research/book-text/deep-work.txt",
+      "sections": [
+        {
+          "heading": "Core mental models",
+          "text": "Core mental models\n\n1. Deep work is economically rare.\nNewport's core distinction is between deep work, which requires sustained attention and creates new value, and shallow work, which keeps the system moving but rarely compounds. The problem is that shallow work is easier to measure and easier to ask for.\n\n2. Attention residue is real.\nEvery switch leaves part of the mind behind. A day broken into small fragments can feel busy while never giving the hardest problem enough uninterrupted contact.\n\n3. Focus needs ritual, not mood.\nThe useful move is to decide when, where, for how long, and under what rules deep work happens. Willpower is weak; a repeatable container is stronger.\n\n4. Shallow work needs a budget.\nThe goal is not to ignore coordination. It is to stop coordination from silently consuming the hours that should produce the valuable artifact."
+        },
+        {
+          "heading": "Key frameworks",
+          "text": "Key frameworks\n\nThe deep work block. Put the hardest work on the calendar with a defined start, stop, and output. Treat it as an appointment with the work, not an aspiration.\n\nThe shutdown ritual. End the day by capturing open loops and deciding the next action, so the mind does not keep rechecking everything at night.\n\nThe shallow-work audit. List recurring tasks and ask which can be batched, reduced, delegated, or made asynchronous."
+        },
+        {
+          "heading": "When to reach for this book",
+          "text": "When to reach for this book\n- When your work requires writing, design, coding, strategy, or analysis.\n- When interruptions feel like the default operating system.\n- When the team confuses responsiveness with productivity.\n- When your most important project never receives your best attention."
+        },
+        {
+          "heading": "Memorable ideas",
+          "text": "Memorable ideas\n\nThe practical idea is simple: attention is not a vibe. It is a production condition."
+        },
+        {
+          "heading": "How I've applied it",
+          "text": "How I've applied it\n\nFor Answer with Books, Deep Work is a useful lens for demand around focus and interruption. People usually do not need another productivity hack; they need a way to protect the kind of attention their important work actually requires."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chunk_1",
+          "text": "Core mental models\n\n1. Deep work is economically rare.\nNewport's core distinction is between deep work, which requires sustained attention and creates new value, and shallow work, which keeps the system moving but rarely compounds. The problem is that shallow work is easier to measure and easier to ask for.\n\n2. Attention residue is real.\nEvery switch leaves part of the mind behind. A day broken into small fragments can feel busy while never giving the hardest problem enough uninterrupted contact.\n\n3. Focus needs ritual, not mood.\nThe useful move is to decide when, where, for how long, and under what rules deep work happens. Willpower is weak; a repeatable container is stronger.\n\n4. Shallow work needs a budget.\nThe goal is not to ignore coordination. It is to stop coordination from silently consuming the hours that should produce the valuable artifact.\n\nKey frameworks\n\nThe deep work block. Put the hardest work on the calendar with a defined start, stop, and output. Treat it as an appointment with the work, not an aspiration.\n\nThe shutdown ritual. End the day by capturing open loops and deciding the next action, so the mind does not keep rechecking everything at night."
+        },
+        {
+          "id": "chunk_2",
+          "text": "The shallow-work audit. List recurring tasks and ask which can be batched, reduced, delegated, or made asynchronous.\n\nWhen to reach for this book\n- When your work requires writing, design, coding, strategy, or analysis.\n- When interruptions feel like the default operating system.\n- When the team confuses responsiveness with productivity.\n- When your most important project never receives your best attention.\n\nMemorable ideas\n\nThe practical idea is simple: attention is not a vibe. It is a production condition.\n\nHow I've applied it\n\nFor Answer with Books, Deep Work is a useful lens for demand around focus and interruption. People usually do not need another productivity hack; they need a way to protect the kind of attention their important work actually requires."
+        }
+      ],
+      "full_text": "A practical argument that valuable work increasingly depends on protecting long, undistracted stretches of attention.\n\nYour day is full of Slack, email, meetings, and context switching, and the work that actually moves your life or company forward keeps getting postponed.\n\nCore mental models\n\n1. Deep work is economically rare.\nNewport's core distinction is between deep work, which requires sustained attention and creates new value, and shallow work, which keeps the system moving but rarely compounds. The problem is that shallow work is easier to measure and easier to ask for.\n\n2. Attention residue is real.\nEvery switch leaves part of the mind behind. A day broken into small fragments can feel busy while never giving the hardest problem enough uninterrupted contact.\n\n3. Focus needs ritual, not mood.\nThe useful move is to decide when, where, for how long, and under what rules deep work happens. Willpower is weak; a repeatable container is stronger.\n\n4. Shallow work needs a budget.\nThe goal is not to ignore coordination. It is to stop coordination from silently consuming the hours that should produce the valuable artifact.\n\nKey frameworks\n\nThe deep work block. Put the hardest work on the calendar with a defined start, stop, and output. Treat it as an appointment with the work, not an aspiration.\n\nThe shutdown ritual. End the day by capturing open loops and deciding the next action, so the mind does not keep rechecking everything at night.\n\nThe shallow-work audit. List recurring tasks and ask which can be batched, reduced, delegated, or made asynchronous.\n\nWhen to reach for this book\n- When your work requires writing, design, coding, strategy, or analysis.\n- When interruptions feel like the default operating system.\n- When the team confuses responsiveness with productivity.\n- When your most important project never receives your best attention.\n\nMemorable ideas\n\nThe practical idea is simple: attention is not a vibe. It is a production condition.\n\nHow I've applied it\n\nFor Answer with Books, Deep Work is a useful lens for demand around focus and interruption. People usually do not need another productivity hack; they need a way to protect the kind of attention their important work actually requires."
+    },
+    {
+      "id": "designing-your-life",
+      "title": "Designing Your Life",
+      "author": "Bill Burnett and Dave Evans",
+      "year": 2016,
+      "tags": [
+        "career",
+        "life-design",
+        "experiments"
+      ],
+      "one_liner": "A design-thinking approach to career and life decisions: prototype paths instead of trying to think your way into certainty.",
+      "read_if": "You feel stuck between possible lives and need a way to test directions without treating every decision as irreversible.",
+      "source_path": "web/src/content/books/designing-your-life.md",
+      "visibility": "backend_only",
+      "text_file": "research/book-text/designing-your-life.txt",
+      "sections": [
+        {
+          "heading": "Core mental models",
+          "text": "Core mental models\n\n1. Designers build their way forward.\nBurnett and Evans treat life choices as design problems. You do not need a perfect answer before trying a prototype.\n\n2. Wayfinding beats grand certainty.\nEnergy, engagement, and curiosity are data. The point is to notice where real experience gives information that planning cannot.\n\n3. There are multiple good lives.\nThe odyssey-plan exercise deliberately creates several plausible paths, weakening the fantasy that there is one hidden correct answer.\n\n4. Prototype the decision.\nConversations, small projects, shadowing, and experiments let you learn about a path before overcommitting."
+        },
+        {
+          "heading": "Key frameworks",
+          "text": "Key frameworks\n\nOdyssey plans. Sketch multiple five-year paths: a current path, an alternative if that disappeared, and a wilder version.\n\nPrototype conversation. Talk to someone living a version of the path to learn what it is actually like.\n\nGravity problem check. Do not design around constraints you cannot change; redirect effort toward choices where action exists."
+        },
+        {
+          "heading": "When to reach for this book",
+          "text": "When to reach for this book\n- When a career decision feels overdetermined and underinformed.\n- When someone is stuck trying to pick the perfect path.\n- When a change should be tested before becoming a leap.\n- When the user needs experiments, not motivational advice."
+        },
+        {
+          "heading": "Memorable ideas",
+          "text": "Memorable ideas\n\nThe core move is to turn \"What should I do with my life?\" into prototypes that create new evidence."
+        },
+        {
+          "heading": "How I've applied it",
+          "text": "How I've applied it\n\nDesigning Your Life gives Answer with Books a practical lens for career questions where the user needs motion and information, not a single grand answer."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chunk_1",
+          "text": "Core mental models\n\n1. Designers build their way forward.\nBurnett and Evans treat life choices as design problems. You do not need a perfect answer before trying a prototype.\n\n2. Wayfinding beats grand certainty.\nEnergy, engagement, and curiosity are data. The point is to notice where real experience gives information that planning cannot.\n\n3. There are multiple good lives.\nThe odyssey-plan exercise deliberately creates several plausible paths, weakening the fantasy that there is one hidden correct answer.\n\n4. Prototype the decision.\nConversations, small projects, shadowing, and experiments let you learn about a path before overcommitting.\n\nKey frameworks\n\nOdyssey plans. Sketch multiple five-year paths: a current path, an alternative if that disappeared, and a wilder version.\n\nPrototype conversation. Talk to someone living a version of the path to learn what it is actually like.\n\nGravity problem check. Do not design around constraints you cannot change; redirect effort toward choices where action exists."
+        },
+        {
+          "id": "chunk_2",
+          "text": "When to reach for this book\n- When a career decision feels overdetermined and underinformed.\n- When someone is stuck trying to pick the perfect path.\n- When a change should be tested before becoming a leap.\n- When the user needs experiments, not motivational advice.\n\nMemorable ideas\n\nThe core move is to turn \"What should I do with my life?\" into prototypes that create new evidence.\n\nHow I've applied it\n\nDesigning Your Life gives Answer with Books a practical lens for career questions where the user needs motion and information, not a single grand answer."
+        }
+      ],
+      "full_text": "A design-thinking approach to career and life decisions: prototype paths instead of trying to think your way into certainty.\n\nYou feel stuck between possible lives and need a way to test directions without treating every decision as irreversible.\n\nCore mental models\n\n1. Designers build their way forward.\nBurnett and Evans treat life choices as design problems. You do not need a perfect answer before trying a prototype.\n\n2. Wayfinding beats grand certainty.\nEnergy, engagement, and curiosity are data. The point is to notice where real experience gives information that planning cannot.\n\n3. There are multiple good lives.\nThe odyssey-plan exercise deliberately creates several plausible paths, weakening the fantasy that there is one hidden correct answer.\n\n4. Prototype the decision.\nConversations, small projects, shadowing, and experiments let you learn about a path before overcommitting.\n\nKey frameworks\n\nOdyssey plans. Sketch multiple five-year paths: a current path, an alternative if that disappeared, and a wilder version.\n\nPrototype conversation. Talk to someone living a version of the path to learn what it is actually like.\n\nGravity problem check. Do not design around constraints you cannot change; redirect effort toward choices where action exists.\n\nWhen to reach for this book\n- When a career decision feels overdetermined and underinformed.\n- When someone is stuck trying to pick the perfect path.\n- When a change should be tested before becoming a leap.\n- When the user needs experiments, not motivational advice.\n\nMemorable ideas\n\nThe core move is to turn \"What should I do with my life?\" into prototypes that create new evidence.\n\nHow I've applied it\n\nDesigning Your Life gives Answer with Books a practical lens for career questions where the user needs motion and information, not a single grand answer."
+    },
+    {
+      "id": "dont-make-me-think",
+      "title": "Don't Make Me Think",
+      "author": "Steve Krug",
+      "year": 2000,
+      "tags": [
+        "design",
+        "usability",
+        "web"
+      ],
+      "one_liner": "A usability classic built on one standard: a page works when users can understand what it is, what they can do, and where to go without decoding it.",
+      "read_if": "Your product page, catalog, guide, or app screen is visually polished but users still hesitate, bounce, or ask what they are supposed to do.",
+      "source_path": "web/src/content/books/dont-make-me-think.md",
+      "visibility": "backend_only",
+      "text_file": "research/book-text/dont-make-me-think.txt",
+      "sections": [
+        {
+          "heading": "Core mental models",
+          "text": "Core mental models\n\n1. People scan, they do not read.\nMost users do not approach a page like a document. They glance, scan, click the first plausible thing, and backtrack if wrong. Design that assumes careful reading is already losing.\n\n2. Self-evidence beats explanation.\nThe best interface does not require instructions. A user should be able to identify the page's purpose, main choices, and next action quickly. If the page needs a paragraph explaining itself, the design is carrying hidden debt.\n\n3. Conventions are useful.\nNovelty is expensive when users are trying to get something done. Navigation, labels, search, breadcrumbs, buttons, and page hierarchy work better when they behave roughly as expected.\n\n4. Usability testing can be small.\nKrug's practical contribution is the cheap test: watch a few real people use the page and narrate what they think. You do not need a lab to find the obvious confusion."
+        },
+        {
+          "heading": "Key frameworks",
+          "text": "Key frameworks\n\nThe squint test. Blur your eyes or step back. What is the page about? What is primary? Where would you click first?\n\nThe five-second question. After five seconds, can a new user say what this is, why it matters, and what they can do next?\n\nWatch, do not defend. During a test, do not explain the page. If the user misses the point, that is the point."
+        },
+        {
+          "heading": "When to reach for this book",
+          "text": "When to reach for this book\n- Before shipping a landing page, catalog, navigation system, or onboarding flow.\n- When the team wants to add explanatory copy instead of fixing structure.\n- When analytics show traffic but not action.\n- When a page is \"beautiful\" and still unclear."
+        },
+        {
+          "heading": "Memorable ideas",
+          "text": "Memorable ideas\n\nThe title is the test. Every unnecessary question in a user's mind is friction: What is this? Is this clickable? Am I in the right place? What happens next?"
+        },
+        {
+          "heading": "How I've applied it",
+          "text": "How I've applied it\n\nThe book is a useful guardrail for content-heavy products like Answer with Books and a2a-catalog. The page has to answer the user's first question before it earns the right to teach anything deeper."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chunk_1",
+          "text": "Core mental models\n\n1. People scan, they do not read.\nMost users do not approach a page like a document. They glance, scan, click the first plausible thing, and backtrack if wrong. Design that assumes careful reading is already losing.\n\n2. Self-evidence beats explanation.\nThe best interface does not require instructions. A user should be able to identify the page's purpose, main choices, and next action quickly. If the page needs a paragraph explaining itself, the design is carrying hidden debt.\n\n3. Conventions are useful.\nNovelty is expensive when users are trying to get something done. Navigation, labels, search, breadcrumbs, buttons, and page hierarchy work better when they behave roughly as expected.\n\n4. Usability testing can be small.\nKrug's practical contribution is the cheap test: watch a few real people use the page and narrate what they think. You do not need a lab to find the obvious confusion.\n\nKey frameworks\n\nThe squint test. Blur your eyes or step back. What is the page about? What is primary? Where would you click first?\n\nThe five-second question. After five seconds, can a new user say what this is, why it matters, and what they can do next?"
+        },
+        {
+          "id": "chunk_2",
+          "text": "Watch, do not defend. During a test, do not explain the page. If the user misses the point, that is the point.\n\nWhen to reach for this book\n- Before shipping a landing page, catalog, navigation system, or onboarding flow.\n- When the team wants to add explanatory copy instead of fixing structure.\n- When analytics show traffic but not action.\n- When a page is \"beautiful\" and still unclear.\n\nMemorable ideas\n\nThe title is the test. Every unnecessary question in a user's mind is friction: What is this? Is this clickable? Am I in the right place? What happens next?\n\nHow I've applied it\n\nThe book is a useful guardrail for content-heavy products like Answer with Books and a2a-catalog. The page has to answer the user's first question before it earns the right to teach anything deeper."
+        }
+      ],
+      "full_text": "A usability classic built on one standard: a page works when users can understand what it is, what they can do, and where to go without decoding it.\n\nYour product page, catalog, guide, or app screen is visually polished but users still hesitate, bounce, or ask what they are supposed to do.\n\nCore mental models\n\n1. People scan, they do not read.\nMost users do not approach a page like a document. They glance, scan, click the first plausible thing, and backtrack if wrong. Design that assumes careful reading is already losing.\n\n2. Self-evidence beats explanation.\nThe best interface does not require instructions. A user should be able to identify the page's purpose, main choices, and next action quickly. If the page needs a paragraph explaining itself, the design is carrying hidden debt.\n\n3. Conventions are useful.\nNovelty is expensive when users are trying to get something done. Navigation, labels, search, breadcrumbs, buttons, and page hierarchy work better when they behave roughly as expected.\n\n4. Usability testing can be small.\nKrug's practical contribution is the cheap test: watch a few real people use the page and narrate what they think. You do not need a lab to find the obvious confusion.\n\nKey frameworks\n\nThe squint test. Blur your eyes or step back. What is the page about? What is primary? Where would you click first?\n\nThe five-second question. After five seconds, can a new user say what this is, why it matters, and what they can do next?\n\nWatch, do not defend. During a test, do not explain the page. If the user misses the point, that is the point.\n\nWhen to reach for this book\n- Before shipping a landing page, catalog, navigation system, or onboarding flow.\n- When the team wants to add explanatory copy instead of fixing structure.\n- When analytics show traffic but not action.\n- When a page is \"beautiful\" and still unclear.\n\nMemorable ideas\n\nThe title is the test. Every unnecessary question in a user's mind is friction: What is this? Is this clickable? Am I in the right place? What happens next?\n\nHow I've applied it\n\nThe book is a useful guardrail for content-heavy products like Answer with Books and a2a-catalog. The page has to answer the user's first question before it earns the right to teach anything deeper."
+    },
+    {
+      "id": "four-thousand-weeks",
+      "title": "Four Thousand Weeks",
+      "author": "Oliver Burkeman",
+      "year": 2021,
+      "tags": [
+        "time",
+        "priorities",
+        "burnout"
+      ],
+      "one_liner": "A counterweight to productivity culture: finite time means the central task is choosing, not optimizing everything.",
+      "read_if": "You are trying to become efficient enough to fit everything in and slowly realizing that the premise may be the trap.",
+      "source_path": "web/src/content/books/four-thousand-weeks.md",
+      "visibility": "backend_only",
+      "text_file": "research/book-text/four-thousand-weeks.txt",
+      "sections": [
+        {
+          "heading": "Core mental models",
+          "text": "Core mental models\n\n1. Time is finite.\nBurkeman's title is the provocation: a human life is roughly four thousand weeks. The point is not despair. It is that finitude makes choice unavoidable.\n\n2. Efficiency can expand the queue.\nGetting faster often lets more obligations in. If the standard is \"eventually everything,\" productivity becomes a way to avoid deciding.\n\n3. Strategic underachievement is necessary.\nYou will neglect many things. The question is whether that neglect is accidental or chosen.\n\n4. Attention is life in practice.\nWhat you attend to is not a side issue. It is the substance of how finite time is spent."
+        },
+        {
+          "heading": "Key frameworks",
+          "text": "Key frameworks\n\nChoose what to fail at. Decide which areas can be merely adequate so the important few can receive real attention.\n\nOne big project. Keep the active priority narrow enough that it can actually receive progress.\n\nSettling as commitment. A chosen path is not the enemy of possibility; it is how possibility becomes life."
+        },
+        {
+          "heading": "When to reach for this book",
+          "text": "When to reach for this book\n- When productivity systems are making you more anxious.\n- When every option feels important.\n- When burnout comes from trying to honor every possible obligation.\n- When the real question is what to stop, not how to do more."
+        },
+        {
+          "heading": "Memorable ideas",
+          "text": "Memorable ideas\n\nThe useful reframe: the problem is not that you have failed to fit everything in. The problem is that everything was never going to fit."
+        },
+        {
+          "heading": "How I've applied it",
+          "text": "How I've applied it\n\nThis book is a corrective lens for Answer with Books topics about overwhelm. Some questions need a task system; others need permission to admit that prioritization means loss."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chunk_1",
+          "text": "Core mental models\n\n1. Time is finite.\nBurkeman's title is the provocation: a human life is roughly four thousand weeks. The point is not despair. It is that finitude makes choice unavoidable.\n\n2. Efficiency can expand the queue.\nGetting faster often lets more obligations in. If the standard is \"eventually everything,\" productivity becomes a way to avoid deciding.\n\n3. Strategic underachievement is necessary.\nYou will neglect many things. The question is whether that neglect is accidental or chosen.\n\n4. Attention is life in practice.\nWhat you attend to is not a side issue. It is the substance of how finite time is spent.\n\nKey frameworks\n\nChoose what to fail at. Decide which areas can be merely adequate so the important few can receive real attention.\n\nOne big project. Keep the active priority narrow enough that it can actually receive progress.\n\nSettling as commitment. A chosen path is not the enemy of possibility; it is how possibility becomes life."
+        },
+        {
+          "id": "chunk_2",
+          "text": "When to reach for this book\n- When productivity systems are making you more anxious.\n- When every option feels important.\n- When burnout comes from trying to honor every possible obligation.\n- When the real question is what to stop, not how to do more.\n\nMemorable ideas\n\nThe useful reframe: the problem is not that you have failed to fit everything in. The problem is that everything was never going to fit.\n\nHow I've applied it\n\nThis book is a corrective lens for Answer with Books topics about overwhelm. Some questions need a task system; others need permission to admit that prioritization means loss."
+        }
+      ],
+      "full_text": "A counterweight to productivity culture: finite time means the central task is choosing, not optimizing everything.\n\nYou are trying to become efficient enough to fit everything in and slowly realizing that the premise may be the trap.\n\nCore mental models\n\n1. Time is finite.\nBurkeman's title is the provocation: a human life is roughly four thousand weeks. The point is not despair. It is that finitude makes choice unavoidable.\n\n2. Efficiency can expand the queue.\nGetting faster often lets more obligations in. If the standard is \"eventually everything,\" productivity becomes a way to avoid deciding.\n\n3. Strategic underachievement is necessary.\nYou will neglect many things. The question is whether that neglect is accidental or chosen.\n\n4. Attention is life in practice.\nWhat you attend to is not a side issue. It is the substance of how finite time is spent.\n\nKey frameworks\n\nChoose what to fail at. Decide which areas can be merely adequate so the important few can receive real attention.\n\nOne big project. Keep the active priority narrow enough that it can actually receive progress.\n\nSettling as commitment. A chosen path is not the enemy of possibility; it is how possibility becomes life.\n\nWhen to reach for this book\n- When productivity systems are making you more anxious.\n- When every option feels important.\n- When burnout comes from trying to honor every possible obligation.\n- When the real question is what to stop, not how to do more.\n\nMemorable ideas\n\nThe useful reframe: the problem is not that you have failed to fit everything in. The problem is that everything was never going to fit.\n\nHow I've applied it\n\nThis book is a corrective lens for Answer with Books topics about overwhelm. Some questions need a task system; others need permission to admit that prioritization means loss."
+    },
+    {
+      "id": "getting-things-done",
+      "title": "Getting Things Done",
+      "author": "David Allen",
+      "year": 2001,
+      "tags": [
+        "productivity",
+        "execution",
+        "systems"
+      ],
+      "one_liner": "A system for turning mental clutter into captured commitments, clear next actions, and regular review.",
+      "read_if": "Your head is full of open loops, reminders, half-decisions, and vague tasks that keep resurfacing at the worst possible time.",
+      "source_path": "web/src/content/books/getting-things-done.md",
+      "visibility": "backend_only",
+      "text_file": "research/book-text/getting-things-done.txt",
+      "sections": [
+        {
+          "heading": "Core mental models",
+          "text": "Core mental models\n\n1. Your mind is for having ideas, not holding them.\nAllen's starting point is that the brain is a bad reminder system. It recalls obligations by association and anxiety, not by priority or context.\n\n2. Capture everything.\nOpen loops create background stress because the mind does not trust that they will resurface. A trusted external system reduces the need to rehearse every obligation.\n\n3. Define the next action.\nVague tasks stay stuck because they hide the physical next move. \"Plan launch\" is fog; \"email Maya for the launch checklist\" is actionable.\n\n4. Review is what makes the system trustworthy.\nA list you never review becomes another pile. The weekly review reconnects projects, next actions, waiting-for items, and calendar commitments."
+        },
+        {
+          "heading": "Key frameworks",
+          "text": "Key frameworks\n\nInbox to next action. For each captured item, decide: is it actionable? If yes, what is the next visible action? If not, is it trash, reference, or someday?\n\nTwo-minute rule. If a task can be done immediately in roughly two minutes, do it instead of storing and reprocessing it.\n\nWeekly review. Clear inboxes, review projects, update next actions, and make sure nothing important depends on memory alone."
+        },
+        {
+          "heading": "When to reach for this book",
+          "text": "When to reach for this book\n- When you feel overwhelmed by small tasks.\n- When your system is scattered across notes, email, chat, and memory.\n- When projects stall because next actions are unclear.\n- When planning creates more anxiety than control."
+        },
+        {
+          "heading": "Memorable ideas",
+          "text": "Memorable ideas\n\nThe book's lasting move is the next-action question. Most overwhelm is not just volume; it is volume plus ambiguity."
+        },
+        {
+          "heading": "How I've applied it",
+          "text": "How I've applied it\n\nFor demand discovery, GTD maps well to questions where people say they are overwhelmed, not because the answer is a perfect personal system, but because the first relief is often making the next move explicit."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chunk_1",
+          "text": "Core mental models\n\n1. Your mind is for having ideas, not holding them.\nAllen's starting point is that the brain is a bad reminder system. It recalls obligations by association and anxiety, not by priority or context.\n\n2. Capture everything.\nOpen loops create background stress because the mind does not trust that they will resurface. A trusted external system reduces the need to rehearse every obligation.\n\n3. Define the next action.\nVague tasks stay stuck because they hide the physical next move. \"Plan launch\" is fog; \"email Maya for the launch checklist\" is actionable.\n\n4. Review is what makes the system trustworthy.\nA list you never review becomes another pile. The weekly review reconnects projects, next actions, waiting-for items, and calendar commitments.\n\nKey frameworks\n\nInbox to next action. For each captured item, decide: is it actionable? If yes, what is the next visible action? If not, is it trash, reference, or someday?\n\nTwo-minute rule. If a task can be done immediately in roughly two minutes, do it instead of storing and reprocessing it.\n\nWeekly review. Clear inboxes, review projects, update next actions, and make sure nothing important depends on memory alone."
+        },
+        {
+          "id": "chunk_2",
+          "text": "When to reach for this book\n- When you feel overwhelmed by small tasks.\n- When your system is scattered across notes, email, chat, and memory.\n- When projects stall because next actions are unclear.\n- When planning creates more anxiety than control.\n\nMemorable ideas\n\nThe book's lasting move is the next-action question. Most overwhelm is not just volume; it is volume plus ambiguity.\n\nHow I've applied it\n\nFor demand discovery, GTD maps well to questions where people say they are overwhelmed, not because the answer is a perfect personal system, but because the first relief is often making the next move explicit."
+        }
+      ],
+      "full_text": "A system for turning mental clutter into captured commitments, clear next actions, and regular review.\n\nYour head is full of open loops, reminders, half-decisions, and vague tasks that keep resurfacing at the worst possible time.\n\nCore mental models\n\n1. Your mind is for having ideas, not holding them.\nAllen's starting point is that the brain is a bad reminder system. It recalls obligations by association and anxiety, not by priority or context.\n\n2. Capture everything.\nOpen loops create background stress because the mind does not trust that they will resurface. A trusted external system reduces the need to rehearse every obligation.\n\n3. Define the next action.\nVague tasks stay stuck because they hide the physical next move. \"Plan launch\" is fog; \"email Maya for the launch checklist\" is actionable.\n\n4. Review is what makes the system trustworthy.\nA list you never review becomes another pile. The weekly review reconnects projects, next actions, waiting-for items, and calendar commitments.\n\nKey frameworks\n\nInbox to next action. For each captured item, decide: is it actionable? If yes, what is the next visible action? If not, is it trash, reference, or someday?\n\nTwo-minute rule. If a task can be done immediately in roughly two minutes, do it instead of storing and reprocessing it.\n\nWeekly review. Clear inboxes, review projects, update next actions, and make sure nothing important depends on memory alone.\n\nWhen to reach for this book\n- When you feel overwhelmed by small tasks.\n- When your system is scattered across notes, email, chat, and memory.\n- When projects stall because next actions are unclear.\n- When planning creates more anxiety than control.\n\nMemorable ideas\n\nThe book's lasting move is the next-action question. Most overwhelm is not just volume; it is volume plus ambiguity.\n\nHow I've applied it\n\nFor demand discovery, GTD maps well to questions where people say they are overwhelmed, not because the answer is a perfect personal system, but because the first relief is often making the next move explicit."
+    },
+    {
+      "id": "good-strategy-bad-strategy",
+      "title": "Good Strategy Bad Strategy",
+      "author": "Richard Rumelt",
+      "year": 2011,
+      "tags": [
+        "strategy",
+        "management",
+        "focus"
+      ],
+      "one_liner": "Why strategy is not ambition, values, or a list of goals - it is a diagnosis, a guiding policy, and coherent action.",
+      "read_if": "You keep calling goals strategy, or your team has priorities but no real explanation of where to concentrate force.",
+      "source_path": "web/src/content/books/good-strategy-bad-strategy.md",
+      "visibility": "backend_only",
+      "text_file": "research/book-text/good-strategy-bad-strategy.txt",
+      "sections": [
+        {
+          "heading": "Core mental models",
+          "text": "Core mental models\n\n1. Bad strategy hides the hard part.\nBad strategy often sounds sophisticated: vision statements, values, financial targets, long initiative lists. Rumelt's point is that these can all avoid the actual work of strategy: naming the central challenge and choosing what not to do.\n\n2. The kernel: diagnosis, guiding policy, coherent action.\nThe most useful framework in the book is the kernel. A good strategy has a diagnosis that explains the situation, a guiding policy that says how you will deal with it, and coherent actions that reinforce each other. Leave out any one and the strategy collapses into either analysis, aspiration, or busyness.\n\n3. Strategy concentrates force.\nStrategy is not about doing everything better. It is about finding the leverage point where focused effort changes the outcome. In product terms: not \"improve activation, retention, monetization, brand, and enterprise readiness,\" but \"the bottleneck is onboarding trust, so every major action for the next cycle reduces perceived switching risk.\"\n\n4. Fluff is a warning sign.\nWords like \"innovative,\" \"customer-centric,\" and \"world-class\" are not automatically wrong, but they often signal that no one has made a choice. If the sentence could be pasted into any competitor's deck, it is probably not strategy."
+        },
+        {
+          "heading": "Key frameworks",
+          "text": "Key frameworks\n\nThe strategy audit. For any strategy memo, underline the diagnosis, guiding policy, and coherent actions in three colors. If one color barely appears, the memo is not ready.\n\nThe bottleneck question. Ask: if we could improve only one constraint this quarter, which one would change the system? Good strategy begins where the answer gets specific.\n\nCoherence test. Each action should make the others more effective. If your roadmap items are individually reasonable but mutually unrelated, you have a portfolio, not a strategy."
+        },
+        {
+          "heading": "When to reach for this book",
+          "text": "When to reach for this book\n- When a planning process produces a long list of priorities.\n- When growth feels stuck but the team cannot agree on the real constraint.\n- When a company says \"strategy\" but means revenue target.\n- When you need a sharper way to turn research into choices."
+        },
+        {
+          "heading": "Memorable ideas",
+          "text": "Memorable ideas\n\nThe kernel is the book's durable tool: diagnosis, guiding policy, coherent action. The phrase is simple enough to remember and strict enough to expose weak thinking."
+        },
+        {
+          "heading": "How I've applied it",
+          "text": "How I've applied it\n\nRumelt is useful for CrowdListen because demand research can produce too many plausible directions. The kernel forces a handoff from \"users are saying many things\" to \"this is the central challenge, this is the bet, and these are the few actions that belong together.\""
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chunk_1",
+          "text": "Core mental models\n\n1. Bad strategy hides the hard part.\nBad strategy often sounds sophisticated: vision statements, values, financial targets, long initiative lists. Rumelt's point is that these can all avoid the actual work of strategy: naming the central challenge and choosing what not to do.\n\n2. The kernel: diagnosis, guiding policy, coherent action.\nThe most useful framework in the book is the kernel. A good strategy has a diagnosis that explains the situation, a guiding policy that says how you will deal with it, and coherent actions that reinforce each other. Leave out any one and the strategy collapses into either analysis, aspiration, or busyness.\n\n3. Strategy concentrates force.\nStrategy is not about doing everything better. It is about finding the leverage point where focused effort changes the outcome. In product terms: not \"improve activation, retention, monetization, brand, and enterprise readiness,\" but \"the bottleneck is onboarding trust, so every major action for the next cycle reduces perceived switching risk.\""
+        },
+        {
+          "id": "chunk_2",
+          "text": "4. Fluff is a warning sign.\nWords like \"innovative,\" \"customer-centric,\" and \"world-class\" are not automatically wrong, but they often signal that no one has made a choice. If the sentence could be pasted into any competitor's deck, it is probably not strategy.\n\nKey frameworks\n\nThe strategy audit. For any strategy memo, underline the diagnosis, guiding policy, and coherent actions in three colors. If one color barely appears, the memo is not ready.\n\nThe bottleneck question. Ask: if we could improve only one constraint this quarter, which one would change the system? Good strategy begins where the answer gets specific.\n\nCoherence test. Each action should make the others more effective. If your roadmap items are individually reasonable but mutually unrelated, you have a portfolio, not a strategy.\n\nWhen to reach for this book\n- When a planning process produces a long list of priorities.\n- When growth feels stuck but the team cannot agree on the real constraint.\n- When a company says \"strategy\" but means revenue target.\n- When you need a sharper way to turn research into choices.\n\nMemorable ideas"
+        },
+        {
+          "id": "chunk_3",
+          "text": "The kernel is the book's durable tool: diagnosis, guiding policy, coherent action. The phrase is simple enough to remember and strict enough to expose weak thinking.\n\nHow I've applied it\n\nRumelt is useful for CrowdListen because demand research can produce too many plausible directions. The kernel forces a handoff from \"users are saying many things\" to \"this is the central challenge, this is the bet, and these are the few actions that belong together.\""
+        }
+      ],
+      "full_text": "Why strategy is not ambition, values, or a list of goals - it is a diagnosis, a guiding policy, and coherent action.\n\nYou keep calling goals strategy, or your team has priorities but no real explanation of where to concentrate force.\n\nCore mental models\n\n1. Bad strategy hides the hard part.\nBad strategy often sounds sophisticated: vision statements, values, financial targets, long initiative lists. Rumelt's point is that these can all avoid the actual work of strategy: naming the central challenge and choosing what not to do.\n\n2. The kernel: diagnosis, guiding policy, coherent action.\nThe most useful framework in the book is the kernel. A good strategy has a diagnosis that explains the situation, a guiding policy that says how you will deal with it, and coherent actions that reinforce each other. Leave out any one and the strategy collapses into either analysis, aspiration, or busyness.\n\n3. Strategy concentrates force.\nStrategy is not about doing everything better. It is about finding the leverage point where focused effort changes the outcome. In product terms: not \"improve activation, retention, monetization, brand, and enterprise readiness,\" but \"the bottleneck is onboarding trust, so every major action for the next cycle reduces perceived switching risk.\"\n\n4. Fluff is a warning sign.\nWords like \"innovative,\" \"customer-centric,\" and \"world-class\" are not automatically wrong, but they often signal that no one has made a choice. If the sentence could be pasted into any competitor's deck, it is probably not strategy.\n\nKey frameworks\n\nThe strategy audit. For any strategy memo, underline the diagnosis, guiding policy, and coherent actions in three colors. If one color barely appears, the memo is not ready.\n\nThe bottleneck question. Ask: if we could improve only one constraint this quarter, which one would change the system? Good strategy begins where the answer gets specific.\n\nCoherence test. Each action should make the others more effective. If your roadmap items are individually reasonable but mutually unrelated, you have a portfolio, not a strategy.\n\nWhen to reach for this book\n- When a planning process produces a long list of priorities.\n- When growth feels stuck but the team cannot agree on the real constraint.\n- When a company says \"strategy\" but means revenue target.\n- When you need a sharper way to turn research into choices.\n\nMemorable ideas\n\nThe kernel is the book's durable tool: diagnosis, guiding policy, coherent action. The phrase is simple enough to remember and strict enough to expose weak thinking.\n\nHow I've applied it\n\nRumelt is useful for CrowdListen because demand research can produce too many plausible directions. The kernel forces a handoff from \"users are saying many things\" to \"this is the central challenge, this is the bet, and these are the few actions that belong together.\""
+    },
+    {
+      "id": "high-output-management",
+      "title": "High Output Management",
+      "author": "Andrew S. Grove",
+      "year": 1983,
+      "tags": [
+        "management",
+        "operations",
+        "delegation"
+      ],
+      "one_liner": "A manager's operating manual for increasing the output of a team through leverage, clear processes, meetings, and coaching.",
+      "read_if": "You manage people and need a practical model for delegation, one-on-ones, training, and team output.",
+      "source_path": "web/src/content/books/high-output-management.md",
+      "visibility": "backend_only",
+      "text_file": "research/book-text/high-output-management.txt",
+      "sections": [
+        {
+          "heading": "Core mental models",
+          "text": "Core mental models\n\n1. A manager's output is the output of the organization.\nGrove's most useful reframe is that management output is indirect. Your work matters through the decisions, clarity, and performance it creates in others.\n\n2. Managerial leverage varies.\nSome activities create large downstream effects: training, better processes, one-on-ones, and decisions that unblock many people. Others merely consume time.\n\n3. Task relevant maturity changes the management style.\nDelegation depends on the person's experience with that specific task, not their general seniority.\n\n4. Meetings are production tools.\nBad meetings waste time, but Grove's point is sharper: recurring meetings and one-on-ones are tools for information flow and output when used deliberately."
+        },
+        {
+          "heading": "Key frameworks",
+          "text": "Key frameworks\n\nLeverage audit. Ask which management activities multiply output and which only create motion.\n\nOne-on-one as work system. Let the report set much of the agenda; use the meeting to surface problems early and improve decisions.\n\nTask relevant maturity. Match direction, coaching, and delegation to the task-specific maturity level."
+        },
+        {
+          "heading": "When to reach for this book",
+          "text": "When to reach for this book\n- When delegation keeps failing.\n- When one-on-ones feel like status theater.\n- When a manager is doing the team's work instead of improving the team system.\n- When scaling creates coordination costs."
+        },
+        {
+          "heading": "Memorable ideas",
+          "text": "Memorable ideas\n\nThe practical question is always: which activity increases the future output of the team?"
+        },
+        {
+          "heading": "How I've applied it",
+          "text": "How I've applied it\n\nHigh Output Management pairs well with Drucker for Answer with Books concerns where the user asks how to delegate, manage, or create leverage without losing quality."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chunk_1",
+          "text": "Core mental models\n\n1. A manager's output is the output of the organization.\nGrove's most useful reframe is that management output is indirect. Your work matters through the decisions, clarity, and performance it creates in others.\n\n2. Managerial leverage varies.\nSome activities create large downstream effects: training, better processes, one-on-ones, and decisions that unblock many people. Others merely consume time.\n\n3. Task relevant maturity changes the management style.\nDelegation depends on the person's experience with that specific task, not their general seniority.\n\n4. Meetings are production tools.\nBad meetings waste time, but Grove's point is sharper: recurring meetings and one-on-ones are tools for information flow and output when used deliberately.\n\nKey frameworks\n\nLeverage audit. Ask which management activities multiply output and which only create motion.\n\nOne-on-one as work system. Let the report set much of the agenda; use the meeting to surface problems early and improve decisions.\n\nTask relevant maturity. Match direction, coaching, and delegation to the task-specific maturity level."
+        },
+        {
+          "id": "chunk_2",
+          "text": "When to reach for this book\n- When delegation keeps failing.\n- When one-on-ones feel like status theater.\n- When a manager is doing the team's work instead of improving the team system.\n- When scaling creates coordination costs.\n\nMemorable ideas\n\nThe practical question is always: which activity increases the future output of the team?\n\nHow I've applied it\n\nHigh Output Management pairs well with Drucker for Answer with Books concerns where the user asks how to delegate, manage, or create leverage without losing quality."
+        }
+      ],
+      "full_text": "A manager's operating manual for increasing the output of a team through leverage, clear processes, meetings, and coaching.\n\nYou manage people and need a practical model for delegation, one-on-ones, training, and team output.\n\nCore mental models\n\n1. A manager's output is the output of the organization.\nGrove's most useful reframe is that management output is indirect. Your work matters through the decisions, clarity, and performance it creates in others.\n\n2. Managerial leverage varies.\nSome activities create large downstream effects: training, better processes, one-on-ones, and decisions that unblock many people. Others merely consume time.\n\n3. Task relevant maturity changes the management style.\nDelegation depends on the person's experience with that specific task, not their general seniority.\n\n4. Meetings are production tools.\nBad meetings waste time, but Grove's point is sharper: recurring meetings and one-on-ones are tools for information flow and output when used deliberately.\n\nKey frameworks\n\nLeverage audit. Ask which management activities multiply output and which only create motion.\n\nOne-on-one as work system. Let the report set much of the agenda; use the meeting to surface problems early and improve decisions.\n\nTask relevant maturity. Match direction, coaching, and delegation to the task-specific maturity level.\n\nWhen to reach for this book\n- When delegation keeps failing.\n- When one-on-ones feel like status theater.\n- When a manager is doing the team's work instead of improving the team system.\n- When scaling creates coordination costs.\n\nMemorable ideas\n\nThe practical question is always: which activity increases the future output of the team?\n\nHow I've applied it\n\nHigh Output Management pairs well with Drucker for Answer with Books concerns where the user asks how to delegate, manage, or create leverage without losing quality."
+    },
+    {
+      "id": "made-to-stick",
+      "title": "Made to Stick",
+      "author": "Chip Heath and Dan Heath",
+      "year": 2007,
+      "tags": [
+        "communication",
+        "marketing",
+        "ideas"
+      ],
+      "one_liner": "Why some ideas survive and spread: they are simple, unexpected, concrete, credible, emotional, and carried by stories.",
+      "read_if": "You understand your idea but cannot make other people remember, repeat, or act on it.",
+      "source_path": "web/src/content/books/made-to-stick.md",
+      "visibility": "backend_only",
+      "text_file": "research/book-text/made-to-stick.txt",
+      "sections": [
+        {
+          "heading": "Core mental models",
+          "text": "Core mental models\n\n1. The Curse of Knowledge.\nOnce you know something deeply, it becomes hard to imagine not knowing it. Experts skip steps, use abstractions, and assume the audience sees the same structure they do. Most unclear messaging starts here.\n\n2. SUCCESs.\nThe Heath brothers' checklist is simple, unexpected, concrete, credible, emotional, stories. It is not a formula for hype; it is a checklist for making an idea survive contact with a distracted audience.\n\n3. Find the core.\nSticky ideas are not comprehensive. They choose the one load-bearing point and make it impossible to miss. If everything matters equally, nothing sticks.\n\n4. Concrete beats abstract.\nPeople remember images, examples, and specific situations better than categories. \"A low-friction onboarding flow\" is abstract. \"A user can finish setup before their coffee cools\" is concrete.\n\n5. Stories are simulation.\nStories let people rehearse action. A good example does more than decorate an argument; it shows the listener what to do."
+        },
+        {
+          "heading": "Key frameworks",
+          "text": "Key frameworks\n\nThe one-sentence core. If someone repeats only one sentence after reading this, what should it be?\n\nConcrete swap. Replace abstract nouns with a scene, number, object, or before/after contrast.\n\nRepeatability test. Could a reader explain the idea to a friend without your slide deck? If not, the idea is not packaged yet."
+        },
+        {
+          "heading": "When to reach for this book",
+          "text": "When to reach for this book\n- When a startup pitch is technically accurate but forgettable.\n- When a guide has good advice but no memorable handle.\n- When a product page explains features but not the idea.\n- When research has many themes and needs a sharp public takeaway."
+        },
+        {
+          "heading": "Memorable ideas",
+          "text": "Memorable ideas\n\nThe most reusable warning is the Curse of Knowledge: the better you understand the thing, the more likely you are to explain it from the wrong starting point."
+        },
+        {
+          "heading": "How I've applied it",
+          "text": "How I've applied it\n\nMade to Stick is directly relevant to Answer with Books: a digest should not merely compress a book. It should extract the portable idea, give it a memorable handle, and show where to use it."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chunk_1",
+          "text": "Core mental models\n\n1. The Curse of Knowledge.\nOnce you know something deeply, it becomes hard to imagine not knowing it. Experts skip steps, use abstractions, and assume the audience sees the same structure they do. Most unclear messaging starts here.\n\n2. SUCCESs.\nThe Heath brothers' checklist is simple, unexpected, concrete, credible, emotional, stories. It is not a formula for hype; it is a checklist for making an idea survive contact with a distracted audience.\n\n3. Find the core.\nSticky ideas are not comprehensive. They choose the one load-bearing point and make it impossible to miss. If everything matters equally, nothing sticks.\n\n4. Concrete beats abstract.\nPeople remember images, examples, and specific situations better than categories. \"A low-friction onboarding flow\" is abstract. \"A user can finish setup before their coffee cools\" is concrete.\n\n5. Stories are simulation.\nStories let people rehearse action. A good example does more than decorate an argument; it shows the listener what to do.\n\nKey frameworks\n\nThe one-sentence core. If someone repeats only one sentence after reading this, what should it be?"
+        },
+        {
+          "id": "chunk_2",
+          "text": "Concrete swap. Replace abstract nouns with a scene, number, object, or before/after contrast.\n\nRepeatability test. Could a reader explain the idea to a friend without your slide deck? If not, the idea is not packaged yet.\n\nWhen to reach for this book\n- When a startup pitch is technically accurate but forgettable.\n- When a guide has good advice but no memorable handle.\n- When a product page explains features but not the idea.\n- When research has many themes and needs a sharp public takeaway.\n\nMemorable ideas\n\nThe most reusable warning is the Curse of Knowledge: the better you understand the thing, the more likely you are to explain it from the wrong starting point.\n\nHow I've applied it\n\nMade to Stick is directly relevant to Answer with Books: a digest should not merely compress a book. It should extract the portable idea, give it a memorable handle, and show where to use it."
+        }
+      ],
+      "full_text": "Why some ideas survive and spread: they are simple, unexpected, concrete, credible, emotional, and carried by stories.\n\nYou understand your idea but cannot make other people remember, repeat, or act on it.\n\nCore mental models\n\n1. The Curse of Knowledge.\nOnce you know something deeply, it becomes hard to imagine not knowing it. Experts skip steps, use abstractions, and assume the audience sees the same structure they do. Most unclear messaging starts here.\n\n2. SUCCESs.\nThe Heath brothers' checklist is simple, unexpected, concrete, credible, emotional, stories. It is not a formula for hype; it is a checklist for making an idea survive contact with a distracted audience.\n\n3. Find the core.\nSticky ideas are not comprehensive. They choose the one load-bearing point and make it impossible to miss. If everything matters equally, nothing sticks.\n\n4. Concrete beats abstract.\nPeople remember images, examples, and specific situations better than categories. \"A low-friction onboarding flow\" is abstract. \"A user can finish setup before their coffee cools\" is concrete.\n\n5. Stories are simulation.\nStories let people rehearse action. A good example does more than decorate an argument; it shows the listener what to do.\n\nKey frameworks\n\nThe one-sentence core. If someone repeats only one sentence after reading this, what should it be?\n\nConcrete swap. Replace abstract nouns with a scene, number, object, or before/after contrast.\n\nRepeatability test. Could a reader explain the idea to a friend without your slide deck? If not, the idea is not packaged yet.\n\nWhen to reach for this book\n- When a startup pitch is technically accurate but forgettable.\n- When a guide has good advice but no memorable handle.\n- When a product page explains features but not the idea.\n- When research has many themes and needs a sharp public takeaway.\n\nMemorable ideas\n\nThe most reusable warning is the Curse of Knowledge: the better you understand the thing, the more likely you are to explain it from the wrong starting point.\n\nHow I've applied it\n\nMade to Stick is directly relevant to Answer with Books: a digest should not merely compress a book. It should extract the portable idea, give it a memorable handle, and show where to use it."
+    },
+    {
+      "id": "never-split-the-difference",
+      "title": "Never Split the Difference",
+      "author": "Chris Voss with Tahl Raz",
+      "year": 2016,
+      "tags": [
+        "negotiation",
+        "communication",
+        "career"
+      ],
+      "one_liner": "A negotiation playbook centered on tactical empathy, listening, labels, mirrors, and calibrated questions.",
+      "read_if": "You are negotiating salary, scope, price, deadlines, or conflict and your default move is either over-explaining or giving ground too quickly.",
+      "source_path": "web/src/content/books/never-split-the-difference.md",
+      "visibility": "backend_only",
+      "text_file": "research/book-text/never-split-the-difference.txt",
+      "sections": [
+        {
+          "heading": "Core mental models",
+          "text": "Core mental models\n\n1. Negotiation is information discovery.\nVoss treats negotiation less as argument and more as finding the constraints, fears, incentives, and hidden no's that shape the other side.\n\n2. Tactical empathy is not agreement.\nLabeling what the other person seems to feel can lower defensiveness and surface information without conceding the point.\n\n3. Calibrated questions create movement.\nQuestions like \"How am I supposed to do that?\" invite the other side to solve the constraint with you instead of forcing an immediate yes/no fight.\n\n4. No can be useful.\nPeople feel safer when they can reject, clarify, or set boundaries. A forced yes can be less informative than an honest no."
+        },
+        {
+          "heading": "Key frameworks",
+          "text": "Key frameworks\n\nMirroring. Repeat the last few important words to invite elaboration.\n\nLabeling. Name the apparent emotion or constraint: \"It sounds like timeline risk is the main concern.\"\n\nCalibrated how/what questions. Keep the conversation solving rather than positional."
+        },
+        {
+          "heading": "When to reach for this book",
+          "text": "When to reach for this book\n- Before salary or compensation negotiations.\n- When a scope or deadline conversation has become positional.\n- When you need information more than a dramatic pitch.\n- When the relationship has to continue after the negotiation."
+        },
+        {
+          "heading": "Memorable ideas",
+          "text": "Memorable ideas\n\nThe book's useful move is to slow down and draw out constraints before bargaining over terms."
+        },
+        {
+          "heading": "How I've applied it",
+          "text": "How I've applied it\n\nFor Answer with Books, this is a strong fit for salary, pricing, sales, and stakeholder negotiation concerns where the user's real need is a conversation path, not a clever line."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chunk_1",
+          "text": "Core mental models\n\n1. Negotiation is information discovery.\nVoss treats negotiation less as argument and more as finding the constraints, fears, incentives, and hidden no's that shape the other side.\n\n2. Tactical empathy is not agreement.\nLabeling what the other person seems to feel can lower defensiveness and surface information without conceding the point.\n\n3. Calibrated questions create movement.\nQuestions like \"How am I supposed to do that?\" invite the other side to solve the constraint with you instead of forcing an immediate yes/no fight.\n\n4. No can be useful.\nPeople feel safer when they can reject, clarify, or set boundaries. A forced yes can be less informative than an honest no.\n\nKey frameworks\n\nMirroring. Repeat the last few important words to invite elaboration.\n\nLabeling. Name the apparent emotion or constraint: \"It sounds like timeline risk is the main concern.\"\n\nCalibrated how/what questions. Keep the conversation solving rather than positional."
+        },
+        {
+          "id": "chunk_2",
+          "text": "When to reach for this book\n- Before salary or compensation negotiations.\n- When a scope or deadline conversation has become positional.\n- When you need information more than a dramatic pitch.\n- When the relationship has to continue after the negotiation.\n\nMemorable ideas\n\nThe book's useful move is to slow down and draw out constraints before bargaining over terms.\n\nHow I've applied it\n\nFor Answer with Books, this is a strong fit for salary, pricing, sales, and stakeholder negotiation concerns where the user's real need is a conversation path, not a clever line."
+        }
+      ],
+      "full_text": "A negotiation playbook centered on tactical empathy, listening, labels, mirrors, and calibrated questions.\n\nYou are negotiating salary, scope, price, deadlines, or conflict and your default move is either over-explaining or giving ground too quickly.\n\nCore mental models\n\n1. Negotiation is information discovery.\nVoss treats negotiation less as argument and more as finding the constraints, fears, incentives, and hidden no's that shape the other side.\n\n2. Tactical empathy is not agreement.\nLabeling what the other person seems to feel can lower defensiveness and surface information without conceding the point.\n\n3. Calibrated questions create movement.\nQuestions like \"How am I supposed to do that?\" invite the other side to solve the constraint with you instead of forcing an immediate yes/no fight.\n\n4. No can be useful.\nPeople feel safer when they can reject, clarify, or set boundaries. A forced yes can be less informative than an honest no.\n\nKey frameworks\n\nMirroring. Repeat the last few important words to invite elaboration.\n\nLabeling. Name the apparent emotion or constraint: \"It sounds like timeline risk is the main concern.\"\n\nCalibrated how/what questions. Keep the conversation solving rather than positional.\n\nWhen to reach for this book\n- Before salary or compensation negotiations.\n- When a scope or deadline conversation has become positional.\n- When you need information more than a dramatic pitch.\n- When the relationship has to continue after the negotiation.\n\nMemorable ideas\n\nThe book's useful move is to slow down and draw out constraints before bargaining over terms.\n\nHow I've applied it\n\nFor Answer with Books, this is a strong fit for salary, pricing, sales, and stakeholder negotiation concerns where the user's real need is a conversation path, not a clever line."
+    },
+    {
+      "id": "seeing-like-a-state",
+      "title": "Seeing Like a State",
+      "author": "James C. Scott",
+      "year": 1998,
+      "tags": [
+        "systems",
+        "planning",
+        "institutions"
+      ],
+      "one_liner": "Why grand schemes to improve the human condition fail: they replace messy local knowledge with tidy maps, then mistake the map for the territory.",
+      "read_if": "You design systems for other people — software, processes, org charts, cities — and want to understand why clean top-down plans keep being defeated by messy reality.",
+      "source_path": "web/src/content/books/seeing-like-a-state.md",
+      "visibility": "backend_only",
+      "text_file": "research/book-text/seeing-like-a-state.txt",
+      "sections": [
+        {
+          "heading": "Core mental models",
+          "text": "Core mental models\n\n1. Legibility: the state's master project.\nTo tax, conscript, and govern, a state must first see its society — so it simplifies: standardized surnames, uniform land registers, grid cities, common units of measure. Each simplification makes the territory more legible to the center, and each discards local detail that didn't fit the schema. Legibility isn't a side effect of administration; it is the precondition for it — and the distortion is built in.\n\n2. The scientific forest.\nScott's founding parable: 18th-century Prussian foresters replaced chaotic old-growth forests with straight rows of a single revenue-maximizing species. The first generation looked like a triumph. The second collapsed — Waldsterben, forest death — because the \"mess\" the planners deleted (underbrush, fungi, insect diversity, soil ecology) had been doing invisible load-bearing work. The general lesson: radically simplifying a complex system harvests short-term legibility and pays for it with long-term fragility.\n\n3. Mētis: knowledge that can't be written down.\nMētis (from the Greek) is practical, local, adaptive skill — when to plant this field, how this machine actually behaves, what this neighborhood needs. It lives in practitioners, is acquired by doing, and resists codification into rules (which Scott calls techne). High-modernist schemes fail in proportion to how much mētis they destroy and how little they let it back in.\n\n4. The fatal combination.\nScott is precise: large-scale disasters require four elements together — (1) administrative ordering of society (legibility), (2) high-modernist ideology (unbounded confidence that scientific design can improve life), (3) an authoritarian state willing to impose the design, and (4) a civil society too weak to resist. Brasília, Soviet collectivization, Tanzanian villagization. Remove the coercion and weak resistance, and high-modernist plans merely underperform instead of killing people.\n\n5. Formal order rides on informal order.\nThe planned factory runs on workarounds; the planned city of Brasília was saved by the unplanned settlements that grew around it; work-to-rule strikes — where workers follow the official rules exactly — grind production to a halt, proving the official description of work was always a fiction. Every formal system is parasitic on informal processes it does not acknowledge and cannot create."
+        },
+        {
+          "heading": "Key frameworks",
+          "text": "Key frameworks\n\nThe map-territory audit. For any schema you impose — a metric, a dashboard, an org chart, a database model — ask: What does this representation delete? Who relied on what was deleted? What will optimize against the representation rather than the reality? (Metrics gamed are legibility's revenge.)\n\nScott's four rules for development planning (his closing prescriptions, useful for any system design):\n1. Take small steps — favor reversibility and frequent feedback over the grand stroke.\n2. Favor reversibility — prefer interventions you can undo when (not if) you're wrong.\n3. Plan on surprises — design slack for contingencies the plan can't foresee.\n4. Plan on human inventiveness — assume users will improve, repurpose, and subvert the design; build room for them to do so.\n\nBeauty is not function. High modernism judges plans by their visual and conceptual order — the city that looks rational from the air, the architecture diagram that looks clean on the whiteboard. Scott's Jane Jacobs-inflected point: street-level disorder often is the functioning order. Distrust solutions whose chief virtue is how tidy they look from above."
+        },
+        {
+          "heading": "When to reach for this book",
+          "text": "When to reach for this book\n- Before any \"great rewrite,\" reorg, migration, or master plan that replaces an evolved system with a designed one.\n- When a metric or model is treating people as inputs and they've started behaving strangely (i.e., legibly).\n- When tempted to dismiss an existing messy process as irrational — first ask what invisible work it's doing.\n- Pairs with The Wisdom of Crowds: Surowiecki on aggregating distributed knowledge, Scott on what happens when the center overwrites it."
+        },
+        {
+          "heading": "Memorable ideas",
+          "text": "Memorable ideas\n\n\"Certain forms of knowledge and control require a narrowing of vision... making possible a high degree of schematic knowledge, control, and manipulation.\"\n\n\"The necessarily simple abstractions of large bureaucratic institutions... can never adequately represent the actual complexity of natural or social processes.\"\n\nThe image to keep: the second-generation forest, dying in perfect rows. Every clean abstraction over a living system should make you ask what the underbrush was doing."
+        },
+        {
+          "heading": "How I've applied it",
+          "text": "How I've applied it\n\nSoftware is applied legibility — every schema and dashboard I build deletes detail by design, and Scott keeps me honest about what I'm deleting. Concretely: when CrowdListen reduces an audience's reactions to scores and clusters, the Scott question is \"what mētis am I flattening?\" — which pushed me to keep raw quotes and outlier voices one click from every aggregate, not buried under it. His four rules also describe good shipping discipline better than most engineering books: small reversible steps, expect surprises, and assume users will use the product in ways the roadmap never imagined — then treat that as signal, not misuse."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chunk_1",
+          "text": "Core mental models\n\n1. Legibility: the state's master project.\nTo tax, conscript, and govern, a state must first see its society — so it simplifies: standardized surnames, uniform land registers, grid cities, common units of measure. Each simplification makes the territory more legible to the center, and each discards local detail that didn't fit the schema. Legibility isn't a side effect of administration; it is the precondition for it — and the distortion is built in.\n\n2. The scientific forest.\nScott's founding parable: 18th-century Prussian foresters replaced chaotic old-growth forests with straight rows of a single revenue-maximizing species. The first generation looked like a triumph. The second collapsed — Waldsterben, forest death — because the \"mess\" the planners deleted (underbrush, fungi, insect diversity, soil ecology) had been doing invisible load-bearing work. The general lesson: radically simplifying a complex system harvests short-term legibility and pays for it with long-term fragility."
+        },
+        {
+          "id": "chunk_2",
+          "text": "3. Mētis: knowledge that can't be written down.\nMētis (from the Greek) is practical, local, adaptive skill — when to plant this field, how this machine actually behaves, what this neighborhood needs. It lives in practitioners, is acquired by doing, and resists codification into rules (which Scott calls techne). High-modernist schemes fail in proportion to how much mētis they destroy and how little they let it back in.\n\n4. The fatal combination.\nScott is precise: large-scale disasters require four elements together — (1) administrative ordering of society (legibility), (2) high-modernist ideology (unbounded confidence that scientific design can improve life), (3) an authoritarian state willing to impose the design, and (4) a civil society too weak to resist. Brasília, Soviet collectivization, Tanzanian villagization. Remove the coercion and weak resistance, and high-modernist plans merely underperform instead of killing people."
+        },
+        {
+          "id": "chunk_3",
+          "text": "5. Formal order rides on informal order.\nThe planned factory runs on workarounds; the planned city of Brasília was saved by the unplanned settlements that grew around it; work-to-rule strikes — where workers follow the official rules exactly — grind production to a halt, proving the official description of work was always a fiction. Every formal system is parasitic on informal processes it does not acknowledge and cannot create.\n\nKey frameworks\n\nThe map-territory audit. For any schema you impose — a metric, a dashboard, an org chart, a database model — ask: What does this representation delete? Who relied on what was deleted? What will optimize against the representation rather than the reality? (Metrics gamed are legibility's revenge.)"
+        },
+        {
+          "id": "chunk_4",
+          "text": "Scott's four rules for development planning (his closing prescriptions, useful for any system design):\n1. Take small steps — favor reversibility and frequent feedback over the grand stroke.\n2. Favor reversibility — prefer interventions you can undo when (not if) you're wrong.\n3. Plan on surprises — design slack for contingencies the plan can't foresee.\n4. Plan on human inventiveness — assume users will improve, repurpose, and subvert the design; build room for them to do so.\n\nBeauty is not function. High modernism judges plans by their visual and conceptual order — the city that looks rational from the air, the architecture diagram that looks clean on the whiteboard. Scott's Jane Jacobs-inflected point: street-level disorder often is the functioning order. Distrust solutions whose chief virtue is how tidy they look from above."
+        },
+        {
+          "id": "chunk_5",
+          "text": "When to reach for this book\n- Before any \"great rewrite,\" reorg, migration, or master plan that replaces an evolved system with a designed one.\n- When a metric or model is treating people as inputs and they've started behaving strangely (i.e., legibly).\n- When tempted to dismiss an existing messy process as irrational — first ask what invisible work it's doing.\n- Pairs with The Wisdom of Crowds: Surowiecki on aggregating distributed knowledge, Scott on what happens when the center overwrites it.\n\nMemorable ideas\n\n\"Certain forms of knowledge and control require a narrowing of vision... making possible a high degree of schematic knowledge, control, and manipulation.\"\n\n\"The necessarily simple abstractions of large bureaucratic institutions... can never adequately represent the actual complexity of natural or social processes.\"\n\nThe image to keep: the second-generation forest, dying in perfect rows. Every clean abstraction over a living system should make you ask what the underbrush was doing.\n\nHow I've applied it"
+        },
+        {
+          "id": "chunk_6",
+          "text": "Software is applied legibility — every schema and dashboard I build deletes detail by design, and Scott keeps me honest about what I'm deleting. Concretely: when CrowdListen reduces an audience's reactions to scores and clusters, the Scott question is \"what mētis am I flattening?\" — which pushed me to keep raw quotes and outlier voices one click from every aggregate, not buried under it. His four rules also describe good shipping discipline better than most engineering books: small reversible steps, expect surprises, and assume users will use the product in ways the roadmap never imagined — then treat that as signal, not misuse."
+        }
+      ],
+      "full_text": "Why grand schemes to improve the human condition fail: they replace messy local knowledge with tidy maps, then mistake the map for the territory.\n\nYou design systems for other people — software, processes, org charts, cities — and want to understand why clean top-down plans keep being defeated by messy reality.\n\nCore mental models\n\n1. Legibility: the state's master project.\nTo tax, conscript, and govern, a state must first see its society — so it simplifies: standardized surnames, uniform land registers, grid cities, common units of measure. Each simplification makes the territory more legible to the center, and each discards local detail that didn't fit the schema. Legibility isn't a side effect of administration; it is the precondition for it — and the distortion is built in.\n\n2. The scientific forest.\nScott's founding parable: 18th-century Prussian foresters replaced chaotic old-growth forests with straight rows of a single revenue-maximizing species. The first generation looked like a triumph. The second collapsed — Waldsterben, forest death — because the \"mess\" the planners deleted (underbrush, fungi, insect diversity, soil ecology) had been doing invisible load-bearing work. The general lesson: radically simplifying a complex system harvests short-term legibility and pays for it with long-term fragility.\n\n3. Mētis: knowledge that can't be written down.\nMētis (from the Greek) is practical, local, adaptive skill — when to plant this field, how this machine actually behaves, what this neighborhood needs. It lives in practitioners, is acquired by doing, and resists codification into rules (which Scott calls techne). High-modernist schemes fail in proportion to how much mētis they destroy and how little they let it back in.\n\n4. The fatal combination.\nScott is precise: large-scale disasters require four elements together — (1) administrative ordering of society (legibility), (2) high-modernist ideology (unbounded confidence that scientific design can improve life), (3) an authoritarian state willing to impose the design, and (4) a civil society too weak to resist. Brasília, Soviet collectivization, Tanzanian villagization. Remove the coercion and weak resistance, and high-modernist plans merely underperform instead of killing people.\n\n5. Formal order rides on informal order.\nThe planned factory runs on workarounds; the planned city of Brasília was saved by the unplanned settlements that grew around it; work-to-rule strikes — where workers follow the official rules exactly — grind production to a halt, proving the official description of work was always a fiction. Every formal system is parasitic on informal processes it does not acknowledge and cannot create.\n\nKey frameworks\n\nThe map-territory audit. For any schema you impose — a metric, a dashboard, an org chart, a database model — ask: What does this representation delete? Who relied on what was deleted? What will optimize against the representation rather than the reality? (Metrics gamed are legibility's revenge.)\n\nScott's four rules for development planning (his closing prescriptions, useful for any system design):\n1. Take small steps — favor reversibility and frequent feedback over the grand stroke.\n2. Favor reversibility — prefer interventions you can undo when (not if) you're wrong.\n3. Plan on surprises — design slack for contingencies the plan can't foresee.\n4. Plan on human inventiveness — assume users will improve, repurpose, and subvert the design; build room for them to do so.\n\nBeauty is not function. High modernism judges plans by their visual and conceptual order — the city that looks rational from the air, the architecture diagram that looks clean on the whiteboard. Scott's Jane Jacobs-inflected point: street-level disorder often is the functioning order. Distrust solutions whose chief virtue is how tidy they look from above.\n\nWhen to reach for this book\n- Before any \"great rewrite,\" reorg, migration, or master plan that replaces an evolved system with a designed one.\n- When a metric or model is treating people as inputs and they've started behaving strangely (i.e., legibly).\n- When tempted to dismiss an existing messy process as irrational — first ask what invisible work it's doing.\n- Pairs with The Wisdom of Crowds: Surowiecki on aggregating distributed knowledge, Scott on what happens when the center overwrites it.\n\nMemorable ideas\n\n\"Certain forms of knowledge and control require a narrowing of vision... making possible a high degree of schematic knowledge, control, and manipulation.\"\n\n\"The necessarily simple abstractions of large bureaucratic institutions... can never adequately represent the actual complexity of natural or social processes.\"\n\nThe image to keep: the second-generation forest, dying in perfect rows. Every clean abstraction over a living system should make you ask what the underbrush was doing.\n\nHow I've applied it\n\nSoftware is applied legibility — every schema and dashboard I build deletes detail by design, and Scott keeps me honest about what I'm deleting. Concretely: when CrowdListen reduces an audience's reactions to scores and clusters, the Scott question is \"what mētis am I flattening?\" — which pushed me to keep raw quotes and outlier voices one click from every aggregate, not buried under it. His four rules also describe good shipping discipline better than most engineering books: small reversible steps, expect surprises, and assume users will use the product in ways the roadmap never imagined — then treat that as signal, not misuse."
+    },
+    {
+      "id": "so-good-they-cant-ignore-you",
+      "title": "So Good They Can't Ignore You",
+      "author": "Cal Newport",
+      "year": 2012,
+      "tags": [
+        "career",
+        "work",
+        "skill-building"
+      ],
+      "one_liner": "A career argument that rare and valuable work usually comes from building rare and valuable skills first.",
+      "read_if": "You are trying to choose a career path and suspect that advice to simply follow your passion is too thin to guide real decisions.",
+      "source_path": "web/src/content/books/so-good-they-cant-ignore-you.md",
+      "visibility": "backend_only",
+      "text_file": "research/book-text/so-good-they-cant-ignore-you.txt",
+      "sections": [
+        {
+          "heading": "Core mental models",
+          "text": "Core mental models\n\n1. The passion hypothesis is incomplete.\nNewport argues that loving your work is often an outcome of mastery, autonomy, and impact, not a starting instruction.\n\n2. Career capital comes first.\nRare and valuable jobs require rare and valuable skills. Building those skills creates leverage for control, mission, and better work.\n\n3. The craftsman mindset beats the passion mindset.\nInstead of asking what the job offers you, ask what valuable skill you are producing for the world.\n\n4. Control has traps.\nPeople want more autonomy, but pursuing control before having enough career capital can backfire."
+        },
+        {
+          "heading": "Key frameworks",
+          "text": "Key frameworks\n\nCareer capital audit. What rare and valuable skills do you have, and where are they compounding?\n\nDeliberate practice. Improve specific skills through feedback, difficulty, and repetition rather than passive time served.\n\nControl test. Ask whether you have enough leverage to support the autonomy you want."
+        },
+        {
+          "heading": "When to reach for this book",
+          "text": "When to reach for this book\n- When career advice feels too vague.\n- When someone wants autonomy before skill leverage.\n- When a career change needs a practical bridge.\n- When the question is how to become valuable, not just how to feel inspired."
+        },
+        {
+          "heading": "Memorable ideas",
+          "text": "Memorable ideas\n\nThe useful reframe is to stop asking only what work you want and start asking what capabilities can earn better work."
+        },
+        {
+          "heading": "How I've applied it",
+          "text": "How I've applied it\n\nThis book supports Answer with Books topics around career uncertainty, skill compounding, and deciding whether to switch, stay, or deepen."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chunk_1",
+          "text": "Core mental models\n\n1. The passion hypothesis is incomplete.\nNewport argues that loving your work is often an outcome of mastery, autonomy, and impact, not a starting instruction.\n\n2. Career capital comes first.\nRare and valuable jobs require rare and valuable skills. Building those skills creates leverage for control, mission, and better work.\n\n3. The craftsman mindset beats the passion mindset.\nInstead of asking what the job offers you, ask what valuable skill you are producing for the world.\n\n4. Control has traps.\nPeople want more autonomy, but pursuing control before having enough career capital can backfire.\n\nKey frameworks\n\nCareer capital audit. What rare and valuable skills do you have, and where are they compounding?\n\nDeliberate practice. Improve specific skills through feedback, difficulty, and repetition rather than passive time served.\n\nControl test. Ask whether you have enough leverage to support the autonomy you want.\n\nWhen to reach for this book\n- When career advice feels too vague.\n- When someone wants autonomy before skill leverage.\n- When a career change needs a practical bridge.\n- When the question is how to become valuable, not just how to feel inspired."
+        },
+        {
+          "id": "chunk_2",
+          "text": "Memorable ideas\n\nThe useful reframe is to stop asking only what work you want and start asking what capabilities can earn better work.\n\nHow I've applied it\n\nThis book supports Answer with Books topics around career uncertainty, skill compounding, and deciding whether to switch, stay, or deepen."
+        }
+      ],
+      "full_text": "A career argument that rare and valuable work usually comes from building rare and valuable skills first.\n\nYou are trying to choose a career path and suspect that advice to simply follow your passion is too thin to guide real decisions.\n\nCore mental models\n\n1. The passion hypothesis is incomplete.\nNewport argues that loving your work is often an outcome of mastery, autonomy, and impact, not a starting instruction.\n\n2. Career capital comes first.\nRare and valuable jobs require rare and valuable skills. Building those skills creates leverage for control, mission, and better work.\n\n3. The craftsman mindset beats the passion mindset.\nInstead of asking what the job offers you, ask what valuable skill you are producing for the world.\n\n4. Control has traps.\nPeople want more autonomy, but pursuing control before having enough career capital can backfire.\n\nKey frameworks\n\nCareer capital audit. What rare and valuable skills do you have, and where are they compounding?\n\nDeliberate practice. Improve specific skills through feedback, difficulty, and repetition rather than passive time served.\n\nControl test. Ask whether you have enough leverage to support the autonomy you want.\n\nWhen to reach for this book\n- When career advice feels too vague.\n- When someone wants autonomy before skill leverage.\n- When a career change needs a practical bridge.\n- When the question is how to become valuable, not just how to feel inspired.\n\nMemorable ideas\n\nThe useful reframe is to stop asking only what work you want and start asking what capabilities can earn better work.\n\nHow I've applied it\n\nThis book supports Answer with Books topics around career uncertainty, skill compounding, and deciding whether to switch, stay, or deepen."
+    },
+    {
+      "id": "the-checklist-manifesto",
+      "title": "The Checklist Manifesto",
+      "author": "Atul Gawande",
+      "year": 2009,
+      "tags": [
+        "operations",
+        "quality",
+        "systems"
+      ],
+      "one_liner": "A case for simple checklists as a way to reduce avoidable failure in complex work.",
+      "read_if": "Your team keeps making preventable mistakes, but adding more process feels like bureaucracy.",
+      "source_path": "web/src/content/books/the-checklist-manifesto.md",
+      "visibility": "backend_only",
+      "text_file": "research/book-text/the-checklist-manifesto.txt",
+      "sections": [
+        {
+          "heading": "Core mental models",
+          "text": "Core mental models\n\n1. Failure has two kinds.\nGawande distinguishes ignorance, where we do not know enough, from ineptitude, where we know enough but fail to apply it reliably.\n\n2. Complexity defeats memory.\nIn complex work, competent people miss basic steps because attention is limited and situations vary.\n\n3. Checklists are communication devices.\nThe best checklists are not exhaustive manuals. They mark pause points, force essential checks, and make coordination explicit.\n\n4. Discipline can be lightweight.\nThe value is not bureaucracy. It is a small structure that catches known failure modes before they compound."
+        },
+        {
+          "heading": "Key frameworks",
+          "text": "Key frameworks\n\nRead-do vs. do-confirm. Some checklists guide action step by step; others confirm critical items after work is done.\n\nPause points. Put the checklist at the moment where a missed step becomes expensive.\n\nShort and usable. A checklist that is too long will not be used when pressure rises."
+        },
+        {
+          "heading": "When to reach for this book",
+          "text": "When to reach for this book\n- When postmortems keep finding preventable mistakes.\n- When handoffs fail.\n- When quality depends on repeated complex execution.\n- When the team needs reliability without heavy process."
+        },
+        {
+          "heading": "Memorable ideas",
+          "text": "Memorable ideas\n\nThe strongest lesson is that expertise and discipline are complements, not substitutes."
+        },
+        {
+          "heading": "How I've applied it",
+          "text": "How I've applied it\n\nAnswer with Books can use this book for concerns about operational mistakes, launch checklists, review processes, and teams that want safety without suffocating the work."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chunk_1",
+          "text": "Core mental models\n\n1. Failure has two kinds.\nGawande distinguishes ignorance, where we do not know enough, from ineptitude, where we know enough but fail to apply it reliably.\n\n2. Complexity defeats memory.\nIn complex work, competent people miss basic steps because attention is limited and situations vary.\n\n3. Checklists are communication devices.\nThe best checklists are not exhaustive manuals. They mark pause points, force essential checks, and make coordination explicit.\n\n4. Discipline can be lightweight.\nThe value is not bureaucracy. It is a small structure that catches known failure modes before they compound.\n\nKey frameworks\n\nRead-do vs. do-confirm. Some checklists guide action step by step; others confirm critical items after work is done.\n\nPause points. Put the checklist at the moment where a missed step becomes expensive.\n\nShort and usable. A checklist that is too long will not be used when pressure rises.\n\nWhen to reach for this book\n- When postmortems keep finding preventable mistakes.\n- When handoffs fail.\n- When quality depends on repeated complex execution.\n- When the team needs reliability without heavy process.\n\nMemorable ideas"
+        },
+        {
+          "id": "chunk_2",
+          "text": "The strongest lesson is that expertise and discipline are complements, not substitutes.\n\nHow I've applied it\n\nAnswer with Books can use this book for concerns about operational mistakes, launch checklists, review processes, and teams that want safety without suffocating the work."
+        }
+      ],
+      "full_text": "A case for simple checklists as a way to reduce avoidable failure in complex work.\n\nYour team keeps making preventable mistakes, but adding more process feels like bureaucracy.\n\nCore mental models\n\n1. Failure has two kinds.\nGawande distinguishes ignorance, where we do not know enough, from ineptitude, where we know enough but fail to apply it reliably.\n\n2. Complexity defeats memory.\nIn complex work, competent people miss basic steps because attention is limited and situations vary.\n\n3. Checklists are communication devices.\nThe best checklists are not exhaustive manuals. They mark pause points, force essential checks, and make coordination explicit.\n\n4. Discipline can be lightweight.\nThe value is not bureaucracy. It is a small structure that catches known failure modes before they compound.\n\nKey frameworks\n\nRead-do vs. do-confirm. Some checklists guide action step by step; others confirm critical items after work is done.\n\nPause points. Put the checklist at the moment where a missed step becomes expensive.\n\nShort and usable. A checklist that is too long will not be used when pressure rises.\n\nWhen to reach for this book\n- When postmortems keep finding preventable mistakes.\n- When handoffs fail.\n- When quality depends on repeated complex execution.\n- When the team needs reliability without heavy process.\n\nMemorable ideas\n\nThe strongest lesson is that expertise and discipline are complements, not substitutes.\n\nHow I've applied it\n\nAnswer with Books can use this book for concerns about operational mistakes, launch checklists, review processes, and teams that want safety without suffocating the work."
+    },
+    {
+      "id": "the-effective-executive",
+      "title": "The Effective Executive",
+      "author": "Peter F. Drucker",
+      "year": 1967,
+      "tags": [
+        "management",
+        "leadership",
+        "priorities"
+      ],
+      "one_liner": "A compact management classic about time, contribution, strengths, priorities, and decision effectiveness.",
+      "read_if": "You are busy, responsible for outcomes through other people, and unsure whether your activity is actually producing contribution.",
+      "source_path": "web/src/content/books/the-effective-executive.md",
+      "visibility": "backend_only",
+      "text_file": "research/book-text/the-effective-executive.txt",
+      "sections": [
+        {
+          "heading": "Core mental models",
+          "text": "Core mental models\n\n1. Effectiveness can be learned.\nDrucker separates intelligence, personality, and activity from effectiveness. The executive's job is contribution, not busyness.\n\n2. Know thy time.\nTime is the limiting resource. Until you know where it goes, you cannot manage contribution.\n\n3. Build on strengths.\nThe effective executive asks where a person's strengths can produce results instead of trying to build an organization around the absence of weakness.\n\n4. Concentration matters.\nDo first things first and second things not at all. Strategy becomes real through concentration."
+        },
+        {
+          "heading": "Key frameworks",
+          "text": "Key frameworks\n\nTime audit. Record where time actually goes, then eliminate, delegate, or consolidate low-contribution work.\n\nContribution question. Ask what results the organization needs from you, not what activity feels appropriate to your role.\n\nDecision discipline. Treat decisions as commitments to action, responsibility, and follow-up."
+        },
+        {
+          "heading": "When to reach for this book",
+          "text": "When to reach for this book\n- When a manager is drowning in meetings and status work.\n- When the question is what deserves executive attention.\n- When delegation is weak because contribution is unclear.\n- When the team needs fewer priorities with stronger ownership."
+        },
+        {
+          "heading": "Memorable ideas",
+          "text": "Memorable ideas\n\nThe enduring lesson is that effectiveness begins by facing the calendar honestly."
+        },
+        {
+          "heading": "How I've applied it",
+          "text": "How I've applied it\n\nThis book is useful for Answer with Books questions about delegation, management leverage, and the feeling of being busy without moving the work that matters."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chunk_1",
+          "text": "Core mental models\n\n1. Effectiveness can be learned.\nDrucker separates intelligence, personality, and activity from effectiveness. The executive's job is contribution, not busyness.\n\n2. Know thy time.\nTime is the limiting resource. Until you know where it goes, you cannot manage contribution.\n\n3. Build on strengths.\nThe effective executive asks where a person's strengths can produce results instead of trying to build an organization around the absence of weakness.\n\n4. Concentration matters.\nDo first things first and second things not at all. Strategy becomes real through concentration.\n\nKey frameworks\n\nTime audit. Record where time actually goes, then eliminate, delegate, or consolidate low-contribution work.\n\nContribution question. Ask what results the organization needs from you, not what activity feels appropriate to your role.\n\nDecision discipline. Treat decisions as commitments to action, responsibility, and follow-up."
+        },
+        {
+          "id": "chunk_2",
+          "text": "When to reach for this book\n- When a manager is drowning in meetings and status work.\n- When the question is what deserves executive attention.\n- When delegation is weak because contribution is unclear.\n- When the team needs fewer priorities with stronger ownership.\n\nMemorable ideas\n\nThe enduring lesson is that effectiveness begins by facing the calendar honestly.\n\nHow I've applied it\n\nThis book is useful for Answer with Books questions about delegation, management leverage, and the feeling of being busy without moving the work that matters."
+        }
+      ],
+      "full_text": "A compact management classic about time, contribution, strengths, priorities, and decision effectiveness.\n\nYou are busy, responsible for outcomes through other people, and unsure whether your activity is actually producing contribution.\n\nCore mental models\n\n1. Effectiveness can be learned.\nDrucker separates intelligence, personality, and activity from effectiveness. The executive's job is contribution, not busyness.\n\n2. Know thy time.\nTime is the limiting resource. Until you know where it goes, you cannot manage contribution.\n\n3. Build on strengths.\nThe effective executive asks where a person's strengths can produce results instead of trying to build an organization around the absence of weakness.\n\n4. Concentration matters.\nDo first things first and second things not at all. Strategy becomes real through concentration.\n\nKey frameworks\n\nTime audit. Record where time actually goes, then eliminate, delegate, or consolidate low-contribution work.\n\nContribution question. Ask what results the organization needs from you, not what activity feels appropriate to your role.\n\nDecision discipline. Treat decisions as commitments to action, responsibility, and follow-up.\n\nWhen to reach for this book\n- When a manager is drowning in meetings and status work.\n- When the question is what deserves executive attention.\n- When delegation is weak because contribution is unclear.\n- When the team needs fewer priorities with stronger ownership.\n\nMemorable ideas\n\nThe enduring lesson is that effectiveness begins by facing the calendar honestly.\n\nHow I've applied it\n\nThis book is useful for Answer with Books questions about delegation, management leverage, and the feeling of being busy without moving the work that matters."
+    },
+    {
+      "id": "the-lean-startup",
+      "title": "The Lean Startup",
+      "author": "Eric Ries",
+      "year": 2011,
+      "tags": [
+        "startups",
+        "experiments",
+        "product"
+      ],
+      "one_liner": "A method for learning under extreme uncertainty: build the smallest thing that tests the riskiest assumption, measure honestly, and learn before you run out of time.",
+      "read_if": "You are tempted to build a complete product before you know whether the underlying customer, value, or growth assumptions are true.",
+      "source_path": "web/src/content/books/the-lean-startup.md",
+      "visibility": "backend_only",
+      "text_file": "research/book-text/the-lean-startup.txt",
+      "sections": [
+        {
+          "heading": "Core mental models",
+          "text": "Core mental models\n\n1. Startups are learning machines.\nRies defines the startup problem as uncertainty, not execution. A startup is not just a small company; it is an institution searching for a repeatable model. The main output should be validated learning, not features shipped.\n\n2. Build-Measure-Learn.\nThe famous loop is often misunderstood as \"ship fast.\" The real point is to shorten the distance between an assumption and evidence. Build only enough to measure the riskiest belief, then use the result to learn what to do next.\n\n3. MVP means minimum learning vehicle.\nAn MVP is not a bad first version of the product. It is the smallest artifact that can test a real assumption. Sometimes that is a landing page, a concierge workflow, a prototype, a manual service, or a sales conversation.\n\n4. Vanity metrics lie.\nTraffic, signups, downloads, and likes can all rise while the business remains unproven. Useful metrics are actionable, accessible, and auditable. They tell you what changed, why it might have changed, and what to do next.\n\n5. Pivot or persevere.\nThe loop needs a decision point. If the evidence undermines the core assumption, change the strategy while preserving what you learned. If it supports the assumption, invest more."
+        },
+        {
+          "heading": "Key frameworks",
+          "text": "Key frameworks\n\nRiskiest assumption test. Before building, write the assumption that would kill the idea if false. Then design the smallest test that can expose it.\n\nLearning milestone. Replace \"launch MVP by Friday\" with \"learn whether clinics will pay to solve appointment no-shows by Friday.\" The product artifact is subordinate to the learning.\n\nCohort over aggregate. Look at behavior by cohort and exposure, not just total numbers. Aggregate growth can hide that every new group churns the same way."
+        },
+        {
+          "heading": "When to reach for this book",
+          "text": "When to reach for this book\n- Before building a polished MVP.\n- When a team is shipping but not learning.\n- When growth metrics look good but retention or willingness to pay is unclear.\n- When deciding whether a failure is a feature problem or a thesis problem."
+        },
+        {
+          "heading": "Memorable ideas",
+          "text": "Memorable ideas\n\nThe book's useful discipline is not \"move fast.\" It is \"make the next build answer a question that matters.\""
+        },
+        {
+          "heading": "How I've applied it",
+          "text": "How I've applied it\n\nFor Answer with Books, the Lean Startup question is whether people want book summaries, or whether they want book-backed answers to problems they already have. The current slice tests the latter: demand first, book lens second, short useful guide third."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chunk_1",
+          "text": "Core mental models\n\n1. Startups are learning machines.\nRies defines the startup problem as uncertainty, not execution. A startup is not just a small company; it is an institution searching for a repeatable model. The main output should be validated learning, not features shipped.\n\n2. Build-Measure-Learn.\nThe famous loop is often misunderstood as \"ship fast.\" The real point is to shorten the distance between an assumption and evidence. Build only enough to measure the riskiest belief, then use the result to learn what to do next.\n\n3. MVP means minimum learning vehicle.\nAn MVP is not a bad first version of the product. It is the smallest artifact that can test a real assumption. Sometimes that is a landing page, a concierge workflow, a prototype, a manual service, or a sales conversation.\n\n4. Vanity metrics lie.\nTraffic, signups, downloads, and likes can all rise while the business remains unproven. Useful metrics are actionable, accessible, and auditable. They tell you what changed, why it might have changed, and what to do next."
+        },
+        {
+          "id": "chunk_2",
+          "text": "5. Pivot or persevere.\nThe loop needs a decision point. If the evidence undermines the core assumption, change the strategy while preserving what you learned. If it supports the assumption, invest more.\n\nKey frameworks\n\nRiskiest assumption test. Before building, write the assumption that would kill the idea if false. Then design the smallest test that can expose it.\n\nLearning milestone. Replace \"launch MVP by Friday\" with \"learn whether clinics will pay to solve appointment no-shows by Friday.\" The product artifact is subordinate to the learning.\n\nCohort over aggregate. Look at behavior by cohort and exposure, not just total numbers. Aggregate growth can hide that every new group churns the same way.\n\nWhen to reach for this book\n- Before building a polished MVP.\n- When a team is shipping but not learning.\n- When growth metrics look good but retention or willingness to pay is unclear.\n- When deciding whether a failure is a feature problem or a thesis problem.\n\nMemorable ideas\n\nThe book's useful discipline is not \"move fast.\" It is \"make the next build answer a question that matters.\"\n\nHow I've applied it"
+        },
+        {
+          "id": "chunk_3",
+          "text": "For Answer with Books, the Lean Startup question is whether people want book summaries, or whether they want book-backed answers to problems they already have. The current slice tests the latter: demand first, book lens second, short useful guide third."
+        }
+      ],
+      "full_text": "A method for learning under extreme uncertainty: build the smallest thing that tests the riskiest assumption, measure honestly, and learn before you run out of time.\n\nYou are tempted to build a complete product before you know whether the underlying customer, value, or growth assumptions are true.\n\nCore mental models\n\n1. Startups are learning machines.\nRies defines the startup problem as uncertainty, not execution. A startup is not just a small company; it is an institution searching for a repeatable model. The main output should be validated learning, not features shipped.\n\n2. Build-Measure-Learn.\nThe famous loop is often misunderstood as \"ship fast.\" The real point is to shorten the distance between an assumption and evidence. Build only enough to measure the riskiest belief, then use the result to learn what to do next.\n\n3. MVP means minimum learning vehicle.\nAn MVP is not a bad first version of the product. It is the smallest artifact that can test a real assumption. Sometimes that is a landing page, a concierge workflow, a prototype, a manual service, or a sales conversation.\n\n4. Vanity metrics lie.\nTraffic, signups, downloads, and likes can all rise while the business remains unproven. Useful metrics are actionable, accessible, and auditable. They tell you what changed, why it might have changed, and what to do next.\n\n5. Pivot or persevere.\nThe loop needs a decision point. If the evidence undermines the core assumption, change the strategy while preserving what you learned. If it supports the assumption, invest more.\n\nKey frameworks\n\nRiskiest assumption test. Before building, write the assumption that would kill the idea if false. Then design the smallest test that can expose it.\n\nLearning milestone. Replace \"launch MVP by Friday\" with \"learn whether clinics will pay to solve appointment no-shows by Friday.\" The product artifact is subordinate to the learning.\n\nCohort over aggregate. Look at behavior by cohort and exposure, not just total numbers. Aggregate growth can hide that every new group churns the same way.\n\nWhen to reach for this book\n- Before building a polished MVP.\n- When a team is shipping but not learning.\n- When growth metrics look good but retention or willingness to pay is unclear.\n- When deciding whether a failure is a feature problem or a thesis problem.\n\nMemorable ideas\n\nThe book's useful discipline is not \"move fast.\" It is \"make the next build answer a question that matters.\"\n\nHow I've applied it\n\nFor Answer with Books, the Lean Startup question is whether people want book summaries, or whether they want book-backed answers to problems they already have. The current slice tests the latter: demand first, book lens second, short useful guide third."
+    },
+    {
+      "id": "the-mom-test",
+      "title": "The Mom Test",
+      "author": "Rob Fitzpatrick",
+      "year": 2013,
+      "tags": [
+        "startups",
+        "customer research",
+        "product"
+      ],
+      "one_liner": "How to talk to customers and learn the truth when everyone is lying to you — including your mom.",
+      "read_if": "You are about to build something and want to find out whether anyone actually needs it, before you spend a year finding out the hard way.",
+      "source_path": "web/src/content/books/the-mom-test.md",
+      "visibility": "backend_only",
+      "text_file": "research/book-text/the-mom-test.txt",
+      "sections": [
+        {
+          "heading": "Core mental models",
+          "text": "Core mental models\n\n1. Everyone lies to you, politely.\nPeople you interview want the conversation to go well. Your mom says your app idea is great because she loves you; strangers say it's great because it ends the meeting faster. The lie isn't malicious — it's social lubricant. The burden is on you to ask questions that even a polite person can't answer with a comfortable falsehood. The Mom Test is named for the standard it sets: your questions should be so grounded in facts that even your mom couldn't mislead you with them.\n\n2. Talk about their life, not your idea.\nThe moment you pitch, the data is contaminated. Every question afterward measures how nice the person is, not how real the problem is. The fix is structural: ask about what they did last week, what it cost them, what they tried, who else they complained to. Their past behavior is evidence; their opinion of your future product is not.\n\n3. Compliments are worthless; commitments are gold.\n\"That's really cool\" is a deflection, not a data point. What counts is anything that costs the person something: time (a scheduled follow-up with a clear agenda), reputation (an intro to their boss or budget owner), or money (a pre-order, a letter of intent, a deposit). Fitzpatrick calls these currency. If a meeting ends with kind words and nothing on the calendar, it didn't go well — it went nowhere.\n\n4. Bad news is good news.\nA lukewarm \"meh\" that arrives in week two saves you the year you would have spent discovering it in production. The goal of customer conversations is truth, not validation. Learning that a problem doesn't matter, or that the customer has no budget, or that they've tried nothing to solve it (a tell that they don't really care) is a successful outcome.\n\n5. Some problems don't matter.\nPeople will cheerfully confirm that something is annoying. The real questions are: Where does this rank against everything else on their plate? What does it cost them? What have they already tried? If they've never Googled for a solution, the problem isn't burning enough to build a business on."
+        },
+        {
+          "heading": "Key frameworks",
+          "text": "Key frameworks\n\nThe three rules of the Mom Test:\n1. Talk about their life instead of your idea.\n2. Ask about specifics in the past instead of generics or opinions about the future.\n3. Talk less and listen more.\n\nQuestion quality check. Bad: \"Would you buy a product that did X?\" (invites a hypothetical lie). Good: \"What are you using now? What does it cost you? When did this last happen — walk me through it.\" Future tense and hypotheticals are where lies live; past tense and specifics are where truth lives.\n\nDeflect compliments, anchor fluff, dig beneath signals. When you get a compliment, ignore it and move on. When you get a generic claim (\"I always…\", \"I'd definitely…\"), anchor it: \"When did that last happen?\" When you get an emotional signal (frustration, excitement), dig: \"Tell me more about that.\"\n\nCommitment and advancement. Every meeting should end by pushing for a next step that costs the prospect something. If you don't know what to ask for, you went into the meeting without a goal — Fitzpatrick's \"three big questions\" prep: decide in advance the three things you most need to learn.\n\nKeep it casual. Early-stage learning conversations don't need a scheduled \"interview.\" A good conversation about someone's workflow can happen at a conference, in a coffee line, or in a user's existing support thread. Formality raises the stakes and invites performance."
+        },
+        {
+          "heading": "When to reach for this book",
+          "text": "When to reach for this book\n- Before writing code for any new product or feature.\n- When your user interviews keep producing enthusiastic feedback but no usage.\n- When someone on the team says \"everyone we talked to loved it\" — this book is the antidote.\n- When deciding whether a feature request is real or polite noise."
+        },
+        {
+          "heading": "Memorable ideas",
+          "text": "Memorable ideas\n\n\"You shouldn't ask anyone whether your business is a good idea... It's a bad question and everyone will lie to you at least a little.\"\n\n\"Opinions are worthless... Anything involving the future is an over-optimistic lie.\"\n\n\"If they haven't looked for ways of solving it already, they're not going to look for (or buy) yours.\"\n\nThe book's sharpest reframe: a failed conversation is one where you only collected compliments. By that standard, most \"great meetings\" founders report are failures."
+        },
+        {
+          "heading": "How I've applied it",
+          "text": "How I've applied it\n\nBuilding CrowdListen, my early conversations were classic anti-patterns: I demoed, people nodded, I logged \"positive feedback.\" Re-running those conversations Mom Test-style — \"show me the last time you tried to figure out what your audience thought\" — changed the product. The painful, specific stories were about aggregating scattered feedback, not about the dashboard I had been building. The other habit that stuck: ending every promising conversation by asking for something that costs the other person effort. The people who wouldn't make an intro or schedule a follow-up were telling me something their compliments weren't."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chunk_1",
+          "text": "Core mental models\n\n1. Everyone lies to you, politely.\nPeople you interview want the conversation to go well. Your mom says your app idea is great because she loves you; strangers say it's great because it ends the meeting faster. The lie isn't malicious — it's social lubricant. The burden is on you to ask questions that even a polite person can't answer with a comfortable falsehood. The Mom Test is named for the standard it sets: your questions should be so grounded in facts that even your mom couldn't mislead you with them.\n\n2. Talk about their life, not your idea.\nThe moment you pitch, the data is contaminated. Every question afterward measures how nice the person is, not how real the problem is. The fix is structural: ask about what they did last week, what it cost them, what they tried, who else they complained to. Their past behavior is evidence; their opinion of your future product is not."
+        },
+        {
+          "id": "chunk_2",
+          "text": "3. Compliments are worthless; commitments are gold.\n\"That's really cool\" is a deflection, not a data point. What counts is anything that costs the person something: time (a scheduled follow-up with a clear agenda), reputation (an intro to their boss or budget owner), or money (a pre-order, a letter of intent, a deposit). Fitzpatrick calls these currency. If a meeting ends with kind words and nothing on the calendar, it didn't go well — it went nowhere.\n\n4. Bad news is good news.\nA lukewarm \"meh\" that arrives in week two saves you the year you would have spent discovering it in production. The goal of customer conversations is truth, not validation. Learning that a problem doesn't matter, or that the customer has no budget, or that they've tried nothing to solve it (a tell that they don't really care) is a successful outcome.\n\n5. Some problems don't matter.\nPeople will cheerfully confirm that something is annoying. The real questions are: Where does this rank against everything else on their plate? What does it cost them? What have they already tried? If they've never Googled for a solution, the problem isn't burning enough to build a business on.\n\nKey frameworks"
+        },
+        {
+          "id": "chunk_3",
+          "text": "The three rules of the Mom Test:\n1. Talk about their life instead of your idea.\n2. Ask about specifics in the past instead of generics or opinions about the future.\n3. Talk less and listen more.\n\nQuestion quality check. Bad: \"Would you buy a product that did X?\" (invites a hypothetical lie). Good: \"What are you using now? What does it cost you? When did this last happen — walk me through it.\" Future tense and hypotheticals are where lies live; past tense and specifics are where truth lives.\n\nDeflect compliments, anchor fluff, dig beneath signals. When you get a compliment, ignore it and move on. When you get a generic claim (\"I always…\", \"I'd definitely…\"), anchor it: \"When did that last happen?\" When you get an emotional signal (frustration, excitement), dig: \"Tell me more about that.\"\n\nCommitment and advancement. Every meeting should end by pushing for a next step that costs the prospect something. If you don't know what to ask for, you went into the meeting without a goal — Fitzpatrick's \"three big questions\" prep: decide in advance the three things you most need to learn."
+        },
+        {
+          "id": "chunk_4",
+          "text": "Keep it casual. Early-stage learning conversations don't need a scheduled \"interview.\" A good conversation about someone's workflow can happen at a conference, in a coffee line, or in a user's existing support thread. Formality raises the stakes and invites performance.\n\nWhen to reach for this book\n- Before writing code for any new product or feature.\n- When your user interviews keep producing enthusiastic feedback but no usage.\n- When someone on the team says \"everyone we talked to loved it\" — this book is the antidote.\n- When deciding whether a feature request is real or polite noise.\n\nMemorable ideas\n\n\"You shouldn't ask anyone whether your business is a good idea... It's a bad question and everyone will lie to you at least a little.\"\n\n\"Opinions are worthless... Anything involving the future is an over-optimistic lie.\"\n\n\"If they haven't looked for ways of solving it already, they're not going to look for (or buy) yours.\"\n\nThe book's sharpest reframe: a failed conversation is one where you only collected compliments. By that standard, most \"great meetings\" founders report are failures.\n\nHow I've applied it"
+        },
+        {
+          "id": "chunk_5",
+          "text": "Building CrowdListen, my early conversations were classic anti-patterns: I demoed, people nodded, I logged \"positive feedback.\" Re-running those conversations Mom Test-style — \"show me the last time you tried to figure out what your audience thought\" — changed the product. The painful, specific stories were about aggregating scattered feedback, not about the dashboard I had been building. The other habit that stuck: ending every promising conversation by asking for something that costs the other person effort. The people who wouldn't make an intro or schedule a follow-up were telling me something their compliments weren't."
+        }
+      ],
+      "full_text": "How to talk to customers and learn the truth when everyone is lying to you — including your mom.\n\nYou are about to build something and want to find out whether anyone actually needs it, before you spend a year finding out the hard way.\n\nCore mental models\n\n1. Everyone lies to you, politely.\nPeople you interview want the conversation to go well. Your mom says your app idea is great because she loves you; strangers say it's great because it ends the meeting faster. The lie isn't malicious — it's social lubricant. The burden is on you to ask questions that even a polite person can't answer with a comfortable falsehood. The Mom Test is named for the standard it sets: your questions should be so grounded in facts that even your mom couldn't mislead you with them.\n\n2. Talk about their life, not your idea.\nThe moment you pitch, the data is contaminated. Every question afterward measures how nice the person is, not how real the problem is. The fix is structural: ask about what they did last week, what it cost them, what they tried, who else they complained to. Their past behavior is evidence; their opinion of your future product is not.\n\n3. Compliments are worthless; commitments are gold.\n\"That's really cool\" is a deflection, not a data point. What counts is anything that costs the person something: time (a scheduled follow-up with a clear agenda), reputation (an intro to their boss or budget owner), or money (a pre-order, a letter of intent, a deposit). Fitzpatrick calls these currency. If a meeting ends with kind words and nothing on the calendar, it didn't go well — it went nowhere.\n\n4. Bad news is good news.\nA lukewarm \"meh\" that arrives in week two saves you the year you would have spent discovering it in production. The goal of customer conversations is truth, not validation. Learning that a problem doesn't matter, or that the customer has no budget, or that they've tried nothing to solve it (a tell that they don't really care) is a successful outcome.\n\n5. Some problems don't matter.\nPeople will cheerfully confirm that something is annoying. The real questions are: Where does this rank against everything else on their plate? What does it cost them? What have they already tried? If they've never Googled for a solution, the problem isn't burning enough to build a business on.\n\nKey frameworks\n\nThe three rules of the Mom Test:\n1. Talk about their life instead of your idea.\n2. Ask about specifics in the past instead of generics or opinions about the future.\n3. Talk less and listen more.\n\nQuestion quality check. Bad: \"Would you buy a product that did X?\" (invites a hypothetical lie). Good: \"What are you using now? What does it cost you? When did this last happen — walk me through it.\" Future tense and hypotheticals are where lies live; past tense and specifics are where truth lives.\n\nDeflect compliments, anchor fluff, dig beneath signals. When you get a compliment, ignore it and move on. When you get a generic claim (\"I always…\", \"I'd definitely…\"), anchor it: \"When did that last happen?\" When you get an emotional signal (frustration, excitement), dig: \"Tell me more about that.\"\n\nCommitment and advancement. Every meeting should end by pushing for a next step that costs the prospect something. If you don't know what to ask for, you went into the meeting without a goal — Fitzpatrick's \"three big questions\" prep: decide in advance the three things you most need to learn.\n\nKeep it casual. Early-stage learning conversations don't need a scheduled \"interview.\" A good conversation about someone's workflow can happen at a conference, in a coffee line, or in a user's existing support thread. Formality raises the stakes and invites performance.\n\nWhen to reach for this book\n- Before writing code for any new product or feature.\n- When your user interviews keep producing enthusiastic feedback but no usage.\n- When someone on the team says \"everyone we talked to loved it\" — this book is the antidote.\n- When deciding whether a feature request is real or polite noise.\n\nMemorable ideas\n\n\"You shouldn't ask anyone whether your business is a good idea... It's a bad question and everyone will lie to you at least a little.\"\n\n\"Opinions are worthless... Anything involving the future is an over-optimistic lie.\"\n\n\"If they haven't looked for ways of solving it already, they're not going to look for (or buy) yours.\"\n\nThe book's sharpest reframe: a failed conversation is one where you only collected compliments. By that standard, most \"great meetings\" founders report are failures.\n\nHow I've applied it\n\nBuilding CrowdListen, my early conversations were classic anti-patterns: I demoed, people nodded, I logged \"positive feedback.\" Re-running those conversations Mom Test-style — \"show me the last time you tried to figure out what your audience thought\" — changed the product. The painful, specific stories were about aggregating scattered feedback, not about the dashboard I had been building. The other habit that stuck: ending every promising conversation by asking for something that costs the other person effort. The people who wouldn't make an intro or schedule a follow-up were telling me something their compliments weren't."
+    },
+    {
+      "id": "the-structure-of-scientific-revolutions",
+      "title": "The Structure of Scientific Revolutions",
+      "author": "Thomas S. Kuhn",
+      "year": 1962,
+      "tags": [
+        "science",
+        "paradigms",
+        "epistemology"
+      ],
+      "one_liner": "Science doesn't progress by smooth accumulation — it alternates between puzzle-solving within a paradigm and rare, wrenching revolutions that replace it.",
+      "read_if": "You're deciding whether to keep refining the current approach or throw it out — in research, strategy, or engineering — and want a vocabulary for telling incremental progress from a dying framework.",
+      "source_path": "web/src/content/books/the-structure-of-scientific-revolutions.md",
+      "visibility": "backend_only",
+      "text_file": "research/book-text/the-structure-of-scientific-revolutions.txt",
+      "sections": [
+        {
+          "heading": "Core mental models",
+          "text": "Core mental models\n\n1. Paradigms and normal science.\nA paradigm is more than a theory — it's the whole package a scientific community shares: exemplary problems and solutions, instruments, standards for what counts as a question and a good answer. \"Normal science\" is the highly productive puzzle-solving that happens inside a paradigm: the framework isn't being tested, it's being applied. This is a feature — paradigms let a field stop relitigating foundations and dig deep.\n\n2. Anomalies accumulate quietly.\nNormal science inevitably turns up results the paradigm can't accommodate. The first response — and usually the correct one — is to blame the experiment, the instrument, or the scientist, and patch the theory. Most anomalies do dissolve. A crisis begins only when anomalies resist repeated assault, multiply, and start attacking the paradigm's core applications (Mercury's orbit for Newton; the ether for classical physics).\n\n3. Crisis and the proliferation of patches.\nThe signature of a paradigm in crisis is not the absence of answers but the multiplication of versions: epicycles upon epicycles in Ptolemaic astronomy, ad-hoc adjustments that each save the data while the framework's elegance and predictive unity drain away. When practitioners start debating foundations again — what the field even is — you're in crisis.\n\n4. Revolutions are gestalt switches, not verdicts.\nA new paradigm doesn't win by accumulating a decisive proof; it wins by solving the crisis-provoking anomalies, promising more, and recruiting the next generation. Kuhn's uncomfortable observation (quoting Planck): old theories die when their holders do. Adherents of rival paradigms partly talk past each other — they disagree about what the problems are, not just the answers. That's \"incommensurability.\"\n\n5. You can't reject a paradigm with nothing to replace it.\nThe decision to abandon a paradigm is simultaneously the decision to accept another. Counterexamples alone never kill a framework, because working without any framework isn't science — it's chaos. This is the most practical sentence in the book: criticism dislodges nothing; alternatives do."
+        },
+        {
+          "heading": "Key frameworks",
+          "text": "Key frameworks\n\nThe paradigm lifecycle. Pre-paradigm confusion → paradigm adoption → normal science (puzzle-solving) → anomaly accumulation → crisis (foundations debated, versions proliferate) → revolution (gestalt switch) → new normal science. Knowing which phase you're in tells you what work is appropriate: in normal science, patching is rational; in crisis, patching is denial.\n\nAnomaly triage. Three questions for any persistent discrepancy: (1) Does it survive repeated, careful attempts to explain it away? (2) Does it strike at the paradigm's central claims rather than its periphery? (3) Is the cost of accommodating it (extra assumptions, special cases) rising over time? Three yeses is what a crisis looks like from the inside.\n\nIncommensurability as a communication diagnosis. When two camps seem to argue endlessly without contact — in science, in companies, in politics — Kuhn suggests checking whether they share standards for what counts as a problem and a solution. If not, more debate won't converge; what's needed is translation, or a generational shift.\n\nThe essential tension. Kuhn's companion idea: productive fields need both committed traditionalists (who push the paradigm to its limits — without depth, anomalies are never even found) and the occasional heretic. Premature revolution is as sterile as permanent orthodoxy."
+        },
+        {
+          "heading": "When to reach for this book",
+          "text": "When to reach for this book\n- When deciding whether mounting problems mean \"work harder\" or \"the approach is wrong.\"\n- When your fixes are multiplying special cases faster than they're closing issues.\n- When two smart groups can't even agree on what the problem is.\n- When evaluating a radical alternative that \"explains everything\" — Kuhn explains both why it might be right and why it can't be proven yet."
+        },
+        {
+          "heading": "Memorable ideas",
+          "text": "Memorable ideas\n\n\"The decision to reject one paradigm is always simultaneously the decision to accept another.\"\n\n\"Novelty emerges only with difficulty, manifested by resistance, against a background provided by expectation.\"\n\nQuoting Max Planck: \"A new scientific truth does not triumph by convincing its opponents... but rather because its opponents eventually die, and a new generation grows up that is familiar with it.\"\n\nThe image to keep: epicycles. Every system in decline produces them — patches that save the data while the framework quietly dies."
+        },
+        {
+          "heading": "How I've applied it",
+          "text": "How I've applied it\n\nKuhn gave me a test for pivots. A struggling product direction generates anomalies — users who churn for reasons the strategy says shouldn't exist. The inside-the-paradigm move is to patch: one more feature, one more onboarding fix. Kuhn's triage made me ask instead: are the patches multiplying? Are the anomalies hitting the core thesis or the edges? With CrowdListen, one strategy accumulated exactly this epicycle pattern — every retention fix added a special case — and recognizing it as crisis, not insufficient effort, is what licensed the reframe. The other half I try to honor: never abandon an approach for criticism alone. I wait until there's a candidate paradigm that explains the old wins and the anomalies."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chunk_1",
+          "text": "Core mental models\n\n1. Paradigms and normal science.\nA paradigm is more than a theory — it's the whole package a scientific community shares: exemplary problems and solutions, instruments, standards for what counts as a question and a good answer. \"Normal science\" is the highly productive puzzle-solving that happens inside a paradigm: the framework isn't being tested, it's being applied. This is a feature — paradigms let a field stop relitigating foundations and dig deep.\n\n2. Anomalies accumulate quietly.\nNormal science inevitably turns up results the paradigm can't accommodate. The first response — and usually the correct one — is to blame the experiment, the instrument, or the scientist, and patch the theory. Most anomalies do dissolve. A crisis begins only when anomalies resist repeated assault, multiply, and start attacking the paradigm's core applications (Mercury's orbit for Newton; the ether for classical physics)."
+        },
+        {
+          "id": "chunk_2",
+          "text": "3. Crisis and the proliferation of patches.\nThe signature of a paradigm in crisis is not the absence of answers but the multiplication of versions: epicycles upon epicycles in Ptolemaic astronomy, ad-hoc adjustments that each save the data while the framework's elegance and predictive unity drain away. When practitioners start debating foundations again — what the field even is — you're in crisis.\n\n4. Revolutions are gestalt switches, not verdicts.\nA new paradigm doesn't win by accumulating a decisive proof; it wins by solving the crisis-provoking anomalies, promising more, and recruiting the next generation. Kuhn's uncomfortable observation (quoting Planck): old theories die when their holders do. Adherents of rival paradigms partly talk past each other — they disagree about what the problems are, not just the answers. That's \"incommensurability.\""
+        },
+        {
+          "id": "chunk_3",
+          "text": "5. You can't reject a paradigm with nothing to replace it.\nThe decision to abandon a paradigm is simultaneously the decision to accept another. Counterexamples alone never kill a framework, because working without any framework isn't science — it's chaos. This is the most practical sentence in the book: criticism dislodges nothing; alternatives do.\n\nKey frameworks\n\nThe paradigm lifecycle. Pre-paradigm confusion → paradigm adoption → normal science (puzzle-solving) → anomaly accumulation → crisis (foundations debated, versions proliferate) → revolution (gestalt switch) → new normal science. Knowing which phase you're in tells you what work is appropriate: in normal science, patching is rational; in crisis, patching is denial.\n\nAnomaly triage. Three questions for any persistent discrepancy: (1) Does it survive repeated, careful attempts to explain it away? (2) Does it strike at the paradigm's central claims rather than its periphery? (3) Is the cost of accommodating it (extra assumptions, special cases) rising over time? Three yeses is what a crisis looks like from the inside."
+        },
+        {
+          "id": "chunk_4",
+          "text": "Incommensurability as a communication diagnosis. When two camps seem to argue endlessly without contact — in science, in companies, in politics — Kuhn suggests checking whether they share standards for what counts as a problem and a solution. If not, more debate won't converge; what's needed is translation, or a generational shift.\n\nThe essential tension. Kuhn's companion idea: productive fields need both committed traditionalists (who push the paradigm to its limits — without depth, anomalies are never even found) and the occasional heretic. Premature revolution is as sterile as permanent orthodoxy.\n\nWhen to reach for this book\n- When deciding whether mounting problems mean \"work harder\" or \"the approach is wrong.\"\n- When your fixes are multiplying special cases faster than they're closing issues.\n- When two smart groups can't even agree on what the problem is.\n- When evaluating a radical alternative that \"explains everything\" — Kuhn explains both why it might be right and why it can't be proven yet.\n\nMemorable ideas\n\n\"The decision to reject one paradigm is always simultaneously the decision to accept another.\""
+        },
+        {
+          "id": "chunk_5",
+          "text": "\"Novelty emerges only with difficulty, manifested by resistance, against a background provided by expectation.\"\n\nQuoting Max Planck: \"A new scientific truth does not triumph by convincing its opponents... but rather because its opponents eventually die, and a new generation grows up that is familiar with it.\"\n\nThe image to keep: epicycles. Every system in decline produces them — patches that save the data while the framework quietly dies.\n\nHow I've applied it\n\nKuhn gave me a test for pivots. A struggling product direction generates anomalies — users who churn for reasons the strategy says shouldn't exist. The inside-the-paradigm move is to patch: one more feature, one more onboarding fix. Kuhn's triage made me ask instead: are the patches multiplying? Are the anomalies hitting the core thesis or the edges? With CrowdListen, one strategy accumulated exactly this epicycle pattern — every retention fix added a special case — and recognizing it as crisis, not insufficient effort, is what licensed the reframe. The other half I try to honor: never abandon an approach for criticism alone. I wait until there's a candidate paradigm that explains the old wins and the anomalies."
+        }
+      ],
+      "full_text": "Science doesn't progress by smooth accumulation — it alternates between puzzle-solving within a paradigm and rare, wrenching revolutions that replace it.\n\nYou're deciding whether to keep refining the current approach or throw it out — in research, strategy, or engineering — and want a vocabulary for telling incremental progress from a dying framework.\n\nCore mental models\n\n1. Paradigms and normal science.\nA paradigm is more than a theory — it's the whole package a scientific community shares: exemplary problems and solutions, instruments, standards for what counts as a question and a good answer. \"Normal science\" is the highly productive puzzle-solving that happens inside a paradigm: the framework isn't being tested, it's being applied. This is a feature — paradigms let a field stop relitigating foundations and dig deep.\n\n2. Anomalies accumulate quietly.\nNormal science inevitably turns up results the paradigm can't accommodate. The first response — and usually the correct one — is to blame the experiment, the instrument, or the scientist, and patch the theory. Most anomalies do dissolve. A crisis begins only when anomalies resist repeated assault, multiply, and start attacking the paradigm's core applications (Mercury's orbit for Newton; the ether for classical physics).\n\n3. Crisis and the proliferation of patches.\nThe signature of a paradigm in crisis is not the absence of answers but the multiplication of versions: epicycles upon epicycles in Ptolemaic astronomy, ad-hoc adjustments that each save the data while the framework's elegance and predictive unity drain away. When practitioners start debating foundations again — what the field even is — you're in crisis.\n\n4. Revolutions are gestalt switches, not verdicts.\nA new paradigm doesn't win by accumulating a decisive proof; it wins by solving the crisis-provoking anomalies, promising more, and recruiting the next generation. Kuhn's uncomfortable observation (quoting Planck): old theories die when their holders do. Adherents of rival paradigms partly talk past each other — they disagree about what the problems are, not just the answers. That's \"incommensurability.\"\n\n5. You can't reject a paradigm with nothing to replace it.\nThe decision to abandon a paradigm is simultaneously the decision to accept another. Counterexamples alone never kill a framework, because working without any framework isn't science — it's chaos. This is the most practical sentence in the book: criticism dislodges nothing; alternatives do.\n\nKey frameworks\n\nThe paradigm lifecycle. Pre-paradigm confusion → paradigm adoption → normal science (puzzle-solving) → anomaly accumulation → crisis (foundations debated, versions proliferate) → revolution (gestalt switch) → new normal science. Knowing which phase you're in tells you what work is appropriate: in normal science, patching is rational; in crisis, patching is denial.\n\nAnomaly triage. Three questions for any persistent discrepancy: (1) Does it survive repeated, careful attempts to explain it away? (2) Does it strike at the paradigm's central claims rather than its periphery? (3) Is the cost of accommodating it (extra assumptions, special cases) rising over time? Three yeses is what a crisis looks like from the inside.\n\nIncommensurability as a communication diagnosis. When two camps seem to argue endlessly without contact — in science, in companies, in politics — Kuhn suggests checking whether they share standards for what counts as a problem and a solution. If not, more debate won't converge; what's needed is translation, or a generational shift.\n\nThe essential tension. Kuhn's companion idea: productive fields need both committed traditionalists (who push the paradigm to its limits — without depth, anomalies are never even found) and the occasional heretic. Premature revolution is as sterile as permanent orthodoxy.\n\nWhen to reach for this book\n- When deciding whether mounting problems mean \"work harder\" or \"the approach is wrong.\"\n- When your fixes are multiplying special cases faster than they're closing issues.\n- When two smart groups can't even agree on what the problem is.\n- When evaluating a radical alternative that \"explains everything\" — Kuhn explains both why it might be right and why it can't be proven yet.\n\nMemorable ideas\n\n\"The decision to reject one paradigm is always simultaneously the decision to accept another.\"\n\n\"Novelty emerges only with difficulty, manifested by resistance, against a background provided by expectation.\"\n\nQuoting Max Planck: \"A new scientific truth does not triumph by convincing its opponents... but rather because its opponents eventually die, and a new generation grows up that is familiar with it.\"\n\nThe image to keep: epicycles. Every system in decline produces them — patches that save the data while the framework quietly dies.\n\nHow I've applied it\n\nKuhn gave me a test for pivots. A struggling product direction generates anomalies — users who churn for reasons the strategy says shouldn't exist. The inside-the-paradigm move is to patch: one more feature, one more onboarding fix. Kuhn's triage made me ask instead: are the patches multiplying? Are the anomalies hitting the core thesis or the edges? With CrowdListen, one strategy accumulated exactly this epicycle pattern — every retention fix added a special case — and recognizing it as crisis, not insufficient effort, is what licensed the reframe. The other half I try to honor: never abandon an approach for criticism alone. I wait until there's a candidate paradigm that explains the old wins and the anomalies."
+    },
+    {
+      "id": "the-wisdom-of-crowds",
+      "title": "The Wisdom of Crowds",
+      "author": "James Surowiecki",
+      "year": 2004,
+      "tags": [
+        "collective intelligence",
+        "decision-making",
+        "markets"
+      ],
+      "one_liner": "Why large groups of ordinary people outguess experts — and the exact conditions under which they stop.",
+      "read_if": "You aggregate opinions for a living — running teams, markets, forecasts, or feedback systems — and want to know when the average answer is smart and when it is a stampede.",
+      "source_path": "web/src/content/books/the-wisdom-of-crowds.md",
+      "visibility": "backend_only",
+      "text_file": "research/book-text/the-wisdom-of-crowds.txt",
+      "sections": [
+        {
+          "heading": "Core mental models",
+          "text": "Core mental models\n\n1. The crowd is smart only under conditions.\nThe famous opener — Francis Galton's 1906 ox-weighing contest, where the median of 787 villagers' guesses landed within a pound of the ox's true weight — is not a claim that groups are always wise. Surowiecki's whole book is about the conditions: diversity of opinion, independence of judgment, decentralization of knowledge, and a mechanism for aggregation. Remove any one and the crowd degrades into a mob, a committee, or an echo.\n\n2. Errors cancel only when they're uncorrelated.\nThe statistical engine underneath everything: each person's guess is truth plus error. If errors are independent, they cancel in aggregate and the signal remains. If everyone's errors point the same way — because they read the same news, defer to the same expert, or watch each other guess — averaging amplifies the shared bias instead of canceling it. Independence isn't a nicety; it's the mechanism.\n\n3. Diversity beats individual ability (within reason).\nA group of diverse, decently-informed people typically outperforms a group of the very best individuals, because the best individuals tend to think alike and share blind spots. Adding a less-expert but differently-thinking member can improve the group; adding another clone of the smartest member usually doesn't.\n\n4. Information cascades: how smart individuals make dumb crowds.\nIf people decide in sequence and can see earlier choices, early movers' opinions drown out later movers' private information. Each rational individual concludes \"all these people can't be wrong\" — and a crowd of rational people marches off a cliff. This is the anatomy of bubbles, pile-on funding rounds, and the empty restaurant next to the full one.\n\n5. Three kinds of problems.\nCognition problems (questions with answers: how much does the ox weigh, will this ship on time) — crowds excel here. Coordination problems (how do buyers and sellers find each other, which side of the road to drive on) — solved by conventions, norms, and markets. Cooperation problems (taxes, tipping, pollution) — require trust and institutions that make self-interest compatible with the group. Diagnosing which type you face tells you what machinery you need."
+        },
+        {
+          "heading": "Key frameworks",
+          "text": "Key frameworks\n\nThe four conditions checklist. Before trusting any aggregate — a poll, a planning meeting, a prediction market, a feedback dashboard — audit it:\n1. Diversity: do participants bring genuinely different information and priors?\n2. Independence: did each judgment form before exposure to the others?\n3. Decentralization: can people draw on local, specific knowledge?\n4. Aggregation: is there a mechanism that actually combines the inputs (a market, a vote, a median), rather than a discussion where the loudest voice wins?\n\nCollect first, discuss second. The most portable practice in the book: gather private, written estimates before any group discussion. Discussion is for surfacing reasons, not for forming the number.\n\nBeware the talkative and the confident. In deliberating groups, talkativeness and status predict influence far better than accuracy does. Unstructured discussion makes groups more extreme (polarization) and more confident — often while making them less accurate.\n\nThe Columbia/NASA case. Surowiecki's study of the Columbia shuttle disaster's management meetings shows aggregation failing inside a hierarchy: information existed at the edges, but the meeting structure — status-driven, time-boxed, skeptical of dissent — never let it reach the decision. A crowd was present; no mechanism was."
+        },
+        {
+          "heading": "When to reach for this book",
+          "text": "When to reach for this book\n- When designing any system that pools opinions: forecasting, voting, feedback, prediction, pricing.\n- When a team unanimously agrees too quickly — this book explains why that's a warning sign, not a comfort.\n- When deciding whether to trust \"the market,\" \"the poll,\" or \"what everyone is saying.\"\n- Pairs naturally with Thinking, Fast and Slow: Kahneman explains individual error; Surowiecki explains when groups cancel it versus compound it."
+        },
+        {
+          "heading": "Memorable ideas",
+          "text": "Memorable ideas\n\n\"The best collective decisions are the product of disagreement and contest, not consensus or compromise.\"\n\n\"Paradoxically, the best way for a group to be smart is for each person in it to think and act as independently as possible.\"\n\nThe ox is the image to keep: 787 amateurs, one number each, no discussion — and the truth falls out of the median. Every smart-crowd system is an attempt to recreate that fairground; every dumb-crowd failure is a story about which of the four conditions broke."
+        },
+        {
+          "heading": "How I've applied it",
+          "text": "How I've applied it\n\nCrowdListen is, in a real sense, an attempt to engineer Surowiecki's conditions into software: collect audience reactions independently (before commenters see each other's takes), preserve diversity by sampling beyond the loudest voices, and aggregate mechanically instead of letting a comment section's early replies cascade. The book also changed how I run meetings: estimates and opinions go into writing before anyone speaks. The first time I did this, the silent median of the room disagreed with the person who would have spoken first — and the median was right."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chunk_1",
+          "text": "Core mental models\n\n1. The crowd is smart only under conditions.\nThe famous opener — Francis Galton's 1906 ox-weighing contest, where the median of 787 villagers' guesses landed within a pound of the ox's true weight — is not a claim that groups are always wise. Surowiecki's whole book is about the conditions: diversity of opinion, independence of judgment, decentralization of knowledge, and a mechanism for aggregation. Remove any one and the crowd degrades into a mob, a committee, or an echo.\n\n2. Errors cancel only when they're uncorrelated.\nThe statistical engine underneath everything: each person's guess is truth plus error. If errors are independent, they cancel in aggregate and the signal remains. If everyone's errors point the same way — because they read the same news, defer to the same expert, or watch each other guess — averaging amplifies the shared bias instead of canceling it. Independence isn't a nicety; it's the mechanism."
+        },
+        {
+          "id": "chunk_2",
+          "text": "3. Diversity beats individual ability (within reason).\nA group of diverse, decently-informed people typically outperforms a group of the very best individuals, because the best individuals tend to think alike and share blind spots. Adding a less-expert but differently-thinking member can improve the group; adding another clone of the smartest member usually doesn't.\n\n4. Information cascades: how smart individuals make dumb crowds.\nIf people decide in sequence and can see earlier choices, early movers' opinions drown out later movers' private information. Each rational individual concludes \"all these people can't be wrong\" — and a crowd of rational people marches off a cliff. This is the anatomy of bubbles, pile-on funding rounds, and the empty restaurant next to the full one."
+        },
+        {
+          "id": "chunk_3",
+          "text": "5. Three kinds of problems.\nCognition problems (questions with answers: how much does the ox weigh, will this ship on time) — crowds excel here. Coordination problems (how do buyers and sellers find each other, which side of the road to drive on) — solved by conventions, norms, and markets. Cooperation problems (taxes, tipping, pollution) — require trust and institutions that make self-interest compatible with the group. Diagnosing which type you face tells you what machinery you need.\n\nKey frameworks\n\nThe four conditions checklist. Before trusting any aggregate — a poll, a planning meeting, a prediction market, a feedback dashboard — audit it:\n1. Diversity: do participants bring genuinely different information and priors?\n2. Independence: did each judgment form before exposure to the others?\n3. Decentralization: can people draw on local, specific knowledge?\n4. Aggregation: is there a mechanism that actually combines the inputs (a market, a vote, a median), rather than a discussion where the loudest voice wins?"
+        },
+        {
+          "id": "chunk_4",
+          "text": "Collect first, discuss second. The most portable practice in the book: gather private, written estimates before any group discussion. Discussion is for surfacing reasons, not for forming the number.\n\nBeware the talkative and the confident. In deliberating groups, talkativeness and status predict influence far better than accuracy does. Unstructured discussion makes groups more extreme (polarization) and more confident — often while making them less accurate.\n\nThe Columbia/NASA case. Surowiecki's study of the Columbia shuttle disaster's management meetings shows aggregation failing inside a hierarchy: information existed at the edges, but the meeting structure — status-driven, time-boxed, skeptical of dissent — never let it reach the decision. A crowd was present; no mechanism was."
+        },
+        {
+          "id": "chunk_5",
+          "text": "When to reach for this book\n- When designing any system that pools opinions: forecasting, voting, feedback, prediction, pricing.\n- When a team unanimously agrees too quickly — this book explains why that's a warning sign, not a comfort.\n- When deciding whether to trust \"the market,\" \"the poll,\" or \"what everyone is saying.\"\n- Pairs naturally with Thinking, Fast and Slow: Kahneman explains individual error; Surowiecki explains when groups cancel it versus compound it.\n\nMemorable ideas\n\n\"The best collective decisions are the product of disagreement and contest, not consensus or compromise.\"\n\n\"Paradoxically, the best way for a group to be smart is for each person in it to think and act as independently as possible.\"\n\nThe ox is the image to keep: 787 amateurs, one number each, no discussion — and the truth falls out of the median. Every smart-crowd system is an attempt to recreate that fairground; every dumb-crowd failure is a story about which of the four conditions broke.\n\nHow I've applied it"
+        },
+        {
+          "id": "chunk_6",
+          "text": "CrowdListen is, in a real sense, an attempt to engineer Surowiecki's conditions into software: collect audience reactions independently (before commenters see each other's takes), preserve diversity by sampling beyond the loudest voices, and aggregate mechanically instead of letting a comment section's early replies cascade. The book also changed how I run meetings: estimates and opinions go into writing before anyone speaks. The first time I did this, the silent median of the room disagreed with the person who would have spoken first — and the median was right."
+        }
+      ],
+      "full_text": "Why large groups of ordinary people outguess experts — and the exact conditions under which they stop.\n\nYou aggregate opinions for a living — running teams, markets, forecasts, or feedback systems — and want to know when the average answer is smart and when it is a stampede.\n\nCore mental models\n\n1. The crowd is smart only under conditions.\nThe famous opener — Francis Galton's 1906 ox-weighing contest, where the median of 787 villagers' guesses landed within a pound of the ox's true weight — is not a claim that groups are always wise. Surowiecki's whole book is about the conditions: diversity of opinion, independence of judgment, decentralization of knowledge, and a mechanism for aggregation. Remove any one and the crowd degrades into a mob, a committee, or an echo.\n\n2. Errors cancel only when they're uncorrelated.\nThe statistical engine underneath everything: each person's guess is truth plus error. If errors are independent, they cancel in aggregate and the signal remains. If everyone's errors point the same way — because they read the same news, defer to the same expert, or watch each other guess — averaging amplifies the shared bias instead of canceling it. Independence isn't a nicety; it's the mechanism.\n\n3. Diversity beats individual ability (within reason).\nA group of diverse, decently-informed people typically outperforms a group of the very best individuals, because the best individuals tend to think alike and share blind spots. Adding a less-expert but differently-thinking member can improve the group; adding another clone of the smartest member usually doesn't.\n\n4. Information cascades: how smart individuals make dumb crowds.\nIf people decide in sequence and can see earlier choices, early movers' opinions drown out later movers' private information. Each rational individual concludes \"all these people can't be wrong\" — and a crowd of rational people marches off a cliff. This is the anatomy of bubbles, pile-on funding rounds, and the empty restaurant next to the full one.\n\n5. Three kinds of problems.\nCognition problems (questions with answers: how much does the ox weigh, will this ship on time) — crowds excel here. Coordination problems (how do buyers and sellers find each other, which side of the road to drive on) — solved by conventions, norms, and markets. Cooperation problems (taxes, tipping, pollution) — require trust and institutions that make self-interest compatible with the group. Diagnosing which type you face tells you what machinery you need.\n\nKey frameworks\n\nThe four conditions checklist. Before trusting any aggregate — a poll, a planning meeting, a prediction market, a feedback dashboard — audit it:\n1. Diversity: do participants bring genuinely different information and priors?\n2. Independence: did each judgment form before exposure to the others?\n3. Decentralization: can people draw on local, specific knowledge?\n4. Aggregation: is there a mechanism that actually combines the inputs (a market, a vote, a median), rather than a discussion where the loudest voice wins?\n\nCollect first, discuss second. The most portable practice in the book: gather private, written estimates before any group discussion. Discussion is for surfacing reasons, not for forming the number.\n\nBeware the talkative and the confident. In deliberating groups, talkativeness and status predict influence far better than accuracy does. Unstructured discussion makes groups more extreme (polarization) and more confident — often while making them less accurate.\n\nThe Columbia/NASA case. Surowiecki's study of the Columbia shuttle disaster's management meetings shows aggregation failing inside a hierarchy: information existed at the edges, but the meeting structure — status-driven, time-boxed, skeptical of dissent — never let it reach the decision. A crowd was present; no mechanism was.\n\nWhen to reach for this book\n- When designing any system that pools opinions: forecasting, voting, feedback, prediction, pricing.\n- When a team unanimously agrees too quickly — this book explains why that's a warning sign, not a comfort.\n- When deciding whether to trust \"the market,\" \"the poll,\" or \"what everyone is saying.\"\n- Pairs naturally with Thinking, Fast and Slow: Kahneman explains individual error; Surowiecki explains when groups cancel it versus compound it.\n\nMemorable ideas\n\n\"The best collective decisions are the product of disagreement and contest, not consensus or compromise.\"\n\n\"Paradoxically, the best way for a group to be smart is for each person in it to think and act as independently as possible.\"\n\nThe ox is the image to keep: 787 amateurs, one number each, no discussion — and the truth falls out of the median. Every smart-crowd system is an attempt to recreate that fairground; every dumb-crowd failure is a story about which of the four conditions broke.\n\nHow I've applied it\n\nCrowdListen is, in a real sense, an attempt to engineer Surowiecki's conditions into software: collect audience reactions independently (before commenters see each other's takes), preserve diversity by sampling beyond the loudest voices, and aggregate mechanically instead of letting a comment section's early replies cascade. The book also changed how I run meetings: estimates and opinions go into writing before anyone speaks. The first time I did this, the silent median of the room disagreed with the person who would have spoken first — and the median was right."
+    },
+    {
+      "id": "thinking-fast-and-slow",
+      "title": "Thinking, Fast and Slow",
+      "author": "Daniel Kahneman",
+      "year": 2011,
+      "tags": [
+        "decision-making",
+        "psychology",
+        "judgment"
+      ],
+      "one_liner": "A map of the two systems that run your mind — and the predictable ways the fast one fools you.",
+      "read_if": "You make judgments under uncertainty for a living — hiring, investing, forecasting, designing — and want to know where your intuition is trustworthy and where it is confidently wrong.",
+      "source_path": "web/src/content/books/thinking-fast-and-slow.md",
+      "visibility": "backend_only",
+      "text_file": "research/book-text/thinking-fast-and-slow.txt",
+      "sections": [
+        {
+          "heading": "Core mental models",
+          "text": "Core mental models\n\n1. System 1 and System 2.\nSystem 1 is fast, automatic, effortless, and always on: it reads faces, completes \"bread and...\", and generates impressions before you ask for them. System 2 is slow, deliberate, and lazy: it does logic, comparison, and self-control, but only when summoned — and it tires. The central drama of the book is that System 2 believes it is the hero while mostly rubber-stamping System 1's suggestions.\n\n2. WYSIATI — What You See Is All There Is.\nSystem 1 builds the most coherent story possible from the information at hand and does not flag what's missing. Confidence tracks the coherence of the story, not the quality or completeness of the evidence. This single mechanism underwrites overconfidence, framing effects, and base-rate neglect: a vivid description of a tidy, bookish person swamps the fact that there are vastly more farmers than librarians.\n\n3. Substitution: answering an easier question.\nFaced with a hard question (\"Should I invest in this company?\"), System 1 quietly substitutes an easier one (\"Do I like this founder?\") and answers that instead — without notifying you of the swap. Most intuitive errors are correct answers to the wrong question.\n\n4. Anchoring, availability, and representativeness.\nThe three classic heuristics. Anchoring: any number on the table — even a random one — pulls your estimate toward it. Availability: ease of recall masquerades as frequency (plane crashes feel common; dishwasher accidents don't). Representativeness: similarity to a stereotype overrides statistics.\n\n5. Loss aversion and prospect theory.\nLosses loom roughly twice as large as equivalent gains, and outcomes are evaluated relative to a reference point, not in absolute terms. This explains why people reject favorable gambles, hold losing positions too long, and why a \"discount\" and a \"surcharge\" of identical size produce different behavior.\n\n6. The two selves: experiencing vs. remembering.\nThe remembering self scores an experience by its peak and its ending (the peak-end rule) and largely ignores duration. We make decisions to serve the remembering self — choosing the vacation that will make the better story rather than the better week.\n\n7. Regression to the mean wears a disguise.\nExceptional performance is partly luck, so it is usually followed by something closer to average — no causal story required. Kahneman's flight-instructor example is canonical: praise after great landings seems to make pilots worse, criticism after bad ones seems to help, and both are illusions of regression."
+        },
+        {
+          "heading": "Key frameworks",
+          "text": "Key frameworks\n\nThe inside view vs. the outside view. The inside view plans from the specifics of your case (\"we're smart, we're motivated, eighteen months\"). The outside view asks: what's the base rate for projects in this reference class? Kahneman's own curriculum-committee story — insiders forecast 2 years, the reference class said 7-10 with a 40% failure rate, and the insiders shrugged and kept going — is the book in miniature. Always ask for the base rate first, then adjust.\n\nThe premortem (borrowed from Gary Klein). Before committing, assume the decision failed spectacularly and have each person write the history of the failure. It legitimizes doubt that group dynamics otherwise suppress.\n\nWhen can you trust intuition? Two conditions, both required: (1) a regular environment with stable cause-and-effect, and (2) prolonged practice with rapid, clear feedback. Chess and firefighting qualify; stock picking and long-range political forecasting do not. Confidence is not a substitute — experts feel equally sure in both kinds of domains.\n\nAlgorithms over judgment in low-validity environments. Where the environment is noisy, simple formulas (even improper ones with equal weights) routinely beat expert holistic judgment — in hiring, parole, and clinical prediction. The practical move: score a few relevant dimensions independently, then decide."
+        },
+        {
+          "heading": "When to reach for this book",
+          "text": "When to reach for this book\n- Before any high-stakes forecast or plan (use the outside view and a premortem).\n- When you're suspiciously confident and the evidence is thin.\n- When designing anything that involves other people's choices: pricing, defaults, framing.\n- When evaluating performance that might just be regression to the mean."
+        },
+        {
+          "heading": "Memorable ideas",
+          "text": "Memorable ideas\n\n\"Nothing in life is as important as you think it is, while you are thinking about it.\"\n\n\"Confidence is a feeling, which reflects the coherence of the information and the cognitive ease of processing it.\"\n\n\"The premortem's main virtue: it legitimizes doubts.\"\n\nAnd the quiet thesis of the whole book: it is easier to recognize other people's mistakes than your own — so build procedures (checklists, base rates, premortems) rather than relying on willpower to debias yourself."
+        },
+        {
+          "heading": "How I've applied it",
+          "text": "How I've applied it\n\nTwo habits earn their keep. First, the outside view as a standing question in planning: \"what happened to the last ten teams who tried this?\" — my time estimates for shipping features were inside-view fantasies until I started anchoring on how long past features actually took. Second, separating evaluation dimensions when judging anything (candidates, product directions, my own ideas): score each dimension before forming a verdict, because the halo effect otherwise lets one vivid strength color everything. And when user numbers spike or crater in a single week, I now wait for regression to the mean before writing the causal story."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chunk_1",
+          "text": "Core mental models\n\n1. System 1 and System 2.\nSystem 1 is fast, automatic, effortless, and always on: it reads faces, completes \"bread and...\", and generates impressions before you ask for them. System 2 is slow, deliberate, and lazy: it does logic, comparison, and self-control, but only when summoned — and it tires. The central drama of the book is that System 2 believes it is the hero while mostly rubber-stamping System 1's suggestions.\n\n2. WYSIATI — What You See Is All There Is.\nSystem 1 builds the most coherent story possible from the information at hand and does not flag what's missing. Confidence tracks the coherence of the story, not the quality or completeness of the evidence. This single mechanism underwrites overconfidence, framing effects, and base-rate neglect: a vivid description of a tidy, bookish person swamps the fact that there are vastly more farmers than librarians."
+        },
+        {
+          "id": "chunk_2",
+          "text": "3. Substitution: answering an easier question.\nFaced with a hard question (\"Should I invest in this company?\"), System 1 quietly substitutes an easier one (\"Do I like this founder?\") and answers that instead — without notifying you of the swap. Most intuitive errors are correct answers to the wrong question.\n\n4. Anchoring, availability, and representativeness.\nThe three classic heuristics. Anchoring: any number on the table — even a random one — pulls your estimate toward it. Availability: ease of recall masquerades as frequency (plane crashes feel common; dishwasher accidents don't). Representativeness: similarity to a stereotype overrides statistics.\n\n5. Loss aversion and prospect theory.\nLosses loom roughly twice as large as equivalent gains, and outcomes are evaluated relative to a reference point, not in absolute terms. This explains why people reject favorable gambles, hold losing positions too long, and why a \"discount\" and a \"surcharge\" of identical size produce different behavior."
+        },
+        {
+          "id": "chunk_3",
+          "text": "6. The two selves: experiencing vs. remembering.\nThe remembering self scores an experience by its peak and its ending (the peak-end rule) and largely ignores duration. We make decisions to serve the remembering self — choosing the vacation that will make the better story rather than the better week.\n\n7. Regression to the mean wears a disguise.\nExceptional performance is partly luck, so it is usually followed by something closer to average — no causal story required. Kahneman's flight-instructor example is canonical: praise after great landings seems to make pilots worse, criticism after bad ones seems to help, and both are illusions of regression.\n\nKey frameworks\n\nThe inside view vs. the outside view. The inside view plans from the specifics of your case (\"we're smart, we're motivated, eighteen months\"). The outside view asks: what's the base rate for projects in this reference class? Kahneman's own curriculum-committee story — insiders forecast 2 years, the reference class said 7-10 with a 40% failure rate, and the insiders shrugged and kept going — is the book in miniature. Always ask for the base rate first, then adjust."
+        },
+        {
+          "id": "chunk_4",
+          "text": "The premortem (borrowed from Gary Klein). Before committing, assume the decision failed spectacularly and have each person write the history of the failure. It legitimizes doubt that group dynamics otherwise suppress.\n\nWhen can you trust intuition? Two conditions, both required: (1) a regular environment with stable cause-and-effect, and (2) prolonged practice with rapid, clear feedback. Chess and firefighting qualify; stock picking and long-range political forecasting do not. Confidence is not a substitute — experts feel equally sure in both kinds of domains.\n\nAlgorithms over judgment in low-validity environments. Where the environment is noisy, simple formulas (even improper ones with equal weights) routinely beat expert holistic judgment — in hiring, parole, and clinical prediction. The practical move: score a few relevant dimensions independently, then decide."
+        },
+        {
+          "id": "chunk_5",
+          "text": "When to reach for this book\n- Before any high-stakes forecast or plan (use the outside view and a premortem).\n- When you're suspiciously confident and the evidence is thin.\n- When designing anything that involves other people's choices: pricing, defaults, framing.\n- When evaluating performance that might just be regression to the mean.\n\nMemorable ideas\n\n\"Nothing in life is as important as you think it is, while you are thinking about it.\"\n\n\"Confidence is a feeling, which reflects the coherence of the information and the cognitive ease of processing it.\"\n\n\"The premortem's main virtue: it legitimizes doubts.\"\n\nAnd the quiet thesis of the whole book: it is easier to recognize other people's mistakes than your own — so build procedures (checklists, base rates, premortems) rather than relying on willpower to debias yourself.\n\nHow I've applied it"
+        },
+        {
+          "id": "chunk_6",
+          "text": "Two habits earn their keep. First, the outside view as a standing question in planning: \"what happened to the last ten teams who tried this?\" — my time estimates for shipping features were inside-view fantasies until I started anchoring on how long past features actually took. Second, separating evaluation dimensions when judging anything (candidates, product directions, my own ideas): score each dimension before forming a verdict, because the halo effect otherwise lets one vivid strength color everything. And when user numbers spike or crater in a single week, I now wait for regression to the mean before writing the causal story."
+        }
+      ],
+      "full_text": "A map of the two systems that run your mind — and the predictable ways the fast one fools you.\n\nYou make judgments under uncertainty for a living — hiring, investing, forecasting, designing — and want to know where your intuition is trustworthy and where it is confidently wrong.\n\nCore mental models\n\n1. System 1 and System 2.\nSystem 1 is fast, automatic, effortless, and always on: it reads faces, completes \"bread and...\", and generates impressions before you ask for them. System 2 is slow, deliberate, and lazy: it does logic, comparison, and self-control, but only when summoned — and it tires. The central drama of the book is that System 2 believes it is the hero while mostly rubber-stamping System 1's suggestions.\n\n2. WYSIATI — What You See Is All There Is.\nSystem 1 builds the most coherent story possible from the information at hand and does not flag what's missing. Confidence tracks the coherence of the story, not the quality or completeness of the evidence. This single mechanism underwrites overconfidence, framing effects, and base-rate neglect: a vivid description of a tidy, bookish person swamps the fact that there are vastly more farmers than librarians.\n\n3. Substitution: answering an easier question.\nFaced with a hard question (\"Should I invest in this company?\"), System 1 quietly substitutes an easier one (\"Do I like this founder?\") and answers that instead — without notifying you of the swap. Most intuitive errors are correct answers to the wrong question.\n\n4. Anchoring, availability, and representativeness.\nThe three classic heuristics. Anchoring: any number on the table — even a random one — pulls your estimate toward it. Availability: ease of recall masquerades as frequency (plane crashes feel common; dishwasher accidents don't). Representativeness: similarity to a stereotype overrides statistics.\n\n5. Loss aversion and prospect theory.\nLosses loom roughly twice as large as equivalent gains, and outcomes are evaluated relative to a reference point, not in absolute terms. This explains why people reject favorable gambles, hold losing positions too long, and why a \"discount\" and a \"surcharge\" of identical size produce different behavior.\n\n6. The two selves: experiencing vs. remembering.\nThe remembering self scores an experience by its peak and its ending (the peak-end rule) and largely ignores duration. We make decisions to serve the remembering self — choosing the vacation that will make the better story rather than the better week.\n\n7. Regression to the mean wears a disguise.\nExceptional performance is partly luck, so it is usually followed by something closer to average — no causal story required. Kahneman's flight-instructor example is canonical: praise after great landings seems to make pilots worse, criticism after bad ones seems to help, and both are illusions of regression.\n\nKey frameworks\n\nThe inside view vs. the outside view. The inside view plans from the specifics of your case (\"we're smart, we're motivated, eighteen months\"). The outside view asks: what's the base rate for projects in this reference class? Kahneman's own curriculum-committee story — insiders forecast 2 years, the reference class said 7-10 with a 40% failure rate, and the insiders shrugged and kept going — is the book in miniature. Always ask for the base rate first, then adjust.\n\nThe premortem (borrowed from Gary Klein). Before committing, assume the decision failed spectacularly and have each person write the history of the failure. It legitimizes doubt that group dynamics otherwise suppress.\n\nWhen can you trust intuition? Two conditions, both required: (1) a regular environment with stable cause-and-effect, and (2) prolonged practice with rapid, clear feedback. Chess and firefighting qualify; stock picking and long-range political forecasting do not. Confidence is not a substitute — experts feel equally sure in both kinds of domains.\n\nAlgorithms over judgment in low-validity environments. Where the environment is noisy, simple formulas (even improper ones with equal weights) routinely beat expert holistic judgment — in hiring, parole, and clinical prediction. The practical move: score a few relevant dimensions independently, then decide.\n\nWhen to reach for this book\n- Before any high-stakes forecast or plan (use the outside view and a premortem).\n- When you're suspiciously confident and the evidence is thin.\n- When designing anything that involves other people's choices: pricing, defaults, framing.\n- When evaluating performance that might just be regression to the mean.\n\nMemorable ideas\n\n\"Nothing in life is as important as you think it is, while you are thinking about it.\"\n\n\"Confidence is a feeling, which reflects the coherence of the information and the cognitive ease of processing it.\"\n\n\"The premortem's main virtue: it legitimizes doubts.\"\n\nAnd the quiet thesis of the whole book: it is easier to recognize other people's mistakes than your own — so build procedures (checklists, base rates, premortems) rather than relying on willpower to debias yourself.\n\nHow I've applied it\n\nTwo habits earn their keep. First, the outside view as a standing question in planning: \"what happened to the last ten teams who tried this?\" — my time estimates for shipping features were inside-view fantasies until I started anchoring on how long past features actually took. Second, separating evaluation dimensions when judging anything (candidates, product directions, my own ideas): score each dimension before forming a verdict, because the halo effect otherwise lets one vivid strength color everything. And when user numbers spike or crater in a single week, I now wait for regression to the mean before writing the causal story."
+    }
+  ]
+}

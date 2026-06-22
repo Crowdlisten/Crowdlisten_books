@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-06-21T23:07:41.297Z",
+  "method": {
+    "source": "Arctic Shift Reddit archive",
+    "note": "Focused CrowdListen-style question discovery for Answer with Books. Scores favor explicit user questions, confusion, frustration, and engagement; final content still requires editorial review against books.",
+    "after": "2024-01-01",
+    "per_query_limit": 8
+  },
+  "clusters": [
+    {
+      "id": "pivot-without-panicking",
+      "working_title": "How to tell whether to pivot or keep going",
+      "books": [
+        "the-structure-of-scientific-revolutions",
+        "thinking-fast-and-slow"
+      ],
+      "evidence": [
+        {
+          "reddit_id": "1u7hd02",
+          "title": "Even with vibe-coding, is it worth it to talk with customers anymore, or should a SaaS founder just build and launch and pivot?",
+          "body_excerpt": "In the old days, before vibe-coding or AI coding, \"building\" a SaaS product was difficult: get the devs together, get them aligned, have capital to pay them, let them build for 3 or 6 months; maybe throw a UX Designer in there; then Boom! Product built. Because this process was long and expensive (a dev team for 3 months could cost $200,000!) So then we started to talk about \"validating\" and experimenting and MVPs etc, etc, and product managers and UX researchers stepped into that space as a way of testing and validating ideas. But now, a semi (or even non-technical person) could put a few prompts together and spit out a landing page and basic MVP in an hour or less for like $20. So it that just \"validation\" now a days? Put up an MVP, do a handful of social media posts, see if anybody signs in. If not, call it a failed experiment and either go on to the next idea or build another featur…",
+          "url": "https://www.reddit.com/r/SaaS/comments/1u7hd02/even_with_vibecoding_is_it_worth_it_to_talk_with/",
+          "subreddit": "SaaS",
+          "author": "Medium-Rush-4369",
+          "published_at": "2026-06-16T15:50:19.000Z",
+          "score": 2,
+          "num_comments": 15,
+          "discovered_by": {
+            "subreddit": "SaaS",
+            "term": "pivot"
+          },
+          "discovery_score": 3.96
+        },
+        {
+          "reddit_id": "1u77u2c",
+          "title": "AI GIF generator with real traction (1M+ GIFs made). How would you scale / pivot this?",
+          "body_excerpt": "I've been working on turning a workflow I use all the time into a standalone creative tool, and I'd love some founder feedback. The workflow is simple: Generate a grid of images instead of a single image. You get lots of consistent variations of an idea in one shot. Recently I've been refining this into a more structured workflow where a single prompt can generate variations, explore concepts, upscales, and create animation frames downloadable and editable as GIFs. The idea continued from a custom GPT which reached #3 in its category on ChatGPT since 2023. Since launch, users have generated around 1M GIFs and the GPT has seen 500k+ chats. I recently turned it into a standalone product: [gifgen.ai](http://gifgen.ai) Original GPT: [https://chatgpt.com/g/g-45WfVCFcy-gif-generator](https://chatgpt.com/g/g-45WfVCFcy-gif-generator) One thing that makes this interesting is that I intentionally…",
+          "url": "https://i.redd.it/06vidky7wl7h1.png",
+          "subreddit": "SaaS",
+          "author": "foreverfomo",
+          "published_at": "2026-06-16T08:40:47.000Z",
+          "score": 0,
+          "num_comments": 8,
+          "discovered_by": {
+            "subreddit": "SaaS",
+            "term": "pivot"
+          },
+          "discovery_score": 3.45
+        },
+        {
+          "reddit_id": "1fx9i6z",
+          "title": "How does your day change from doing delivery to doing pure strategy?",
+          "body_excerpt": "In my previous role, I did 70% delivery 30% vision, tactical stuff. New role requires almost no delivery, passing it on to PO/BAs My boss used to spend all her time in meetings, occasionally organising workshops. How does your weekly calendar look in this type of role?",
+          "url": "https://www.reddit.com/r/ProductManagement/comments/1fx9i6z/how_does_your_day_change_from_doing_delivery_to/",
+          "subreddit": "ProductManagement",
+          "author": "delitomatoes",
+          "published_at": "2024-10-06T05:32:32.000Z",
+          "score": 17,
+          "num_comments": 9,
+          "discovered_by": {
+            "subreddit": "ProductManagement",
+            "term": "change strategy"
+          },
+          "discovery_score": 3.43
+        }
+      ]
+    }
+  ]
+}

@@ -9,7 +9,11 @@
     "dev": "node src/server.js",
     "start": "node src/server.js",
     "test": "node --test",
-    "check": "node --check src/server.js && node --check src/app.js && node --check src/generator.js"
+    "check": "node --check src/server.js && node --check src/app.js && node --check src/generator.js && node --check scripts/discover-reddit-questions.mjs && node --check scripts/enrich-demand-concerns.mjs && node --check scripts/sync-crowdlisten-demand.mjs && node --check scripts/build-book-corpus.mjs",
+    "build:book-corpus": "node scripts/build-book-corpus.mjs",
+    "discover:reddit": "node scripts/discover-reddit-questions.mjs",
+    "enrich:concerns": "node scripts/enrich-demand-concerns.mjs",
+    "sync:crowdlisten": "node scripts/sync-crowdlisten-demand.mjs"
   },
   "keywords": [
     "books",
