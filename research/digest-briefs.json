@@ -1,0 +1,124 @@
+{
+  "generated_at": "2026-07-04",
+  "source": "/Users/terry/Desktop/crowdlisten_files/knowledge/prototypes/outcome_loop_packs/out/app_handoffs/answer_with_books/crowdlisten_handoff.json",
+  "briefs": [
+    {
+      "id": "awb-action-04",
+      "title": "Create a personalized digest/audio brief from the top validation and decision-making concerns",
+      "source_context_pack_id": "awb-content-answer-loop",
+      "target_asset": "personalized_digest_or_audio_brief",
+      "audience": "product leaders and founders with validation/decision concerns",
+      "formats": [
+        "short_digest",
+        "audio_script"
+      ],
+      "concern_ids": [
+        "validate-without-fooling-yourself",
+        "repair-user-interviews",
+        "trust-gut-or-check-it"
+      ],
+      "book_lenses": [
+        "the-mom-test",
+        "thinking-fast-and-slow"
+      ],
+      "required_context": [
+        {
+          "id": "validate-without-fooling-yourself",
+          "title": "How to validate an idea without fooling yourself",
+          "concern": "People are trying to validate an idea without fooling yourself, but the social evidence suggests uncertainty, wasted building, bad evidence, stakeholder pressure, planning breakdown, decision fatigue are getting in the way.",
+          "audience": "product leader",
+          "pain_points": [
+            "uncertainty",
+            "wasted_building",
+            "bad_evidence",
+            "stakeholder_pressure",
+            "planning_breakdown"
+          ],
+          "matched_books": [
+            "the-mom-test",
+            "thinking-fast-and-slow"
+          ],
+          "evidence_count": 8,
+          "question_variants": [
+            "How do you do user research in fintech when compliance rules and limited access to users make interviews hard?",
+            "The Customer Discovery Trap: What’s the Actual Most Productive Way to Talk to Users? “I will not promote”",
+            "I’ll help 3 founders with customer discovery ( I will not promote)"
+          ]
+        },
+        {
+          "id": "repair-user-interviews",
+          "title": "How to fix user interviews that are not teaching you anything",
+          "concern": "People are trying to fix user interviews that are not teaching you anything, but the social evidence suggests wasted building, bad evidence, stakeholder pressure, decision fatigue are getting in the way.",
+          "audience": "product leader",
+          "pain_points": [
+            "wasted_building",
+            "bad_evidence",
+            "stakeholder_pressure",
+            "decision_fatigue"
+          ],
+          "matched_books": [
+            "the-mom-test"
+          ],
+          "evidence_count": 8,
+          "question_variants": [
+            "How do you do user research in fintech when compliance rules and limited access to users make interviews hard?",
+            "User Interviews are not going well, are there any workarounds?",
+            "Do I need user interviews in my case study? How to find users without a budget?"
+          ]
+        },
+        {
+          "id": "trust-gut-or-check-it",
+          "title": "How to know when to trust your gut",
+          "concern": "People are trying to know when to trust your gut, but the social evidence suggests uncertainty, wasted building, bad evidence, stakeholder pressure, planning breakdown, communication gap, decision fatigue are getting in the way.",
+          "audience": "product leader",
+          "pain_points": [
+            "uncertainty",
+            "wasted_building",
+            "bad_evidence",
+            "stakeholder_pressure",
+            "planning_breakdown"
+          ],
+          "matched_books": [
+            "thinking-fast-and-slow"
+          ],
+          "evidence_count": 8,
+          "question_variants": [
+            "How to deal with an impulsive PM who launches features based on intuition without data?",
+            "How do I navigate my current situation to be working on what that matters vs doing what my gut feeling tells me? I have been working with the same employer for past six years",
+            "'Data Intuition' gap"
+          ]
+        }
+      ],
+      "output_contract": {
+        "artifact_type": "personalized_digest_or_audio_brief",
+        "must_include": [
+          "audience segment",
+          "concern sequence",
+          "book lenses used",
+          "short digest script",
+          "audio-ready narration notes",
+          "next answer recommendations"
+        ],
+        "must_not_include": [
+          "long book summaries",
+          "claims without source concern IDs"
+        ]
+      },
+      "quality_gate": [
+        "Every recommendation links to at least one evidence or demand signal ID.",
+        "The output states what changed or why this matters now.",
+        "The output declares the next measurable outcome.",
+        "The digest preserves the source concern IDs behind every segment.",
+        "The output can be read aloud without restructuring."
+      ],
+      "writeback_required": [
+        "digest_id_or_audio_brief_path",
+        "source_concern_ids",
+        "books_used",
+        "audience_segment",
+        "format_length",
+        "completion_followup_questions"
+      ]
+    }
+  ]
+}

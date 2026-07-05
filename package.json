@@ -1,19 +1,34 @@
 {
-  "name": "@crowdlisten/answer-with-books",
+  "name": "answer-with-books",
   "version": "0.1.0",
   "description": "Open-source REST API and agent skill for turning books plus demand signals into book-grounded answers.",
   "type": "module",
   "private": false,
   "license": "MIT",
+  "bin": {
+    "answer-with-books": "bin/answer-with-books.js"
+  },
+  "files": [
+    "bin/",
+    "docs/",
+    "research/book-corpus.json",
+    "skill/",
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "dev": "node src/server.js",
     "start": "node src/server.js",
     "test": "node --test",
-    "check": "node --check src/server.js && node --check src/app.js && node --check src/generator.js && node --check scripts/discover-reddit-questions.mjs && node --check scripts/enrich-demand-concerns.mjs && node --check scripts/sync-crowdlisten-demand.mjs && node --check scripts/build-book-corpus.mjs",
+    "check": "node --check src/server.js && node --check src/app.js && node --check src/generator.js && node --check bin/answer-with-books.js && node --check scripts/discover-reddit-questions.mjs && node --check scripts/enrich-demand-concerns.mjs && node --check scripts/sync-crowdlisten-demand.mjs && node --check scripts/build-book-corpus.mjs && node --check scripts/import-crowdlisten-handoff.mjs && node --check scripts/materialize-crowdlisten-drafts.mjs && node --check scripts/skill-e2e.mjs",
+    "test:skill": "node scripts/skill-e2e.mjs",
     "build:book-corpus": "node scripts/build-book-corpus.mjs",
     "discover:reddit": "node scripts/discover-reddit-questions.mjs",
     "enrich:concerns": "node scripts/enrich-demand-concerns.mjs",
-    "sync:crowdlisten": "node scripts/sync-crowdlisten-demand.mjs"
+    "sync:crowdlisten": "node scripts/sync-crowdlisten-demand.mjs",
+    "import:crowdlisten-handoff": "node scripts/import-crowdlisten-handoff.mjs",
+    "draft:crowdlisten": "node scripts/materialize-crowdlisten-drafts.mjs"
   },
   "keywords": [
     "books",

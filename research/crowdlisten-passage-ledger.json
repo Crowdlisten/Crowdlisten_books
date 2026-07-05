@@ -1,0 +1,289 @@
+{
+  "generated_at": "2026-07-04",
+  "source": "/Users/terry/Desktop/crowdlisten_files/knowledge/prototypes/outcome_loop_packs/out/app_handoffs/answer_with_books/crowdlisten_handoff.json",
+  "supply_ledger": {
+    "type": "book_passage_ledger",
+    "entry_count": 18,
+    "passage_count": 54,
+    "top_entries": [
+      {
+        "concern_id": "validate-without-fooling-yourself",
+        "title": "How to validate an idea without fooling yourself",
+        "matched_books": [
+          "the-mom-test",
+          "thinking-fast-and-slow"
+        ],
+        "passage_count": 3,
+        "top_passages": [
+          {
+            "book_id": "the-mom-test",
+            "book_title": "The Mom Test",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 286,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "thinking-fast-and-slow",
+            "book_title": "Thinking, Fast and Slow",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 235,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "the-mom-test",
+            "book_title": "The Mom Test",
+            "passage_id": "section_2",
+            "heading": "Key frameworks",
+            "match_score": 177,
+            "use_as": "framework_or_checklist"
+          }
+        ]
+      },
+      {
+        "concern_id": "repair-user-interviews",
+        "title": "How to fix user interviews that are not teaching you anything",
+        "matched_books": [
+          "the-mom-test"
+        ],
+        "passage_count": 3,
+        "top_passages": [
+          {
+            "book_id": "the-mom-test",
+            "book_title": "The Mom Test",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 266,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "the-mom-test",
+            "book_title": "The Mom Test",
+            "passage_id": "section_2",
+            "heading": "Key frameworks",
+            "match_score": 156,
+            "use_as": "framework_or_checklist"
+          },
+          {
+            "book_id": "the-mom-test",
+            "book_title": "The Mom Test",
+            "passage_id": "section_4",
+            "heading": "Memorable ideas",
+            "match_score": 81,
+            "use_as": "short_takeaway"
+          }
+        ]
+      },
+      {
+        "concern_id": "trust-gut-or-check-it",
+        "title": "How to know when to trust your gut",
+        "matched_books": [
+          "thinking-fast-and-slow"
+        ],
+        "passage_count": 3,
+        "top_passages": [
+          {
+            "book_id": "thinking-fast-and-slow",
+            "book_title": "Thinking, Fast and Slow",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 245,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "thinking-fast-and-slow",
+            "book_title": "Thinking, Fast and Slow",
+            "passage_id": "section_2",
+            "heading": "Key frameworks",
+            "match_score": 141,
+            "use_as": "framework_or_checklist"
+          },
+          {
+            "book_id": "thinking-fast-and-slow",
+            "book_title": "Thinking, Fast and Slow",
+            "passage_id": "section_5",
+            "heading": "How I've applied it",
+            "match_score": 92,
+            "use_as": "practical_application"
+          }
+        ]
+      },
+      {
+        "concern_id": "prevent-smart-team-bad-decision",
+        "title": "How to keep a smart team from making a dumb decision",
+        "matched_books": [
+          "the-wisdom-of-crowds",
+          "thinking-fast-and-slow"
+        ],
+        "passage_count": 3,
+        "top_passages": [
+          {
+            "book_id": "the-wisdom-of-crowds",
+            "book_title": "The Wisdom of Crowds",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 231,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "thinking-fast-and-slow",
+            "book_title": "Thinking, Fast and Slow",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 218,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "thinking-fast-and-slow",
+            "book_title": "Thinking, Fast and Slow",
+            "passage_id": "section_2",
+            "heading": "Key frameworks",
+            "match_score": 135,
+            "use_as": "framework_or_checklist"
+          }
+        ]
+      },
+      {
+        "concern_id": "pivot-without-panicking",
+        "title": "How to tell whether to pivot or keep going",
+        "matched_books": [
+          "the-structure-of-scientific-revolutions",
+          "thinking-fast-and-slow"
+        ],
+        "passage_count": 3,
+        "top_passages": [
+          {
+            "book_id": "thinking-fast-and-slow",
+            "book_title": "Thinking, Fast and Slow",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 210,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "the-structure-of-scientific-revolutions",
+            "book_title": "The Structure of Scientific Revolutions",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 173,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "thinking-fast-and-slow",
+            "book_title": "Thinking, Fast and Slow",
+            "passage_id": "section_2",
+            "heading": "Key frameworks",
+            "match_score": 126,
+            "use_as": "framework_or_checklist"
+          }
+        ]
+      },
+      {
+        "concern_id": "plan-that-survives-reality",
+        "title": "How to make a plan that survives contact with reality",
+        "matched_books": [
+          "seeing-like-a-state",
+          "the-wisdom-of-crowds"
+        ],
+        "passage_count": 3,
+        "top_passages": [
+          {
+            "book_id": "the-wisdom-of-crowds",
+            "book_title": "The Wisdom of Crowds",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 204,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "seeing-like-a-state",
+            "book_title": "Seeing Like a State",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 193,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "seeing-like-a-state",
+            "book_title": "Seeing Like a State",
+            "passage_id": "section_2",
+            "heading": "Key frameworks",
+            "match_score": 135,
+            "use_as": "framework_or_checklist"
+          }
+        ]
+      },
+      {
+        "concern_id": "strategy-without-slogans",
+        "title": "How to turn a vague goal into an actual strategy",
+        "matched_books": [
+          "good-strategy-bad-strategy",
+          "seeing-like-a-state"
+        ],
+        "passage_count": 3,
+        "top_passages": [
+          {
+            "book_id": "good-strategy-bad-strategy",
+            "book_title": "Good Strategy Bad Strategy",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 143,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "seeing-like-a-state",
+            "book_title": "Seeing Like a State",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 106,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "seeing-like-a-state",
+            "book_title": "Seeing Like a State",
+            "passage_id": "section_2",
+            "heading": "Key frameworks",
+            "match_score": 105,
+            "use_as": "framework_or_checklist"
+          }
+        ]
+      },
+      {
+        "concern_id": "test-risk-before-building",
+        "title": "How to test a risky idea before you build too much",
+        "matched_books": [
+          "the-lean-startup",
+          "the-mom-test"
+        ],
+        "passage_count": 3,
+        "top_passages": [
+          {
+            "book_id": "the-mom-test",
+            "book_title": "The Mom Test",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 257,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "the-lean-startup",
+            "book_title": "The Lean Startup",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 197,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "the-mom-test",
+            "book_title": "The Mom Test",
+            "passage_id": "section_2",
+            "heading": "Key frameworks",
+            "match_score": 155,
+            "use_as": "framework_or_checklist"
+          }
+        ]
+      }
+    ]
+  }
+}

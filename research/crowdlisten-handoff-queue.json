@@ -1,0 +1,2261 @@
+{
+  "generated_at": "2026-07-04",
+  "source": "/Users/terry/Desktop/crowdlisten_files/knowledge/prototypes/outcome_loop_packs/out/app_handoffs/answer_with_books/crowdlisten_handoff.json",
+  "context_pack_id": "awb-content-answer-loop",
+  "signal_opportunity": {
+    "vertical": "answer_with_books",
+    "target_entity": "Answer With Books",
+    "loop": "question_demand_to_book_grounded_answer",
+    "business_outcome": "Turn repeated reader/business/life questions into short answers grounded in useful books.",
+    "loop_readiness_score": 0.9,
+    "source_evidence_strength": 1,
+    "demand_signal_count": 5,
+    "source_record_count": 54,
+    "source_platforms": [
+      {
+        "platform": "reddit",
+        "count": 54
+      }
+    ],
+    "signal_class_mix": [
+      {
+        "signal_class": "customer_demand",
+        "count": 54
+      }
+    ],
+    "available_loop_templates": [
+      {
+        "id": "content_demand",
+        "business_goal": "Turn repeated audience questions, concerns, and goals into useful content artifacts.",
+        "action_outputs": [
+          "answer brief",
+          "guide update",
+          "faq entry",
+          "digest segment",
+          "audio brief"
+        ],
+        "writeback_fields": [
+          "artifact_url",
+          "evidence_used",
+          "impressions",
+          "clicks",
+          "follow_up_questions",
+          "next_content_gap"
+        ]
+      },
+      {
+        "id": "feedback_triage",
+        "business_goal": "Turn fragmented customer complaints, feature requests, and confusion into prioritized product actions.",
+        "action_outputs": [
+          "issue card",
+          "bug report",
+          "feature brief",
+          "customer follow-up brief",
+          "roadmap evidence pack"
+        ],
+        "writeback_fields": [
+          "ticket_url",
+          "owner",
+          "resolution_status",
+          "customers_affected",
+          "repeat_rate_after_fix",
+          "new_related_issues"
+        ]
+      },
+      {
+        "id": "internal_context",
+        "business_goal": "Turn decisions, examples, calls, notes, and operating preferences into reusable context for agents.",
+        "action_outputs": [
+          "agent instruction pack",
+          "decision pack",
+          "project context pack",
+          "handoff brief",
+          "review checklist"
+        ],
+        "writeback_fields": [
+          "artifact_url",
+          "decision_update",
+          "agent_used_context",
+          "quality_rating",
+          "corrections",
+          "new_context_needed"
+        ]
+      }
+    ],
+    "top_signals": [
+      {
+        "id": "validate-without-fooling-yourself",
+        "title": "How to validate an idea without fooling yourself",
+        "why_it_matters": "People are trying to validate an idea without fooling yourself, but the social evidence suggests uncertainty, wasted building, bad evidence, stakeholder pressure, planning breakdown, decision fatigue are getting in the...",
+        "evidence_count": 8,
+        "source_record_count": 3,
+        "source_roles": [
+          "audience_question"
+        ]
+      },
+      {
+        "id": "repair-user-interviews",
+        "title": "How to fix user interviews that are not teaching you anything",
+        "why_it_matters": "People are trying to fix user interviews that are not teaching you anything, but the social evidence suggests wasted building, bad evidence, stakeholder pressure, decision fatigue are getting in the way.",
+        "evidence_count": 8,
+        "source_record_count": 3,
+        "source_roles": [
+          "audience_question"
+        ]
+      },
+      {
+        "id": "trust-gut-or-check-it",
+        "title": "How to know when to trust your gut",
+        "why_it_matters": "People are trying to know when to trust your gut, but the social evidence suggests uncertainty, wasted building, bad evidence, stakeholder pressure, planning breakdown, communication gap, decision fatigue are getting in...",
+        "evidence_count": 8,
+        "source_record_count": 3,
+        "source_roles": [
+          "audience_question"
+        ]
+      },
+      {
+        "id": "prevent-smart-team-bad-decision",
+        "title": "How to keep a smart team from making a dumb decision",
+        "why_it_matters": "People are trying to keep a smart team from making a dumb decision, but the social evidence suggests wasted building, bad evidence, stakeholder pressure, planning breakdown, communication gap, decision fatigue are getti...",
+        "evidence_count": 8,
+        "source_record_count": 3,
+        "source_roles": [
+          "audience_question"
+        ]
+      },
+      {
+        "id": "pivot-without-panicking",
+        "title": "How to tell whether to pivot or keep going",
+        "why_it_matters": "People are trying to tell whether to pivot or keep going, but the social evidence suggests uncertainty, wasted building, bad evidence, stakeholder pressure, planning breakdown, communication gap, decision fatigue are ge...",
+        "evidence_count": 8,
+        "source_record_count": 3,
+        "source_roles": [
+          "audience_question"
+        ]
+      }
+    ],
+    "source_records": [
+      {
+        "id": "awb-validate-without-fooling-yourself-01-https-www-reddit-com-r-productma",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How do you do user research in fintech when compliance rules and limited access to users make interviews hard?",
+        "observed_signal": "I’m a PM working in fintech, and I’ve been finding that traditional user interviews don’t always work the way they’re described in books. In practice: * Compliance limits what we can ask about financial behavior * Interview scripts often need pre-approval * Access to users is sometimes gated by internal teams (support, advisors, account managers) * Even when interviews happen, answers can be high-level or guarded * A lot of dissatisfaction shows up indirectly through behavior rather than direct feedback I’m curious how others approach discovery in this kind of environment: * How much do you rely on interviews vs behavioral data? * What proxies or alternative research methods have actually worked for you? * How do you validate product decisions when interviews feel incomplete or filtered? Looking for real-world approaches, not textbook theory. P.S. I just wanted to clarify that i am work…",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "ProductManagement",
+          "the-mom-test",
+          "thinking-fast-and-slow",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown"
+        ],
+        "url": "https://www.reddit.com/r/ProductManagement/comments/1pmyck9/how_do_you_do_user_research_in_fintech_when/"
+      },
+      {
+        "id": "awb-validate-without-fooling-yourself-02-https-www-reddit-com-r-startups-",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "The Customer Discovery Trap: What’s the Actual Most Productive Way to Talk to Users? “I will not promote”",
+        "observed_signal": "I’m burned out on the “talk to customers first” advice. I know it’s gospel, but the execution is a nightmare. The pain is real: Where do you find these people? Cold DMs on LinkedIn? Spamming subreddits? The reply rate is soul-crushing. Even if they reply, how do you know their feedback is useful? It feels like I’m begging strangers for five minutes, and the feedback is always generic. The MVP paradox: I build something small, they give feedback, but will they ever actually pay? I need the truth: What is the single most useful, proven, and productive customer discovery method you have successfully used? I’m not looking for “talk to customers.” I need the actionable strategy that actually bridges the gap between a conversation and a paying customer. Share the specific channel, the specific script, or the specific context that got you real, actionable feedback that led to a successful prod…",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "startups",
+          "the-mom-test",
+          "thinking-fast-and-slow",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown"
+        ],
+        "url": "https://www.reddit.com/r/startups/comments/1q1yqwl/the_customer_discovery_trap_whats_the_actual_most/"
+      },
+      {
+        "id": "awb-validate-without-fooling-yourself-03-https-www-reddit-com-r-startups-",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "I’ll help 3 founders with customer discovery ( I will not promote)",
+        "observed_signal": "I've been a researcher in FAANG for 10 years who've works with teams to build 0-1 ideas, and now that I'm in found up world I've realized alot of founders I've talked struggle with early customer interviews and validating the need for their product. I'd love to see if I can solve this problem so l'm now testing a service where you can send me your unstructured notes (from calls, responses to social posts, market reports etc) and I'll send back a lightweight report providing clear insights and recommendations for next steps. Would anyone here want to try this (free while I'm testing) and provide feedback? This would help me to iterate on what's the right format and the type of insights founders find most actionable.",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "startups",
+          "the-mom-test",
+          "thinking-fast-and-slow",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown"
+        ],
+        "url": "https://www.reddit.com/r/startups/comments/1nezfqn/ill_help_3_founders_with_customer_discovery_i/"
+      },
+      {
+        "id": "awb-repair-user-interviews-01-https-www-reddit-com-r-productma",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How do you do user research in fintech when compliance rules and limited access to users make interviews hard?",
+        "observed_signal": "I’m a PM working in fintech, and I’ve been finding that traditional user interviews don’t always work the way they’re described in books. In practice: * Compliance limits what we can ask about financial behavior * Interview scripts often need pre-approval * Access to users is sometimes gated by internal teams (support, advisors, account managers) * Even when interviews happen, answers can be high-level or guarded * A lot of dissatisfaction shows up indirectly through behavior rather than direct feedback I’m curious how others approach discovery in this kind of environment: * How much do you rely on interviews vs behavioral data? * What proxies or alternative research methods have actually worked for you? * How do you validate product decisions when interviews feel incomplete or filtered? Looking for real-world approaches, not textbook theory. P.S. I just wanted to clarify that i am work…",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "ProductManagement",
+          "the-mom-test",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "decision_fatigue"
+        ],
+        "url": "https://www.reddit.com/r/ProductManagement/comments/1pmyck9/how_do_you_do_user_research_in_fintech_when/"
+      },
+      {
+        "id": "awb-repair-user-interviews-02-https-www-reddit-com-r-productma",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "User Interviews are not going well, are there any workarounds?",
+        "observed_signal": "Hi all! I've been studying product development and management and I'm at the point where I'm doing my first case study. I've created my customer personas, created my assumptions on user segments and I've done some preliminary research by scraping reddit. The issue I'm running into is that I'm trying to get people in for user interviews and not a lot of people want to talk. I've DM'd people online and I've also approached people in person with no real results (outside of the people who give me a quick answer to wave me away) *Just for context, my project is to see if offloading bulk pokemon cards are a problem for people and what might be another way to approach getting rid of them. The secondary objective is to understand what the friction is if people haven't decided to get rid of them but do acknowledge it's a bit much.* I'm starting to get the vibe that this not a problem that's wort…",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "ProductManagement",
+          "the-mom-test",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "decision_fatigue"
+        ],
+        "url": "https://www.reddit.com/r/ProductManagement/comments/1thb1vp/user_interviews_are_not_going_well_are_there_any/"
+      },
+      {
+        "id": "awb-repair-user-interviews-03-https-www-reddit-com-r-uxresearc",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "Do I need user interviews in my case study? How to find users without a budget?",
+        "observed_signal": "Hi! I’m a beginner in UX and I notice that many case studies include 5–10 interviews. Is it really required to have user interviews in a portfolio project? If yes, where can I find users for a student project with no budget? I tried Discord communities related to my topic, but people are usually not willing to participate for free. This situation is stressful, and I feel like I’m falling behind in UX. Any advice would be appreciated.",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "UXResearch",
+          "the-mom-test",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "decision_fatigue"
+        ],
+        "url": "https://www.reddit.com/r/UXResearch/comments/1rjx746/do_i_need_user_interviews_in_my_case_study_how_to/"
+      },
+      {
+        "id": "awb-trust-gut-or-check-it-01-https-www-reddit-com-r-productma",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How to deal with an impulsive PM who launches features based on intuition without data?",
+        "observed_signal": "I'm a product designer at a large-ish company struggling with the impulsive nature of my PM. Several observations of his behavior: 1. Adds scope to design projects based on gut feeling just because \"other competitors\" are doing it 2. Does not write effective feature narratives/PRDs (any document which clarifies scope) and leaves a lot of the cross functional alignment of up to me. Gets defensive when told that strategy isn't clear enough. 3. Doesn't understand how to establish assumptions and evaluate / test them with research, and sees user research as \"a box you just need to check to convince leadership of a direction\", rather than an opportunity to learn about user behavior 4. Metrics and data are used for vanity, instead of guiding decisions. Very focused on optics. So far, 1 project has been recoiled because users reacted very badly to the feature that was released. 1 project neede…",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "ProductManagement",
+          "thinking-fast-and-slow",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown"
+        ],
+        "url": "https://www.reddit.com/r/ProductManagement/comments/1bnw293/how_to_deal_with_an_impulsive_pm_who_launches/"
+      },
+      {
+        "id": "awb-trust-gut-or-check-it-02-https-www-reddit-com-r-cscareerq",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How do I navigate my current situation to be working on what that matters vs doing what my gut feeling tells me? I have been working with the same employer for past six years",
+        "observed_signal": "How do I grow from where I am? I feel either I’m losing steam or don’t have a defined plan, hence not truly working toward some goal. My goal is simple — to get or be in a position where I am employable. But to make myself employable, I am either overwhelmed or do not have a clear direction on what to prioritize. I started my career late — I got a true programming job at 28 years old. Since then, I’ve been with my current employer doing Java and legacy C# development for six years. I started job hunting three years ago, on and off. It has been a learning experience since then — crafting my resume better and using the time to upskill in domains like cloud (Azure) and doing mini personal projects to gain exposure to different technologies. In the past three years, I have gone through system design and done LeetCode. Lately, I’ve given up on LeetCode or lost motivation for it since I legit…",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "cscareerquestions",
+          "thinking-fast-and-slow",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown"
+        ],
+        "url": "https://www.reddit.com/r/cscareerquestions/comments/1otvrwv/how_do_i_navigate_my_current_situation_to_be/"
+      },
+      {
+        "id": "awb-trust-gut-or-check-it-03-https-www-reddit-com-r-productma",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "'Data Intuition' gap",
+        "observed_signal": "I'm currently a Head of Data at a legal tech company, and previously worked with PMs across the spectrum (entry-level to CPO) at Big Tech/FAANG. I’ve been trying to codify the specific patterns that separate effective builders from the rest, specifically regarding data. One of the biggest differentiators I've seen is how they ask questions. A common trap I see is the \"it'd be interesting to know X\" impulse. They ask data teams to pull numbers because they are curious. This creates motion (requests are generated, queries are run), but not progress. The effective leaders I’ve worked with do the opposite. They ask sharp questions that cut straight to the core: *\"What evidence do I actually need to make this decision?\"* They work backward from the decision to find the specific evidence that would change it. If the answer to a data question won't change their roadmap, they don't ask it. I’m…",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "ProductManagement",
+          "thinking-fast-and-slow",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown"
+        ],
+        "url": "https://www.reddit.com/r/ProductManagement/comments/1qgel2c/data_intuition_gap/"
+      },
+      {
+        "id": "awb-prevent-smart-team-bad-decision-01-https-www-reddit-com-r-leadershi",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How do you handle making endless choices without giving into decision fatigue?",
+        "observed_signal": "I’ve seen other founders talk about decision fatigue, but I didn’t realize how brutal it actually is until now. Every day, it feels like I’m drowning in choices. What feature to prioritize, whether I should go all in or keep a safety net, if I should bring in a freelancer or wait, if this marketing strategy is even the right move. It never stops. And the worst part? The more I think, the harder it gets to decide. My brain just shuts down from overload. Even small choices feel like life or death situations at this point. Others say to trust my gut, but what if my gut gets exhausted?",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "Leadership",
+          "the-wisdom-of-crowds",
+          "thinking-fast-and-slow",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown",
+          "communication_gap"
+        ],
+        "url": "https://www.reddit.com/r/Leadership/comments/1lcuw90/how_do_you_handle_making_endless_choices_without/"
+      },
+      {
+        "id": "awb-prevent-smart-team-bad-decision-02-https-www-reddit-com-r-managers-",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How do you let go and move on when the company makes a bad decision that negatively impacts your team member?",
+        "observed_signal": "One of my new employees took a few hours of sick time during their third week on the job. The company policy says that no time off during the first 30 days is paid. However, this employee lives in a state with mandated paid sick time which clearly states that it needs to be made available immediately upon hire with no waiting period. I checked multiple credible sources that all confirm this information. Even though I pointed this out, HR is refusing to pay them and is insisting that we don't have to. We're a remote business, so I think they struggle to keep up with changing requirements. Anyways, my manager is equally as bothered by this so we escalated to the VP who just deferred us back to HR saying that they're the expert and we have to listen to what they say. Great, thanks lol... Anyways, there's nothing else I can do at this point. I had to let this employee know that they won't b…",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "managers",
+          "the-wisdom-of-crowds",
+          "thinking-fast-and-slow",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown",
+          "communication_gap"
+        ],
+        "url": "https://www.reddit.com/r/managers/comments/1pcjqsl/how_do_you_let_go_and_move_on_when_the_company/"
+      },
+      {
+        "id": "awb-prevent-smart-team-bad-decision-03-https-www-reddit-com-r-managers-",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How do you rebuild trust with a team after a bad leadership decision?",
+        "observed_signal": "A few weeks ago, senior leadership announced a reorg that most of my team saw as arbitrary and short-sighted. I fought against it privately, but once the decision was final, I communicated it as professionally as I could. Now my team is quiet in meetings, collaboration feels forced, and a couple of high-performers have asked to go remote permanently “for focus.” I don’t think they’re being difficult. I think they lost trust in the people above me, and by extension, in me for delivering the message without resigning on the spot. I’ve tried acknowledging the frustration openly, holding extra office hours, and protecting them from the next wave of noise. But the energy hasn’t come back. For managers who have led through a bad decision they didn’t support, what actually helped rebuild trust over time? Is this just a waiting game, or are there concrete actions that signal “I’m still on your…",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "managers",
+          "the-wisdom-of-crowds",
+          "thinking-fast-and-slow",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown",
+          "communication_gap"
+        ],
+        "url": "https://www.reddit.com/r/managers/comments/1tgxek3/how_do_you_rebuild_trust_with_a_team_after_a_bad/"
+      },
+      {
+        "id": "awb-pivot-without-panicking-01-https-www-reddit-com-r-startups-",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How many times did you pivot before finding product-market fit and first users? I will not promote.",
+        "observed_signal": "To be honest, I’ve been feeling really low. It’s been 10 days since launch and I still have no users. I keep wondering how long it usually takes to get those first few users in B2B SaaS. How do you stay resilient and keep going in this stage? I’m feeling extremely down, I’m not eating or sleeping properly, and my imposter syndrome is getting worse.",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "startups",
+          "the-structure-of-scientific-revolutions",
+          "thinking-fast-and-slow",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown"
+        ],
+        "url": "https://www.reddit.com/r/startups/comments/1sh30jf/how_many_times_did_you_pivot_before_finding/"
+      },
+      {
+        "id": "awb-pivot-without-panicking-02-https-www-reddit-com-r-startups-",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How do I raise a pre-seed round when there is little traction and we need to pivot? (i will not promote)",
+        "observed_signal": "Title. We've been running off of savings and iterating, but the savings have simply ran out and we haven't gotten to product market fit yet. Most likely, the business that ends up working may not be in the same market. But we have all the tech, infrastructure, etc. still setup and working. How do we do this? How do we pitch this. I appreciate any help, especially from someone who's been here before.",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "startups",
+          "the-structure-of-scientific-revolutions",
+          "thinking-fast-and-slow",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown"
+        ],
+        "url": "https://www.reddit.com/r/startups/comments/1tbgyak/how_do_i_raise_a_preseed_round_when_there_is/"
+      },
+      {
+        "id": "awb-pivot-without-panicking-03-https-www-reddit-com-r-entrepren",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How did i pivot / change your business when things get bad?",
+        "observed_signal": "I run a web design agency. We don't just build websites, but we also do the SEO, and implement GHL for them, and really help them generate local high-quality leads. However with AI, facebook ads being down, and many other factors I'm looking to leave this business and explore other business options. I'm really curious how you made the swap, and what you saw. I'm very excited to change business as I've done this for 5-6 years now and am very much done with it. However, I know ideas don't just come out of nowhere (sometimes they do) and despite all of the research and things I do, I can't find anything I think I'd be good at, or that would work out! Just looking to get some inspiration from someone who is mega burnt out, and struggling to see the business world from a birds eye point of view! (This has been something I've toyed with for 2+ years now)",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "Entrepreneur",
+          "the-structure-of-scientific-revolutions",
+          "thinking-fast-and-slow",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown"
+        ],
+        "url": "https://www.reddit.com/r/Entrepreneur/comments/1sl29gg/how_did_i_pivot_change_your_business_when_things/"
+      },
+      {
+        "id": "awb-plan-that-survives-reality-01-https-www-reddit-com-r-experienc",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "Too large career gap after previous job reorg layoff (too much time/focus on pet portfolio project) - any advice as I apply to jobs w/o any portfolio pieces in prod?",
+        "observed_signal": "TL;DR: 4+YOE at companies. Worked on portfolio project too long. Need job ASAP - best way? Hello, I'm a senior full stack engineer with professional experience as a SW architect & tech lead but also a dangerously strong passion for AI everything. I'm also kind of an idiot. I was laid off in my company's 4th mass layoff for budget purposes (was told directly they didn't want to have to, but couldn't afford to pay employees lol) last year in July. I'd been planning to look for a better job anyway and was well under way building an AI-based portfolio project on the side/after work. The wild west of open-source AI I've been working with is nostalgic to me in some ways, and it has also been a challenge for such needs as harmony among Python dependencies (many libraries quite new) -- both factors I've learned are enormous distrations that have led me to rabbit holes that have taught me a whol…",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "ExperiencedDevs",
+          "seeing-like-a-state",
+          "the-wisdom-of-crowds",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown",
+          "communication_gap"
+        ],
+        "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1jrnvhj/too_large_career_gap_after_previous_job_reorg/"
+      },
+      {
+        "id": "awb-plan-that-survives-reality-02-https-www-reddit-com-r-sysadmin-",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "Thoughts on QB Enterprise migration plan?",
+        "observed_signal": "Hey all! Currently I am tasked with migrating our QB Enterprise to a location and configuration where both my CFO and Accounting can remote in and access QB Enterprise when not on site. QB Enterprise hates VPN so I was planning on reconfiguring our old backup server into the QB Enterprise Server as well as hosting two virtual windows machines that they can remote into so that the machine they are actually using QB on is on prem with the server. I'm thinking I can get away with just moving the QB server onto this machine then using VMWare Workstation Pro host the two virtualized desktops and call it a day. Is there a better way y'all might go about this or any pointers that might make this easier? I considered doing ESXi and virtualizing the QB Server as well as the desktops. I've also considered ProxMox but fuck subscription models! Thanks in advance for your feedback!",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "sysadmin",
+          "seeing-like-a-state",
+          "the-wisdom-of-crowds",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown",
+          "communication_gap"
+        ],
+        "url": "https://www.reddit.com/r/sysadmin/comments/1aeqpg4/thoughts_on_qb_enterprise_migration_plan/"
+      },
+      {
+        "id": "awb-plan-that-survives-reality-03-https-www-reddit-com-r-managers-",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How to handle a high-power stakeholder who keeps bypassing the change process?",
+        "observed_signal": "Scenario: A key stakeholder with high power and high interest keeps giving direct, unapproved work requests to your team, causing confusion and disrupting planned activities. Question: What is the best action to take? Options: A. Add a project buffer to account for unplanned work B. Remind the stakeholder to follow the formal change request process C. Meet with the stakeholder to understand their needs and clarify the process for new requests D. Escalate the issue to the sponsor to resolve the communication breakdown Answer: C. Meet with the stakeholder to understand their needs and clarify the process Rationale: Direct conversation is the best first step. It builds understanding and trust. Escalation should only follow if the behavior persists. So… Meeting the stakeholder makes sense, but what if they continue to bypass the process after multiple reminders? At what point do you escalat…",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "managers",
+          "seeing-like-a-state",
+          "the-wisdom-of-crowds",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown",
+          "communication_gap"
+        ],
+        "url": "https://www.reddit.com/r/managers/comments/1o2dah7/how_to_handle_a_highpower_stakeholder_who_keeps/"
+      },
+      {
+        "id": "awb-strategy-without-slogans-01-https-www-reddit-com-r-startups-",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "Is it normal to change commercial strategy wildly after a bad VC meeting? I will not promote",
+        "observed_signal": "Hey everyone, We recently had a meeting with a VC (follow up after our initial pitch) and we realised that the questions from the GP were quite tough when it came to our commercial strategy. They basically asked “What will be your main source of revenue” and we basically fumbled it and focused on the wrong thing and we did not have a slick pitch there. We still think our initial commercial revenue generators are fair but it didn’t flow well and looked cluttered. That said, we now had to rethink our commercial strategy for our next pitch but we are simplifying it down to a ridiculous amount so that the story flows well. The also means our company starts to look quite different to what we originally started pitching it as. That is what is our worry. Now is it normal to “pivot” our commercial strategy to make it more VC friendly after a VC meeting or is it better to stick to our original p…",
+        "entities": [
+          "Answer With Books",
+          "early-stage founder",
+          "startups",
+          "good-strategy-bad-strategy",
+          "seeing-like-a-state",
+          "wasted_building",
+          "planning_breakdown",
+          "communication_gap",
+          "decision_fatigue"
+        ],
+        "url": "https://www.reddit.com/r/startups/comments/1tl9wsb/is_it_normal_to_change_commercial_strategy_wildly/"
+      },
+      {
+        "id": "awb-strategy-without-slogans-02-https-www-reddit-com-r-startups-",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "I will not promote - tell me if I am missing anything else on my GTM app strategy",
+        "observed_signal": "I’m a solo founder working on an AI consumer product and trying to figure out the most effective GTM strategy with a limited budget. My current approach is focused on organic growth. I’m trying to build a community through TikTok, Instagram, and Lemon8, and I’ve experimented with paying a small number of UGC creators to create content around the product. The goal right now is awareness and learning what messaging resonates. My plan is to identify the highest-performing organic content and then put a small amount of paid spend behind it rather than investing heavily upfront. One thing I’m unsure about is sequencing. Should I continue focusing primarily on awareness and audience-building first, or should I already be optimizing for free-to-paid conversion before I have meaningful scale? For founders who have launched consumer apps with limited budgets, what worked, what didn’t, and what w…",
+        "entities": [
+          "Answer With Books",
+          "early-stage founder",
+          "startups",
+          "good-strategy-bad-strategy",
+          "seeing-like-a-state",
+          "wasted_building",
+          "planning_breakdown",
+          "communication_gap",
+          "decision_fatigue"
+        ],
+        "url": "https://www.reddit.com/r/startups/comments/1tzwlbi/i_will_not_promote_tell_me_if_i_am_missing/"
+      },
+      {
+        "id": "awb-strategy-without-slogans-03-https-www-reddit-com-r-startups-",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "CTO in 2026: you code, you mentor, you do ops, you own AI strategy, same salary, no sleep (i will not promote)",
+        "observed_signal": "I am a tech lead at a startup with 5000+ users, running my own SaaS on the side(trying), and somehow still a uni student who genuinely wants to consume ML papers, which at this point feels like a joke I keep telling myself before sleep. And tbh, the schedule is: tech debt that never ends, bugs not critical enough to stop everything but annoying enough to follow you into the shower, third-party integrations that break at 2am for no reason, junior devs who need mentorship and inspirational words, and vibe-coded legacy from previous devs that I keep quietly rewriting because someone has to actually own this thing, and apparently that someone is me. No one even notices these kinds of tasks like refact done either, but that’s a separate conversation. yet the people around you, the ones who read the AI-native articles, genuinely expect it to happen somewhere between your current sprint and th…",
+        "entities": [
+          "Answer With Books",
+          "early-stage founder",
+          "startups",
+          "good-strategy-bad-strategy",
+          "seeing-like-a-state",
+          "wasted_building",
+          "planning_breakdown",
+          "communication_gap",
+          "decision_fatigue"
+        ],
+        "url": "https://www.reddit.com/r/startups/comments/1tf3rjo/cto_in_2026_you_code_you_mentor_you_do_ops_you/"
+      },
+      {
+        "id": "awb-test-risk-before-building-01-https-www-reddit-com-r-saas-comm",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How do you validate a b2b saas idea before building mvp?",
+        "observed_signal": "Okay, I’ve got b2b saas idea around helping founders find leads, but I’m deliberately trying **not** to start by coding. I’m already juggling other startups, and building even a decent mvp will take time. I don’t want to spend months building something only to discover nobody wants it. Here’s the twist: the idea isn’t entirely new, there are existing small players in the space. But I genuinely think I can do a much better job, mainly because I have an edge in using AI + prompt engineering to approach the problem differently. So now I’m thinking: **how do you validate something that isn’t a completely new category, but a “better wedge” into an existing market?** If you were me, how would you test demand *before writing code?* \\- Landing page + waitlist? \\- Cold outreach to potential users? Curious how people here validate “me-too but better” saas ideas before building.",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "SaaS",
+          "the-lean-startup",
+          "the-mom-test",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "communication_gap",
+          "decision_fatigue"
+        ],
+        "url": "https://www.reddit.com/r/SaaS/comments/1svkmbf/how_do_you_validate_a_b2b_saas_idea_before/"
+      },
+      {
+        "id": "awb-test-risk-before-building-02-https-www-reddit-com-r-saas-comm",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "First-time founder here — how would you validate this MVP and get first users?",
+        "observed_signal": "Hey everyone, this is my first MVP launch ever and I’d really appreciate some honest feedback and advice. I recently built a desktop app called Wavy. Before building it, I personally used this idea for about a year (in a very rough form), and it genuinely saved me a lot of time and mental energy while working remotely. That’s what convinced me to finally turn it into a real product. What Wavy does (in simple terms): It’s a desktop app for remote workers that: * keeps your status active (Slack / Teams-style environments) * listens for system notifications (messages, calls, meetings) * alerts you like an alarm only when something actually happens So you can step away from your computer, rest, watch a movie, or do other things — and only come back when it actually matters. If I had to give it a “strong” description: it helps you work and live more calmly while working remotely. # The probl…",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "SaaS",
+          "the-lean-startup",
+          "the-mom-test",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "communication_gap",
+          "decision_fatigue"
+        ],
+        "url": "https://www.reddit.com/r/SaaS/comments/1quepl2/firsttime_founder_here_how_would_you_validate/"
+      },
+      {
+        "id": "awb-test-risk-before-building-03-https-www-reddit-com-r-saas-comm",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How to test and validate startup idea with a mvp without wasting months?",
+        "observed_signal": "Hi folks, I was wondering how to test and validate startup idea with a mvp in a way that doesn't involve me sitting in my basement for six months. I'm a side-hustler with a day job, and I feel like I'm stuck in a loop of adding features because I’m unsure if the core idea even works. Building an actual MVP can sometimes take 1-2 months of coding at night, which feels like a massive risk if it flops. What I tried so far is building a simple landing page and running some Google search ads to see if anyone clicks. I wonder though what metrics could be an indicator of \"real\" demand before I spend more time on how to test and validate startup idea with a mvp properly. For example, let’s say I get 200 visitors to my site from people looking for a solution. I ask them for their email to get early access or to be a beta tester. What kind of conversion rate should I look for to know if I'm wasti…",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "SaaS",
+          "the-lean-startup",
+          "the-mom-test",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "communication_gap",
+          "decision_fatigue"
+        ],
+        "url": "https://www.reddit.com/r/SaaS/comments/1r7cq2q/how_to_test_and_validate_startup_idea_with_a_mvp/"
+      },
+      {
+        "id": "awb-make-confusing-page-clear-01-https-www-reddit-com-r-saas-comm",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "Struggling to improve conversion rate on my landing page what am I missing?",
+        "observed_signal": "I’ve been working on a website and getting decent traffic, but my conversion rate is very low. I’ve already tried: * Improving page speed * Simplifying the design * Adding clearer CTAs Still not seeing much improvement. For those with experience in CRO: * What are the most common mistakes that hurt conversions? * What should I test next? Happy to share more details if needed.",
+        "entities": [
+          "Answer With Books",
+          "team leader",
+          "SaaS",
+          "dont-make-me-think",
+          "thinking-fast-and-slow",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown",
+          "communication_gap"
+        ],
+        "url": "https://www.reddit.com/r/SaaS/comments/1stag7o/struggling_to_improve_conversion_rate_on_my/"
+      },
+      {
+        "id": "awb-make-confusing-page-clear-02-https-www-reddit-com-r-saas-comm",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "Added a \"this product isn't for you if...\" section to our landing page. Signups dropped 15%. Trial conversion nearly doubled.",
+        "observed_signal": "Three bullet points at the top of the page. \"\\[Product\\] isn't for you if: you need enterprise-level permissions (we're built for small teams), you require SOC2 compliance (we don't have it yet), or you need offline functionality (we're cloud-only).\" Signups dropped from about 130/month to 110/month. Trial-to-paid went from 6% to 11%. Before the anti-pitch, 130 people signed up and 8 converted. After, 110 signed up and 12 converted. More paying customers from fewer total signups. The 20 people who stopped signing up were the ones who would have tried the product, hit one of those three limitations, and left frustrated. They were always going to churn. I just moved the churn from day 7 to pre-signup. Every trial user who doesn't convert costs support time, server resources, and dilutes your conversion metrics. The anti-pitch eliminates waste at the top of the funnel instead of processing…",
+        "entities": [
+          "Answer With Books",
+          "team leader",
+          "SaaS",
+          "dont-make-me-think",
+          "thinking-fast-and-slow",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown",
+          "communication_gap"
+        ],
+        "url": "https://www.reddit.com/r/SaaS/comments/1s69rux/added_a_this_product_isnt_for_you_if_section_to/"
+      },
+      {
+        "id": "awb-make-confusing-page-clear-03-https-i-redd-it-3437uuvmf9pg1-pn",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "The most useless homepage ever?",
+        "observed_signal": "I'm sure there are product strategy and monetization straggles driving this particular design, but, from a users' perspective, this has to be one of the most useless home page ever—no useful information whatsoever for me, who is looking for today's weather to decide what to wear, whether to run outside or workout inside, etc. Are they thinking that people would switch to premium account if they did this? Or am I not the right persona for their website (I suspect that this might be the main reason)? I've been a weather .com user for a long time, these recent changes finally made me switch to the Mac weather app. I'm not posting to complain, Apple's weather app is thorough and easy enough to access. I'm just curious about why they, weather .com, would do this.",
+        "entities": [
+          "Answer With Books",
+          "team leader",
+          "UXDesign",
+          "dont-make-me-think",
+          "thinking-fast-and-slow",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown",
+          "communication_gap"
+        ],
+        "url": "https://i.redd.it/3437uuvmf9pg1.png"
+      },
+      {
+        "id": "awb-make-idea-stick-01-https-www-reddit-com-r-productma",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "(B2B Ecommerce SaaS) How do you determine whether low pipeline is caused by positioning, ICP, or channel execution?",
+        "observed_signal": "joined a B2B ecommerce SaaS company recently and I'm struggling to identify where the actual bottleneck is. We're actively running outbound campaigns through cold email, LinkedIn outreach, webinars, and paid ads. We send roughly 20k cold emails per month and over 1k LinkedIn outbound messages, but we're generating only around 5 leads per month. What's making this harder is that website traffic itself is also very low, so I'm not even seeing enough visitors to diagnose conversion issues. Our competitors appear to be growing and generating awareness, which makes me wonder whether we're dealing with a positioning problem, an ICP problem, weak channel execution, or something more fundamental like product-market fit. For those who have faced a similar situation, what framework would you use to diagnose the root cause before making major changes to messaging or GTM strategy?",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "ProductMarketing",
+          "made-to-stick",
+          "the-wisdom-of-crowds",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown"
+        ],
+        "url": "https://www.reddit.com/r/ProductMarketing/comments/1tvvfco/b2b_ecommerce_saas_how_do_you_determine_whether/"
+      },
+      {
+        "id": "awb-make-idea-stick-02-https-www-reddit-com-r-marketing",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "Anyone else realize halfway through production that the explainer video still doesn't explain the product?",
+        "observed_signal": "We just got the first draft back for our saas onboarding animation and honestly it looks polished but somehow still feels empty. Like visually it checks every startup-video box possible, but after watching it a few times I realized it barely explains the actual workflow users struggle with. Part of the issue is probably us. Every stakeholder keeps adding random requests and now the script feels bloated. Also fwiw i learned shorter demos only work if the narrative is insanely clear. Otherwise it just becomes fast confusion. How are other founders handling saas explainer videos without completely losing the core message?",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "marketing",
+          "made-to-stick",
+          "the-wisdom-of-crowds",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown"
+        ],
+        "url": "https://www.reddit.com/r/marketing/comments/1tat6xx/anyone_else_realize_halfway_through_production/"
+      },
+      {
+        "id": "awb-make-idea-stick-03-https-www-reddit-com-r-startups-",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "Most startup founders know their product. Fewer know how to explain it.(I will not promote)",
+        "observed_signal": "I’ve spent the last month working on how I explain what I’m building. Not just for investors or customers , for myself. It’s surprisingly hard. I knew what I was building, but I didn’t know how to talk about it clearly. My sentences would drift. I'd say “AI” and “feedback loop” and “founder coaching,” but none of it stuck. So I changed how I worked. Every morning, I’d pitch out loud like I was explaining it to a really impatient friend. That process helped me rewrite the pitch, the landing page, even some of the product. I used to think clarity came from writing. But now I think it comes from talking. And being forced to say it out loud ,every day ,has helped me get honest about what I’m actually building. what’s helped you explain your idea better?",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "startups",
+          "made-to-stick",
+          "the-wisdom-of-crowds",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown"
+        ],
+        "url": "https://www.reddit.com/r/startups/comments/1l7smve/most_startup_founders_know_their_product_fewer/"
+      },
+      {
+        "id": "awb-prioritize-without-loudest-voice-01-https-www-reddit-com-r-productma",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How do you prioritize features for your product roadmap?",
+        "observed_signal": "As the product owner for an app, I’m constantly getting feedback and ideas for new features. It’s a challenge to decide what to prioritize while keeping development manageable and user-focused. How do you handle this in your role? What’s your process for deciding which features to prioritize on the roadmap, and how do you communicate this to your team?",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "ProductManagement",
+          "good-strategy-bad-strategy",
+          "the-wisdom-of-crowds",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown",
+          "communication_gap"
+        ],
+        "url": "https://www.reddit.com/r/ProductManagement/comments/1ggdzb9/how_do_you_prioritize_features_for_your_product/"
+      },
+      {
+        "id": "awb-prioritize-without-loudest-voice-02-https-www-reddit-com-r-productma",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How do you prioritize customer requests vs roadmap goals?",
+        "observed_signal": "A real problem is that customer requests often come with urgent pressure and vocal demand, making it tempting to address them immediately. But constantly shifting focus to these can derail the planned roadmap and stretch resources thin, leading to missed deadlines and lack of strategic progress. Finding a fair, transparent way to balance urgent requests without losing sight of long term goals is a tough challenge many PMs face.",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "ProductManagement",
+          "good-strategy-bad-strategy",
+          "the-wisdom-of-crowds",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown",
+          "communication_gap"
+        ],
+        "url": "https://www.reddit.com/r/ProductManagement/comments/1o794f4/how_do_you_prioritize_customer_requests_vs/"
+      },
+      {
+        "id": "awb-prioritize-without-loudest-voice-03-https-www-reddit-com-r-productma",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "Best ways to consolidate user feature requests and feedback?",
+        "observed_signal": "Hi, all! First post here after a few months of lurking. I was wondering if any of you would be willing to share your methods of processing and consolidating user feedback and feature requests\\* where you have multiple channels and ways for users to share their thoughts? Where I work (a SaaS company), we have lots of different places where users make requests or provide feedback: \\- in-app feature requests \\- requests and feedback made via email and live chat \\- conversations had with members of our Sales team \\- review sites etc etc. We do capture feedback from our apps and store it all in one spot, but requests that come in via other channels can be harder to keep track of. I have colleagues in CS and Sales who will do their best to log feature requests, but ultimately this is a very manual task and we end up with suggestions and requests in multiple locations. Ideally, I'd like to hav…",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "ProductManagement",
+          "good-strategy-bad-strategy",
+          "the-wisdom-of-crowds",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown",
+          "communication_gap"
+        ],
+        "url": "https://www.reddit.com/r/ProductManagement/comments/1sqw9z3/best_ways_to_consolidate_user_feature_requests/"
+      },
+      {
+        "id": "awb-make-estimates-less-fictional-01-https-www-reddit-com-r-projectma",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "Project managers: Where do time estimates go wrong?",
+        "observed_signal": "Hey all! I’m an engineer and ex-agency owner exploring a SaaS idea in project management and would love some honest input. The problem: Accurately estimating how long development tasks will take is *hard*. We’ve all been burned by the classic “oh, that’ll take 2 days” → turns into 2 weeks. Agencies struggle to set good client expectations, teams overcommit, freelancers underquote. The idea: A tool that helps break down tasks, estimates each subtask, and rolls up a realistic overall time estimate - including confidence ranges (best/worst/most likely). 👉 **My questions for PMs and project leads here:** * Is inaccurate estimation something you actively struggle with? * Where do you usually go wrong when scoping or estimating software work? * Would you *pay* for a tool that improves this? Why or why not? Appreciate any thoughts or feedback! Not selling anything yet, just in discovery phase…",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "projectmanagement",
+          "thinking-fast-and-slow",
+          "seeing-like-a-state",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown"
+        ],
+        "url": "https://www.reddit.com/r/projectmanagement/comments/1khsamo/project_managers_where_do_time_estimates_go_wrong/"
+      },
+      {
+        "id": "awb-make-estimates-less-fictional-02-https-www-reddit-com-r-experienc",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How do you estimate time for a project when you use AI Code?",
+        "observed_signal": "Hi guys. Recently I started new position for a outsource company ( my first time, i have always work for product company and its so chill) . Time for a project is expected to be less than a month for a mvp version. Its quite new to me but im still adapting that I dont code anymore. All I do I review code and brainstorm with AI and testing. I use Claude Code and found it quite smart. But my problem is because Im quite new to this so estimate time might be difficult to me. Now before start the project. Me along with AI brainstorm to create docs like BA, plan, design, task... hour-level detail instead of days or week. Because sometimes issue happen when testing (that AI even not anticipated). And need more time handle that. But for outsource, time is fixed in proposal but I dont want to work overtime for something that I commited. Anyone else faces the same issue?",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "ExperiencedDevs",
+          "thinking-fast-and-slow",
+          "seeing-like-a-state",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown"
+        ],
+        "url": "https://www.reddit.com/r/ExperiencedDevs/comments/1s9o8an/how_do_you_estimate_time_for_a_project_when_you/"
+      },
+      {
+        "id": "awb-make-estimates-less-fictional-03-https-www-reddit-com-r-projectma",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How are you managing capacity without time tracking or reliable effort estimates?",
+        "observed_signal": "I’m looking for advice from people who have managed resource capacity across multiple projects in a relatively low-maturity PM environment. I work in a niche HR function in the public sector. Our team supports thousands of employees across dozens of departments. I was hired in part to help establish more formal PMO/project portfolio practices for the unit. One of the recurring problems we run into is predictable resource constraints causing delivery delays across the portfolio. Right now, we do not track time to projects (nor do we track time at all), and we also are not at a level where I reliable effort estimation is realistic or feasible (yet). I’m trying to identify an approach that gives us a more realistic and usable picture of resource availability and portfolio capacity using the tools we already have (MS Project, excell, Power BI, etc.). What I’m really curious about is: Have a…",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "projectmanagement",
+          "thinking-fast-and-slow",
+          "seeing-like-a-state",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown"
+        ],
+        "url": "https://www.reddit.com/r/projectmanagement/comments/1th37wy/how_are_you_managing_capacity_without_time/"
+      },
+      {
+        "id": "awb-turn-feedback-into-signal-01-https-www-reddit-com-r-entrepren",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How do you actually *use* customer feedback to make your business better?",
+        "observed_signal": "I'm always asking for customer feedback, but I'm not sure I'm doing a great job of actually *using* it. I get surveys, read reviews, and sometimes even have direct conversations. But turning that into actionable improvements feels like a struggle. What are your best practices for making sure customer feedback drives real changes in your services? * Do you have a system for categorizing different types of feedback? * How do you prioritize which issues to address first? * What tools or processes do you use to track progress and ensure changes are effective? Looking for advice from anyone who has successfully used customer feedback to significantly improve their business. Any tips or resources are greatly appreciated!",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "Entrepreneur",
+          "the-mom-test",
+          "the-wisdom-of-crowds",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown"
+        ],
+        "url": "https://www.reddit.com/r/Entrepreneur/comments/1o88qz4/how_do_you_actually_use_customer_feedback_to_make/"
+      },
+      {
+        "id": "awb-turn-feedback-into-signal-02-https-www-reddit-com-r-startups-",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How do you prioritize feature requests when building your product?",
+        "observed_signal": "I’m working on a SaaS solution right now for businesses, and I have a few early users who came in organically. I’ve also convinced a couple of companies I know well to use it actively and provide feedback. The problem I’m facing now is that I’m bombarded with feature requests. I’m aware there’s a lot more I need to build in it to make it fully suitable for day-to-day ops, but I’m not sure how to prioritise. For some items, it’s indeed a lot of engineering effort. I feel like I need to be counting the number of requests for the same feature before deciding to build or not. Can I get some advice?",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "startups",
+          "the-mom-test",
+          "the-wisdom-of-crowds",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown"
+        ],
+        "url": "https://www.reddit.com/r/startups/comments/1e738yr/how_do_you_prioritize_feature_requests_when/"
+      },
+      {
+        "id": "awb-turn-feedback-into-signal-03-https-www-reddit-com-r-productma",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How do you track user feedback when testing new UI interactions?",
+        "observed_signal": "Quick question for product teams here. When we test UI changes (animations, flows, micro interactions, etc.), the feedback ends up scattered everywhere: (a)Slack messages (b)support tickets (c)app reviews (d)survey responses (e)customer interviews For example, we were testing a few animation concepts created with Jitter, and suddenly we had dozens of comments across different channels. The hardest part wasn’t collecting feedback ,it was understanding patterns. A few loud users would complain about something minor, while a quieter usability issue appeared repeatedly but wasn’t obvious at first. We eventually started grouping similar feedback to track how often certain issues appeared over time. That made roadmap discussions way more objective. Curious how other teams handle this stage. Do you manually tag feedback or use some kind of analysis workflow?",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "ProductManagement",
+          "the-mom-test",
+          "the-wisdom-of-crowds",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown"
+        ],
+        "url": "https://www.reddit.com/r/ProductManagement/comments/1rta1bk/how_do_you_track_user_feedback_when_testing_new/"
+      },
+      {
+        "id": "awb-escape-task-overwhelm-01-https-www-reddit-com-r-projectma",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How do you project managers handle email overload and task tracking in Gmail?",
+        "observed_signal": "Hey PMS! I'm a new project manager dealing with 100+ emails a day. Some emails require action, while others are just for my reference. I'm struggling to stay on top of everything and feel like my day gets consumed by managing emails rather than focusing on important tasks. Wondering if you have tips on: 1. Organizing Gmail (labels, filters, etc.) to sort emails efficiently. I currently use labels and multiple inboxes with conversations views on. 2. Managing tasks directly from Gmail or integrating with a task management tool. We use Monday but I don't find this effective for task tracking. 3. Strategies to respond to emails without letting them take over the day. Any advice on what works for you or tools you use to stay organized would be awesome. Thanks in advance!",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "projectmanagement",
+          "getting-things-done",
+          "four-thousand-weeks",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "decision_fatigue"
+        ],
+        "url": "https://www.reddit.com/r/projectmanagement/comments/1fqxrty/how_do_you_project_managers_handle_email_overload/"
+      },
+      {
+        "id": "awb-escape-task-overwhelm-02-https-www-reddit-com-r-projectma",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "Nonprofit program staff task overload, how do you prioritize when everything is urgent?",
+        "observed_signal": "Program staff at our org are managing caseloads, grant reporting, community partnerships, and internal admin simultaneously. When I ask people to also update a project management tool it feels like I'm adding overhead to an already full plate for the sake of my own visibility. The tension I keep running into is that I need some level of operational visibility to manage the team and advocate for resources, but the mechanisms I use to get that visibility can't add meaningful burden to people who are already stretched. Everything I've tried has either been too lightweight to be useful or too heavy to be sustained. How do other nonprofit leaders balance the visibility and accountability need with the capacity reality of a small program team?",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "projectmanagement",
+          "getting-things-done",
+          "four-thousand-weeks",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "decision_fatigue"
+        ],
+        "url": "https://www.reddit.com/r/projectmanagement/comments/1rtpz8y/nonprofit_program_staff_task_overload_how_do_you/"
+      },
+      {
+        "id": "awb-escape-task-overwhelm-03-https-www-reddit-com-r-managers-",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "One of my direct reports is lying about his work time (works way too much)",
+        "observed_signal": "Hi, I manage a team with flexible hours, but workloads are designed for \\~7.5-8 hours/day. Most people work roughly 9am-6pm. One of my direct reports used to work significant unpaid overtime. Three months ago, I asked her whether she felt overloaded; she said no. I told her that, in that case, her work should be manageable within normal hours on average, and that part of her bonus would depend on that. She agreed, and I offered support if needed. Since then, I’ve seen some improvement (she appears less active in the evenings but it didn't affect her deliverables), this is why I've tried to negociate a raise for her to encourage her in this path. However, I’ve received indirect feedback suggesting she still works overtime: specifically, leaving around 7pm, returning after dinner, and working late (10-11pm), without being visible on Teams or saving files until the next day. I suspect she…",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "managers",
+          "getting-things-done",
+          "four-thousand-weeks",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "decision_fatigue"
+        ],
+        "url": "https://www.reddit.com/r/managers/comments/1rzapoq/one_of_my_direct_reports_is_lying_about_his_work/"
+      },
+      {
+        "id": "awb-hard-conversation-without-making-it-worse-01-https-www-reddit-com-r-managers-",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "What's the best way you've found to train someone for a difficult conversation?",
+        "observed_signal": "Performance reviews, delivering tough feedback, handling a frustrated client - these are conversations most people are terrible at until they've done them enough times. How do you actually prepare your team for these? Is there anything beyond \"just watch how I do it\" that has worked for you?",
+        "entities": [
+          "Answer With Books",
+          "team leader",
+          "managers",
+          "crucial-conversations",
+          "thinking-fast-and-slow",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "communication_gap"
+        ],
+        "url": "https://www.reddit.com/r/managers/comments/1teqemb/whats_the_best_way_youve_found_to_train_someone/"
+      },
+      {
+        "id": "awb-hard-conversation-without-making-it-worse-02-https-www-reddit-com-r-careergui",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "Job offer followed by difficult conversation with HR.. what should i do?",
+        "observed_signal": "Hi keepers of Career insight I have applied to a new health care position. It requires a grad degree, 2 interviews and is in an high-stress role. My experience of the manager was that she was candid and really excited about me. They have several openings and have not been able to get them filled for months. there is a shortage of people trained to do my role. It took HR 2 weeks to get me a wage set. It was significantly lower than I anticipated and everyone I spoke with in my field said it was a pass. However, I'd had such a positive experience with the supervisor. and this is role I have wanted to always do. The wage set is done via a formula. I was really candid about how I felt. She offered to talk to the union rep and recomended I redo my resume and ask HR to consider a re-eval. The process was very long already and then a week later I was given a new wage set. less than a dollar mo…",
+        "entities": [
+          "Answer With Books",
+          "team leader",
+          "careerguidance",
+          "crucial-conversations",
+          "thinking-fast-and-slow",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "communication_gap"
+        ],
+        "url": "https://www.reddit.com/r/careerguidance/comments/1kfx6za/job_offer_followed_by_difficult_conversation_with/"
+      },
+      {
+        "id": "awb-hard-conversation-without-making-it-worse-03-https-www-reddit-com-r-work-comm",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How do i handle a difficult conversation with a manager?",
+        "observed_signal": "To keep it brief: Last week I was pulled up for a mistake I made. I won’t go into the ins and outs of the mistake as it is a very long story if i provided appropriate context. The day after the mistake, my manager called me out the blue, and spent 30 minutes essentially telling me off. I was exceptionally apologetic and took full accountability. This manager was hard, unforgiving, and whilst aggressive would be the wrong word, intense seems to fall short. Especially due to how apologetic I was. He has told me to reflect on this mistake and talk it through with him next week. I was beyond devastated after the call; I cried for literally an hour (I am not a crier), and couldn’t focus at all for the rest of the day. I woke up tearful about it again this morning. I have done A LOT of reflection on it, and I have to say I don’t feel completely to blame. I am very new (less than two months) a…",
+        "entities": [
+          "Answer With Books",
+          "team leader",
+          "work",
+          "crucial-conversations",
+          "thinking-fast-and-slow",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "communication_gap"
+        ],
+        "url": "https://www.reddit.com/r/work/comments/1anmgb0/how_do_i_handle_a_difficult_conversation_with_a/"
+      },
+      {
+        "id": "awb-negotiate-salary-without-guessing-01-https-www-reddit-com-r-careergui",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "Salary Negotiation - can I negotiate if offered the highest salary in the range?",
+        "observed_signal": "Hi All! After 4 rounds of interviews in less than 2 weeks, I was just offered a position at a really cool luxury retail brand on the Merchandising team. It's a lower level title and will be a pay cut for me (\\~33% decrease). I'm making a pivot into this field and am really excited about it, so more than happy to take a step back. It's been apparent the team has been really excited about me and they've moved me along really quickly. In my initial round with the Talent Acquisition team-member, they checked to see if their salary range worked for me and I said yes. The offer they gave me was the highest number in the range which is very flattering, but I'm wondering if it's worth negotiating a bit more? I always negotiate, but I'm unfamiliar with how this works when it comes to a range being shared and being offered at the very top of the range. I'd appreciate any advice! I'd also consider…",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "careerguidance",
+          "never-split-the-difference",
+          "thinking-fast-and-slow",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "communication_gap"
+        ],
+        "url": "https://www.reddit.com/r/careerguidance/comments/1taddrl/salary_negotiation_can_i_negotiate_if_offered_the/"
+      },
+      {
+        "id": "awb-negotiate-salary-without-guessing-02-https-www-reddit-com-r-jobs-comm",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "Should I negotiate salary for a role after a 7-stage process? Never done it before and feeling nervous about it",
+        "observed_signal": "I’m in the final stages for a **Technical Account Manager** role and I’m trying to figure out whether salary negotiation is actually worth it here, or whether I’m overthinking it. The company has been pretty transparent about salary from the beginning and shared the range early in the process. The interview process has also been *long -* 7 stages so far and I’m expecting a final decision/offer soon after references. I’m considering whether to try negotiating **above the stated range** (roughly 6-12% higher on base salary if I were to ask), but I’ve honestly never really negotiated salary before. I constantly see people online saying *“always negotiate”*, but I’m unsure how that applies when: \\- the range has already been openly discussed \\- the process has been extensive \\- I don’t want to jeopardise or complicate a final offer One extra factor: I’m also likely to receive a **retention…",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "jobs",
+          "never-split-the-difference",
+          "thinking-fast-and-slow",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "communication_gap"
+        ],
+        "url": "https://www.reddit.com/r/jobs/comments/1tih2g7/should_i_negotiate_salary_for_a_role_after_a/"
+      },
+      {
+        "id": "awb-negotiate-salary-without-guessing-03-https-www-reddit-com-r-careergui",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "Salary negotiation before job offer. How do I go about responding?",
+        "observed_signal": "I've just received an offer for an interview. They said my application was a standout (though unsure if that's what they tell everyone). However, they have mentioned the pay being 65k and asked if that aligns with my expectations. I am seeking at least a 75-82.5k salary (in AUS). How would I go about responding to the email? I am unsure if I should justify my request fully in my response, or to only provide a brief sentence stating that I have experience and explain the details in later negotiations. For context, I have a Masters degree, along with 10 years of experience in the industry (though none in that particular role, aside from some technical experience that directly relates to the role).",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "careerguidance",
+          "never-split-the-difference",
+          "thinking-fast-and-slow",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "communication_gap"
+        ],
+        "url": "https://www.reddit.com/r/careerguidance/comments/1to6xkz/salary_negotiation_before_job_offer_how_do_i_go/"
+      },
+      {
+        "id": "awb-delegate-without-losing-control-01-https-www-reddit-com-r-projectma",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How to delegate better?",
+        "observed_signal": "Hey all. Currently managing a very high profile project worth $28 mil for our scope. I ahve two subordinates and am struggling to delegate effectively. Construction PM and one teammate is pretty well versed with one side of the job. The other is incredibly green. Im working 55/60 hr weeks and still feel like im not gaining traction to the degree id like. I know the answer is delegate more, so how do you all do it well?",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "projectmanagement",
+          "high-output-management",
+          "the-effective-executive",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown",
+          "communication_gap"
+        ],
+        "url": "https://www.reddit.com/r/projectmanagement/comments/1kt6mzy/how_to_delegate_better/"
+      },
+      {
+        "id": "awb-delegate-without-losing-control-02-https-www-reddit-com-r-managers-",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "Do you use any frameworks to make decisions and delegate faster? I need to do these earlier and with confidence…",
+        "observed_signal": "In 2026, one of my goals is to follow up with people faster and delegate faster. Close the loop on projects sooner. Also keep my email inbox updated to no more than 1-2 weeks old. I’m not in a director role yet but that would be the next role up when it’s time. I tend to build up a list of things I need to follow up like tough conversations or feedback on report’s assignments. I do a good job of addressing things on super fire quickly that hits our team, but the other stuff just kind of sits there and builds up and then takes up mental headspace. I run out of energy to address it at the end of the day. I work in a role where I get hit by things all day long and my reports are all working on different things. I have a mixture of 4 full-time staff and 3 contractors. I’ve been in a managing role for about 3-4 years. I don’t think my manager is realize this is a weakness of mine because no…",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "managers",
+          "high-output-management",
+          "the-effective-executive",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown",
+          "communication_gap"
+        ],
+        "url": "https://www.reddit.com/r/managers/comments/1pzqbgz/do_you_use_any_frameworks_to_make_decisions_and/"
+      },
+      {
+        "id": "awb-delegate-without-losing-control-03-https-www-reddit-com-r-leadershi",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "How to become comfortable with delegation (and not feel like you're just dumping work off)?",
+        "observed_signal": "I've been in mgmt roles for years, and until recently felt like I had a pretty healthy approach to delegating, but with a recent company switch, I'm starting to second guess that. The culture at my new company differs from my old one in the sense that before I would be expected to delegate *tasks* but still retain *ownership* of the overall effort/activity, but here the leadership style is far more based on delegating the *ownership* aspect itself. We just went through our goal planning for the year, and for my personal internal goals, I have two major practice development initiatives I want to accomplish, but my boss is adamant that they think they're good \"goals\" for me, but they expect me to find junior staff to \"own\" them because I'll have other things to do. I've found that I'm struggling with the general sort of \"ethics\" of the thing, because if I'm looking at them as my accomplis…",
+        "entities": [
+          "Answer With Books",
+          "product leader",
+          "Leadership",
+          "high-output-management",
+          "the-effective-executive",
+          "wasted_building",
+          "bad_evidence",
+          "stakeholder_pressure",
+          "planning_breakdown",
+          "communication_gap"
+        ],
+        "url": "https://www.reddit.com/r/Leadership/comments/1df9kb2/how_to_become_comfortable_with_delegation_and_not/"
+      },
+      {
+        "id": "awb-decide-career-next-step-01-https-www-reddit-com-r-findapath",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "23M, Huge Study Gap, No Clear Career Option — How Do I Restart My Life?",
+        "observed_signal": "I’m 23 and I’ve had a pretty long break from studies. Life didn’t go as planned and I just kind of lost consistency along the way. Right now I honestly feel stuck. I don’t have a clear career path, and even restarting feels overwhelming because I don’t know what direction to take. Everyone around me seems ahead in life and I’m just here trying to figure out how to even begin again. If you’ve been in a similar situation—long gap, confused, starting from zero—how did you actually restart? What was the first step you took that helped you get moving again? I’m not looking for motivation quotes or sympathy, just real advice from people who’ve been through it. Thanks for reading.",
+        "entities": [
+          "Answer With Books",
+          "product designer",
+          "findapath",
+          "designing-your-life",
+          "so-good-they-cant-ignore-you",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "planning_breakdown",
+          "decision_fatigue"
+        ],
+        "url": "https://www.reddit.com/r/findapath/comments/1ubdics/23m_huge_study_gap_no_clear_career_option_how_do/"
+      },
+      {
+        "id": "awb-decide-career-next-step-02-https-www-reddit-com-r-careergui",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "What should I do with my career path?",
+        "observed_signal": "I went to college for Pre-Law/Criminal Justice and I started working in a law firm as a legal assistant right out of college. My plans were to go to law school the next year but I got super nervous about money and all of that so I didn't take the LSAT. After that I began to spiral asking myself is law really what I want to do? I researched careers with quick schooling that made decent money and I got Diagnostic Sonographer. I applied to a local college and got in. But now I am worried I made an impulsive decision. I basically have no medical background other than child care, and the program seems pretty intense and drama filled. It doesn't start until 2027 Spring so I have time to make a choice. It also means not working for two years which gives me extreme anxiety and more loans. I am also considering real-estate, as it has more synonymous work with law. Paperwork, important deadlines,…",
+        "entities": [
+          "Answer With Books",
+          "product designer",
+          "careerguidance",
+          "designing-your-life",
+          "so-good-they-cant-ignore-you",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "planning_breakdown",
+          "decision_fatigue"
+        ],
+        "url": "https://www.reddit.com/r/careerguidance/comments/1tuto3d/what_should_i_do_with_my_career_path/"
+      },
+      {
+        "id": "awb-decide-career-next-step-03-https-www-reddit-com-r-careergui",
+        "signal_class": "customer_demand",
+        "platform": "reddit",
+        "source_role": "audience_question",
+        "actor": null,
+        "title": "Career Change, Not sure where to start?",
+        "observed_signal": "Hi Everyone, I recently have decided that I am leaving the social work profession after a year of therapy of my own. I also have a general business degree, I am job searching right now for a role in coordination, data, marketing, etc.. If anyone has any leads or knows what key words i should be searching for I would greatly appreciate it! We on the struggle bus at the moment ;(",
+        "entities": [
+          "Answer With Books",
+          "product designer",
+          "careerguidance",
+          "designing-your-life",
+          "so-good-they-cant-ignore-you",
+          "uncertainty",
+          "wasted_building",
+          "bad_evidence",
+          "planning_breakdown",
+          "decision_fatigue"
+        ],
+        "url": "https://www.reddit.com/r/careerguidance/comments/1u9d3xm/career_change_not_sure_where_to_start/"
+      }
+    ],
+    "supply_ledger": {
+      "type": "book_passage_ledger",
+      "entry_count": 18,
+      "passage_count": 54,
+      "top_entries": [
+        {
+          "concern_id": "validate-without-fooling-yourself",
+          "title": "How to validate an idea without fooling yourself",
+          "matched_books": [
+            "the-mom-test",
+            "thinking-fast-and-slow"
+          ],
+          "passage_count": 3,
+          "top_passages": [
+            {
+              "book_id": "the-mom-test",
+              "book_title": "The Mom Test",
+              "passage_id": "section_1",
+              "heading": "Core mental models",
+              "match_score": 286,
+              "use_as": "answer_lens"
+            },
+            {
+              "book_id": "thinking-fast-and-slow",
+              "book_title": "Thinking, Fast and Slow",
+              "passage_id": "section_1",
+              "heading": "Core mental models",
+              "match_score": 235,
+              "use_as": "answer_lens"
+            },
+            {
+              "book_id": "the-mom-test",
+              "book_title": "The Mom Test",
+              "passage_id": "section_2",
+              "heading": "Key frameworks",
+              "match_score": 177,
+              "use_as": "framework_or_checklist"
+            }
+          ]
+        },
+        {
+          "concern_id": "repair-user-interviews",
+          "title": "How to fix user interviews that are not teaching you anything",
+          "matched_books": [
+            "the-mom-test"
+          ],
+          "passage_count": 3,
+          "top_passages": [
+            {
+              "book_id": "the-mom-test",
+              "book_title": "The Mom Test",
+              "passage_id": "section_1",
+              "heading": "Core mental models",
+              "match_score": 266,
+              "use_as": "answer_lens"
+            },
+            {
+              "book_id": "the-mom-test",
+              "book_title": "The Mom Test",
+              "passage_id": "section_2",
+              "heading": "Key frameworks",
+              "match_score": 156,
+              "use_as": "framework_or_checklist"
+            },
+            {
+              "book_id": "the-mom-test",
+              "book_title": "The Mom Test",
+              "passage_id": "section_4",
+              "heading": "Memorable ideas",
+              "match_score": 81,
+              "use_as": "short_takeaway"
+            }
+          ]
+        },
+        {
+          "concern_id": "trust-gut-or-check-it",
+          "title": "How to know when to trust your gut",
+          "matched_books": [
+            "thinking-fast-and-slow"
+          ],
+          "passage_count": 3,
+          "top_passages": [
+            {
+              "book_id": "thinking-fast-and-slow",
+              "book_title": "Thinking, Fast and Slow",
+              "passage_id": "section_1",
+              "heading": "Core mental models",
+              "match_score": 245,
+              "use_as": "answer_lens"
+            },
+            {
+              "book_id": "thinking-fast-and-slow",
+              "book_title": "Thinking, Fast and Slow",
+              "passage_id": "section_2",
+              "heading": "Key frameworks",
+              "match_score": 141,
+              "use_as": "framework_or_checklist"
+            },
+            {
+              "book_id": "thinking-fast-and-slow",
+              "book_title": "Thinking, Fast and Slow",
+              "passage_id": "section_5",
+              "heading": "How I've applied it",
+              "match_score": 92,
+              "use_as": "practical_application"
+            }
+          ]
+        },
+        {
+          "concern_id": "prevent-smart-team-bad-decision",
+          "title": "How to keep a smart team from making a dumb decision",
+          "matched_books": [
+            "the-wisdom-of-crowds",
+            "thinking-fast-and-slow"
+          ],
+          "passage_count": 3,
+          "top_passages": [
+            {
+              "book_id": "the-wisdom-of-crowds",
+              "book_title": "The Wisdom of Crowds",
+              "passage_id": "section_1",
+              "heading": "Core mental models",
+              "match_score": 231,
+              "use_as": "answer_lens"
+            },
+            {
+              "book_id": "thinking-fast-and-slow",
+              "book_title": "Thinking, Fast and Slow",
+              "passage_id": "section_1",
+              "heading": "Core mental models",
+              "match_score": 218,
+              "use_as": "answer_lens"
+            },
+            {
+              "book_id": "thinking-fast-and-slow",
+              "book_title": "Thinking, Fast and Slow",
+              "passage_id": "section_2",
+              "heading": "Key frameworks",
+              "match_score": 135,
+              "use_as": "framework_or_checklist"
+            }
+          ]
+        },
+        {
+          "concern_id": "pivot-without-panicking",
+          "title": "How to tell whether to pivot or keep going",
+          "matched_books": [
+            "the-structure-of-scientific-revolutions",
+            "thinking-fast-and-slow"
+          ],
+          "passage_count": 3,
+          "top_passages": [
+            {
+              "book_id": "thinking-fast-and-slow",
+              "book_title": "Thinking, Fast and Slow",
+              "passage_id": "section_1",
+              "heading": "Core mental models",
+              "match_score": 210,
+              "use_as": "answer_lens"
+            },
+            {
+              "book_id": "the-structure-of-scientific-revolutions",
+              "book_title": "The Structure of Scientific Revolutions",
+              "passage_id": "section_1",
+              "heading": "Core mental models",
+              "match_score": 173,
+              "use_as": "answer_lens"
+            },
+            {
+              "book_id": "thinking-fast-and-slow",
+              "book_title": "Thinking, Fast and Slow",
+              "passage_id": "section_2",
+              "heading": "Key frameworks",
+              "match_score": 126,
+              "use_as": "framework_or_checklist"
+            }
+          ]
+        },
+        {
+          "concern_id": "plan-that-survives-reality",
+          "title": "How to make a plan that survives contact with reality",
+          "matched_books": [
+            "seeing-like-a-state",
+            "the-wisdom-of-crowds"
+          ],
+          "passage_count": 3,
+          "top_passages": [
+            {
+              "book_id": "the-wisdom-of-crowds",
+              "book_title": "The Wisdom of Crowds",
+              "passage_id": "section_1",
+              "heading": "Core mental models",
+              "match_score": 204,
+              "use_as": "answer_lens"
+            },
+            {
+              "book_id": "seeing-like-a-state",
+              "book_title": "Seeing Like a State",
+              "passage_id": "section_1",
+              "heading": "Core mental models",
+              "match_score": 193,
+              "use_as": "answer_lens"
+            },
+            {
+              "book_id": "seeing-like-a-state",
+              "book_title": "Seeing Like a State",
+              "passage_id": "section_2",
+              "heading": "Key frameworks",
+              "match_score": 135,
+              "use_as": "framework_or_checklist"
+            }
+          ]
+        },
+        {
+          "concern_id": "strategy-without-slogans",
+          "title": "How to turn a vague goal into an actual strategy",
+          "matched_books": [
+            "good-strategy-bad-strategy",
+            "seeing-like-a-state"
+          ],
+          "passage_count": 3,
+          "top_passages": [
+            {
+              "book_id": "good-strategy-bad-strategy",
+              "book_title": "Good Strategy Bad Strategy",
+              "passage_id": "section_1",
+              "heading": "Core mental models",
+              "match_score": 143,
+              "use_as": "answer_lens"
+            },
+            {
+              "book_id": "seeing-like-a-state",
+              "book_title": "Seeing Like a State",
+              "passage_id": "section_1",
+              "heading": "Core mental models",
+              "match_score": 106,
+              "use_as": "answer_lens"
+            },
+            {
+              "book_id": "seeing-like-a-state",
+              "book_title": "Seeing Like a State",
+              "passage_id": "section_2",
+              "heading": "Key frameworks",
+              "match_score": 105,
+              "use_as": "framework_or_checklist"
+            }
+          ]
+        },
+        {
+          "concern_id": "test-risk-before-building",
+          "title": "How to test a risky idea before you build too much",
+          "matched_books": [
+            "the-lean-startup",
+            "the-mom-test"
+          ],
+          "passage_count": 3,
+          "top_passages": [
+            {
+              "book_id": "the-mom-test",
+              "book_title": "The Mom Test",
+              "passage_id": "section_1",
+              "heading": "Core mental models",
+              "match_score": 257,
+              "use_as": "answer_lens"
+            },
+            {
+              "book_id": "the-lean-startup",
+              "book_title": "The Lean Startup",
+              "passage_id": "section_1",
+              "heading": "Core mental models",
+              "match_score": 197,
+              "use_as": "answer_lens"
+            },
+            {
+              "book_id": "the-mom-test",
+              "book_title": "The Mom Test",
+              "passage_id": "section_2",
+              "heading": "Key frameworks",
+              "match_score": 155,
+              "use_as": "framework_or_checklist"
+            }
+          ]
+        }
+      ]
+    },
+    "action_types": [
+      "create_answer",
+      "create_personalized_digest"
+    ],
+    "action_queue": [
+      {
+        "id": "awb-action-01",
+        "type": "create_answer",
+        "title": "Draft answer: How to validate an idea without fooling yourself",
+        "expected_outcome": "Publish an answer that satisfies a repeated question better than a generic LLM response."
+      },
+      {
+        "id": "awb-action-02",
+        "type": "create_answer",
+        "title": "Draft answer: How to fix user interviews that are not teaching you anything",
+        "expected_outcome": "Publish an answer that satisfies a repeated question better than a generic LLM response."
+      },
+      {
+        "id": "awb-action-03",
+        "type": "create_answer",
+        "title": "Draft answer: How to know when to trust your gut",
+        "expected_outcome": "Publish an answer that satisfies a repeated question better than a generic LLM response."
+      },
+      {
+        "id": "awb-action-04",
+        "type": "create_personalized_digest",
+        "title": "Create a personalized digest/audio brief from the top validation and decision-making concerns",
+        "expected_outcome": "Package repeated questions into a short digest/audio-ready sequence that preserves book grounding while reducing reading effort."
+      }
+    ],
+    "repurpose_strategy": {
+      "pattern": "repeated concern -> book lens -> short answer -> digest/audio/feed variant",
+      "reuse_moves": [
+        "Turn each concern cluster into a short answer page.",
+        "Combine adjacent concern clusters into a personalized digest sequence.",
+        "Use the same answer brief as an audio script outline.",
+        "Write back follow-up questions as new concern variants."
+      ],
+      "needs_before_scaling": [
+        "answer performance and follow-up question analytics"
+      ]
+    },
+    "next_recommendations": [
+      {
+        "id": "next-event-awb-answer-01",
+        "title": "Create a follow-up answer on finding real users and validating buying intent",
+        "target_action_type": "create_answer",
+        "required_context": [
+          "How do I find users outside my network?",
+          "How do I know if interview feedback is real buying intent?"
+        ]
+      },
+      {
+        "id": "next-event-awb-digest-01",
+        "title": "Shorten the founder decision digest and make the next-answer path explicit",
+        "target_action_type": "revise_personalized_digest",
+        "required_context": [
+          "segment completion",
+          "audio completion",
+          "follow-up questions",
+          "source concern IDs"
+        ]
+      }
+    ],
+    "gaps": [
+      "exact quote/passages ledger for each book",
+      "live analytics loop from query impressions and answer clicks",
+      "personalized digest/audio generation outcomes",
+      "strong external evidence count for every concern seed"
+    ]
+  },
+  "supply_ledger": {
+    "type": "book_passage_ledger",
+    "entry_count": 18,
+    "passage_count": 54,
+    "top_entries": [
+      {
+        "concern_id": "validate-without-fooling-yourself",
+        "title": "How to validate an idea without fooling yourself",
+        "matched_books": [
+          "the-mom-test",
+          "thinking-fast-and-slow"
+        ],
+        "passage_count": 3,
+        "top_passages": [
+          {
+            "book_id": "the-mom-test",
+            "book_title": "The Mom Test",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 286,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "thinking-fast-and-slow",
+            "book_title": "Thinking, Fast and Slow",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 235,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "the-mom-test",
+            "book_title": "The Mom Test",
+            "passage_id": "section_2",
+            "heading": "Key frameworks",
+            "match_score": 177,
+            "use_as": "framework_or_checklist"
+          }
+        ]
+      },
+      {
+        "concern_id": "repair-user-interviews",
+        "title": "How to fix user interviews that are not teaching you anything",
+        "matched_books": [
+          "the-mom-test"
+        ],
+        "passage_count": 3,
+        "top_passages": [
+          {
+            "book_id": "the-mom-test",
+            "book_title": "The Mom Test",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 266,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "the-mom-test",
+            "book_title": "The Mom Test",
+            "passage_id": "section_2",
+            "heading": "Key frameworks",
+            "match_score": 156,
+            "use_as": "framework_or_checklist"
+          },
+          {
+            "book_id": "the-mom-test",
+            "book_title": "The Mom Test",
+            "passage_id": "section_4",
+            "heading": "Memorable ideas",
+            "match_score": 81,
+            "use_as": "short_takeaway"
+          }
+        ]
+      },
+      {
+        "concern_id": "trust-gut-or-check-it",
+        "title": "How to know when to trust your gut",
+        "matched_books": [
+          "thinking-fast-and-slow"
+        ],
+        "passage_count": 3,
+        "top_passages": [
+          {
+            "book_id": "thinking-fast-and-slow",
+            "book_title": "Thinking, Fast and Slow",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 245,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "thinking-fast-and-slow",
+            "book_title": "Thinking, Fast and Slow",
+            "passage_id": "section_2",
+            "heading": "Key frameworks",
+            "match_score": 141,
+            "use_as": "framework_or_checklist"
+          },
+          {
+            "book_id": "thinking-fast-and-slow",
+            "book_title": "Thinking, Fast and Slow",
+            "passage_id": "section_5",
+            "heading": "How I've applied it",
+            "match_score": 92,
+            "use_as": "practical_application"
+          }
+        ]
+      },
+      {
+        "concern_id": "prevent-smart-team-bad-decision",
+        "title": "How to keep a smart team from making a dumb decision",
+        "matched_books": [
+          "the-wisdom-of-crowds",
+          "thinking-fast-and-slow"
+        ],
+        "passage_count": 3,
+        "top_passages": [
+          {
+            "book_id": "the-wisdom-of-crowds",
+            "book_title": "The Wisdom of Crowds",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 231,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "thinking-fast-and-slow",
+            "book_title": "Thinking, Fast and Slow",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 218,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "thinking-fast-and-slow",
+            "book_title": "Thinking, Fast and Slow",
+            "passage_id": "section_2",
+            "heading": "Key frameworks",
+            "match_score": 135,
+            "use_as": "framework_or_checklist"
+          }
+        ]
+      },
+      {
+        "concern_id": "pivot-without-panicking",
+        "title": "How to tell whether to pivot or keep going",
+        "matched_books": [
+          "the-structure-of-scientific-revolutions",
+          "thinking-fast-and-slow"
+        ],
+        "passage_count": 3,
+        "top_passages": [
+          {
+            "book_id": "thinking-fast-and-slow",
+            "book_title": "Thinking, Fast and Slow",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 210,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "the-structure-of-scientific-revolutions",
+            "book_title": "The Structure of Scientific Revolutions",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 173,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "thinking-fast-and-slow",
+            "book_title": "Thinking, Fast and Slow",
+            "passage_id": "section_2",
+            "heading": "Key frameworks",
+            "match_score": 126,
+            "use_as": "framework_or_checklist"
+          }
+        ]
+      },
+      {
+        "concern_id": "plan-that-survives-reality",
+        "title": "How to make a plan that survives contact with reality",
+        "matched_books": [
+          "seeing-like-a-state",
+          "the-wisdom-of-crowds"
+        ],
+        "passage_count": 3,
+        "top_passages": [
+          {
+            "book_id": "the-wisdom-of-crowds",
+            "book_title": "The Wisdom of Crowds",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 204,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "seeing-like-a-state",
+            "book_title": "Seeing Like a State",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 193,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "seeing-like-a-state",
+            "book_title": "Seeing Like a State",
+            "passage_id": "section_2",
+            "heading": "Key frameworks",
+            "match_score": 135,
+            "use_as": "framework_or_checklist"
+          }
+        ]
+      },
+      {
+        "concern_id": "strategy-without-slogans",
+        "title": "How to turn a vague goal into an actual strategy",
+        "matched_books": [
+          "good-strategy-bad-strategy",
+          "seeing-like-a-state"
+        ],
+        "passage_count": 3,
+        "top_passages": [
+          {
+            "book_id": "good-strategy-bad-strategy",
+            "book_title": "Good Strategy Bad Strategy",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 143,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "seeing-like-a-state",
+            "book_title": "Seeing Like a State",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 106,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "seeing-like-a-state",
+            "book_title": "Seeing Like a State",
+            "passage_id": "section_2",
+            "heading": "Key frameworks",
+            "match_score": 105,
+            "use_as": "framework_or_checklist"
+          }
+        ]
+      },
+      {
+        "concern_id": "test-risk-before-building",
+        "title": "How to test a risky idea before you build too much",
+        "matched_books": [
+          "the-lean-startup",
+          "the-mom-test"
+        ],
+        "passage_count": 3,
+        "top_passages": [
+          {
+            "book_id": "the-mom-test",
+            "book_title": "The Mom Test",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 257,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "the-lean-startup",
+            "book_title": "The Lean Startup",
+            "passage_id": "section_1",
+            "heading": "Core mental models",
+            "match_score": 197,
+            "use_as": "answer_lens"
+          },
+          {
+            "book_id": "the-mom-test",
+            "book_title": "The Mom Test",
+            "passage_id": "section_2",
+            "heading": "Key frameworks",
+            "match_score": 155,
+            "use_as": "framework_or_checklist"
+          }
+        ]
+      }
+    ]
+  },
+  "answer_brief_candidates": [
+    {
+      "id": "awb-action-01",
+      "title": "How to validate an idea without fooling yourself",
+      "source_action_id": "awb-action-01",
+      "source_context_pack_id": "awb-content-answer-loop",
+      "format": "how_to_guide",
+      "audience": "product leader",
+      "concern_id": "validate-without-fooling-yourself",
+      "user_problem": "People are trying to validate an idea without fooling yourself, but the social evidence suggests uncertainty, wasted building, bad evidence, stakeholder pressure, planning breakdown, decision fatigue are getting in the way.",
+      "books": [
+        "the-mom-test",
+        "thinking-fast-and-slow"
+      ],
+      "source_ids": [
+        "validate-without-fooling-yourself"
+      ],
+      "output_contract": {
+        "artifact_type": "book_grounded_answer",
+        "must_include": [
+          "user question in plain language",
+          "book lenses used",
+          "short answer",
+          "practical sequence/checklist",
+          "why these books fit"
+        ],
+        "must_not_include": [
+          "generic book summary detached from demand signal",
+          "exact quotes unless verified in source notes"
+        ]
+      },
+      "quality_gate": [
+        "Every recommendation links to at least one evidence or demand signal ID.",
+        "The output states what changed or why this matters now.",
+        "The output declares the next measurable outcome.",
+        "The answer starts from the user's practical problem, not from a book report.",
+        "Each book is used as a lens or operating model."
+      ],
+      "writeback_required": [
+        "answer_slug",
+        "books_used",
+        "source_concern_id",
+        "passages_or_notes_used",
+        "cache_status",
+        "impressions_clicks_followup_questions"
+      ]
+    },
+    {
+      "id": "awb-action-02",
+      "title": "How to fix user interviews that are not teaching you anything",
+      "source_action_id": "awb-action-02",
+      "source_context_pack_id": "awb-content-answer-loop",
+      "format": "how_to_guide",
+      "audience": null,
+      "concern_id": "repair-user-interviews",
+      "user_problem": "People are trying to fix user interviews that are not teaching you anything, but the social evidence suggests wasted building, bad evidence, stakeholder pressure, decision fatigue are getting in the way.",
+      "books": [
+        "the-mom-test"
+      ],
+      "source_ids": [
+        "repair-user-interviews"
+      ],
+      "output_contract": {
+        "artifact_type": "book_grounded_answer",
+        "must_include": [
+          "user question in plain language",
+          "book lenses used",
+          "short answer",
+          "practical sequence/checklist",
+          "why these books fit"
+        ],
+        "must_not_include": [
+          "generic book summary detached from demand signal",
+          "exact quotes unless verified in source notes"
+        ]
+      },
+      "quality_gate": [
+        "Every recommendation links to at least one evidence or demand signal ID.",
+        "The output states what changed or why this matters now.",
+        "The output declares the next measurable outcome.",
+        "The answer starts from the user's practical problem, not from a book report.",
+        "Each book is used as a lens or operating model."
+      ],
+      "writeback_required": [
+        "answer_slug",
+        "books_used",
+        "source_concern_id",
+        "passages_or_notes_used",
+        "cache_status",
+        "impressions_clicks_followup_questions"
+      ]
+    },
+    {
+      "id": "awb-action-03",
+      "title": "How to know when to trust your gut",
+      "source_action_id": "awb-action-03",
+      "source_context_pack_id": "awb-content-answer-loop",
+      "format": "how_to_guide",
+      "audience": null,
+      "concern_id": "trust-gut-or-check-it",
+      "user_problem": "People are trying to know when to trust your gut, but the social evidence suggests uncertainty, wasted building, bad evidence, stakeholder pressure, planning breakdown, communication gap, decision fatigue are getting in the way.",
+      "books": [
+        "thinking-fast-and-slow"
+      ],
+      "source_ids": [
+        "trust-gut-or-check-it"
+      ],
+      "output_contract": {
+        "artifact_type": "book_grounded_answer",
+        "must_include": [
+          "user question in plain language",
+          "book lenses used",
+          "short answer",
+          "practical sequence/checklist",
+          "why these books fit"
+        ],
+        "must_not_include": [
+          "generic book summary detached from demand signal",
+          "exact quotes unless verified in source notes"
+        ]
+      },
+      "quality_gate": [
+        "Every recommendation links to at least one evidence or demand signal ID.",
+        "The output states what changed or why this matters now.",
+        "The output declares the next measurable outcome.",
+        "The answer starts from the user's practical problem, not from a book report.",
+        "Each book is used as a lens or operating model."
+      ],
+      "writeback_required": [
+        "answer_slug",
+        "books_used",
+        "source_concern_id",
+        "passages_or_notes_used",
+        "cache_status",
+        "impressions_clicks_followup_questions"
+      ]
+    }
+  ],
+  "digest_briefs": [
+    {
+      "id": "awb-action-04",
+      "title": "Create a personalized digest/audio brief from the top validation and decision-making concerns",
+      "source_context_pack_id": "awb-content-answer-loop",
+      "target_asset": "personalized_digest_or_audio_brief",
+      "audience": "product leaders and founders with validation/decision concerns",
+      "formats": [
+        "short_digest",
+        "audio_script"
+      ],
+      "concern_ids": [
+        "validate-without-fooling-yourself",
+        "repair-user-interviews",
+        "trust-gut-or-check-it"
+      ],
+      "book_lenses": [
+        "the-mom-test",
+        "thinking-fast-and-slow"
+      ],
+      "required_context": [
+        {
+          "id": "validate-without-fooling-yourself",
+          "title": "How to validate an idea without fooling yourself",
+          "concern": "People are trying to validate an idea without fooling yourself, but the social evidence suggests uncertainty, wasted building, bad evidence, stakeholder pressure, planning breakdown, decision fatigue are getting in the way.",
+          "audience": "product leader",
+          "pain_points": [
+            "uncertainty",
+            "wasted_building",
+            "bad_evidence",
+            "stakeholder_pressure",
+            "planning_breakdown"
+          ],
+          "matched_books": [
+            "the-mom-test",
+            "thinking-fast-and-slow"
+          ],
+          "evidence_count": 8,
+          "question_variants": [
+            "How do you do user research in fintech when compliance rules and limited access to users make interviews hard?",
+            "The Customer Discovery Trap: What’s the Actual Most Productive Way to Talk to Users? “I will not promote”",
+            "I’ll help 3 founders with customer discovery ( I will not promote)"
+          ]
+        },
+        {
+          "id": "repair-user-interviews",
+          "title": "How to fix user interviews that are not teaching you anything",
+          "concern": "People are trying to fix user interviews that are not teaching you anything, but the social evidence suggests wasted building, bad evidence, stakeholder pressure, decision fatigue are getting in the way.",
+          "audience": "product leader",
+          "pain_points": [
+            "wasted_building",
+            "bad_evidence",
+            "stakeholder_pressure",
+            "decision_fatigue"
+          ],
+          "matched_books": [
+            "the-mom-test"
+          ],
+          "evidence_count": 8,
+          "question_variants": [
+            "How do you do user research in fintech when compliance rules and limited access to users make interviews hard?",
+            "User Interviews are not going well, are there any workarounds?",
+            "Do I need user interviews in my case study? How to find users without a budget?"
+          ]
+        },
+        {
+          "id": "trust-gut-or-check-it",
+          "title": "How to know when to trust your gut",
+          "concern": "People are trying to know when to trust your gut, but the social evidence suggests uncertainty, wasted building, bad evidence, stakeholder pressure, planning breakdown, communication gap, decision fatigue are getting in the way.",
+          "audience": "product leader",
+          "pain_points": [
+            "uncertainty",
+            "wasted_building",
+            "bad_evidence",
+            "stakeholder_pressure",
+            "planning_breakdown"
+          ],
+          "matched_books": [
+            "thinking-fast-and-slow"
+          ],
+          "evidence_count": 8,
+          "question_variants": [
+            "How to deal with an impulsive PM who launches features based on intuition without data?",
+            "How do I navigate my current situation to be working on what that matters vs doing what my gut feeling tells me? I have been working with the same employer for past six years",
+            "'Data Intuition' gap"
+          ]
+        }
+      ],
+      "output_contract": {
+        "artifact_type": "personalized_digest_or_audio_brief",
+        "must_include": [
+          "audience segment",
+          "concern sequence",
+          "book lenses used",
+          "short digest script",
+          "audio-ready narration notes",
+          "next answer recommendations"
+        ],
+        "must_not_include": [
+          "long book summaries",
+          "claims without source concern IDs"
+        ]
+      },
+      "quality_gate": [
+        "Every recommendation links to at least one evidence or demand signal ID.",
+        "The output states what changed or why this matters now.",
+        "The output declares the next measurable outcome.",
+        "The digest preserves the source concern IDs behind every segment.",
+        "The output can be read aloud without restructuring."
+      ],
+      "writeback_required": [
+        "digest_id_or_audio_brief_path",
+        "source_concern_ids",
+        "books_used",
+        "audience_segment",
+        "format_length",
+        "completion_followup_questions"
+      ]
+    }
+  ],
+  "next_recommendations": [
+    {
+      "id": "next-event-awb-answer-01",
+      "source_event_id": "event-awb-answer-01",
+      "from_action_id": "awb-action-01",
+      "context_pack_id": "awb-content-answer-loop",
+      "vertical": "answer_with_books",
+      "recommendation_type": "follow_up_answer",
+      "target_action_type": "create_answer",
+      "title": "Create a follow-up answer on finding real users and validating buying intent",
+      "why": "The shipped answer generated follow-up questions around recruiting users and separating praise from intent.",
+      "required_context": [
+        "How do I find users outside my network?",
+        "How do I know if interview feedback is real buying intent?"
+      ],
+      "priority": 86
+    },
+    {
+      "id": "next-event-awb-digest-01",
+      "source_event_id": "event-awb-digest-01",
+      "from_action_id": "awb-action-04",
+      "context_pack_id": "awb-content-answer-loop",
+      "vertical": "answer_with_books",
+      "recommendation_type": "digest_iteration",
+      "target_action_type": "revise_personalized_digest",
+      "title": "Shorten the founder decision digest and make the next-answer path explicit",
+      "why": "Digest and audio completion are promising but not strong enough to treat the format as solved.",
+      "required_context": [
+        "segment completion",
+        "audio completion",
+        "follow-up questions",
+        "source concern IDs"
+      ],
+      "priority": 78
+    }
+  ],
+  "writeback_contract": {
+    "required_fields": [
+      "answer_slug",
+      "audience_segment",
+      "books_used",
+      "cache_status",
+      "completion_followup_questions",
+      "digest_id_or_audio_brief_path",
+      "format_length",
+      "impressions_clicks_followup_questions",
+      "passages_or_notes_used",
+      "source_concern_id",
+      "source_concern_ids"
+    ],
+    "endpoint_or_file": "applications/answerwithbooks/core/research/crowdlisten-outcomes.json",
+    "purpose": "Record shipped assets, measured outcomes, follow-up questions, and new source observations so the next CrowdListen recommendation improves."
+  }
+}
