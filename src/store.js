@@ -212,6 +212,7 @@ export function createStore() {
   ];
 
   const bookKnowledge = loadBookKnowledge();
+  const retrievalCorpus = loadRetrievalCorpus();
 
   for (const book of seedBooks) {
     const knowledge = bookKnowledge.get(book.id);
@@ -222,6 +223,54 @@ export function createStore() {
       knowledge_sections: knowledge?.sections ?? [],
       knowledge_source_path: knowledge?.source_path ?? null,
       knowledge_visibility: knowledge?.visibility ?? 'backend_only',
+      created_at: now(),
+      updated_at: now(),
+    });
+  }
+
+  for (const book of retrievalCorpus.books ?? []) {
+    const existing = books.get(book.id);
+    books.set(book.id, {
+      ...existing,
+      id: book.id,
+      title: book.title,
+      author: book.author,
+      year: book.year,
+      one_liner: book.one_liner,
+      read_if: book.read_if,
+      concepts: existing?.concepts?.length ? existing.concepts : book.tags,
+      quotes: existing?.quotes ?? [],
+      applications: unique([...(existing?.applications ?? []), book.one_liner, book.read_if, ...(book.tags ?? [])].filter(Boolean)),
+      url: book.url,
+      retrieval_type: 'book',
+      knowledge_text: [existing?.knowledge_text, book.semantic_text, book.text].filter(Boolean).join('\n\n'),
+      knowledge_chunks: existing?.knowledge_chunks ?? [],
+      knowledge_sections: existing?.knowledge_sections ?? [],
+      knowledge_source_path: existing?.knowledge_source_path ?? '../web/src/content/books',
+      knowledge_visibility: existing?.knowledge_visibility ?? 'backend_only',
+      created_at: existing?.created_at ?? now(),
+      updated_at: now(),
+    });
+  }
+
+  for (const answer of retrievalCorpus.answers ?? []) {
+    const answerBooks = answer.books
+      .map((id) => books.get(id))
+      .filter(Boolean)
+      .map((book) => ({ id: book.id, title: book.title, author: book.author }));
+    content.set(`answer:${answer.id}`, {
+      id: `answer:${answer.id}`,
+      type: 'answer',
+      status: 'published',
+      question: answer.question,
+      title: answer.title,
+      description: answer.description,
+      body: answer.text,
+      url: answer.url,
+      books: answerBooks,
+      concepts: answer.tags ?? [],
+      source_ids: ['answers', 'books'],
+      cache_key: answer.id,
       created_at: now(),
       updated_at: now(),
     });
@@ -247,6 +296,20 @@ function loadBookKnowledge() {
   } catch {
     return new Map();
   }
+}
+
+function loadRetrievalCorpus() {
+  const path = new URL('../research/retrieval-corpus.json', import.meta.url).pathname;
+  if (!existsSync(path)) return { books: [], answers: [] };
+  try {
+    return JSON.parse(readFileSync(path, 'utf8'));
+  } catch {
+    return { books: [], answers: [] };
+  }
+}
+
+function unique(items) {
+  return [...new Set(items)];
 }
 
 export function makeId(prefix) {

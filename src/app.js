@@ -8,7 +8,7 @@ export function createApp({ store = createStore() } = {}) {
 
     try {
       if (method === 'GET' && url.pathname === '/health') {
-        return json({ ok: true, service: 'answer-with-books', version: '0.1.0' });
+        return json({ ok: true, service: 'answer-with-books', version: '0.1.2' });
       }
 
       if (method === 'GET' && url.pathname === '/v1/sources') {
@@ -124,6 +124,58 @@ export function createApp({ store = createStore() } = {}) {
 
       if (method === 'GET' && url.pathname === '/v1/content') {
         return json({ content: [...store.content.values()] });
+      }
+
+      if (method === 'POST' && url.pathname === '/v1/ask') {
+        const body = await readJson(req);
+        const question = resolveQuestion(body, store);
+        if (!question) return problem(400, 'question or question_id is required');
+        const sourceIds = normalizeSources(body.sources, store);
+        const answers = retrieveContent({
+          query: question,
+          content: store.content,
+          limit: body.limit ?? 3,
+          minScore: body.answer_min_score ?? 2,
+        });
+        const books = retrieveBooks({
+          query: question,
+          books: store.books,
+          limit: body.book_limit ?? 5,
+          minScore: body.book_min_score ?? 1,
+        });
+        const answer = answers[0]?.content ?? null;
+        const isHit = Boolean(answer);
+        const newQuestion = isHit && body.capture_hit !== true
+          ? null
+          : captureNewQuestion({ question, body, sourceIds, answers, books, store });
+        const compact = body.compact === true;
+        const objects = {
+          books: compact ? books.map(compactBookMatch) : books,
+          answers: compact ? answers.map(compactAnswerMatch) : answers,
+          new_question: newQuestion,
+        };
+        const payload = {
+          status: isHit ? 'hit' : 'new_question',
+          question,
+          objects,
+          next_step: isHit
+            ? 'adapt_existing_answer_with_books'
+            : books.length
+              ? 'answer_from_books_and_save_question'
+              : 'save_question_and_request_source_books',
+        };
+
+        if (compact) {
+          return json(payload, isHit ? 200 : 201);
+        }
+
+        return json({
+          ...payload,
+          answer,
+          answers,
+          books,
+          new_question: newQuestion,
+        }, isHit ? 200 : 201);
       }
 
       if (method === 'POST' && url.pathname === '/v1/content/generate') {
@@ -311,6 +363,66 @@ function generateAndStoreContent({ question, concern, sourceIds, body, store }) 
     created_at: store.now(),
     ...candidate,
   };
+}
+
+function captureNewQuestion({ question, body, sourceIds, answers, books, store }) {
+  const captured = {
+    id: makeId('newq'),
+    type: 'new_question',
+    question,
+    context: body.context ?? null,
+    top_of_mind: body.top_of_mind ?? [],
+    source_ids: sourceIds,
+    answer_ids: answers.map((match) => match.content.id),
+    book_ids: books.map((match) => match.book.id),
+    status: answers.length ? 'answered' : 'needs_answer',
+    created_at: store.now(),
+  };
+  store.questions.set(captured.id, captured);
+  return captured;
+}
+
+function compactBookMatch(match) {
+  const book = match.book;
+  return {
+    score: match.score,
+    book: {
+      id: book.id,
+      title: book.title,
+      author: book.author,
+      year: book.year ?? null,
+      url: book.url ?? null,
+      one_liner: book.one_liner ?? null,
+      read_if: book.read_if ?? null,
+      concepts: (book.concepts ?? []).slice(0, 8),
+    },
+  };
+}
+
+function compactAnswerMatch(match) {
+  const answer = match.content;
+  return {
+    score: match.score,
+    answer: {
+      id: answer.id,
+      title: answer.title ?? answer.question,
+      question: answer.question,
+      description: answer.description ?? null,
+      url: answer.url ?? null,
+      excerpt: excerpt(answer.body ?? answer.description ?? '', 520),
+      books: answer.books ?? [],
+      concepts: answer.concepts ?? [],
+    },
+  };
+}
+
+function excerpt(value, maxLength) {
+  const text = String(value)
+    .replace(/[#*_`>\-[\]()]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (text.length <= maxLength) return text;
+  return `${text.slice(0, maxLength).replace(/\s+\S*$/, '')}...`;
 }
 
 function normalizeCrowdListenSignals(body) {

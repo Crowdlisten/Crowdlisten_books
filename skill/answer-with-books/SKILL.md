@@ -1,138 +1,70 @@
 ---
 name: answer-with-books
-description: Retrieve cached book-grounded answers and source books before generating new answers for recurring internet, clicked, and top-of-mind questions.
+description: Activate when the user says "answer with books", "ask any books", "ask the books", "activate the book skill", or wants book-grounded help with a top-of-mind question. Use one retrieval call to get books, existing answers, and a new-question record before responding.
 ---
 
-# Answer with Books Skill
+# Answer with Books
 
-Use this skill when a user wants to answer a live question with ideas from books, retrieve similar previously generated answers, find source books that can answer a question, or turn clicked/top-of-mind questions into digestible learning material.
+Use this skill when the user wants a live question answered with books, wants to ask the shelf, or needs source-book lenses for a top-of-mind decision.
 
-## Core Principle
+## Thin Harness Contract
 
-Start from the user's actual question. Retrieve before generating. Use cached answers if they are close enough, retrieve source books next, and generate a new answer only when no useful cached answer exists. The output should feel like commentary, explanation, or applied judgment, not a book report.
+The harness should do one thing:
 
-## Source Toggles
-
-The API supports these sources:
-
-- `books`: concepts, quotes, frameworks, stories, and applications from the book graph
-- `crowdlisten`: trending questions, pain points, themes, and emotional language from CrowdListen
-- `top_of_mind`: explicit user priorities or questions
-- `clicked_questions`: questions users clicked into, saved, expanded, or revisited
-
-Use the smallest source set that fits the task. For a private user question, `books` plus `top_of_mind` is often enough. For content strategy, use all four.
-
-## Workflow
-
-1. Clarify the question if it is vague.
-2. Select active sources.
-3. Capture any top-of-mind or clicked-question signal.
-4. Retrieve similar cached answers through `POST /v1/answers/query`.
-5. If the endpoint returns `hit`, use the cached answer and its source books.
-6. If it returns `miss` or `generated`, inspect the returned book matches.
-7. If no source book is preindexed and the user supplies a book, add it through `POST /v1/books/retrieve` with `create_if_missing: true`.
-8. Generate a new answer only on cache miss.
-9. Revise away generic summaries.
-
-## API Calls
-
-List source toggles:
-
-```http
-GET /v1/sources
+```bash
+answer-with-books ask "QUESTION" --top-of-mind "OPTIONAL USER CONTEXT" --json
 ```
 
-Toggle sources:
+If the CLI is unavailable, call:
 
 ```http
-POST /v1/sources/toggle
+POST /v1/ask
 {
-  "enabled": ["books", "crowdlisten", "top_of_mind", "clicked_questions"]
+  "question": "QUESTION",
+  "top_of_mind": ["OPTIONAL USER CONTEXT"],
+  "compact": true
 }
 ```
 
-Capture a clicked question:
+The result always has three object buckets:
 
-```http
-POST /v1/signals/clicked-question
-{
-  "question": "How to keep a smart team from making a dumb decision"
-}
-```
+- `books`: source books and lenses that can answer the question
+- `answers`: published answers already on Answer with Books
+- `new_question`: a captured question when no strong published answer exists
 
-Retrieve or generate an answer:
+Do not make the harness choose sources, graph schemas, personas, or workflows. The skill is the fat layer: it retrieves, interprets, and adapts the returned objects.
 
-```http
-POST /v1/answers/query
-{
-  "question": "How to keep a smart team from making a dumb decision",
-  "sources": ["books", "clicked_questions", "crowdlisten"],
-  "format": "article",
-  "audience": "curious reader"
-}
-```
+## Response Workflow
 
-Retrieve source books:
+1. Start with the user's exact question.
+2. Run `answer-with-books ask ... --json`.
+3. If `answers` has a close match, use that answer as the base.
+4. Use `books` to add the relevant mechanism, mental model, or caution.
+5. If `new_question` is present, say this is not yet a published answer and answer from the returned books.
+6. End with a compact source note.
 
-```http
-POST /v1/books/retrieve
-{
-  "query": "startup validation without polite lies"
-}
-```
+## Output Shape
 
-Add a missing book to the catalog:
+Give the user a useful answer, not a book summary. Prefer:
 
-```http
-POST /v1/books/retrieve
-{
-  "query": "strategy diagnosis and coherent action",
-  "create_if_missing": true,
-  "book": {
-    "title": "Good Strategy Bad Strategy",
-    "author": "Richard Rumelt",
-    "concepts": ["diagnosis", "guiding policy", "coherent action"]
-  }
-}
-```
-
-Generate content directly only when bypassing cache:
-
-```http
-POST /v1/content/generate
-{
-  "question": "How to keep a smart team from making a dumb decision",
-  "sources": ["books", "clicked_questions", "crowdlisten"],
-  "format": "article",
-  "audience": "curious reader"
-}
-```
-
-## Quality Bar
-
-Good outputs:
-
-- start from a question people actually care about
-- reuse a cached answer when it is close enough
-- retrieve source books before generating
-- name the mechanism underneath the question
-- use books as source material
-- connect concepts across books without flattening them
-- produce a digestible answer, not a summary dump
+- the mechanism underneath the problem
+- the decision rule or next move
+- where the book lens breaks
+- the source books used
 
 Avoid:
 
-- generic "here are five lessons from the book" content
-- unsupported quotes or invented citations
-- shallow keyword matching
-- mass content that does not improve understanding
+- generic five-point summaries
+- pretending a new question is already published
+- invented quotes or citations
+- asking the user to pick sources when the retrieval already returned enough
 
-## Completion Pattern
+## Source Note
 
-Return the generated answer plus a compact source note:
+End with:
 
 ```text
-Answered with: The Mom Test, Thinking, Fast and Slow
-Signals used: clicked_questions, crowdlisten
-Cache status: hit | generated | miss
+Answered with: Book A, Book B
+Matched answers: Answer title if used
+Shelf status: hit | new_question
 ```

@@ -1,8 +1,8 @@
 openapi: 3.0.3
 info:
   title: Answer with Books API
-  version: 0.1.0
-  description: REST API for book-grounded answer generation using source toggles and demand signals.
+  version: 0.1.2
+  description: REST API for retrieving book-grounded published answers, source books, and captured new questions.
 servers:
   - url: http://127.0.0.1:8787
 paths:
@@ -250,6 +250,53 @@ paths:
       responses:
         '200':
           description: Generated content drafts
+  /v1/ask:
+    post:
+      summary: Ask the shelf by retrieving published answers, relevant books, or capturing a new question
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [question]
+              properties:
+                question:
+                  type: string
+                top_of_mind:
+                  type: array
+                  items:
+                    type: string
+                sources:
+                  type: array
+                  items:
+                    type: string
+                limit:
+                  type: integer
+                answer_min_score:
+                  type: integer
+                book_limit:
+                  type: integer
+                book_min_score:
+                  type: integer
+                capture_hit:
+                  type: boolean
+                compact:
+                  type: boolean
+                  description: Return only the agent-facing books, answers, and new_question buckets.
+      responses:
+        '200':
+          description: Existing published answer found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AskResponse'
+        '201':
+          description: New question captured with relevant books
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AskResponse'
   /v1/content/generate:
     post:
       summary: Generate a book-grounded content draft
@@ -317,3 +364,35 @@ paths:
           description: Similar answer found or cache miss returned
         '201':
           description: New answer generated and cached
+components:
+  schemas:
+    AskResponse:
+      type: object
+      required: [status, question, objects, next_step]
+      properties:
+        status:
+          type: string
+          enum: [hit, new_question]
+        question:
+          type: string
+        next_step:
+          type: string
+          enum:
+            - adapt_existing_answer_with_books
+            - answer_from_books_and_save_question
+            - save_question_and_request_source_books
+        objects:
+          type: object
+          required: [books, answers, new_question]
+          properties:
+            books:
+              type: array
+              items:
+                type: object
+            answers:
+              type: array
+              items:
+                type: object
+            new_question:
+              nullable: true
+              type: object

@@ -167,8 +167,9 @@ test('queries the answer cache before generating a new answer', async () => {
 
   const first = await app.route(
     req('POST', '/v1/answers/query', {
-      question: 'How do I validate a startup idea?',
+      question: 'How do I validate a startup idea using a synthetic cache-only prompt?',
       sources: ['books', 'top_of_mind'],
+      min_score: 99,
     })
   );
   const generated = parse(first);
@@ -179,7 +180,7 @@ test('queries the answer cache before generating a new answer', async () => {
 
   const second = await app.route(
     req('POST', '/v1/answers/query', {
-      question: 'How can founders validate a startup idea?',
+      question: 'How can I validate a startup idea using a synthetic cache prompt?',
       generate_if_missing: false,
     })
   );
@@ -189,6 +190,69 @@ test('queries the answer cache before generating a new answer', async () => {
   assert.equal(cached.status, 'hit');
   assert.equal(cached.answers[0].content.id, generated.answers[0].content.id);
   assert.ok(cached.books.length >= 1);
+});
+
+test('asks against published answers, books, and captures new questions', async () => {
+  const app = createApp();
+
+  const hit = await app.route(
+    req('POST', '/v1/ask', {
+      question: 'How do I fix user interviews that are not teaching me anything?',
+    })
+  );
+  const hitBody = parse(hit);
+
+  assert.equal(hit.status, 200);
+  assert.equal(hitBody.status, 'hit');
+  assert.equal(hitBody.next_step, 'adapt_existing_answer_with_books');
+  assert.deepEqual(Object.keys(hitBody.objects), ['books', 'answers', 'new_question']);
+  assert.equal(hitBody.answer.type, 'answer');
+  assert.equal(hitBody.answer.url, '/answers/how-to-fix-user-interviews-that-are-not-teaching-you-anything/');
+  assert.equal(hitBody.answer.books[0].id, 'the-mom-test');
+  assert.ok(hitBody.books.some((match) => match.book.id === 'the-mom-test'));
+  assert.ok(hitBody.objects.answers.length >= 1);
+  assert.ok(hitBody.objects.books.length >= 1);
+  assert.equal(hitBody.objects.new_question, null);
+
+  const miss = await app.route(
+    req('POST', '/v1/ask', {
+      question: 'How should I use books to decide which niche travel guide to write next?',
+      top_of_mind: ['building China Travel Made Easy content'],
+      answer_min_score: 20,
+    })
+  );
+  const missBody = parse(miss);
+
+  assert.equal(miss.status, 201);
+  assert.equal(missBody.status, 'new_question');
+  assert.equal(missBody.next_step, 'answer_from_books_and_save_question');
+  assert.equal(missBody.answer, null);
+  assert.equal(missBody.new_question.type, 'new_question');
+  assert.equal(missBody.new_question.status, 'needs_answer');
+  assert.equal(missBody.objects.new_question.id, missBody.new_question.id);
+  assert.equal(app.store.questions.has(missBody.new_question.id), true);
+});
+
+test('returns a compact ask payload for thin harnesses', async () => {
+  const app = createApp();
+
+  const response = await app.route(
+    req('POST', '/v1/ask', {
+      question: 'How do I validate this idea without collecting compliments?',
+      top_of_mind: ['testing founder demand'],
+      compact: true,
+    })
+  );
+  const body = parse(response);
+
+  assert.equal(response.status, 200);
+  assert.deepEqual(Object.keys(body.objects), ['books', 'answers', 'new_question']);
+  assert.equal(body.answer, undefined);
+  assert.equal(body.answers, undefined);
+  assert.equal(body.books, undefined);
+  assert.equal(body.objects.answers[0].content, undefined);
+  assert.ok(body.objects.answers[0].answer.excerpt.length <= 523);
+  assert.equal(body.objects.books[0].book.knowledge_text, undefined);
 });
 
 test('retrieves relevant books or creates a missing catalog record', async () => {

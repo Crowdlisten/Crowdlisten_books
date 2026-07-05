@@ -21,6 +21,7 @@ Run the local API:
 ```bash
 npm install
 npm run build:book-corpus
+npm run build:retrieval-corpus
 npm run dev
 ```
 
@@ -36,15 +37,28 @@ Quick health check:
 curl http://127.0.0.1:8787/health
 ```
 
+Ask the installed shelf:
+
+```bash
+answer-with-books ask "Am I validating this idea or just collecting compliments?"
+```
+
+Add personal top-of-mind context when you want the answer tuned to what you are
+already thinking about:
+
+```bash
+answer-with-books ask "What should I do next?" \
+  --top-of-mind "launching a content engine, validating founder demand"
+```
+
 ## What It Does
 
 | Layer | What it gives your agent |
 | --- | --- |
-| Book shelf | Distilled ideas, frameworks, quotes, examples, and when-to-use notes from books |
-| Question memory | A cache of answered questions so the agent reuses good answers before generating new ones |
-| Demand signals | Top-of-mind questions, clicked questions, and CrowdListen demand packets |
-| Retrieval | The closest prior answers and most relevant book lenses for the current question |
-| Generation | A book-grounded answer only when the cache does not already have one |
+| Books | Distilled ideas, frameworks, quotes, examples, and when-to-use notes from the source shelf |
+| Answers | Published answer pages retrieved before generating anything new |
+| New questions | Questions captured when the shelf has no strong existing answer yet |
+| Thin harness | One command or endpoint: `answer-with-books ask` / `POST /v1/ask` |
 
 ## Use Cases
 
@@ -62,10 +76,10 @@ curl http://127.0.0.1:8787/health
 The installed skill teaches an agent to:
 
 1. Understand the user's top-of-mind question.
-2. Check whether a strong answer already exists.
-3. Retrieve the books that are useful for that situation.
-4. Add a missing book when the catalog has no good match.
-5. Generate a grounded answer and save it back for reuse.
+2. Retrieve existing published answers.
+3. Retrieve useful source books.
+4. Capture the question as new when no answer is close enough.
+5. Adapt the retrieved material to the user's exact situation.
 
 The skill lives at:
 
@@ -93,7 +107,8 @@ Core endpoints:
 
 | Endpoint | Purpose |
 | --- | --- |
-| `POST /v1/answers/query` | Retrieve a similar answer or generate one on cache miss |
+| `POST /v1/ask` | Retrieve published answers and books, or capture a new question |
+| `POST /v1/answers/query` | Legacy cache-first answer retrieval/generation |
 | `POST /v1/books/retrieve` | Find relevant books or add a missing catalog record |
 | `POST /v1/signals/top-of-mind` | Add user top-of-mind questions |
 | `POST /v1/crowdlisten/sync` | Import CrowdListen demand packets |
