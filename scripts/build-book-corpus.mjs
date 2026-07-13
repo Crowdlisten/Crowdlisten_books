@@ -118,6 +118,9 @@ function splitSections(markdown) {
 
 function markdownToText(markdown) {
   return markdown
+    .replace(/<figure\b[\s\S]*?<figcaption[^>]*>([\s\S]*?)<\/figcaption>[\s\S]*?<\/figure>/gi, '\n\n$1\n\n')
+    .replace(/<svg\b[\s\S]*?<\/svg>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
     .replace(/```[\s\S]*?```/g, ' ')
     .replace(/`([^`]+)`/g, '$1')
     .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
@@ -127,6 +130,14 @@ function markdownToText(markdown) {
     .replace(/\*\*([^*]+)\*\*/g, '$1')
     .replace(/\*([^*]+)\*/g, '$1')
     .replace(/>\s?/g, '')
+    .replace(/&(?:nbsp|amp|lt|gt|quot|#39);/g, (entity) => ({
+      '&nbsp;': ' ',
+      '&amp;': '&',
+      '&lt;': '<',
+      '&gt;': '>',
+      '&quot;': '"',
+      '&#39;': "'",
+    })[entity] ?? ' ')
     .replace(/\n{3,}/g, '\n\n')
     .trim();
 }

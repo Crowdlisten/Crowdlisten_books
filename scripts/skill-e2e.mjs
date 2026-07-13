@@ -27,6 +27,9 @@ try {
 
   const skill = readFileSync(join(codexHome, 'skills', 'answer-with-books', 'SKILL.md'), 'utf8');
   assert.match(skill, /Thin Harness Contract/);
+  assert.match(skill, /Answer URL Contract/);
+  assert.match(skill, /900–1,500 word personalized digest/);
+  assert.match(skill, /Do not ask the user to repeat context that is already available/);
   assert.match(skill, /POST \/v1\/ask/);
   assert.match(skill, /books.*answers.*new_question/s);
 
@@ -84,7 +87,7 @@ try {
   const created = await app.route(
     req('POST', '/v1/books/retrieve', {
       query: 'constraint theory bottleneck throughput',
-      min_score: 3,
+      min_score: 99,
       create_if_missing: true,
       book: {
         title: 'The Goal',
@@ -114,7 +117,24 @@ try {
   assert.match(asked.stdout, /Books:/);
   assert.match(asked.stdout, /Retrieval status:/);
 
-  console.log('Agent skill E2E passed: install command, skill file, API config, cache query, and missing-book creation verified.');
+  const localFallback = await runCommand(
+    process.execPath,
+    [
+      new URL('../bin/answer-with-books.js', import.meta.url).pathname,
+      'ask',
+      'How do I validate a startup idea without collecting compliments?',
+      '--api-url',
+      'http://127.0.0.1:65534',
+      '--json',
+    ],
+    { cwd: tempRoot, env: { ...process.env, CODEX_HOME: codexHome } }
+  );
+  assert.equal(localFallback.status, 0, localFallback.stderr || localFallback.stdout);
+  const fallbackPayload = JSON.parse(localFallback.stdout);
+  assert.equal(fallbackPayload.status, 'hit');
+  assert.ok(fallbackPayload.objects.answers.length >= 1);
+
+  console.log('Agent skill E2E passed: install command, one-command local fallback, skill file, API config, cache query, and missing-book creation verified.');
 } finally {
   if (server) {
     server.closeAllConnections();

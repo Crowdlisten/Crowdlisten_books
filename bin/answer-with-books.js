@@ -5,9 +5,11 @@ import { request as httpsRequest } from 'node:https';
 import { homedir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { Readable } from 'node:stream';
 
 const packageRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2);
+let localApp;
 
 if (args.includes('--help') || args.length === 0) {
   printHelp();
@@ -101,10 +103,10 @@ async function ask(askArgs) {
 
   try {
     if (topOfMind?.length) {
-      await postJson(`${baseUrl}${config.endpoints?.topOfMind ?? '/v1/signals/top-of-mind'}`, { items: topOfMind });
+      await requestJson(baseUrl, config.endpoints?.topOfMind ?? '/v1/signals/top-of-mind', { items: topOfMind });
     }
 
-    const result = await postJson(`${baseUrl}${config.endpoints?.ask ?? '/v1/ask'}`, payload);
+    const result = await requestJson(baseUrl, config.endpoints?.ask ?? '/v1/ask', payload);
     if (values.json) {
       console.log(JSON.stringify(result, null, 2));
       return;
@@ -116,6 +118,34 @@ async function ask(askArgs) {
     console.error(`Start the API first, or pass --api-url. Expected API: ${baseUrl}`);
     process.exit(1);
   }
+}
+
+async function requestJson(baseUrl, path, body) {
+  try {
+    return await postJson(`${baseUrl}${path}`, body);
+  } catch (error) {
+    const target = new URL(baseUrl);
+    const isLocal = target.hostname === '127.0.0.1' || target.hostname === 'localhost';
+    const isUnavailable = /ECONNREFUSED|fetch failed|socket hang up/i.test(error instanceof Error ? error.message : String(error));
+    if (!isLocal || !isUnavailable) throw error;
+    return localPost(path, body);
+  }
+}
+
+async function localPost(path, body) {
+  if (!localApp) {
+    const { createApp } = await import('../src/app.js');
+    localApp = createApp();
+  }
+  const req = Readable.from([JSON.stringify(body)]);
+  req.method = 'POST';
+  req.url = path;
+  const response = await localApp.route(req);
+  const payload = response.body ? JSON.parse(response.body) : {};
+  if (response.status < 200 || response.status >= 300) {
+    throw new Error(payload.error ?? `Local API returned ${response.status}`);
+  }
+  return payload;
 }
 
 function readApiConfig() {

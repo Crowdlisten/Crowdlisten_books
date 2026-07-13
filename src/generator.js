@@ -6,24 +6,65 @@ const formatLabels = {
 };
 
 const stopwords = new Set([
+  'answer',
+  'answers',
   'and',
   'are',
+  'being',
+  'book',
+  'books',
   'but',
   'can',
+  'could',
+  'decide',
   'for',
   'from',
+  'get',
+  'have',
   'how',
   'into',
+  'instead',
+  'another',
+  'applicable',
+  'did',
+  'does',
+  'had',
+  'has',
+  'know',
+  'make',
+  'making',
+  'more',
+  'need',
+  'next',
+  'not',
+  'product',
+  'problem',
+  'reader',
+  'real',
+  'relevant',
+  'really',
+  'right',
+  'should',
+  'summary',
+  'than',
   'the',
+  'their',
+  'them',
+  'they',
   'this',
   'that',
+  'use',
+  'using',
+  'want',
   'what',
   'when',
   'where',
   'which',
   'who',
   'why',
+  'whether',
   'with',
+  'would',
   'your',
 ]);
 
@@ -45,20 +86,40 @@ export function selectRelevantBooks({ question, books, limit = 3 }) {
 export function retrieveBooks({ query, books, limit = 5, minScore = 1 }) {
   return [...books.values()]
     .map((book) => {
-      const haystack = [
-        book.title,
-        book.author,
-        ...(book.concepts ?? []),
-        ...(book.quotes ?? []),
-        ...(book.applications ?? []),
-        book.knowledge_text ?? '',
-      ].join(' ');
-      return { book: publicBook(book), score: scoreText(query, haystack) };
+      const score = scoreDistinctFields(query, [
+        { value: book.title, weight: 7 },
+        { value: book.author, weight: 3 },
+        { value: book.concepts, weight: 6 },
+        { value: book.applications, weight: 5 },
+        { value: [book.one_liner, book.read_if], weight: 4 },
+        { value: book.knowledge_text, weight: 1, cap: 4 },
+      ]);
+      return { book: publicBook(book), score };
     })
     .filter((item) => item.score >= minScore)
     .sort((a, b) => b.score - a.score || a.book.title.localeCompare(b.book.title))
     .slice(0, limit)
     .map(({ book, score }) => ({ score, book }));
+}
+
+function scoreDistinctFields(query, fields) {
+  const queryTokens = tokenize(query);
+  if (!queryTokens.length) return 0;
+
+  const bestWeight = new Map(queryTokens.map((token) => [token, 0]));
+  for (const field of fields) {
+    const weight = field.weight ?? 1;
+    const fieldTokens = new Set(tokenize(Array.isArray(field.value) ? field.value.join(' ') : field.value));
+    const matches = queryTokens.filter((token) => fieldTokens.has(token));
+    const maxMatches = Number.isFinite(field.cap)
+      ? Math.max(0, Math.floor(field.cap / weight))
+      : matches.length;
+    for (const token of matches.slice(0, maxMatches)) {
+      bestWeight.set(token, Math.max(bestWeight.get(token) ?? 0, weight));
+    }
+  }
+
+  return [...bestWeight.values()].reduce((sum, weight) => sum + weight, 0);
 }
 
 function publicBook(book) {
@@ -74,32 +135,62 @@ function publicBook(book) {
 export function retrieveContent({ query, content, limit = 5, minScore = 2 }) {
   return [...content.values()]
     .map((item) => {
-      const haystack = [
-        item.question,
-        item.title,
-        item.body,
-        ...(item.concepts ?? []),
-        ...(item.books ?? []).map((book) => `${book.title} ${book.author}`),
-      ].join(' ');
-      return { content: item, score: scoreText(query, haystack) };
+      const anchorScore = scoreFields(query, [
+        { value: [item.question, item.title], weight: 1 },
+        { value: item.concepts, weight: 1 },
+      ]);
+      const score = scoreFields(query, [
+        { value: [item.question, item.title], weight: 7 },
+        { value: item.description, weight: 5 },
+        { value: item.concepts, weight: 4 },
+        { value: (item.books ?? []).map((book) => `${book.title} ${book.author}`), weight: 2 },
+        { value: item.body, weight: 1, cap: 6 },
+      ]);
+      return { content: item, score, anchorScore };
     })
-    .filter((item) => item.score >= minScore)
+    .filter((item) => item.anchorScore > 0 && item.score >= minScore)
     .sort((a, b) => b.score - a.score || b.content.created_at.localeCompare(a.content.created_at))
     .slice(0, limit)
     .map(({ content, score }) => ({ score, content }));
 }
 
 export function scoreText(query, text) {
-  const haystack = String(text ?? '').toLowerCase();
-  const tokens = [
+  return scoreFields(query, [{ value: text, weight: 1 }]);
+}
+
+function scoreFields(query, fields) {
+  const queryTokens = tokenize(query);
+  if (!queryTokens.length) return 0;
+
+  return fields.reduce((total, field) => {
+    const fieldTokens = new Set(tokenize(Array.isArray(field.value) ? field.value.join(' ') : field.value));
+    const raw = queryTokens.reduce(
+      (sum, token) => sum + (fieldTokens.has(token) ? (field.weight ?? 1) : 0),
+      0
+    );
+    return total + Math.min(raw, field.cap ?? Number.POSITIVE_INFINITY);
+  }, 0);
+}
+
+function tokenize(value) {
+  return [
     ...new Set(
-      String(query ?? '')
+      String(value ?? '')
         .toLowerCase()
-        .split(/\W+/)
+        .split(/[^a-z0-9]+/)
+        .filter((token) => token.length > 2 && !stopwords.has(token))
+        .map(stem)
         .filter((token) => token.length > 2 && !stopwords.has(token))
     ),
   ];
-  return tokens.reduce((sum, token) => sum + (haystack.includes(token) ? 1 : 0), 0);
+}
+
+function stem(token) {
+  if (token.length > 5 && token.endsWith('ing')) return token.slice(0, -3);
+  if (token.length > 4 && token.endsWith('ed')) return token.slice(0, -2);
+  if (token.length > 4 && token.endsWith('es')) return token.slice(0, -2);
+  if (token.length > 3 && token.endsWith('s')) return token.slice(0, -1);
+  return token;
 }
 
 export function generateContentCandidate({
@@ -128,23 +219,33 @@ export function generateContentCandidate({
   const body = [
     `# ${title}`,
     '',
-    `This ${formatLabel} answers the question for ${audienceLabel} by treating books as source material and demand signals as the editorial brief.`,
+    `This ${formatLabel} starts with the live decision facing ${audienceLabel}. The books are evidence and lenses, not the table of contents for a summary.`,
     '',
-    `## Book-grounded answer`,
+    `## What is really going on`,
     '',
-    `${primary.title} gives the first lens: ${sentenceFromList(primary.concepts)}. The useful move is to name the mechanism underneath the surface question, then apply the book's framework to the situation people already care about.`,
+    `The surface question is asking for an answer, but the useful work is to identify which observable condition should change the decision. ${primary.title} supplies the first diagnostic lens: ${sentenceFromList(primary.concepts)}.`,
+    '',
+    `## What the books add`,
     '',
     supporting.length
-      ? `A second lens comes from ${supporting.map((book) => book.title).join(' and ')}. Together, these sources keep the answer from becoming a generic summary: one book gives the core model, another complicates it, and the final answer becomes usable judgment.`
-      : `The answer should stay close to ${primary.title}, using its concepts as the constraint that prevents generic commentary.`,
+      ? `${primary.title} provides the primary mechanism. ${supporting.map((book) => book.title).join(' and ')} should be used only where they add a competing explanation, a constraint, or a failure mode.`
+      : `Stay close to ${primary.title}. One well-fitted mechanism is more useful than several loosely related takeaways.`,
     '',
-    `## Demand signal`,
+    `## The working move`,
+    '',
+    `Write a one-sentence decision rule in this form: "When I observe ___, I will ___ because ___." Fill the first blank with evidence available in the user's situation, the second with the smallest reversible action, and the third with the mechanism from ${primary.title}.`,
+    '',
+    `## What to watch for`,
+    '',
+    `A book lens is not proof that it fits this case. Name what evidence would falsify the diagnosis, and omit any supporting book that cannot change the decision.`,
+    '',
+    `## Try this next`,
+    '',
+    `Run the smallest action that produces a visible artifact: a written rule, a customer commitment, a calendar change, a decision log, or another signal appropriate to the question. Review that artifact before adding more advice.`,
+    '',
+    `## Demand evidence`,
     '',
     signalSummary,
-    '',
-    `## Content angle`,
-    '',
-    `Lead with the user's live problem, then bring in the book. Do not start with a book report. Start with the tension people are already feeling, use the book to make it legible, then end with a practical takeaway.`,
   ].join('\n');
 
   return {

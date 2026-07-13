@@ -130,20 +130,31 @@ export function createApp({ store = createStore() } = {}) {
         const body = await readJson(req);
         const question = resolveQuestion(body, store);
         if (!question) return problem(400, 'question or question_id is required');
+        const context = Array.isArray(body.top_of_mind) ? body.top_of_mind.filter(Boolean) : [];
+        const retrievalQuery = [question, question, ...context].join(' ');
         const sourceIds = normalizeSources(body.sources, store);
         const answers = retrieveContent({
-          query: question,
+          query: retrievalQuery,
           content: store.content,
           limit: body.limit ?? 3,
-          minScore: body.answer_min_score ?? 2,
+          minScore: body.answer_min_score ?? 8,
         });
-        const books = retrieveBooks({
-          query: question,
+        const retrievedBooks = retrieveBooks({
+          query: retrievalQuery,
           books: store.books,
           limit: body.book_limit ?? 5,
-          minScore: body.book_min_score ?? 1,
+          minScore: body.book_min_score ?? 5,
         });
         const answer = answers[0]?.content ?? null;
+        const sourceBooks = answer?.books?.length
+          ? answer.books.flatMap((book) => retrieveBooks({
+              query: `${book.title} ${book.author}`,
+              books: store.books,
+              limit: 1,
+              minScore: 5,
+            }))
+          : [];
+        const books = answer ? sourceBooks : retrievedBooks;
         const isHit = Boolean(answer);
         const newQuestion = isHit && body.capture_hit !== true
           ? null

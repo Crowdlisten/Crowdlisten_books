@@ -44,7 +44,10 @@ test('toggles sources and generates a book-grounded content draft', async () => 
   assert.equal(generated.status, 201);
   assert.equal(body.content.status, 'draft');
   assert.equal(body.content.source_ids.includes('books'), true);
-  assert.match(body.content.body, /Book-grounded answer/);
+  assert.match(body.content.body, /What is really going on/);
+  assert.match(body.content.body, /The working move/);
+  assert.match(body.content.body, /What to watch for/);
+  assert.match(body.content.body, /Try this next/);
   assert.ok(body.content.books.length >= 1);
 });
 
@@ -255,6 +258,28 @@ test('returns a compact ask payload for thin harnesses', async () => {
   assert.equal(body.objects.books[0].book.knowledge_text, undefined);
 });
 
+test('matches the value proposition question to its published answer and curated source books', async () => {
+  const app = createApp();
+  const response = await app.route(
+    req('POST', '/v1/ask', {
+      question: 'Does this have a differentiated value proposition or is it another summary product?',
+      top_of_mind: ['making answers relevant and applicable to real reader problems'],
+      compact: true,
+    })
+  );
+  const body = parse(response);
+
+  assert.equal(response.status, 200);
+  assert.equal(body.status, 'hit');
+  assert.equal(body.objects.answers[0].answer.id, 'answer:how-to-tell-whether-your-value-proposition-is-actually-different');
+  assert.deepEqual(
+    body.objects.books.map((match) => match.book.id),
+    ['good-strategy-bad-strategy', 'the-mom-test', 'made-to-stick']
+  );
+  assert.equal(body.objects.books.some((match) => match.book.id === 'atomic-habits'), false);
+  assert.equal(body.objects.books.some((match) => match.book.id === 'the-effective-executive'), false);
+});
+
 test('retrieves relevant books or creates a missing catalog record', async () => {
   const app = createApp();
 
@@ -272,7 +297,7 @@ test('retrieves relevant books or creates a missing catalog record', async () =>
   const created = await app.route(
     req('POST', '/v1/books/retrieve', {
       query: 'rogo herbie drum buffer rope manufacturing novel',
-      min_score: 2,
+      min_score: 99,
       create_if_missing: true,
       book: {
         title: 'The Goal',

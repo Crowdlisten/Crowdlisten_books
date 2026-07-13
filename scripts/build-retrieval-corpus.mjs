@@ -5,47 +5,53 @@ const repoRoot = resolve(new URL('..', import.meta.url).pathname);
 const webRoot = resolve(repoRoot, '../web/src/content');
 const outputPath = join(repoRoot, 'research', 'retrieval-corpus.json');
 
-const books = readCollection('books').map((entry) => ({
-  id: entry.slug,
-  type: 'book',
-  title: entry.data.title,
-  author: entry.data.author,
-  year: entry.data.year ?? null,
-  one_liner: entry.data.oneLiner ?? '',
-  read_if: entry.data.readIf ?? '',
-  tags: entry.data.tags ?? [],
-  featured: Boolean(entry.data.featured),
-  url: `/books/${entry.slug}/`,
-  text: entry.body,
-  semantic_text: [
-    entry.data.title,
-    entry.data.author,
-    entry.data.oneLiner,
-    entry.data.readIf,
-    ...(entry.data.tags ?? []),
-    entry.body,
-  ].filter(Boolean).join('\n'),
-}));
+const books = readCollection('books').map((entry) => {
+  const text = markdownToText(entry.body);
+  return {
+    id: entry.slug,
+    type: 'book',
+    title: entry.data.title,
+    author: entry.data.author,
+    year: entry.data.year ?? null,
+    one_liner: entry.data.oneLiner ?? '',
+    read_if: entry.data.readIf ?? '',
+    tags: entry.data.tags ?? [],
+    featured: Boolean(entry.data.featured),
+    url: `/books/${entry.slug}/`,
+    text,
+    semantic_text: [
+      entry.data.title,
+      entry.data.author,
+      entry.data.oneLiner,
+      entry.data.readIf,
+      ...(entry.data.tags ?? []),
+      text,
+    ].filter(Boolean).join('\n'),
+  };
+});
 
-const answers = readCollection('answers').map((entry) => ({
-  id: entry.slug,
-  type: 'answer',
-  question: entry.data.question,
-  title: entry.data.question,
-  description: entry.data.description ?? '',
-  books: entry.data.books ?? [],
-  tags: entry.data.tags ?? [],
-  featured: Boolean(entry.data.featured),
-  url: `/answers/${entry.slug}/`,
-  text: entry.body,
-  semantic_text: [
-    entry.data.question,
-    entry.data.description,
-    ...(entry.data.books ?? []),
-    ...(entry.data.tags ?? []),
-    entry.body,
-  ].filter(Boolean).join('\n'),
-}));
+const answers = readCollection('answers').map((entry) => {
+  const text = markdownToText(entry.body);
+  return {
+    id: entry.slug,
+    type: 'answer',
+    question: entry.data.question,
+    title: entry.data.question,
+    description: entry.data.description ?? '',
+    books: entry.data.books ?? [],
+    tags: entry.data.tags ?? [],
+    featured: Boolean(entry.data.featured),
+    url: `/answers/${entry.slug}/`,
+    text,
+    semantic_text: [
+      entry.data.question,
+      entry.data.description,
+      ...(entry.data.books ?? []),
+      ...(entry.data.tags ?? []),
+      text,
+    ].filter(Boolean).join('\n'),
+  };
+});
 
 const corpus = {
   version: 1,
@@ -123,4 +129,31 @@ function parseValue(value) {
 
 function cleanScalar(value) {
   return value.trim().replace(/^["']|["']$/g, '');
+}
+
+function markdownToText(markdown) {
+  return String(markdown)
+    .replace(/<figure\b[\s\S]*?<figcaption[^>]*>([\s\S]*?)<\/figcaption>[\s\S]*?<\/figure>/gi, '\n\n$1\n\n')
+    .replace(/<svg\b[\s\S]*?<\/svg>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/!\[[^\]]*]\([^)]+\)/g, ' ')
+    .replace(/\[([^\]]+)]\([^)]+\)/g, '$1')
+    .replace(/^#{1,6}\s+/gm, '')
+    .replace(/^\s*[-*]\s+/gm, '- ')
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/\*([^*]+)\*/g, '$1')
+    .replace(/^>\s?/gm, '')
+    .replace(/&(?:nbsp|amp|lt|gt|quot|#39);/g, (entity) => ({
+      '&nbsp;': ' ',
+      '&amp;': '&',
+      '&lt;': '<',
+      '&gt;': '>',
+      '&quot;': '"',
+      '&#39;': "'",
+    })[entity] ?? ' ')
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
 }

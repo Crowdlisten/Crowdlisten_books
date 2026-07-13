@@ -5,54 +5,70 @@ How to talk to customers and learn the truth when everyone is lying to you — i
 
 You are about to build something and want to find out whether anyone actually needs it, before you spend a year finding out the hard way.
 
-Core mental models
+The central problem in customer research is not that people lie. It is that most questions make honesty almost impossible. Ask someone whether your idea is good and they have to predict a future they cannot see while managing a social interaction they do not want to damage. Their answer may be sincere and still tell you nothing about demand.
 
-1. Everyone lies to you, politely.
-People you interview want the conversation to go well. Your mom says your app idea is great because she loves you; strangers say it's great because it ends the meeting faster. The lie isn't malicious — it's social lubricant. The burden is on you to ask questions that even a polite person can't answer with a comfortable falsehood. The Mom Test is named for the standard it sets: your questions should be so grounded in facts that even your mom couldn't mislead you with them.
+The Mom Test replaces that unreliable prediction with evidence from the person's life. Do not ask whether the idea could work. Reconstruct what already happened: the last time the problem appeared, the workaround they chose, the cost they accepted, and the people they involved. Then look for a commitment that moves the conversation forward. The book's deepest insight is that a customer conversation becomes useful only when it is capable of proving you wrong.
 
-2. Talk about their life, not your idea.
-The moment you pitch, the data is contaminated. Every question afterward measures how nice the person is, not how real the problem is. The fix is structural: ask about what they did last week, what it cost them, what they tried, who else they complained to. Their past behavior is evidence; their opinion of your future product is not.
+Your idea contaminates the interview
 
-3. Compliments are worthless; commitments are gold.
-"That's really cool" is a deflection, not a data point. What counts is anything that costs the person something: time (a scheduled follow-up with a clear agenda), reputation (an intro to their boss or budget owner), or money (a pre-order, a letter of intent, a deposit). Fitzpatrick calls these currency. If a meeting ends with kind words and nothing on the calendar, it didn't go well — it went nowhere.
+The instant you describe a product, the conversation changes. The other person stops being a witness to their own behavior and becomes a critic of your proposal. They infer what you hope to hear. They try to be encouraging, clever, or helpful. Even blunt criticism is shaped by the features and language you supplied.
 
-4. Bad news is good news.
-A lukewarm "meh" that arrives in week two saves you the year you would have spent discovering it in production. The goal of customer conversations is truth, not validation. Learning that a problem doesn't matter, or that the customer has no budget, or that they've tried nothing to solve it (a tell that they don't really care) is a successful outcome.
+This is why a friendly conversation can generate pages of notes without reducing uncertainty. “I would use that” is a prediction about an imagined product in an imagined future. “That sounds useful” is often politeness. A feature request describes what someone can picture during the meeting, not necessarily what they value enough to adopt.
 
-5. Some problems don't matter.
-People will cheerfully confirm that something is annoying. The real questions are: Where does this rank against everything else on their plate? What does it cost them? What have they already tried? If they've never Googled for a solution, the problem isn't burning enough to build a business on.
+Fitzpatrick's corrective is to keep the conversation on the customer's side of the table. Ask about their existing workflow before revealing yours. Find out when the problem last occurred, how they responded, which tools they used, where time or money disappeared, and who cared about the outcome. Specific questions are not merely better wording. They change the kind of evidence being collected.
 
-Key frameworks
+Evidence gets stronger as it becomes more costly
 
-The three rules of the Mom Test:
-1. Talk about their life instead of your idea.
-2. Ask about specifics in the past instead of generics or opinions about the future.
-3. Talk less and listen more.
+The book implicitly describes an evidence ladder. Each step requires the customer to give up more than an opinion.
 
-Question quality check. Bad: "Would you buy a product that did X?" (invites a hypothetical lie). Good: "What are you using now? What does it cost you? When did this last happen — walk me through it." Future tense and hypotheticals are where lies live; past tense and specifics are where truth lives.
+A statement becomes more informative when it is tied to behavior or costs the speaker something.
 
-Deflect compliments, anchor fluff, dig beneath signals. When you get a compliment, ignore it and move on. When you get a generic claim ("I always…", "I'd definitely…"), anchor it: "When did that last happen?" When you get an emotional signal (frustration, excitement), dig: "Tell me more about that."
+An opinion is cheap. It can reveal vocabulary, taste, or emotional reaction, but it is weak evidence of demand. Past behavior is stronger because it describes a choice made under real constraints. A commitment is stronger still because the person gives something scarce: time for another meeting, an introduction to a colleague, access to an artifact, budget for a trial, or reputation spent advocating internally.
 
-Commitment and advancement. Every meeting should end by pushing for a next step that costs the prospect something. If you don't know what to ask for, you went into the meeting without a goal — Fitzpatrick's "three big questions" prep: decide in advance the three things you most need to learn.
+The ladder does not mean every interview must end in a sale. The appropriate commitment depends on what is still unknown. Early in discovery, permission to inspect an existing spreadsheet may be more informative than a vague promise to buy. Later, a pilot that never reaches the actual workflow owner is weaker than it appears. The test is whether the next step creates new evidence and requires genuine participation.
 
-Keep it casual. Early-stage learning conversations don't need a scheduled "interview." A good conversation about someone's workflow can happen at a conference, in a coffee line, or in a user's existing support thread. Formality raises the stakes and invites performance.
+Ask backward, not forward
 
-When to reach for this book
-- Before writing code for any new product or feature.
-- When your user interviews keep producing enthusiastic feedback but no usage.
-- When someone on the team says "everyone we talked to loved it" — this book is the antidote.
-- When deciding whether a feature request is real or polite noise.
+Future-tense questions invite speculation: Would you use this? How much would you pay? Do you think your team needs it? The respondent can construct a plausible answer without confronting any constraint. Past-tense questions force the conversation toward facts: When did this last happen? What did you do? What did that cost? What else did you try?
 
-Memorable ideas
+The book demonstrates the difference through its own mother-and-cookbook example. A bad conversation introduces an iPad cookbook idea, confirms that the interviewee likes the iPad and cooking, then treats an encouraging reaction as validation. The questions manufacture agreement because every answer is downstream of the pitch.
 
-"You shouldn't ask anyone whether your business is a good idea... It's a bad question and everyone will lie to you at least a little."
+In Fitzpatrick's improved version, the founder asks how the iPad is actually used and how recipes are currently found and followed. The details reveal behavior the product pitch concealed. General affection for cooking and technology does not automatically produce a recurring need for a new cookbook product. The example matters because it shows that the same person can give an enthusiastic opinion and contradictory behavioral evidence without being dishonest.
 
-"Opinions are worthless... Anything involving the future is an over-optimistic lie."
+Past behavior is not destiny. A new regulation, technical capability, or organizational change can make tomorrow unlike yesterday. But when that is your thesis, name the change explicitly and test its consequences. Do not use novelty as permission to return to ungrounded predictions.
 
-"If they haven't looked for ways of solving it already, they're not going to look for (or buy) yours."
+Compliments hide the absence of commitment
 
-The book's sharpest reframe: a failed conversation is one where you only collected compliments. By that standard, most "great meetings" founders report are failures.
+Founders often record positive phrases because praise is emotionally salient and easy to summarize. The book treats compliments as warning signs. They are not negative evidence, but they often tempt the interviewer to stop asking the questions that would produce real evidence.
 
-How I've applied it
+The useful response to praise is neither gratitude nor skepticism. It is a return to specifics. If someone says the problem is important, ask what happened the last time it appeared. If they say they would pay, ask what they already spend to manage it. If they call the product exciting, ask who else would need to approve it and what the next step would be.
 
-Building CrowdListen, my early conversations were classic anti-patterns: I demoed, people nodded, I logged "positive feedback." Re-running those conversations Mom Test-style — "show me the last time you tried to figure out what your audience thought" — changed the product. The painful, specific stories were about aggregating scattered feedback, not about the dashboard I had been building. The other habit that stuck: ending every promising conversation by asking for something that costs the other person effort. The people who wouldn't make an intro or schedule a follow-up were telling me something their compliments weren't.
+This turns customer development from sentiment collection into movement. A conversation advances when it produces a fact that changes the model or a commitment that opens the next source of evidence. Ten pleasant calls with no change in behavior may be less informative than one uncomfortable call that exposes a missing buyer, an inaccessible workflow, or a problem too minor to fund.
+
+A real problem leaves traces
+
+Many problems are genuine but commercially weak. People tolerate annoyances, complain about them, and agree they should be fixed. The relevant question is whether the problem is important relative to everything else competing for attention.
+
+Important problems leave traces. Someone has built a workaround, paid for an imperfect tool, assigned staff, accepted delays, escalated failures, or repeatedly searched for alternatives. The trace need not be money. It can be time, risk, political attention, or an ugly manual process that survives because the outcome matters.
+
+An absence of traces is also information. If a supposedly urgent problem has not caused any response, the pain may be infrequent, the affected person may lack authority, or the current workaround may be good enough. The interviewer's job is not to argue the person into caring. It is to discover which explanation fits.
+
+Good interviews are designed around a decision
+
+The Mom Test is sometimes reduced to a list of clever questions. That misses the operating discipline underneath them. Before the conversation, decide what uncertainty matters and what evidence would change the plan. Otherwise even a candid interview can become a tour of interesting facts.
+
+A useful sequence is short:
+
+1. Name the decision the conversation should inform.
+2. Reconstruct specific past behavior around that decision.
+3. Ask for the smallest commitment that would produce the next piece of evidence.
+
+The learning goal should be written before the call. It may be a question about who owns the problem, whether the pain is frequent, what the current alternative costs, or why an earlier solution was abandoned. A fixed learning goal makes it easier to notice when an entertaining conversation has drifted away from the decision. It also makes interviews comparable without turning them into a rigid questionnaire.
+
+Learning and selling can happen in the same relationship, but they should not be confused. Once you explain the product, later reactions are responses to the pitch. They can still help with language, objections, and product comprehension; they are simply a different kind of evidence. Marking that transition in the notes prevents the team from mixing observed behavior with prompted opinion.
+
+Afterward, keep the conditions attached to what you learned. Role, workflow, frequency, stakes, and current alternative determine where an observation applies. Combining every interview into an average “customer” erases the differences that make the evidence useful.
+
+Notes should preserve what happened before they compress it into a conclusion. “They manually reconcile three exports every Friday” is evidence. “They need automation” is an interpretation. The distinction matters because a different reader may infer a different product, buyer, or constraint from the same fact. Good discovery keeps that correction possible.
+
+The method also changes what counts as a successful call. Bad news is not a failed interview. Discovering that the buyer is different, the pain is rare, or access is blocked may save months of building. A failed interview is one that protects the idea from reality.
