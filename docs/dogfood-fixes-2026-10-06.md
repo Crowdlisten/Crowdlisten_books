@@ -1,9 +1,9 @@
 # Dogfood fixes, October 6, 2026
 
-Release 0.1.3 addresses both rounds of installation, retrieval, and privacy findings.
+Release 0.1.4 addresses both rounds of installation, retrieval, and privacy findings.
 
-- The install command bundles executable Node source and both corpora with the skill and optional API. Asking works from an empty directory without a server, account, or API key. The skill uses its installed runtime. Site, help, README, and skill use the same pinned GitHub distribution.
-- The npm registry update is pending publisher authentication. The old npm 0.1.0 package must not be used. The canonical command uses `github:Crowdlisten/Crowdlisten_books#v0.1.3` until a registry release is verified.
+- The install command bundles executable Node source and both corpora with the skill and optional API. Asking works from an empty directory without a server, account, or API key. The skill uses its installed runtime. Site, help, README, and skill use the same pinned npm distribution.
+- The canonical install uses `npx --yes answer-with-books@0.1.4 install --skill --api`. The old npm 0.1.0 package must not be used. Version 0.1.3 remains a working GitHub release for existing pinned installations.
 - Both `/v1/ask` and legacy `/v1/answers/query` use identical retrieval of published content. Neither generates filler or saves questions by default. Anchored multi-term relevance excludes incidental full-text matches. Scores are sorted; explicit book titles receive priority.
 - Malformed JSON, unknown sources, invalid limits, and queries over 2,000 characters are rejected. Body size is capped at 64 KB. Source toggles are validated before changing state and honored by all public retrieval paths.
 - Operator routes require a configured token of at least 24 characters. Reading a saved question by ID also requires it. Public content listing excludes drafts. Servers bind to localhost by default.

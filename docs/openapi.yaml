@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Answer with Books
-  version: 0.1.3
+  version: 0.1.4
   description: English lexical retrieval over public editorial digests. Queries are not saved by default. Operator storage is single-owner, not multi-user.
 servers:
   - url: http://127.0.0.1:8787

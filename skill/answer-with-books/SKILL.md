@@ -44,7 +44,7 @@ The harness should do one thing:
 node <skill-directory>/runtime/bin/answer-with-books.js ask "QUESTION" --top-of-mind "OPTIONAL USER CONTEXT" --json
 ```
 
-The installer includes Node runtime source and the public corpus inside `runtime/`; no package.json, separate clone, API key, or running server is needed. Node 20+ is required. If only this Markdown file was installed, use `npx --yes --package=github:Crowdlisten/Crowdlisten_books#v0.1.3 answer-with-books ask "QUESTION" --json`.
+The installer includes Node runtime source and the public corpus inside `runtime/`; no package.json, separate clone, API key, or running server is needed. Node 20+ is required. If only this Markdown file was installed, use `npx --yes answer-with-books@0.1.4 ask "QUESTION" --json`.
 
 Only if the user explicitly configured a trusted HTTP server, call:
 

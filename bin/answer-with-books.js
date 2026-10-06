@@ -78,7 +78,7 @@ function install(installArgs) {
 
   console.log('Answer with Books installed.');
   for (const item of installed) console.log(`- ${item}`);
-  console.log('Ask without a server: npx --yes --package=github:Crowdlisten/Crowdlisten_books#v0.1.3 answer-with-books ask "YOUR QUESTION" --json');
+  console.log('Ask without a server: npx --yes answer-with-books@0.1.4 ask "YOUR QUESTION" --json');
   if (installApi) console.log('Optional local HTTP API: node .answer-with-books/runtime/src/server.js');
 }
 
@@ -258,9 +258,9 @@ function printHelp() {
   console.log(`Answer with Books CLI
 
 Usage:
-  npx --yes --package=github:Crowdlisten/Crowdlisten_books#v0.1.3 answer-with-books install --skill --api
-  npx --yes --package=github:Crowdlisten/Crowdlisten_books#v0.1.3 answer-with-books serve
-  npx --yes --package=github:Crowdlisten/Crowdlisten_books#v0.1.3 answer-with-books ask "Am I validating this idea or collecting compliments?"
+  npx --yes answer-with-books@0.1.4 install --skill --api
+  npx --yes answer-with-books@0.1.4 serve
+  npx --yes answer-with-books@0.1.4 ask "Am I validating this idea or collecting compliments?"
 
 Options:
   --skill   Install the agent skill into $CODEX_HOME/skills/answer-with-books

@@ -4,11 +4,11 @@ Give your agent a book’s methods, grounded in public editorial digests and sou
 
 ## One install path
 
-Node 20+ and Git are required. This pinned GitHub release is the canonical install while the npm registry update is pending. Do not use the stale npm 0.1.0 package. From any empty directory:
+Node 20+ is required. Use the pinned npm release below; older npm 0.1.0 installations lack the runtime and ask command. From any empty directory:
 
 ```sh
-npx --yes --package=github:Crowdlisten/Crowdlisten_books#v0.1.3 answer-with-books install --skill --api
-npx --yes --package=github:Crowdlisten/Crowdlisten_books#v0.1.3 answer-with-books ask "Am I validating this idea or collecting compliments?" --json
+npx --yes answer-with-books@0.1.4 install --skill --api
+npx --yes answer-with-books@0.1.4 ask "Am I validating this idea or collecting compliments?" --json
 ```
 
 No repository clone, npm install, account, API key, or running server is required to ask. The command retrieves from the bundled corpus in-process. The agent skill is installed to `$CODEX_HOME/skills/answer-with-books` (default `~/.codex/skills/answer-with-books`) together with its executable source and corpus. An existing installation at that path is updated. `npx` does not install a global command; keep the `npx` prefix, or use the bundled Node command documented in SKILL.md.
@@ -20,7 +20,7 @@ node .answer-with-books/runtime/src/server.js
 curl http://127.0.0.1:8787/health
 ```
 
-Alternatively use `npx --yes --package=github:Crowdlisten/Crowdlisten_books#v0.1.3 answer-with-books serve`. The server binds to localhost. `ask` uses the bundled corpus unless you explicitly pass `--api-url` or `ANSWER_WITH_BOOKS_API_URL`; an unavailable explicit server is an error, not a silent fallback.
+Alternatively use `npx --yes answer-with-books@0.1.4 serve`. The server binds to localhost. `ask` uses the bundled corpus unless you explicitly pass `--api-url` or `ANSWER_WITH_BOOKS_API_URL`; an unavailable explicit server is an error, not a silent fallback.
 
 ## Retrieval contract
 

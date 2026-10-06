@@ -1,6 +1,6 @@
 {
   "name": "answer-with-books",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Open-source REST API and agent skill for turning books plus demand signals into book-grounded answers.",
   "type": "module",
   "private": false,

@@ -11,7 +11,7 @@ test('npm tarball installs a self-contained skill and HTTP API in an empty direc
  }
  const server=spawn(process.execPath,[join(temp,'.answer-with-books/runtime/src/server.js')],{cwd:temp,env:{...env,PORT:'0'},stdio:['ignore','pipe','pipe']});
  t.after(()=>server.kill());let out='';const base=await new Promise((res,rej)=>{const timer=setTimeout(()=>rej(Error('server timeout')),5000);server.stdout.on('data',x=>{out+=x;const m=out.match(/http:\/\/127\.0\.0\.1:(\d+)/);if(m){clearTimeout(timer);res(m[0]);}});server.on('error',rej);});
- assert.equal((await (await fetch(base+'/health')).json()).version,'0.1.3');
+ assert.equal((await (await fetch(base+'/health')).json()).version,'0.1.4');
  const result=await (await fetch(base+'/v1/ask',{method:'POST',body:JSON.stringify({question:'Should I move to Mars?'})})).json();assert.equal(result.status,'new_question');assert.deepEqual(result.books,[]);
  assert.equal((await fetch(base+'/v1/questions')).status,403);
 });
