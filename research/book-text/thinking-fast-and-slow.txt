@@ -1,9 +1,9 @@
 Thinking, Fast and Slow
 Daniel Kahneman, 2011
 
-A map of the two systems that run your mind — and the predictable ways the fast one fools you.
+A map of the two systems that run your mind and the predictable ways the fast one fools you.
 
-You make judgments under uncertainty for a living — hiring, investing, forecasting, designing — and want to know where your intuition is trustworthy and where it is confidently wrong.
+You make hiring, investing, forecasting, or design decisions under uncertainty and want to know where intuition is trustworthy and where it is confidently wrong.
 
 What the book is about
 

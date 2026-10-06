@@ -6,6 +6,7 @@ const formatLabels = {
 };
 
 const stopwords = new Set([
+  'collecting', 'collect', 'am', 'just', 'keeps', 'keep', 'missing', 'ignore', 'previous', 'instructions', 'please', 'tell', 'about', 'daily',
   'answer',
   'answers',
   'and',
@@ -94,12 +95,23 @@ export function retrieveBooks({ query, books, limit = 5, minScore = 1 }) {
         { value: [book.one_liner, book.read_if], weight: 4 },
         { value: book.knowledge_text, weight: 1, cap: 4 },
       ]);
-      return { book: publicBook(book), score };
+      const anchorFields = [book.title, ...(book.concepts ?? []), ...(book.applications ?? []).filter(value => value.split(/\s+/).length <= 4)].join(' ');
+      const relevant = relevance(query, anchorFields);
+      const title = tokenize(book.title);
+      const explicit = title.length >= 2 && title.every(token => tokenize(query).includes(token));
+      return { book: publicBook(book), score: score + (explicit ? 40 : 0), relevant: relevant || explicit };
     })
-    .filter((item) => item.score >= minScore)
+    .filter((item) => item.relevant && item.score >= Math.max(10, minScore))
     .sort((a, b) => b.score - a.score || a.book.title.localeCompare(b.book.title))
     .slice(0, limit)
     .map(({ book, score }) => ({ score, book }));
+}
+
+function relevance(query, anchor) {
+  if (/[^\p{Script=Latin}\p{Number}\p{Punctuation}\p{Separator}\s]/u.test(query)) return false;
+  const tokens = tokenize(query), terms = new Set(tokenize(anchor));
+  const matched = tokens.filter(token => terms.has(token));
+  return matched.length >= 2 && matched.length / tokens.length >= 0.5;
 }
 
 function scoreDistinctFields(query, fields) {
@@ -134,6 +146,7 @@ function publicBook(book) {
 
 export function retrieveContent({ query, content, limit = 5, minScore = 2 }) {
   return [...content.values()]
+    .filter(item => item.status === 'published' && item.type === 'answer')
     .map((item) => {
       const anchorScore = scoreFields(query, [
         { value: [item.question, item.title], weight: 1 },
@@ -146,9 +159,9 @@ export function retrieveContent({ query, content, limit = 5, minScore = 2 }) {
         { value: (item.books ?? []).map((book) => `${book.title} ${book.author}`), weight: 2 },
         { value: item.body, weight: 1, cap: 6 },
       ]);
-      return { content: item, score, anchorScore };
+      return { content: item, score, anchorScore, relevant: relevance(query, [item.question, item.title, ...(item.concepts ?? [])].join(' ')) };
     })
-    .filter((item) => item.anchorScore > 0 && item.score >= minScore)
+    .filter((item) => item.relevant && item.anchorScore > 0 && item.score >= Math.max(14,minScore))
     .sort((a, b) => b.score - a.score || b.content.created_at.localeCompare(a.content.created_at))
     .slice(0, limit)
     .map(({ content, score }) => ({ score, content }));
@@ -186,6 +199,9 @@ function tokenize(value) {
 }
 
 function stem(token) {
+  if (/^validat/.test(token)) return 'validat';
+  if (/^negotiat/.test(token)) return 'negotiat';
+  if (/^interview/.test(token)) return 'interview';
   if (token.length > 5 && token.endsWith('ing')) return token.slice(0, -3);
   if (token.length > 4 && token.endsWith('ed')) return token.slice(0, -2);
   if (token.length > 4 && token.endsWith('es')) return token.slice(0, -2);

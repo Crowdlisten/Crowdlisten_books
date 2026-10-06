@@ -3,7 +3,7 @@ James C. Scott, 1998
 
 Why grand schemes to improve the human condition fail: they replace messy local knowledge with tidy maps, then mistake the map for the territory.
 
-You design systems for other people — software, processes, org charts, cities — and want to understand why clean top-down plans keep being defeated by messy reality.
+You design software, processes, organizations, or cities for other people and want to understand why clean plans keep being defeated by messy reality.
 
 What the book is about
 

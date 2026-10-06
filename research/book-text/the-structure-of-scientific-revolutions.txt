@@ -1,9 +1,9 @@
 The Structure of Scientific Revolutions
 Thomas S. Kuhn, 1962
 
-Science doesn't progress by smooth accumulation — it alternates between puzzle-solving within a paradigm and rare, wrenching revolutions that replace it.
+Science doesn't progress by smooth accumulation. It alternates between puzzle-solving within a paradigm and rare, wrenching revolutions that replace it.
 
-You're deciding whether to keep refining the current approach or throw it out — in research, strategy, or engineering — and want a vocabulary for telling incremental progress from a dying framework.
+You're deciding whether to keep refining the current approach or throw it out in research, strategy, or engineering, and want a vocabulary for telling incremental progress from a dying framework.
 
 What the book is about
 

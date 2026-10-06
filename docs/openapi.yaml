@@ -1,28 +1,86 @@
 openapi: 3.0.3
 info:
-  title: Answer with Books API
-  version: 0.1.2
-  description: REST API for retrieving book-grounded published answers, source books, and captured new questions.
+  title: Answer with Books
+  version: 0.1.3
+  description: English lexical retrieval over public editorial digests. Queries are not saved by default. Operator storage is single-owner, not multi-user.
 servers:
   - url: http://127.0.0.1:8787
+components:
+  securitySchemes:
+    OperatorToken:
+      type: http
+      scheme: bearer
+      description: Server-configured AWB_ADMIN_TOKEN, at least 24 characters.
+  schemas:
+    Ask:
+      type: object
+      required: [question]
+      properties:
+        question: {type: string, minLength: 1, maxLength: 2000}
+        compact: {type: boolean, default: false}
+        capture: {type: boolean, default: false, description: Requires operator authorization when true.}
+        sources:
+          type: array
+          items: {type: string, enum: [books, crowdlisten, top_of_mind, clicked_questions]}
+        top_of_mind:
+          type: array
+          maxItems: 10
+          items: {type: string, maxLength: 500}
 paths:
   /health:
     get:
-      summary: Health check
       responses:
-        '200':
-          description: Service is healthy
-  /v1/sources:
-    get:
-      summary: List source toggles
-      responses:
-        '200':
-          description: Sources
-  /v1/sources/toggle:
+        '200': {description: Version and English retrieval support}
+  /v1/ask:
     post:
-      summary: Enable selected sources
+      summary: Retrieve published answers and books without generating or saving a question
       requestBody:
         required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/Ask'}
+      responses:
+        '200': {description: 'hit, with objects.books, objects.answers and null new_question'}
+        '201': {description: 'new_question with saved=false, no strong published answer; book matches may also be empty'}
+        '400': {description: Invalid input or malformed JSON}
+        '403': {description: Unauthorized capture request}
+        '413': {description: Request exceeds 64 KB}
+  /v1/answers/query:
+    post:
+      deprecated: true
+      summary: Compatibility alias for /v1/ask with the same relevance floor and response shape
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/Ask'}
+      responses:
+        '200': {description: Published match}
+        '201': {description: Unsaved miss; no draft generation}
+        '400': {description: Invalid request}
+  /v1/books:
+    get:
+      responses:
+        '200': {description: Public book catalog}
+    post:
+      security: [{OperatorToken: []}]
+      responses:
+        '201': {description: Operator-added catalog entry}
+        '403': {description: Unauthorized}
+  /v1/books/retrieve:
+    post:
+      summary: Retrieve books; creating a missing book requires operator authorization
+      responses:
+        '200': {description: hit or miss with matches}
+        '400': {description: Invalid query or source IDs}
+  /v1/sources:
+    get:
+      responses:
+        '200': {description: Current source toggles}
+  /v1/sources/toggle:
+    post:
+      security: [{OperatorToken: []}]
+      requestBody:
         content:
           application/json:
             schema:
@@ -31,368 +89,49 @@ paths:
               properties:
                 enabled:
                   type: array
-                  items:
-                    type: string
-                    enum: [books, crowdlisten, top_of_mind, clicked_questions]
+                  minItems: 1
+                  items: {type: string, enum: [books, crowdlisten, top_of_mind, clicked_questions]}
       responses:
-        '200':
-          description: Updated source state
-  /v1/books:
-    get:
-      summary: List books
-      responses:
-        '200':
-          description: Book source records
-    post:
-      summary: Add a book source record
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required: [title, author]
-              properties:
-                id:
-                  type: string
-                title:
-                  type: string
-                author:
-                  type: string
-                concepts:
-                  type: array
-                  items:
-                    type: string
-                quotes:
-                  type: array
-                  items:
-                    type: string
-                applications:
-                  type: array
-                  items:
-                    type: string
-      responses:
-        '201':
-          description: Created book
-  /v1/books/retrieve:
-    post:
-      summary: Retrieve relevant books or create a missing catalog record
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                query:
-                  type: string
-                question:
-                  type: string
-                title:
-                  type: string
-                limit:
-                  type: integer
-                min_score:
-                  type: integer
-                create_if_missing:
-                  type: boolean
-                book:
-                  type: object
-                  required: [title, author]
-                  properties:
-                    id:
-                      type: string
-                    title:
-                      type: string
-                    author:
-                      type: string
-                    concepts:
-                      type: array
-                      items:
-                        type: string
-                    quotes:
-                      type: array
-                      items:
-                        type: string
-                    applications:
-                      type: array
-                      items:
-                        type: string
-      responses:
-        '200':
-          description: Book retrieval hit or miss
-        '201':
-          description: Missing book created
+        '200': {description: Updated toggles}
+        '400': {description: Unknown IDs; state unchanged}
+        '403': {description: Unauthorized}
   /v1/questions:
     get:
-      summary: List captured questions
+      security: [{OperatorToken: []}]
       responses:
-        '200':
-          description: Questions
+        '200': {description: Operator-owned queue}
+        '403': {description: Unauthorized}
     post:
-      summary: Capture a user question
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required: [question]
-              properties:
-                question:
-                  type: string
-                sources:
-                  type: array
-                  items:
-                    type: string
-                clicked:
-                  type: boolean
-                context:
-                  type: string
+      security: [{OperatorToken: []}]
       responses:
-        '201':
-          description: Captured question
-  /v1/concerns:
-    get:
-      summary: List demand concerns
-      responses:
-        '200':
-          description: Demand concerns synced from CrowdListen or local fixtures
-  /v1/concerns/sync:
-    post:
-      summary: Ingest enriched concern objects
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required: [concerns]
-              properties:
-                concerns:
-                  type: array
-                  items:
-                    type: object
-      responses:
-        '201':
-          description: Created or updated concerns
+        '201': {description: Explicitly captured operator question}
+        '403': {description: Unauthorized}
   /v1/signals/top-of-mind:
     post:
-      summary: Add top-of-mind demand signals
+      security: [{OperatorToken: []}]
       requestBody:
-        required: true
         content:
           application/json:
             schema:
               type: object
               required: [items]
               properties:
-                items:
-                  type: array
-                  items:
-                    type: string
+                items: {type: array, minItems: 1, items: {type: string}}
+            example: {items: ['Improve customer interviews']}
       responses:
-        '201':
-          description: Created signals
+        '201': {description: Operator signals stored}
+        '400': {description: Missing items array}
+        '403': {description: Unauthorized}
   /v1/signals/clicked-question:
     post:
-      summary: Add clicked-question signal
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required: [question]
-              properties:
-                question:
-                  type: string
-                user_id:
-                  type: string
+      security: [{OperatorToken: []}]
       responses:
-        '201':
-          description: Created signal
-  /v1/crowdlisten/sync:
-    post:
-      summary: Ingest CrowdListen demand packets, concerns, insights, questions, and signals
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                demand_packets:
-                  type: array
-                  items:
-                    type: object
-                concerns:
-                  type: array
-                  items:
-                    type: object
-                insights:
-                  type: array
-                  items:
-                    type: object
-                signals:
-                  type: array
-                  items: {}
-                questions:
-                  type: array
-                  items:
-                    type: string
-      responses:
-        '201':
-          description: Created demand signals and concerns
-  /v1/content:
-    get:
-      summary: List generated drafts
-      responses:
-        '200':
-          description: Generated content drafts
-  /v1/ask:
-    post:
-      summary: Ask the shelf by retrieving published answers, relevant books, or capturing a new question
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required: [question]
-              properties:
-                question:
-                  type: string
-                top_of_mind:
-                  type: array
-                  items:
-                    type: string
-                sources:
-                  type: array
-                  items:
-                    type: string
-                limit:
-                  type: integer
-                answer_min_score:
-                  type: integer
-                book_limit:
-                  type: integer
-                book_min_score:
-                  type: integer
-                capture_hit:
-                  type: boolean
-                compact:
-                  type: boolean
-                  description: Return only the agent-facing books, answers, and new_question buckets.
-      responses:
-        '200':
-          description: Existing published answer found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AskResponse'
-        '201':
-          description: New question captured with relevant books
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AskResponse'
+        '201': {description: Explicit operator signal stored}
+        '403': {description: Unauthorized}
   /v1/content/generate:
     post:
-      summary: Generate a book-grounded content draft
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                question_id:
-                  type: string
-                question:
-                  type: string
-                concern_id:
-                  type: string
-                sources:
-                  type: array
-                  items:
-                    type: string
-                format:
-                  type: string
-                  enum: [article, brief, script, card]
-                audience:
-                  type: string
+      security: [{OperatorToken: []}]
+      deprecated: true
       responses:
-        '201':
-          description: Generated content draft
-  /v1/answers/query:
-    post:
-      summary: Retrieve similar answers or generate and cache on miss
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                question_id:
-                  type: string
-                question:
-                  type: string
-                sources:
-                  type: array
-                  items:
-                    type: string
-                generate_if_missing:
-                  type: boolean
-                  default: true
-                limit:
-                  type: integer
-                min_score:
-                  type: integer
-                book_limit:
-                  type: integer
-                book_min_score:
-                  type: integer
-                format:
-                  type: string
-                  enum: [article, brief, script, card]
-                audience:
-                  type: string
-      responses:
-        '200':
-          description: Similar answer found or cache miss returned
-        '201':
-          description: New answer generated and cached
-components:
-  schemas:
-    AskResponse:
-      type: object
-      required: [status, question, objects, next_step]
-      properties:
-        status:
-          type: string
-          enum: [hit, new_question]
-        question:
-          type: string
-        next_step:
-          type: string
-          enum:
-            - adapt_existing_answer_with_books
-            - answer_from_books_and_save_question
-            - save_question_and_request_source_books
-        objects:
-          type: object
-          required: [books, answers, new_question]
-          properties:
-            books:
-              type: array
-              items:
-                type: object
-            answers:
-              type: array
-              items:
-                type: object
-            new_question:
-              nullable: true
-              type: object
+        '410': {description: Template generation retired}
+        '403': {description: Unauthorized}

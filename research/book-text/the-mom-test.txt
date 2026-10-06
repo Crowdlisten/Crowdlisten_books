@@ -1,7 +1,7 @@
 The Mom Test
 Rob Fitzpatrick, 2013
 
-How to talk to customers and learn the truth when everyone is lying to you — including your mom.
+How to talk to customers and learn the truth when everyone is lying to you, including your mom.
 
 You are about to build something and want to find out whether anyone actually needs it, before you spend a year finding out the hard way.
 

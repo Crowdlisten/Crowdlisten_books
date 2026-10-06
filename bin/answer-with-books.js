@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { request as httpRequest } from 'node:http';
 import { request as httpsRequest } from 'node:https';
 import { homedir } from 'node:os';
@@ -20,6 +20,8 @@ const command = args[0];
 
 if (command === 'install') {
   install(args.slice(1));
+} else if (command === 'serve') {
+  await import('../src/server.js');
 } else if (command === 'ask') {
   await ask(args.slice(1));
 } else {
@@ -46,19 +48,21 @@ function install(installArgs) {
     const targetDir = join(codexHome, 'skills', 'answer-with-books');
     mkdirSync(targetDir, { recursive: true });
     writeFileSync(join(targetDir, 'SKILL.md'), readFileSync(source, 'utf8'));
+    copyRuntime(join(targetDir, 'runtime'));
     installed.push(`skill -> ${targetDir}`);
   }
 
   if (installApi) {
     const configDir = join(cwd, '.answer-with-books');
     mkdirSync(configDir, { recursive: true });
+    copyRuntime(join(configDir, 'runtime'));
     writeFileSync(
       join(configDir, 'api.json'),
       JSON.stringify(
         {
           name: 'answer-with-books',
           baseUrl: process.env.ANSWER_WITH_BOOKS_API_URL || 'http://127.0.0.1:8787',
-          startCommand: 'npm run dev',
+          startCommand: 'node .answer-with-books/runtime/src/server.js',
           endpoints: {
             health: '/health',
             ask: '/v1/ask',
@@ -74,7 +78,15 @@ function install(installArgs) {
 
   console.log('Answer with Books installed.');
   for (const item of installed) console.log(`- ${item}`);
-  console.log('Start the local API with: npm run dev');
+  console.log('Ask without a server: npx --yes --package=github:Crowdlisten/Crowdlisten_books#v0.1.3 answer-with-books ask "YOUR QUESTION" --json');
+  if (installApi) console.log('Optional local HTTP API: node .answer-with-books/runtime/src/server.js');
+}
+
+function copyRuntime(target) {
+  mkdirSync(target, { recursive: true });
+  for (const name of ['src', 'bin', 'package.json']) cpSync(join(packageRoot, name), join(target, name), { recursive: true });
+  mkdirSync(join(target, 'research'), { recursive: true });
+  for (const name of ['book-corpus.json', 'retrieval-corpus.json']) cpSync(join(packageRoot, 'research', name), join(target, 'research', name));
 }
 
 async function ask(askArgs) {
@@ -86,10 +98,10 @@ async function ask(askArgs) {
     process.exit(1);
   }
 
-  const config = readApiConfig();
-  const baseUrl = String(values.apiUrl ?? process.env.ANSWER_WITH_BOOKS_API_URL ?? config.baseUrl ?? 'http://127.0.0.1:8787')
+  const remote = values.apiUrl ?? process.env.ANSWER_WITH_BOOKS_API_URL;
+  const baseUrl = String(values.apiUrl ?? process.env.ANSWER_WITH_BOOKS_API_URL ?? 'http://127.0.0.1:8787')
     .replace(/\/$/, '');
-  const sources = normalizeList(values.sources ?? values.source) ?? ['books', 'top_of_mind', 'clicked_questions'];
+  const sources = normalizeList(values.sources ?? values.source) ?? undefined;
   const topOfMind = normalizeList(values.topOfMind);
   const payload = {
     question,
@@ -102,11 +114,9 @@ async function ask(askArgs) {
   };
 
   try {
-    if (topOfMind?.length) {
-      await requestJson(baseUrl, config.endpoints?.topOfMind ?? '/v1/signals/top-of-mind', { items: topOfMind });
-    }
-
-    const result = await requestJson(baseUrl, config.endpoints?.ask ?? '/v1/ask', payload);
+    const result = remote
+      ? await postJson(`${baseUrl}/v1/ask`, payload)
+      : await localPost('/v1/ask', payload);
     if (values.json) {
       console.log(JSON.stringify(result, null, 2));
       return;
@@ -115,20 +125,8 @@ async function ask(askArgs) {
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     console.error(`Could not ask the books: ${message}`);
-    console.error(`Start the API first, or pass --api-url. Expected API: ${baseUrl}`);
+    console.error('Default retrieval uses the bundled corpus. Check your input; use --api-url only for a server you trust.');
     process.exit(1);
-  }
-}
-
-async function requestJson(baseUrl, path, body) {
-  try {
-    return await postJson(`${baseUrl}${path}`, body);
-  } catch (error) {
-    const target = new URL(baseUrl);
-    const isLocal = target.hostname === '127.0.0.1' || target.hostname === 'localhost';
-    const isUnavailable = /ECONNREFUSED|fetch failed|socket hang up/i.test(error instanceof Error ? error.message : String(error));
-    if (!isLocal || !isUnavailable) throw error;
-    return localPost(path, body);
   }
 }
 
@@ -148,24 +146,10 @@ async function localPost(path, body) {
   return payload;
 }
 
-function readApiConfig() {
-  const path = join(process.cwd(), '.answer-with-books', 'api.json');
-  if (!existsSync(path)) {
-    return {
-      baseUrl: 'http://127.0.0.1:8787',
-      endpoints: {
-        ask: '/v1/ask',
-        queryAnswer: '/v1/answers/query',
-        topOfMind: '/v1/signals/top-of-mind',
-      },
-    };
-  }
-  return JSON.parse(readFileSync(path, 'utf8'));
-}
-
 async function postJson(url, body) {
   const target = new URL(url);
   const data = JSON.stringify(body);
+  if (!['http:', 'https:'].includes(target.protocol) || target.username || target.password) throw new Error('Invalid API URL');
   const transport = target.protocol === 'https:' ? httpsRequest : httpRequest;
 
   return new Promise((resolvePromise, reject) => {
@@ -197,6 +181,7 @@ async function postJson(url, body) {
         });
       }
     );
+    req.setTimeout(15000, () => req.destroy(new Error('API request timed out')));
     req.on('error', reject);
     req.end(data);
   });
@@ -236,12 +221,6 @@ function printAskResult(result) {
   }
 }
 
-function printBooks(matches) {
-  const books = matches.map((match) => match.book).filter(Boolean);
-  if (!books.length) return;
-  console.log(`Answered with: ${books.map((book) => book.title).join(', ')}`);
-}
-
 function parseArgs(input) {
   const values = {};
   const positionals = [];
@@ -279,15 +258,16 @@ function printHelp() {
   console.log(`Answer with Books CLI
 
 Usage:
-  npx answer-with-books install --skill --api
-  answer-with-books ask "Am I validating this idea or collecting compliments?"
+  npx --yes --package=github:Crowdlisten/Crowdlisten_books#v0.1.3 answer-with-books install --skill --api
+  npx --yes --package=github:Crowdlisten/Crowdlisten_books#v0.1.3 answer-with-books serve
+  npx --yes --package=github:Crowdlisten/Crowdlisten_books#v0.1.3 answer-with-books ask "Am I validating this idea or collecting compliments?"
 
 Options:
   --skill   Install the agent skill into $CODEX_HOME/skills/answer-with-books
-  --api     Write .answer-with-books/api.json in the current project
+  --api     Install a self-contained local API in .answer-with-books/runtime
   --api-url Override the local Answer with Books API URL for ask
   --sources Optional comma-separated retrieval sources
-  --top-of-mind Add comma-separated personal context before asking
+  --top-of-mind Use comma-separated context for this request only (never saved)
   --json    Print the raw API response for ask
   --full    Include full legacy answer bodies in --json output
   --help    Show this help text

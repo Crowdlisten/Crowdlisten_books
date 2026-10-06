@@ -1,14 +1,20 @@
-import { generateContentCandidate, retrieveBooks, retrieveContent } from './generator.js';
+import { timingSafeEqual } from 'node:crypto';
+import { retrieveBooks, retrieveContent } from './generator.js';
 import { createStore, makeId } from './store.js';
 
-export function createApp({ store = createStore() } = {}) {
+export function createApp({ store = createStore(), adminToken } = {}) {
   async function route(req) {
     const url = new URL(req.url, 'http://localhost');
     const method = req.method ?? 'GET';
 
     try {
+      const publicPosts = ['/v1/ask', '/v1/answers/query', '/v1/books/retrieve'];
+      const privateRoute = (method === 'POST' && !publicPosts.includes(url.pathname)) || ['/v1/questions', '/v1/concerns'].includes(url.pathname);
+      const provided = req.headers?.authorization?.replace(/^Bearer /i, '') || '';
+      const authorized = typeof adminToken === 'string' && adminToken.length >= 24 && Buffer.byteLength(provided) === Buffer.byteLength(adminToken) && timingSafeEqual(Buffer.from(provided), Buffer.from(adminToken));
+      if (privateRoute && !authorized) return problem(403, 'This operator route requires a configured AWB_ADMIN_TOKEN of at least 24 characters.');
       if (method === 'GET' && url.pathname === '/health') {
-        return json({ ok: true, service: 'answer-with-books', version: '0.1.2' });
+        return json({ ok: true, service: 'answer-with-books', version: '0.1.3', retrieval_languages: ['en'], query_storage: 'off-by-default' });
       }
 
       if (method === 'GET' && url.pathname === '/v1/sources') {
@@ -17,7 +23,8 @@ export function createApp({ store = createStore() } = {}) {
 
       if (method === 'POST' && url.pathname === '/v1/sources/toggle') {
         const body = await readJson(req);
-        const enabled = new Set(body.enabled ?? []);
+        if (!Array.isArray(body.enabled) || body.enabled.some(id => !store.sources.has(id))) return problem(400, 'enabled must contain known source ids');
+        const enabled = new Set(body.enabled);
         if (!enabled.size) return problem(400, 'enabled must include at least one source id');
         for (const source of store.sources.values()) source.enabled = enabled.has(source.id);
         return json({ sources: [...store.sources.values()] });
@@ -37,15 +44,17 @@ export function createApp({ store = createStore() } = {}) {
       if (method === 'POST' && url.pathname === '/v1/books/retrieve') {
         const body = await readJson(req);
         const query = body.query ?? body.question ?? body.title;
-        if (!query) return problem(400, 'query, question, or title is required');
+        validateQuestion(query);
+        const sources = normalizeSources(body.sources, store);
         const matches = retrieveBooks({
           query,
-          books: store.books,
+          books: sources.includes('books') ? store.books : new Map(),
           limit: body.limit,
           minScore: body.min_score ?? 1,
         });
         if (matches.length) return json({ status: 'hit', matches });
 
+        if (body.create_if_missing && !authorized) return problem(403, 'Creating books requires operator authorization');
         if (body.create_if_missing && body.book?.title && body.book?.author) {
           const book = upsertBook(body.book, store);
           return json({ status: 'created', matches: [{ score: 0, book }] }, 201);
@@ -123,42 +132,43 @@ export function createApp({ store = createStore() } = {}) {
       }
 
       if (method === 'GET' && url.pathname === '/v1/content') {
-        return json({ content: [...store.content.values()] });
+        return json({ content: [...store.content.values()].filter(item => item.status === 'published') });
       }
 
-      if (method === 'POST' && url.pathname === '/v1/ask') {
+      if (method === 'POST' && ['/v1/ask', '/v1/answers/query'].includes(url.pathname)) {
         const body = await readJson(req);
+        if (body.question_id !== undefined && !authorized) return problem(403, 'Reading a saved question requires operator authorization');
         const question = resolveQuestion(body, store);
         if (!question) return problem(400, 'question or question_id is required');
-        const context = Array.isArray(body.top_of_mind) ? body.top_of_mind.filter(Boolean) : [];
-        const retrievalQuery = [question, question, ...context].join(' ');
+        const context = body.top_of_mind ?? [];
+        if (!Array.isArray(context) || context.length > 10 || context.some(value => typeof value !== 'string' || value.length > 500)) return problem(400, 'top_of_mind must be up to 10 strings of at most 500 characters');
+        const retrievalQuery = question; // Context must not manufacture relevance for an unrelated question.
         const sourceIds = normalizeSources(body.sources, store);
         const answers = retrieveContent({
           query: retrievalQuery,
-          content: store.content,
+          content: sourceIds.includes('books') ? store.content : new Map(),
           limit: body.limit ?? 3,
           minScore: body.answer_min_score ?? 8,
         });
         const retrievedBooks = retrieveBooks({
           query: retrievalQuery,
-          books: store.books,
+          books: sourceIds.includes('books') ? store.books : new Map(),
           limit: body.book_limit ?? 5,
           minScore: body.book_min_score ?? 5,
         });
         const answer = answers[0]?.content ?? null;
-        const sourceBooks = answer?.books?.length
-          ? answer.books.flatMap((book) => retrieveBooks({
-              query: `${book.title} ${book.author}`,
-              books: store.books,
-              limit: 1,
-              minScore: 5,
-            }))
-          : [];
-        const books = answer ? sourceBooks : retrievedBooks;
+        const sourceBooks = answer?.books?.flatMap(ref => {
+          const book = store.books.get(ref.id);
+          return book ? [{score: retrievedBooks.find(match => match.book.id === ref.id)?.score ?? 0, book: {...book, knowledge_text:undefined, knowledge_chunks:undefined, knowledge_sections:undefined}, via_answer: answer.id}] : [];
+        }) ?? [];
+        const books = [...new Map([...sourceBooks, ...retrievedBooks].map(match => [match.book.id, match])).values()].sort((a,b) => b.score-a.score).slice(0,5);
         const isHit = Boolean(answer);
-        const newQuestion = isHit && body.capture_hit !== true
-          ? null
-          : captureNewQuestion({ question, body, sourceIds, answers, books, store });
+        const unsupported = /[^\p{Script=Latin}\p{Number}\p{Punctuation}\p{Separator}\s]/u.test(question);
+        let newQuestion = isHit ? null : { type:'new_question', question, status:'not_saved', saved:false };
+        if (body.capture === true) {
+          if (!authorized) return problem(403, 'Saving questions requires operator authorization and capture: true');
+          newQuestion = {...captureNewQuestion({question,body,sourceIds,answers,books,store}), saved:true};
+        }
         const compact = body.compact === true;
         const objects = {
           books: compact ? books.map(compactBookMatch) : books,
@@ -169,11 +179,13 @@ export function createApp({ store = createStore() } = {}) {
           status: isHit ? 'hit' : 'new_question',
           question,
           objects,
+          retrieval_language: 'en',
+          notice: unsupported ? 'The bundled index supports English queries. Translate your question to English before retrying; no question was saved by default.' : null,
           next_step: isHit
             ? 'adapt_existing_answer_with_books'
             : books.length
-              ? 'answer_from_books_and_save_question'
-              : 'save_question_and_request_source_books',
+              ? 'review_matching_books'
+              : 'request_relevant_source_or_rephrase',
         };
 
         if (compact) {
@@ -190,60 +202,7 @@ export function createApp({ store = createStore() } = {}) {
       }
 
       if (method === 'POST' && url.pathname === '/v1/content/generate') {
-        const body = await readJson(req);
-        const concern = resolveConcern(body, store);
-        const question = resolveQuestion(body, store) ?? concern?.title;
-        if (!question) return problem(400, 'question, question_id, or concern_id is required');
-        const sourceIds = normalizeSources(body.sources, store);
-        const content = generateAndStoreContent({ question, concern, sourceIds, body, store });
-        store.content.set(content.id, content);
-        return json({ content }, 201);
-      }
-
-      if (method === 'POST' && url.pathname === '/v1/answers/query') {
-        const body = await readJson(req);
-        const question = resolveQuestion(body, store);
-        if (!question) return problem(400, 'question or question_id is required');
-        const sourceIds = normalizeSources(body.sources, store);
-        const answerMatches = retrieveContent({
-          query: question,
-          content: store.content,
-          limit: body.limit ?? 5,
-          minScore: body.min_score ?? 2,
-        });
-        const bookMatches = retrieveBooks({
-          query: question,
-          books: store.books,
-          limit: body.book_limit ?? 5,
-          minScore: body.book_min_score ?? 1,
-        });
-
-        if (answerMatches.length) {
-          return json({
-            status: 'hit',
-            question,
-            answers: answerMatches,
-            books: bookMatches,
-          });
-        }
-
-        if (body.generate_if_missing === false) {
-          return json({
-            status: 'miss',
-            question,
-            answers: [],
-            books: bookMatches,
-          });
-        }
-
-        const content = generateAndStoreContent({ question, sourceIds, body, store });
-        store.content.set(content.id, content);
-        return json({
-          status: 'generated',
-          question,
-          answers: [{ score: null, content }],
-          books: bookMatches,
-        }, 201);
+        return problem(410, 'Template generation was retired. Use /v1/ask to retrieve published evidence; author and review new content separately.');
       }
 
       if (method === 'POST' && url.pathname === '/v1/crowdlisten/sync') {
@@ -261,18 +220,33 @@ export function createApp({ store = createStore() } = {}) {
 
       return problem(404, 'route not found');
     } catch (error) {
-      return problem(500, error instanceof Error ? error.message : 'unknown error');
+      return problem(error.status || 500, error.status ? error.message : 'Internal server error');
     }
   }
 
   return { route, store };
 }
 
+function invalid(message, status = 400) { return Object.assign(new Error(message), {status}); }
+function validateQuestion(value) {
+  if (typeof value !== 'string' || !value.trim() || value.length > 2000) throw invalid('question must be text between 1 and 2000 characters');
+  return value.trim();
+}
 export async function readJson(req) {
-  const chunks = [];
-  for await (const chunk of req) chunks.push(chunk);
-  if (!chunks.length) return {};
-  return JSON.parse(Buffer.concat(chunks.map((chunk) => Buffer.isBuffer(chunk) ? chunk : Buffer.from(String(chunk)))).toString('utf8'));
+  const chunks = []; let size = 0;
+  for await (const chunk of req) {
+    const bytes = Buffer.isBuffer(chunk) ? chunk : Buffer.from(String(chunk));
+    size += bytes.length; if (size > 65536) throw invalid('Request body exceeds 64 KB', 413);
+    chunks.push(bytes);
+  }
+  let value;
+  try { value = chunks.length ? JSON.parse(Buffer.concat(chunks).toString('utf8')) : {}; }
+  catch { throw invalid('Malformed JSON'); }
+  if (!value || typeof value !== 'object' || Array.isArray(value)) throw invalid('JSON body must be an object');
+  for (const key of ['question','query','title']) if (value[key] !== undefined) validateQuestion(value[key]);
+  for (const key of ['limit','book_limit']) if (value[key] !== undefined && (!Number.isInteger(value[key]) || value[key]<1 || value[key]>20)) throw invalid(key+' must be between 1 and 20');
+  for (const key of ['min_score','answer_min_score','book_min_score']) if (value[key] !== undefined && (!Number.isFinite(value[key]) || value[key]<0)) throw invalid(key+' must be a nonnegative number');
+  return value;
 }
 
 function json(payload, status = 200) {
@@ -288,14 +262,13 @@ function problem(status, message) {
 }
 
 function normalizeSources(input, store) {
-  const requested = Array.isArray(input)
-    ? input
-    : [...store.sources.values()].filter((source) => source.enabled).map((source) => source.id);
-  return requested.filter((id) => store.sources.has(id));
+  if (input !== undefined && (!Array.isArray(input) || input.some(id => !store.sources.has(id)))) throw invalid('sources must contain known source ids');
+  const requested = input ?? [...store.sources.keys()];
+  return [...new Set(requested)].filter(id => store.sources.get(id).enabled);
 }
 
 function resolveQuestion(body, store) {
-  if (body.question) return body.question;
+  if (body.question) return validateQuestion(body.question);
   if (body.question_id && store.questions.has(body.question_id)) {
     return store.questions.get(body.question_id).question;
   }
@@ -353,27 +326,6 @@ function upsertConcern(body, store) {
     });
   }
   return concern;
-}
-
-function generateAndStoreContent({ question, concern, sourceIds, body, store }) {
-  const candidate = generateContentCandidate({
-    question,
-    books: store.books,
-    preferredBookIds: body.books ?? concern?.books ?? [],
-    sourceIds,
-    demandSignals: store.demandSignals.filter((signal) => sourceIds.includes(signal.type) || sourceIds.includes('crowdlisten')),
-    format: body.format,
-    audience: body.audience ?? concern?.audience,
-  });
-  return {
-    id: makeId('content'),
-    question,
-    concern_id: concern?.id ?? null,
-    status: 'draft',
-    cache_key: slugify(question),
-    created_at: store.now(),
-    ...candidate,
-  };
 }
 
 function captureNewQuestion({ question, body, sourceIds, answers, books, store }) {

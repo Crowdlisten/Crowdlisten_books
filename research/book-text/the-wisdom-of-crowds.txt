@@ -1,9 +1,9 @@
 The Wisdom of Crowds
 James Surowiecki, 2004
 
-Why large groups of ordinary people outguess experts — and the exact conditions under which they stop.
+Why large groups of ordinary people outguess experts and the exact conditions under which they stop.
 
-You aggregate opinions for a living — running teams, markets, forecasts, or feedback systems — and want to know when the average answer is smart and when it is a stampede.
+You combine opinions from teams, markets, forecasts, or feedback systems and want to know when the average answer is smart and when it is a stampede.
 
 What the book is about
 

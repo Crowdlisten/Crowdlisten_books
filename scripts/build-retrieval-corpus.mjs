@@ -1,8 +1,16 @@
-import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { basename, join, resolve } from 'node:path';
 
 const repoRoot = resolve(new URL('..', import.meta.url).pathname);
-const webRoot = resolve(repoRoot, '../web/src/content');
+const inputIndex = process.argv.indexOf('--input');
+const webRoot = resolve(process.env.AWB_CONTENT_DIR || (inputIndex >= 0 ? process.argv[inputIndex+1] : resolve(repoRoot, 'content')));
+if (!existsSync(webRoot)) {
+  if (inputIndex >= 0 || process.env.AWB_CONTENT_DIR) throw new Error('Source directory not found. Use --input /path/to/web/src/content');
+  const bundled = JSON.parse(readFileSync(join(repoRoot, 'research/retrieval-corpus.json'), 'utf8'));
+  if (!bundled.books?.length || !bundled.answers?.length) throw new Error('Bundled corpus is empty. Pass --input /path/to/web/src/content');
+  console.log(`Using validated bundled corpus (${bundled.books.length} books, ${bundled.answers.length} answers). To rebuild, pass --input /path/to/web/src/content.`);
+  process.exit(0);
+}
 const outputPath = join(repoRoot, 'research', 'retrieval-corpus.json');
 
 const books = readCollection('books').map((entry) => {
@@ -56,7 +64,7 @@ const answers = readCollection('answers').map((entry) => {
 const corpus = {
   version: 1,
   generated_at: new Date().toISOString(),
-  source: '../web/src/content',
+  source: 'Answer with Books public editorial catalog',
   counts: {
     books: books.length,
     answers: answers.length,

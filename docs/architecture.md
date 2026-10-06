@@ -1,61 +1,9 @@
-# Architecture
+# Retrieval architecture
 
-Answer with Books has four small layers.
+The npm package bundles the public editorial book and answer corpus. `ask` runs retrieval in-process by default; the optional HTTP server uses the identical app. Skills carry a copy of that runtime so installing the skill is sufficient to execute it with Node.
 
-## 1. Source Graph
+Only published editorial answers are retrieval candidates. Distinct query tokens must overlap multiple topic anchors with at least 50% query coverage. Full-text overlap can rank an already relevant match but cannot qualify one. Exact multiword book titles receive a ranking boost. Scores are lexical, not calibrated confidence. Queries in other scripts get an explicit English-index notice; no multilingual semantic support is claimed.
 
-The source graph stores book records:
+Both `/v1/ask` and its legacy `/v1/answers/query` alias abstain on insufficient evidence. No generated scaffold enters the answer cache. The old template generation endpoint is retired. Misses return an unsaved `new_question` object; ordinary calls never write to the question queue.
 
-- title and author
-- concepts
-- quotes
-- applications
-- future: stories, chapters, citation spans, licensed excerpts, embeddings
-
-Books are the durable source material. The API should never generate unsupported claims or pretend a quote exists when it does not.
-
-## 2. Demand Graph
-
-The demand graph stores signals:
-
-- CrowdListen themes and questions
-- top-of-mind user topics
-- clicked questions
-- saved or expanded questions
-
-Demand signals decide what content is worth generating. They do not replace the books.
-
-## 3. Answer Generator
-
-The generator selects relevant books, combines them with active demand signals, and creates a draft artifact. It should run after retrieval fails to find a useful cached answer.
-
-Supported draft formats:
-
-- `article`
-- `brief`
-- `script`
-- `card`
-
-The first implementation is deterministic and dependency-light. Production implementations can replace `src/generator.js` with an LLM-backed adapter while keeping the REST contract stable.
-
-## 4. Answer Cache
-
-Generated answers are stored as reusable artifacts. When a new question arrives, the API should:
-
-1. retrieve similar generated answers
-2. retrieve relevant source books
-3. return the cached answer if similarity is good enough
-4. generate a new answer only on a miss
-5. store the generated answer for future retrieval
-
-This keeps the system from repeatedly generating near-duplicate answers and lets users discover prior explanations for related questions.
-
-## Future Production Adapters
-
-- Postgres or Supabase persistence
-- pgvector search over book fragments
-- CrowdListen REST/MCP client
-- OpenAI Responses API content generator
-- auth and rate limits
-- review queue for generated drafts
-- citation/span enforcement
+The optional server binds to loopback. Operator-owned questions, signals, toggles and mutations require an explicit admin bearer token. Capture requires both `capture: true` and authorization. State is in-memory and shared by one operator; it is not a hosted multi-user service. A public multi-user service would require per-user authorization and isolated storage.

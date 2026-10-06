@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const inputDir =
-  getArg('--input') ?? new URL('../../web/src/content/books/', import.meta.url).pathname;
+  getArg('--input') ?? (process.env.AWB_CONTENT_DIR ? process.env.AWB_CONTENT_DIR + '/books' : new URL('../content/books/', import.meta.url).pathname);
 const output =
   getArg('--output') ?? new URL('../research/book-corpus.json', import.meta.url).pathname;
 const textOutputDir =
@@ -10,6 +10,13 @@ const textOutputDir =
 const fs = await import('node:fs/promises');
 const path = await import('node:path');
 
+try { await fs.access(inputDir); } catch {
+  if (getArg('--input') || process.env.AWB_CONTENT_DIR) throw new Error('Source directory not found. Use --input /path/to/web/src/content/books');
+  const corpus = JSON.parse(await fs.readFile(output, 'utf8'));
+  if (!corpus.books?.length) throw new Error('Bundled corpus is empty');
+  console.log(`Using validated bundled corpus (${corpus.books.length} books). To rebuild, pass --input /path/to/web/src/content/books.`);
+  process.exit(0);
+}
 const files = (await fs.readdir(inputDir))
   .filter((file) => file.endsWith('.md'))
   .sort();

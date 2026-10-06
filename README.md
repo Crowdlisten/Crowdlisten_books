@@ -1,126 +1,62 @@
-# 锦囊妙计 - Answer with Books
+# Answer with Books
 
-![Watercolor illustration of a sealed strategy pouch, books, and an agent harness](docs/assets/jinnang-miaoji-watercolor.jpg)
+Give your agent a book’s methods, grounded in public editorial digests and source references. The website also turns your own uploaded source into a private book and skill package.
 
-**Helping answer your top of minds with insights from books.**
+## One install path
 
-Answer with Books gives your agent harness a shelf of useful book-derived judgment. When you ask a messy question, the agent can look for the closest existing answer, pull the right book lenses, and return a practical next move instead of generic advice.
+Node 20+ and Git are required. This pinned GitHub release is the canonical install while the npm registry update is pending. Do not use the stale npm 0.1.0 package. From any empty directory:
 
-The metaphor is **锦囊妙计**: in *Romance of the Three Kingdoms*, Zhuge Liang gives Zhao Yun sealed pouches with strategies to open at the right moment. This project is the same idea for agents: a small packet of book-grounded insight, opened when the question actually matters.
-
-## Install
-
-Install the agent skill and local API config:
-
-```bash
-npx answer-with-books install --skill --api
+```sh
+npx --yes --package=github:Crowdlisten/Crowdlisten_books#v0.1.3 answer-with-books install --skill --api
+npx --yes --package=github:Crowdlisten/Crowdlisten_books#v0.1.3 answer-with-books ask "Am I validating this idea or collecting compliments?" --json
 ```
 
-Run the local API:
+No repository clone, npm install, account, API key, or running server is required to ask. The command retrieves from the bundled corpus in-process. The agent skill is installed to `$CODEX_HOME/skills/answer-with-books` (default `~/.codex/skills/answer-with-books`) together with its executable source and corpus. An existing installation at that path is updated. `npx` does not install a global command; keep the `npx` prefix, or use the bundled Node command documented in SKILL.md.
 
-```bash
-npm install
-npm run build:book-corpus
-npm run build:retrieval-corpus
-npm run dev
-```
+`--api` installs a self-contained runtime at `.answer-with-books/runtime`. To run its optional local HTTP API:
 
-The local API starts at:
-
-```text
-http://127.0.0.1:8787
-```
-
-Quick health check:
-
-```bash
+```sh
+node .answer-with-books/runtime/src/server.js
 curl http://127.0.0.1:8787/health
 ```
 
-Ask the installed shelf:
+Alternatively use `npx --yes --package=github:Crowdlisten/Crowdlisten_books#v0.1.3 answer-with-books serve`. The server binds to localhost. `ask` uses the bundled corpus unless you explicitly pass `--api-url` or `ANSWER_WITH_BOOKS_API_URL`; an unavailable explicit server is an error, not a silent fallback.
 
-```bash
-answer-with-books ask "Am I validating this idea or just collecting compliments?"
+## Retrieval contract
+
+`POST /v1/ask` accepts `{"question":"How do I run customer interviews?","compact":true}`. It returns `objects.books`, `objects.answers`, and an unsaved `objects.new_question` on a miss. Only published editorial answers qualify. Both answers and books require multiple distinct relevant terms; full-text coincidence alone is insufficient. No template answer is generated. Scores are lexical matching scores, not confidence probabilities. The index supports English queries; agents can translate queries and disclose that step. A missing match is a coverage gap, not proof that no useful book exists.
+
+`POST /v1/answers/query` is a compatibility alias for the same retrieval logic. It no longer generates or caches drafts. `/v1/content/generate` is retired. Requests have a 64 KB body limit and questions a 2,000-character limit. Malformed JSON and unknown source IDs return 400. Disabled book sources disable both book and published-answer retrieval.
+
+## Privacy and operator APIs
+
+Asking does not save raw questions or context. Operator routes (question queue, signals, source toggles, catalog edits, and CrowdListen imports) require `Authorization: Bearer <AWB_ADMIN_TOKEN>` and a server-configured token of at least 24 characters. Without a configured token they are unavailable. Explicit `capture: true` also requires authorization. This is one operator-owned store, not multi-user storage. Do not expose it as a public customer service without per-user authentication and isolation. Public catalog reads remain available. Binding beyond loopback requires the operator token.
+
+Examples for an authorized operator:
+
+```http
+POST /v1/sources/toggle
+{"enabled":["books","top_of_mind"]}
+
+POST /v1/signals/top-of-mind
+{"items":["Improve customer interviews"]}
+
+POST /v1/ask
+{"question":"A new research question","capture":true}
 ```
-
-Add personal top-of-mind context when you want the answer tuned to what you are
-already thinking about:
-
-```bash
-answer-with-books ask "What should I do next?" \
-  --top-of-mind "launching a content engine, validating founder demand"
-```
-
-## What It Does
-
-| Layer | What it gives your agent |
-| --- | --- |
-| Books | Distilled ideas, frameworks, quotes, examples, and when-to-use notes from the source shelf |
-| Answers | Published answer pages retrieved before generating anything new |
-| New questions | Questions captured when the shelf has no strong existing answer yet |
-| Thin harness | One command or endpoint: `answer-with-books ask` / `POST /v1/ask` |
-
-## Use Cases
-
-| Use case | Example question | Book-grounded output |
-| --- | --- | --- |
-| Founder judgment | "Am I validating this idea or just collecting compliments?" | Pulls from *The Mom Test* and related lenses to separate praise from evidence |
-| Career decisions | "What should I do next without starting over?" | Uses career and design books to turn uncertainty into options and tests |
-| Team decisions | "Why are smart people making a bad group decision?" | Applies group judgment frameworks and process checks |
-| Productivity | "How do I keep the habit alive during a chaotic week?" | Converts habit and time-management ideas into a smaller next move |
-| Product strategy | "Is this a real signal or just noisy feedback?" | Matches demand evidence to product and customer research books |
-| Agent workflows | "What context should my coding or research agent use here?" | Retrieves the relevant shelf context before the agent acts |
-
-## How Agents Use It
-
-The installed skill teaches an agent to:
-
-1. Understand the user's top-of-mind question.
-2. Retrieve existing published answers.
-3. Retrieve useful source books.
-4. Capture the question as new when no answer is close enough.
-5. Adapt the retrieved material to the user's exact situation.
-
-The skill lives at:
-
-```text
-skill/answer-with-books/SKILL.md
-```
-
-## CrowdListen Loop
-
-CrowdListen supplies demand: repeated questions, objections, and debates people keep having online. Answer with Books turns that demand into book-grounded answers and expands the shelf when new questions reveal missing books.
-
-```text
-CrowdListen demand -> book lenses -> answer -> reading behavior -> better demand
-```
-
-## API Reference
-
-The README is intentionally simple. For the full API contract, see:
-
-```text
-docs/openapi.yaml
-```
-
-Core endpoints:
-
-| Endpoint | Purpose |
-| --- | --- |
-| `POST /v1/ask` | Retrieve published answers and books, or capture a new question |
-| `POST /v1/answers/query` | Legacy cache-first answer retrieval/generation |
-| `POST /v1/books/retrieve` | Find relevant books or add a missing catalog record |
-| `POST /v1/signals/top-of-mind` | Add user top-of-mind questions |
-| `POST /v1/crowdlisten/sync` | Import CrowdListen demand packets |
 
 ## Development
 
-```bash
+```sh
 npm test
 npm run check
 npm run test:skill
+npm run build:book-corpus
+npm run build:retrieval-corpus
 ```
 
-## License
+The corpus is already bundled. Build commands validate it when source Markdown is absent. To regenerate from the website repository, use `npm run build:book-corpus -- --input /path/to/web/src/content/books` and `npm run build:retrieval-corpus -- --input /path/to/web/src/content`. Do not rebuild from an assumed sibling checkout.
 
-MIT
+The upload-to-skill service is a separate website worker. It is not installed by this CLI and does not use the old research API keys.
+
+MIT. See LICENSE.
