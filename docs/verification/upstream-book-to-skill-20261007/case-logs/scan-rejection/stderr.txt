@@ -1,0 +1,15 @@
+book-to-skill · turns a document into a structured agent skill
+free and MIT-licensed · maintained in personal time · github.com/virgiliojr94/book-to-skill
+
+WARNING: Skipping scan.pdf: Could not extract text from PDF.
+Install one of: poppler-utils (pdftotext), pypdf, or pdfminer.six
+  sudo apt install poppler-utils
+  pip3 install pypdf
+  pip3 install pdfminer.six
+
+ERROR: All 1 source(s) failed extraction:
+  - scan.pdf: Could not extract text from PDF.
+Install one of: poppler-utils (pdftotext), pypdf, or pdfminer.six
+  sudo apt install poppler-utils
+  pip3 install pypdf
+  pip3 install pdfminer.six

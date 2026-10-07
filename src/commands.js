@@ -1,17 +1,21 @@
 export const commands=[
  {name:'books',aliases:['list'],usage:'books [search] [--topic TOPIC] [--private | --public] [--json]',description:'List and search the public shelf and your connected private books.'},
- {name:'ask',aliases:['answer'],usage:'ask "QUESTION" [--book ID] [--top-of-mind "CONTEXT"] [--private | --public] [--json]',description:'Retrieve book methods and citations for your agent to apply.'},
- {name:'upload',usage:'upload FILE [FILE ...] [--process-file] [--json]',description:'Create separate private books, skills, and covers. Reuse saved sources first.'},
+ {name:'match',usage:'match "QUESTION" [--public | --private] [--catalog] [--json]',description:'Find books by meaning, then let your agent check applicability. --catalog uses agent reasoning over the complete catalog without downloading a model.'},
+ {name:'ask',aliases:['answer'],usage:'ask "QUESTION" [--book ID] [--chapters PATH,PATH] [--top-of-mind "CONTEXT"] [--private | --public] [--json]',description:'Read a selected book for your agent to apply, or use legacy public keyword retrieval without --book.'},
+ {name:'upload',usage:'upload FILE [FILE ...] [--book ID --revision append|replace] [--mode analysis|full] [--extraction text|technical] [--process-file] [--json]',description:'Upload a new source or prepare a new revision for a private book.'},
  {name:'status',usage:'status [BOOK_ID] [--json]',description:'Check your private processing queue or one book.'},
  {name:'download',usage:'download BOOK_ID [--output FILE.zip] [--accept-review]',description:'Download a completed book and skill, including citation sources.'},
+ {name:'library',usage:'library sync | library install-book BOOK_ID [--accept-review] [--json]',description:'Install ready current full-source packages from the connected account as individual book skills.'},
+ {name:'install-book',usage:'install-book BOOK_ID [--accept-review] [--json]',description:'Install or update one private book skill; alias for library install-book.'},
+ ...['pause','retry','generate','revisions','activate'].map(name=>({name,usage:name+' BOOK_ID'+(name==='activate'?' --accept-review':'')+' [--json]',description:({pause:'Pause book processing.',retry:'Retry failed book processing.',generate:'Generate the full skill after source analysis.',revisions:'List the revisions of a private book.',activate:'Make a reviewed ready revision current.'})[name]})),
  {name:'login',usage:'login [--no-browser]',description:'Connect your account through browser sign-in.'},
  {name:'logout',usage:'logout',description:'Revoke this agent’s account access.'},
  {name:'install',usage:'install [--skill] [--api]',description:'Install the Codex skill and optional local API.'},
  {name:'serve',usage:'serve',description:'Start the optional local public HTTP API.'},
 ];
 export function parseArgs(args) {
- const bool=new Set(['json','full','private','public','noBrowser','processFile','acceptReview','help','skill','api']);
- const valueFlags=new Set(['topic','book','topOfMind','sources','source','apiUrl','format','audience','generate','output','depth','purpose']);
+ const bool=new Set(['json','full','private','public','noBrowser','processFile','acceptReview','help','skill','api','catalog']);
+ const valueFlags=new Set(['topic','book','chapters','topOfMind','sources','source','apiUrl','format','audience','generate','output','depth','purpose','revision','mode','extraction']);
  const values={},positionals=[];let positional=false;
  for(let i=0;i<args.length;i++){
   const arg=args[i];if(arg==='--'){positional=true;continue;}

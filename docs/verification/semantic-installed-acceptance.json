@@ -1,0 +1,10 @@
+{
+  "installed_skill": true,
+  "installed_api": true,
+  "query_language": "Chinese",
+  "semantic_top_book": "Atomic Habits",
+  "selected_digest_read": true,
+  "api_candidate_count": 8,
+  "api_reasoning_required": true,
+  "production_deployed": false
+}

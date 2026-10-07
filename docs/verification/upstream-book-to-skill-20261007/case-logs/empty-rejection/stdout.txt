@@ -1,0 +1,1 @@
+Extracting text document: /private/tmp/awb-upstream-eval-20261007/fixtures/empty.txt

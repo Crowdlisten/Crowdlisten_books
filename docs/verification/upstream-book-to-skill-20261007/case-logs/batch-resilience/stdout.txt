@@ -1,0 +1,30 @@
+Extracting PDF: /private/tmp/awb-upstream-eval-20261007/fixtures/corrupt.pdf
+Mode: text — using pdftotext...
+Trying pdftotext... not available
+Trying pypdf... not available
+Trying pdfminer.six... FAILED
+Extracting text document: /private/tmp/awb-upstream-eval-20261007/fixtures/handbook.md
+  chapters: 2 (numeric)
+Extracting text document: /private/tmp/awb-upstream-eval-20261007/fixtures/second.md
+  chapters: 2 (numeric)
+
+Extraction complete:
+   Sources : 2 processed
+   Size    : 0.00 MB
+   Total Pages: 0
+   Words   : 53
+   Tokens  : ~0K
+   Chapters: 2 detected overall (numeric)
+   ToC     : not detected
+   WARN    : No table of contents detected — chapter mapping in Step 3 will rely on heading scan only, which may miss or duplicate sections.
+
+   Workdir -> /private/tmp/awb-upstream-eval-20261007/cases/batch-resilience
+   Text    -> /private/tmp/awb-upstream-eval-20261007/cases/batch-resilience/full_text.txt
+   Meta    -> /private/tmp/awb-upstream-eval-20261007/cases/batch-resilience/metadata.json
+
+   WARNING: 1 source(s) skipped due to errors:
+     - corrupt.pdf: Could not extract text from PDF.
+Install one of: poppler-utils (pdftotext), pypdf, or pdfminer.six
+  sudo apt install poppler-utils
+  pip3 install pypdf
+  pip3 install pdfminer.six

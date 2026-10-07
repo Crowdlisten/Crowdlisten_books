@@ -1,0 +1,26 @@
+{
+  "emailsSent": 0,
+  "cliVersion": "0.3.0",
+  "origin": "http://127.0.0.1:4321",
+  "productionBackend": true,
+  "browserPairing": true,
+  "separateBatch": 2,
+  "accountIsolation": true,
+  "cacheReuse": true,
+  "backgroundCompletion": true,
+  "privateDiscovery": {
+    "method": "multilingual_embeddings_then_agent_reasoning",
+    "fallbackReason": null,
+    "methodMetadata": true,
+    "twoDistinctTopics": true
+  },
+  "privateBookEvidence": true,
+  "citationBundle": true,
+  "individualBookInstall": true,
+  "accountLibrarySync": true,
+  "oldRevisionRemainsUsable": true,
+  "revisionAccountIsolation": true,
+  "appendRevisionActivationAndSync": true,
+  "revocation": true,
+  "passed": true
+}

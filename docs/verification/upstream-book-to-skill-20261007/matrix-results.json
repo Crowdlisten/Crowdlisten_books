@@ -1,0 +1,301 @@
+[
+  {
+    "case": "markdown-code",
+    "passed": true,
+    "expected": "Preserve code indentation and two chapter headings",
+    "exit_code": 0,
+    "seconds": 2.887,
+    "output_chars": 410,
+    "chapters": 2,
+    "sources": 1,
+    "methods": [
+      "plain-text"
+    ],
+    "source_sha256": {
+      "handbook.md": "4ab2fa0275ffc2b1b469dba7e6a9dc0ba0064ff1f89cf040579821c47869525e"
+    },
+    "artifacts": "/private/tmp/awb-upstream-eval-20261007/cases/markdown-code"
+  },
+  {
+    "case": "html-cleanup",
+    "passed": true,
+    "expected": "Extract article text without script/style content",
+    "exit_code": 0,
+    "seconds": 1.083,
+    "output_chars": 289,
+    "chapters": 1,
+    "sources": 1,
+    "methods": [
+      "html-parser"
+    ],
+    "source_sha256": {
+      "article.html": "518f6ab97cd10cbaf521cf647c10a6f40f99c35fbbb76ae3f58da87f323a38e4"
+    },
+    "artifacts": "/private/tmp/awb-upstream-eval-20261007/cases/html-cleanup"
+  },
+  {
+    "case": "rtf",
+    "passed": true,
+    "expected": "Extract basic RTF prose",
+    "exit_code": 0,
+    "seconds": 4.135,
+    "output_chars": 293,
+    "chapters": 1,
+    "sources": 1,
+    "methods": [
+      "rtf-regex"
+    ],
+    "source_sha256": {
+      "notes.rtf": "60f67516be83f7e080203feb8174f867191b737632473ed51ef24f08c5a933f2"
+    },
+    "artifacts": "/private/tmp/awb-upstream-eval-20261007/cases/rtf"
+  },
+  {
+    "case": "chinese",
+    "passed": true,
+    "expected": "Preserve CJK text and detect two Chinese chapters",
+    "exit_code": 0,
+    "seconds": 1.046,
+    "output_chars": 308,
+    "chapters": 2,
+    "sources": 1,
+    "methods": [
+      "plain-text"
+    ],
+    "source_sha256": {
+      "chinese.md": "659ed1643a3d9b4aeaaf8825b5ea27f61b55ccc2bc52aa3a109c155a9d83a674"
+    },
+    "artifacts": "/private/tmp/awb-upstream-eval-20261007/cases/chinese"
+  },
+  {
+    "case": "pdf-searchable",
+    "passed": true,
+    "expected": "Extract searchable two-page PDF through pypdf",
+    "exit_code": 0,
+    "seconds": 2.974,
+    "output_chars": 319,
+    "chapters": 2,
+    "sources": 1,
+    "methods": [
+      "pypdf"
+    ],
+    "source_sha256": {
+      "searchable.pdf": "67f662b585d56ee7c471ef933ee9e153484ac9fa9d533e8637e0a60aaa0dcd12"
+    },
+    "artifacts": "/private/tmp/awb-upstream-eval-20261007/cases/pdf-searchable"
+  },
+  {
+    "case": "epub-order",
+    "passed": true,
+    "expected": "Follow EPUB spine, not ZIP entry order",
+    "exit_code": 0,
+    "seconds": 0.673,
+    "output_chars": 299,
+    "chapters": 2,
+    "sources": 1,
+    "methods": [
+      "zipfile"
+    ],
+    "source_sha256": {
+      "ordered.epub": "c3c873c61d013eef9ec1dfc3e175e823db808a744ec63426daec4151698bf4b4"
+    },
+    "artifacts": "/private/tmp/awb-upstream-eval-20261007/cases/epub-order"
+  },
+  {
+    "case": "docx-table",
+    "passed": true,
+    "expected": "Keep DOCX table cells in document order",
+    "exit_code": 0,
+    "seconds": 0.538,
+    "output_chars": 292,
+    "chapters": 0,
+    "sources": 1,
+    "methods": [
+      "zipfile-docx"
+    ],
+    "source_sha256": {
+      "table.docx": "46e57cd29ff2a7200ff4ce9615f94840bcd6bbc03e0b62a44ac90a6dcba62cf5"
+    },
+    "artifacts": "/private/tmp/awb-upstream-eval-20261007/cases/docx-table"
+  },
+  {
+    "case": "scan-rejection",
+    "passed": true,
+    "expected": "Reject image-only PDF without pretending OCR succeeded",
+    "exit_code": 1,
+    "seconds": 1.048,
+    "output_chars": 0,
+    "chapters": null,
+    "sources": null,
+    "methods": [],
+    "source_sha256": {
+      "scan.pdf": "88d9106b6026684bd36cde5af29c8342e0359379c3d3c40a982a005e3b556e66"
+    },
+    "artifacts": "/private/tmp/awb-upstream-eval-20261007/cases/scan-rejection"
+  },
+  {
+    "case": "empty-rejection",
+    "passed": true,
+    "expected": "Reject empty source",
+    "exit_code": 1,
+    "seconds": 0.64,
+    "output_chars": 0,
+    "chapters": null,
+    "sources": null,
+    "methods": [],
+    "source_sha256": {
+      "empty.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts": "/private/tmp/awb-upstream-eval-20261007/cases/empty-rejection"
+  },
+  {
+    "case": "corrupt-rejection",
+    "passed": true,
+    "expected": "Reject corrupt PDF",
+    "exit_code": 1,
+    "seconds": 1.285,
+    "output_chars": 0,
+    "chapters": null,
+    "sources": null,
+    "methods": [],
+    "source_sha256": {
+      "corrupt.pdf": "e489f8d69fb905019cfd46627aedcdb9c8987734f74859d64f826202a179587f"
+    },
+    "artifacts": "/private/tmp/awb-upstream-eval-20261007/cases/corrupt-rejection"
+  },
+  {
+    "case": "unsupported-rejection",
+    "passed": true,
+    "expected": "Reject unsupported binary format",
+    "exit_code": 1,
+    "seconds": 0.387,
+    "output_chars": 0,
+    "chapters": null,
+    "sources": null,
+    "methods": [],
+    "source_sha256": {
+      "unsupported.bin": "f428e41ce3ba1c728bb00c2d17e8222d99c67ca5607c214a2c54b044f9533fae"
+    },
+    "artifacts": "/private/tmp/awb-upstream-eval-20261007/cases/unsupported-rejection"
+  },
+  {
+    "case": "missing-rejection",
+    "passed": true,
+    "expected": "Reject nonexistent input",
+    "exit_code": 1,
+    "seconds": 0.426,
+    "output_chars": 0,
+    "chapters": null,
+    "sources": null,
+    "methods": [],
+    "source_sha256": {},
+    "artifacts": "/private/tmp/awb-upstream-eval-20261007/cases/missing-rejection"
+  },
+  {
+    "case": "batch-resilience",
+    "passed": true,
+    "expected": "Skip corrupt file and preserve both valid sources in one combined corpus",
+    "exit_code": 0,
+    "seconds": 0.869,
+    "output_chars": 750,
+    "chapters": 2,
+    "sources": 2,
+    "methods": [
+      "plain-text",
+      "plain-text"
+    ],
+    "source_sha256": {
+      "corrupt.pdf": "e489f8d69fb905019cfd46627aedcdb9c8987734f74859d64f826202a179587f",
+      "handbook.md": "4ab2fa0275ffc2b1b469dba7e6a9dc0ba0064ff1f89cf040579821c47869525e",
+      "second.md": "503e0f64be201421e8d1470c3d9235438466568f9a24b62d924f9cfc93f16b55"
+    },
+    "artifacts": "/private/tmp/awb-upstream-eval-20261007/cases/batch-resilience"
+  },
+  {
+    "case": "batch-chapter-count",
+    "passed": false,
+    "expected": "Aggregate chapter count equals per-source chapter count (2 + 2)",
+    "exit_code": 0,
+    "seconds": 0.362,
+    "output_chars": 750,
+    "chapters": 2,
+    "sources": 2,
+    "methods": [
+      "plain-text",
+      "plain-text"
+    ],
+    "source_sha256": {
+      "handbook.md": "4ab2fa0275ffc2b1b469dba7e6a9dc0ba0064ff1f89cf040579821c47869525e",
+      "second.md": "503e0f64be201421e8d1470c3d9235438466568f9a24b62d924f9cfc93f16b55"
+    },
+    "artifacts": "/private/tmp/awb-upstream-eval-20261007/cases/batch-chapter-count"
+  },
+  {
+    "case": "large-source",
+    "passed": true,
+    "expected": "Extract over 1.2 million characters without truncating start/middle/end",
+    "exit_code": 0,
+    "seconds": 10.1,
+    "output_chars": 1966305,
+    "chapters": 2,
+    "sources": 1,
+    "methods": [
+      "plain-text"
+    ],
+    "source_sha256": {
+      "long.txt": "f73b5430c1e52b799cf956e7929d6c7fb6bdbcdf84280f1d651d286ee83844f2"
+    },
+    "artifacts": "/private/tmp/awb-upstream-eval-20261007/cases/large-source"
+  },
+  {
+    "case": "technical-fallback",
+    "passed": true,
+    "expected": "Without Docling, disclose and use text extraction; this does not verify formulas/tables",
+    "exit_code": 0,
+    "seconds": 1.905,
+    "output_chars": 319,
+    "chapters": 2,
+    "sources": 1,
+    "methods": [
+      "pypdf"
+    ],
+    "source_sha256": {
+      "searchable.pdf": "67f662b585d56ee7c471ef933ee9e153484ac9fa9d533e8637e0a60aaa0dcd12"
+    },
+    "artifacts": "/private/tmp/awb-upstream-eval-20261007/cases/technical-fallback"
+  },
+  {
+    "case": "scanner-negative",
+    "passed": true,
+    "expected": "Flag instruction-override fixture; do not load it",
+    "exit_code": 1
+  },
+  {
+    "case": "reuse-unchanged",
+    "passed": true,
+    "expected_reusable": true,
+    "actual_reusable": true,
+    "reason": "workdir intact and all sources match the current inputs"
+  },
+  {
+    "case": "reuse-changed",
+    "passed": true,
+    "expected_reusable": false,
+    "actual_reusable": false,
+    "reason": "content changed for handbook.md"
+  },
+  {
+    "case": "reuse-mode-changed",
+    "passed": true,
+    "expected_reusable": false,
+    "actual_reusable": false,
+    "reason": "mode changed (recorded 'text', current is 'technical')"
+  },
+  {
+    "case": "real-book-chapter-coverage",
+    "passed": false,
+    "expected": 12,
+    "actual": 0,
+    "note": "Agent must recover Roman-numeral structure manually; extraction text is intact."
+  }
+]

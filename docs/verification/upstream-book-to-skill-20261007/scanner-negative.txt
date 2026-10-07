@@ -1,0 +1,5 @@
+Generated-skill scan found 1 advisory finding(s):
+  WARN SKILL.md:5 [prompt.ignore_previous] contains an instruction-override phrase
+Review the generated files before loading, installing, or publishing them.
+Rules are intentionally broad and may match legitimate AI/LLM or systems-topic text; review each finding in context.
+No files were modified by this scan.

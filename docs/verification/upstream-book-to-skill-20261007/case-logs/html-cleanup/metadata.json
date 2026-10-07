@@ -1,0 +1,45 @@
+{
+  "source_file": "/private/tmp/awb-upstream-eval-20261007/fixtures/article.html",
+  "filename": "article.html",
+  "format": "html",
+  "extraction_method": "html-parser",
+  "extraction_mode": "text",
+  "file_size_mb": 0.0,
+  "pages": 0,
+  "chars": 289,
+  "words": 10,
+  "estimated_tokens": 13,
+  "estimated_tokens_human": "~0K",
+  "images_dropped": 0,
+  "workdir": "/private/tmp/awb-upstream-eval-20261007/cases/html-cleanup",
+  "output_text": "/private/tmp/awb-upstream-eval-20261007/cases/html-cleanup/full_text.txt",
+  "total_sources": 1,
+  "sources": [
+    {
+      "source_file": "/private/tmp/awb-upstream-eval-20261007/fixtures/article.html",
+      "filename": "article.html",
+      "format": "html",
+      "extraction_method": "html-parser",
+      "file_size_mb": 0.0,
+      "sha256": "518f6ab97cd10cbaf521cf647c10a6f40f99c35fbbb76ae3f58da87f323a38e4",
+      "pages": 0,
+      "pages_label": "sections",
+      "chars": 35,
+      "words": 4,
+      "estimated_tokens": 5,
+      "images_dropped": null,
+      "chapters_detected": 1,
+      "chapters_method": "numeric",
+      "chapter_headings_sample": [
+        "Chapter 1: Observe"
+      ],
+      "has_toc": false
+    }
+  ],
+  "chapters_detected": 1,
+  "chapters_method": "numeric",
+  "chapter_headings_sample": [
+    "Chapter 1: Observe"
+  ],
+  "has_toc": false
+}

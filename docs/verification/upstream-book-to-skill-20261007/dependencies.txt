@@ -1,0 +1,45 @@
+book-to-skill — dependency check
+
+  PDF (smart inspection / native Markdown)
+      ✗ python: pdf-inspector>=1.15,<2
+      → fallback available (install for best quality) — optional fast classifier/provenance layer; falls back to the existing PDF chain
+
+  PDF (text-heavy)
+      ✓ python: pypdf
+      ✗ python: pdfminer.six
+      ✗ system: pdftotext (poppler-utils)
+      → ready — any one of pdftotext / pypdf / pdfminer is enough
+
+  PDF (technical: tables, code, formulas)
+      ✗ python: docling
+      → fallback available (install for best quality) — needed only for --mode technical; otherwise falls back to the text chain
+
+  EPUB
+      ✗ python: ebooklib
+      ✗ python: beautifulsoup4
+      → fallback available (install for best quality) — falls back to a stdlib zipfile parser if missing
+
+  DOCX
+      ✗ python: python-docx
+      → fallback available (install for best quality) — falls back to a stdlib ZIP/XML parser if missing
+
+  HTML
+      ✗ python: trafilatura
+      ✗ python: beautifulsoup4
+      → fallback available (install for best quality) — trafilatura does real boilerplate detection; falls back to bs4, then the stdlib html.parser, if missing
+
+  RTF
+      ✗ python: striprtf
+      → fallback available (install for best quality) — falls back to a basic regex cleanup if missing
+
+  MOBI / AZW / AZW3
+      ✗ system: ebook-convert (Calibre)
+      → MISSING — required, no fallback — no fallback — Calibre is required for these formats
+
+To enable the best extractor for every format, install the missing pieces:
+
+  /private/tmp/awb-upstream-eval-20261007/venv/bin/python -m pip install pdf-inspector>=1.15,<2 pdfminer.six docling ebooklib beautifulsoup4 python-docx trafilatura striprtf
+  # poppler-utils: sudo apt install poppler-utils
+  # Calibre: install Calibre: https://calibre-ebook.com/download
+
+Note: missing Python packages are optional — most formats fall back to a stdlib parser. Calibre is the only hard requirement, and only for MOBI/AZW files.

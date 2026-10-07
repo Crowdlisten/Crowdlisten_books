@@ -1,0 +1,70 @@
+{
+  "source_file": "Consolidated from multiple sources",
+  "filename": "multi-source",
+  "format": "mixed",
+  "extraction_method": "multi-method",
+  "extraction_mode": "text",
+  "file_size_mb": 0.0,
+  "pages": 0,
+  "chars": 750,
+  "words": 53,
+  "estimated_tokens": 70,
+  "estimated_tokens_human": "~0K",
+  "images_dropped": 0,
+  "workdir": "/private/tmp/awb-upstream-eval-20261007/cases/batch-chapter-count",
+  "output_text": "/private/tmp/awb-upstream-eval-20261007/cases/batch-chapter-count/full_text.txt",
+  "total_sources": 2,
+  "sources": [
+    {
+      "source_file": "/private/tmp/awb-upstream-eval-20261007/fixtures/handbook.md",
+      "filename": "handbook.md",
+      "format": "md",
+      "extraction_method": "plain-text",
+      "file_size_mb": 0.0,
+      "sha256": "4ab2fa0275ffc2b1b469dba7e6a9dc0ba0064ff1f89cf040579821c47869525e",
+      "pages": 0,
+      "pages_label": "sections",
+      "chars": 159,
+      "words": 26,
+      "estimated_tokens": 34,
+      "images_dropped": null,
+      "chapters_detected": 2,
+      "chapters_method": "numeric",
+      "chapter_headings_sample": [
+        "# Chapter 1: Observe",
+        "# Chapter 2: Decide"
+      ],
+      "has_toc": false
+    },
+    {
+      "source_file": "/private/tmp/awb-upstream-eval-20261007/fixtures/second.md",
+      "filename": "second.md",
+      "format": "md",
+      "extraction_method": "plain-text",
+      "file_size_mb": 0.0,
+      "sha256": "503e0f64be201421e8d1470c3d9235438466568f9a24b62d924f9cfc93f16b55",
+      "pages": 0,
+      "pages_label": "sections",
+      "chars": 90,
+      "words": 15,
+      "estimated_tokens": 20,
+      "images_dropped": null,
+      "chapters_detected": 2,
+      "chapters_method": "numeric",
+      "chapter_headings_sample": [
+        "# Chapter 1: Test",
+        "# Chapter 2: Review"
+      ],
+      "has_toc": false
+    }
+  ],
+  "chapters_detected": 2,
+  "chapters_method": "numeric",
+  "chapter_headings_sample": [
+    "# Chapter 1: Observe",
+    "# Chapter 2: Decide",
+    "# Chapter 1: Test",
+    "# Chapter 2: Review"
+  ],
+  "has_toc": false
+}

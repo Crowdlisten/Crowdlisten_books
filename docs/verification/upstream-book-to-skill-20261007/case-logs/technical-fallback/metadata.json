@@ -1,0 +1,47 @@
+{
+  "source_file": "/private/tmp/awb-upstream-eval-20261007/fixtures/searchable.pdf",
+  "filename": "searchable.pdf",
+  "format": "pdf",
+  "extraction_method": "pypdf",
+  "extraction_mode": "technical",
+  "file_size_mb": 0.0,
+  "pages": 2,
+  "chars": 319,
+  "words": 13,
+  "estimated_tokens": 17,
+  "estimated_tokens_human": "~0K",
+  "images_dropped": 0,
+  "workdir": "/private/tmp/awb-upstream-eval-20261007/cases/technical-fallback",
+  "output_text": "/private/tmp/awb-upstream-eval-20261007/cases/technical-fallback/full_text.txt",
+  "total_sources": 1,
+  "sources": [
+    {
+      "source_file": "/private/tmp/awb-upstream-eval-20261007/fixtures/searchable.pdf",
+      "filename": "searchable.pdf",
+      "format": "pdf",
+      "extraction_method": "pypdf",
+      "file_size_mb": 0.0,
+      "sha256": "67f662b585d56ee7c471ef933ee9e153484ac9fa9d533e8637e0a60aaa0dcd12",
+      "pages": 2,
+      "pages_label": "pages",
+      "chars": 62,
+      "words": 7,
+      "estimated_tokens": 9,
+      "images_dropped": null,
+      "chapters_detected": 2,
+      "chapters_method": "numeric",
+      "chapter_headings_sample": [
+        "Chapter 1: Observe",
+        "Chapter 2: Review"
+      ],
+      "has_toc": false
+    }
+  ],
+  "chapters_detected": 2,
+  "chapters_method": "numeric",
+  "chapter_headings_sample": [
+    "Chapter 1: Observe",
+    "Chapter 2: Review"
+  ],
+  "has_toc": false
+}

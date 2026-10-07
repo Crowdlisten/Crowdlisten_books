@@ -1,0 +1,24 @@
+EPUB extraction uses ebooklib, beautifulsoup4 if installed, otherwise a stdlib ZIP/HTML parser.
+Non-interactive mode or install disabled; using fallback.
+Using fallback: a stdlib ZIP/HTML parser.
+Extracting EPUB: /private/tmp/awb-upstream-eval-20261007/fixtures/ordered.epub
+ebooklib not available
+Trying stdlib zipfile parser... OK
+  chapters: 2 (numeric)
+
+Extraction complete:
+   Sources : 1 processed
+   Size    : 0.00 MB
+   Total Pages: 2
+   Words   : 12
+   Tokens  : ~0K
+   Chapters: 2 detected overall (numeric)
+   ToC     : not detected
+   WARN    : No table of contents detected — chapter mapping in Step 3 will rely on heading scan only, which may miss or duplicate sections.
+
+   Workdir -> /private/tmp/awb-upstream-eval-20261007/cases/epub-order
+   Text    -> /private/tmp/awb-upstream-eval-20261007/cases/epub-order/full_text.txt
+   Meta    -> /private/tmp/awb-upstream-eval-20261007/cases/epub-order/metadata.json
+
+   book-to-skill is free, and maintained in personal time.
+   If it saves you work, you can fund its upkeep: github.com/sponsors/virgiliojr94

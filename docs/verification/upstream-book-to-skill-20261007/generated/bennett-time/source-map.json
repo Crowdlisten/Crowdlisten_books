@@ -1,0 +1,93 @@
+{
+  "source_url": "https://www.gutenberg.org/ebooks/2274",
+  "sha256": "9b82d3168c476d0b5238768555ebd50a3cc7bbf199927e6f065d35a650ebfa16",
+  "line_convention": "UTF-8 decoded with universal newlines; 1-based",
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "The Daily Miracle",
+      "file": "chapters/ch01-daily-miracle.md",
+      "source_start_line": 218,
+      "source_end_line": 315
+    },
+    {
+      "chapter": 2,
+      "title": "The Desire to Exceed One's Programme",
+      "file": "chapters/ch02-exceed-programme.md",
+      "source_start_line": 316,
+      "source_end_line": 409
+    },
+    {
+      "chapter": 3,
+      "title": "Precautions Before Beginning",
+      "file": "chapters/ch03-precautions.md",
+      "source_start_line": 410,
+      "source_end_line": 509
+    },
+    {
+      "chapter": 4,
+      "title": "The Cause of the Troubles",
+      "file": "chapters/ch04-day-within-day.md",
+      "source_start_line": 510,
+      "source_end_line": 612
+    },
+    {
+      "chapter": 5,
+      "title": "Tennis and the Immortal Soul",
+      "file": "chapters/ch05-protected-evenings.md",
+      "source_start_line": 613,
+      "source_end_line": 708
+    },
+    {
+      "chapter": 6,
+      "title": "Remember Human Nature",
+      "file": "chapters/ch06-human-nature.md",
+      "source_start_line": 709,
+      "source_end_line": 798
+    },
+    {
+      "chapter": 7,
+      "title": "Controlling the Mind",
+      "file": "chapters/ch07-concentration.md",
+      "source_start_line": 799,
+      "source_end_line": 895
+    },
+    {
+      "chapter": 8,
+      "title": "The Reflective Mood",
+      "file": "chapters/ch08-reflection.md",
+      "source_start_line": 896,
+      "source_end_line": 997
+    },
+    {
+      "chapter": 9,
+      "title": "Interest in the Arts",
+      "file": "chapters/ch09-arts.md",
+      "source_start_line": 998,
+      "source_end_line": 1096
+    },
+    {
+      "chapter": 10,
+      "title": "Nothing in Life Is Humdrum",
+      "file": "chapters/ch10-cause-effect.md",
+      "source_start_line": 1097,
+      "source_end_line": 1195
+    },
+    {
+      "chapter": 11,
+      "title": "Serious Reading",
+      "file": "chapters/ch11-serious-reading.md",
+      "source_start_line": 1196,
+      "source_end_line": 1296
+    },
+    {
+      "chapter": 12,
+      "title": "Dangers to Avoid",
+      "file": "chapters/ch12-dangers.md",
+      "source_start_line": 1297,
+      "source_end_line": 1403
+    }
+  ],
+  "preface": "PREFACE TO THIS EDITION before CONTENTS",
+  "chapter_mapping": "Agent-assisted, after extractor reported zero chapters"
+}

@@ -1,0 +1,25 @@
+HTML extraction uses one of trafilatura, beautifulsoup4 if installed, otherwise a stdlib HTML parser.
+Non-interactive mode or install disabled; using fallback.
+Using fallback: a stdlib HTML parser.
+Extracting HTML: /private/tmp/awb-upstream-eval-20261007/fixtures/article.html
+Trying trafilatura... not available
+Trying BeautifulSoup (bs4)... not available
+Trying stdlib HTML parser... OK
+  chapters: 1 (numeric)
+
+Extraction complete:
+   Sources : 1 processed
+   Size    : 0.00 MB
+   Total Pages: 0
+   Words   : 10
+   Tokens  : ~0K
+   Chapters: 1 detected overall (numeric)
+   ToC     : not detected
+   WARN    : No table of contents detected — chapter mapping in Step 3 will rely on heading scan only, which may miss or duplicate sections.
+
+   Workdir -> /private/tmp/awb-upstream-eval-20261007/cases/html-cleanup
+   Text    -> /private/tmp/awb-upstream-eval-20261007/cases/html-cleanup/full_text.txt
+   Meta    -> /private/tmp/awb-upstream-eval-20261007/cases/html-cleanup/metadata.json
+
+   book-to-skill is free, and maintained in personal time.
+   If it saves you work, you can fund its upkeep: github.com/sponsors/virgiliojr94

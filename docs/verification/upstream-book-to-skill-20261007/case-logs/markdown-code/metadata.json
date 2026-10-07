@@ -1,0 +1,47 @@
+{
+  "source_file": "/private/tmp/awb-upstream-eval-20261007/fixtures/handbook.md",
+  "filename": "handbook.md",
+  "format": "md",
+  "extraction_method": "plain-text",
+  "extraction_mode": "text",
+  "file_size_mb": 0.0,
+  "pages": 0,
+  "chars": 410,
+  "words": 32,
+  "estimated_tokens": 42,
+  "estimated_tokens_human": "~0K",
+  "images_dropped": 0,
+  "workdir": "/private/tmp/awb-upstream-eval-20261007/cases/markdown-code",
+  "output_text": "/private/tmp/awb-upstream-eval-20261007/cases/markdown-code/full_text.txt",
+  "total_sources": 1,
+  "sources": [
+    {
+      "source_file": "/private/tmp/awb-upstream-eval-20261007/fixtures/handbook.md",
+      "filename": "handbook.md",
+      "format": "md",
+      "extraction_method": "plain-text",
+      "file_size_mb": 0.0,
+      "sha256": "4ab2fa0275ffc2b1b469dba7e6a9dc0ba0064ff1f89cf040579821c47869525e",
+      "pages": 0,
+      "pages_label": "sections",
+      "chars": 159,
+      "words": 26,
+      "estimated_tokens": 34,
+      "images_dropped": null,
+      "chapters_detected": 2,
+      "chapters_method": "numeric",
+      "chapter_headings_sample": [
+        "# Chapter 1: Observe",
+        "# Chapter 2: Decide"
+      ],
+      "has_toc": false
+    }
+  ],
+  "chapters_detected": 2,
+  "chapters_method": "numeric",
+  "chapter_headings_sample": [
+    "# Chapter 1: Observe",
+    "# Chapter 2: Decide"
+  ],
+  "has_toc": false
+}

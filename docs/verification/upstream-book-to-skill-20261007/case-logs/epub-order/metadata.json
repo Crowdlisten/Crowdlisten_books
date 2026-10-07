@@ -1,0 +1,47 @@
+{
+  "source_file": "/private/tmp/awb-upstream-eval-20261007/fixtures/ordered.epub",
+  "filename": "ordered.epub",
+  "format": "epub",
+  "extraction_method": "zipfile",
+  "extraction_mode": "text",
+  "file_size_mb": 0.0,
+  "pages": 2,
+  "chars": 299,
+  "words": 12,
+  "estimated_tokens": 16,
+  "estimated_tokens_human": "~0K",
+  "images_dropped": 0,
+  "workdir": "/private/tmp/awb-upstream-eval-20261007/cases/epub-order",
+  "output_text": "/private/tmp/awb-upstream-eval-20261007/cases/epub-order/full_text.txt",
+  "total_sources": 1,
+  "sources": [
+    {
+      "source_file": "/private/tmp/awb-upstream-eval-20261007/fixtures/ordered.epub",
+      "filename": "ordered.epub",
+      "format": "epub",
+      "extraction_method": "zipfile",
+      "file_size_mb": 0.0,
+      "sha256": "c3c873c61d013eef9ec1dfc3e175e823db808a744ec63426daec4151698bf4b4",
+      "pages": 2,
+      "pages_label": "spine_items",
+      "chars": 45,
+      "words": 6,
+      "estimated_tokens": 8,
+      "images_dropped": 0,
+      "chapters_detected": 2,
+      "chapters_method": "numeric",
+      "chapter_headings_sample": [
+        "Chapter 1",
+        "Chapter 2"
+      ],
+      "has_toc": false
+    }
+  ],
+  "chapters_detected": 2,
+  "chapters_method": "numeric",
+  "chapter_headings_sample": [
+    "Chapter 1",
+    "Chapter 2"
+  ],
+  "has_toc": false
+}

@@ -1,0 +1,24 @@
+DOCX extraction uses python-docx if installed, otherwise a stdlib ZIP/XML parser.
+Non-interactive mode or install disabled; using fallback.
+Using fallback: a stdlib ZIP/XML parser.
+Extracting DOCX: /private/tmp/awb-upstream-eval-20261007/fixtures/table.docx
+Trying python-docx... not available
+Trying stdlib DOCX parser... OK
+  chapters: 0 (none)
+
+Extraction complete:
+   Sources : 1 processed
+   Size    : 0.00 MB
+   Total Pages: 0
+   Words   : 10
+   Tokens  : ~0K
+   Chapters: 0 detected overall (none)
+   ToC     : not detected
+   WARN    : No table of contents detected — chapter mapping in Step 3 will rely on heading scan only, which may miss or duplicate sections.
+
+   Workdir -> /private/tmp/awb-upstream-eval-20261007/cases/docx-table
+   Text    -> /private/tmp/awb-upstream-eval-20261007/cases/docx-table/full_text.txt
+   Meta    -> /private/tmp/awb-upstream-eval-20261007/cases/docx-table/metadata.json
+
+   book-to-skill is free, and maintained in personal time.
+   If it saves you work, you can fund its upkeep: github.com/sponsors/virgiliojr94

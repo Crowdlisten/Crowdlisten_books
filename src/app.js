@@ -2,14 +2,15 @@ import packageInfo from '../package.json' with {type:'json'};
 import { timingSafeEqual } from 'node:crypto';
 import { retrieveBooks, retrieveContent } from './generator.js';
 import { createStore, makeId } from './store.js';
+import {matchBookCandidates} from './semantic.js';
 
-export function createApp({ store = createStore(), adminToken } = {}) {
+export function createApp({ store = createStore(), adminToken, semanticMatcher = matchBookCandidates } = {}) {
   async function route(req) {
     const url = new URL(req.url, 'http://localhost');
     const method = req.method ?? 'GET';
 
     try {
-      const publicPosts = ['/v1/ask', '/v1/answers/query', '/v1/books/retrieve'];
+      const publicPosts = ['/v1/ask', '/v1/answers/query', '/v1/books/retrieve', '/v1/books/match'];
       const privateRoute = (method === 'POST' && !publicPosts.includes(url.pathname)) || ['/v1/questions', '/v1/concerns'].includes(url.pathname);
       const provided = req.headers?.authorization?.replace(/^Bearer /i, '') || '';
       const authorized = typeof adminToken === 'string' && adminToken.length >= 24 && Buffer.byteLength(provided) === Buffer.byteLength(adminToken) && timingSafeEqual(Buffer.from(provided), Buffer.from(adminToken));
@@ -40,6 +41,16 @@ export function createApp({ store = createStore(), adminToken } = {}) {
         if (!body.title || !body.author) return problem(400, 'title and author are required');
         const book = upsertBook(body, store);
         return json({ book }, 201);
+      }
+
+      if (method === 'POST' && url.pathname === '/v1/books/match') {
+        const body = await readJson(req);
+        const question = body.question ?? body.query;
+        validateQuestion(question);
+        if (body.catalog_only !== undefined && typeof body.catalog_only !== 'boolean') return problem(400, 'catalog_only must be a boolean');
+        const sources = normalizeSources(body.sources, store);
+        const result = await semanticMatcher(question, sources.includes('books') ? [...store.books.values()] : [], {catalogOnly: body.catalog_only});
+        return json(result);
       }
 
       if (method === 'POST' && url.pathname === '/v1/books/retrieve') {

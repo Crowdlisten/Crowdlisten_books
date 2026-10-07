@@ -1,0 +1,45 @@
+{
+  "source_file": "/private/tmp/awb-upstream-eval-20261007/fixtures/notes.rtf",
+  "filename": "notes.rtf",
+  "format": "rtf",
+  "extraction_method": "rtf-regex",
+  "extraction_mode": "text",
+  "file_size_mb": 0.0,
+  "pages": 0,
+  "chars": 293,
+  "words": 13,
+  "estimated_tokens": 17,
+  "estimated_tokens_human": "~0K",
+  "images_dropped": 0,
+  "workdir": "/private/tmp/awb-upstream-eval-20261007/cases/rtf",
+  "output_text": "/private/tmp/awb-upstream-eval-20261007/cases/rtf/full_text.txt",
+  "total_sources": 1,
+  "sources": [
+    {
+      "source_file": "/private/tmp/awb-upstream-eval-20261007/fixtures/notes.rtf",
+      "filename": "notes.rtf",
+      "format": "rtf",
+      "extraction_method": "rtf-regex",
+      "file_size_mb": 0.0,
+      "sha256": "60f67516be83f7e080203feb8174f867191b737632473ed51ef24f08c5a933f2",
+      "pages": 0,
+      "pages_label": "sections",
+      "chars": 45,
+      "words": 7,
+      "estimated_tokens": 9,
+      "images_dropped": null,
+      "chapters_detected": 1,
+      "chapters_method": "numeric",
+      "chapter_headings_sample": [
+        "Chapter 1"
+      ],
+      "has_toc": false
+    }
+  ],
+  "chapters_detected": 1,
+  "chapters_method": "numeric",
+  "chapter_headings_sample": [
+    "Chapter 1"
+  ],
+  "has_toc": false
+}

@@ -7,6 +7,11 @@ export const serviceUrl='https://yozeqanibszoxnowmvsm.supabase.co/functions/v1';
 const configDir=()=>process.env.ANSWER_WITH_BOOKS_CONFIG_DIR||join(homedir(),'.config','answer-with-books');
 const credentialsPath=()=>join(configDir(),'session.json');
 export const hash=value=>createHash('sha256').update(value).digest('hex');
+export function accountKey(session) {
+ if(typeof session?.user_id!=='string'||!session.user_id.trim())throw new Error('The saved session has no account identity. Run login again.');
+ return hash(serviceUrl+'\0'+session.user_id);
+}
+export const accountCache=(session)=>join(process.env.ANSWER_WITH_BOOKS_CACHE_DIR||join(homedir(),'.cache','answer-with-books'),'accounts',accountKey(session));
 export async function credentials(required=false) {
  let value;
  try {
@@ -29,10 +34,15 @@ export async function serviceCall(endpoint,body,token,fetcher=fetch) {
  try {response=await fetcher(`${serviceUrl}/${endpoint}`,{method:'POST',redirect:'error',headers:{'Content-Type':'application/json',...(token?{Authorization:`Bearer ${token}`}:{})},body:JSON.stringify(body),signal:AbortSignal.timeout(120000)});}
  catch{throw new Error('Could not reach Answer with Books. Check your connection and retry.');}
  let result;try{result=await response.json();}catch{throw new Error('The service returned an unreadable response.');}
- if(!response.ok||result.error){const error=new Error(result.error||`Request failed (${response.status}).`);if(result.findings)error.findings=result.findings;throw error;}
+ if(!response.ok||result.error){
+  const redact=value=>String(value).replaceAll(token||'\0','[redacted]').replace(/awb_cli_[a-f0-9]{64}/g,'[redacted]');
+  const error=new Error(redact(result.error||`Request failed (${response.status}).`));
+  if(result.findings)error.findings=JSON.parse(redact(JSON.stringify(result.findings)));throw error;
+ }
  return result;
 }
 export async function privateCall(body,session) {session??=await credentials(true);return serviceCall('book-process',body,session.token);}
+export async function nativeCall(body,session) {session??=await credentials(true);return serviceCall('book-native',body,session.token);}
 export function openBrowser(url) {
  const [command,args]=process.platform==='darwin'?['open',[url]]:process.platform==='win32'?['rundll32',['url.dll,FileProtocolHandler',url]]:['xdg-open',[url]];
  const child=spawn(command,args,{stdio:'ignore',detached:true});child.on('error',()=>{});child.unref();
@@ -57,7 +67,16 @@ export async function logout() {
  await rm(credentialsPath(),{force:true});console.log('Signed out. This agent’s access has been revoked.');
 }
 export async function privateBooks(session) {
+ session??=await credentials(true);
  const books=[];let offset=0;
- do {const result=await privateCall({action:'list',offset},session);books.push(...result.books.map(b=>({...b,visibility:'private',url:`https://answerwithbooks.com/your-book/?id=${b.id}`})));offset=result.next_offset;}while(offset!==null&&offset!==undefined);
+ do {const result=await privateCall({action:'list',offset},session);if(!Array.isArray(result.books))throw new Error('The service returned an invalid private library.');books.push(...result.books.map(b=>({...b,visibility:'private',url:`https://answerwithbooks.com/your-book/?id=${b.id}`})));const next=result.next_offset;if(next!==null&&next!==undefined&&(!Number.isInteger(next)||next<=offset))throw new Error('The service returned invalid library pagination.');offset=next;}while(offset!==null&&offset!==undefined);
  return books;
+}
+export async function resolvePrivateId(id,session) {
+ if(!id)throw new Error('Choose a private book or revision ID.');
+ const books=await privateBooks(session),book=books.find(b=>b.id===id||b.book_id===id);
+ if(book)return book.id;
+ // Historical revision IDs are still accepted by status/revisions/retry.
+ if(!/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i.test(id))throw new Error('Private book not found. Run books --private for account book IDs.');
+ return id;
 }

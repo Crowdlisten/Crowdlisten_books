@@ -1,0 +1,7 @@
+book-to-skill · turns a document into a structured agent skill
+free and MIT-licensed · maintained in personal time · github.com/virgiliojr94/book-to-skill
+
+WARNING: Skipping unsupported.bin: Unsupported format '.bin'. Supported: .adoc, .asciidoc, .azw, .azw3, .docx, .epub, .htm, .html, .markdown, .md, .mobi, .pdf, .rst, .rtf, .text, .txt, .xhtml
+
+ERROR: All 1 source(s) failed extraction:
+  - unsupported.bin: Unsupported format '.bin'. Supported: .adoc, .asciidoc, .azw, .azw3, .docx, .epub, .htm, .html, .markdown, .md, .mobi, .pdf, .rst, .rtf, .text, .txt, .xhtml

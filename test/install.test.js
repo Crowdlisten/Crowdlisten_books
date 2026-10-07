@@ -8,10 +8,11 @@ test('npm tarball installs a self-contained skill and HTTP API in an empty direc
  const skillDir=join(env.CODEX_HOME,'skills/answer-with-books');assert.equal(readFileSync(join(skillDir,'SKILL.md'),'utf8'),readFileSync(resolve('skill/answer-with-books/SKILL.md'),'utf8'));
  for(const executable of [cli,join(skillDir,'runtime/bin/answer-with-books.js')]){
  const result=spawnSync(process.execPath,[executable,'ask','Am I validating this idea or collecting compliments?','--json'],{cwd:temp,env,encoding:'utf8'});assert.equal(result.status,0,result.stderr);assert.equal(JSON.parse(result.stdout).status,'hit');
+ const match=spawnSync(process.execPath,[executable,'match','如何养成习惯？','--public','--catalog','--json'],{cwd:temp,env,encoding:'utf8'});assert.equal(match.status,0,match.stderr);assert.equal(JSON.parse(match.stdout).status,'needs_reasoning');assert.ok(JSON.parse(match.stdout).candidates.some(b=>b.id==='atomic-habits'));
  }
  const server=spawn(process.execPath,[join(temp,'.answer-with-books/runtime/src/server.js')],{cwd:temp,env:{...env,PORT:'0'},stdio:['ignore','pipe','pipe']});
- t.after(()=>server.kill());let out='';const base=await new Promise((res,rej)=>{const timer=setTimeout(()=>rej(Error('server timeout')),5000);server.stdout.on('data',x=>{out+=x;const m=out.match(/http:\/\/127\.0\.0\.1:(\d+)/);if(m){clearTimeout(timer);res(m[0]);}});server.on('error',rej);});
- assert.equal((await (await fetch(base+'/health')).json()).version,'0.2.0');
+ t.after(()=>server.kill());let out='',stderr='';server.stderr.on('data',x=>stderr+=x);const base=await new Promise((res,rej)=>{const timer=setTimeout(()=>rej(Error('server timeout: '+stderr)),30000);server.stdout.on('data',x=>{out+=x;const m=out.match(/http:\/\/127\.0\.0\.1:(\d+)/);if(m){clearTimeout(timer);res(m[0]);}});server.on('error',error=>{clearTimeout(timer);rej(error);});server.on('exit',code=>{clearTimeout(timer);rej(Error('server exited '+code+': '+stderr));});});
+ assert.equal((await (await fetch(base+'/health')).json()).version,'0.3.0');
  const result=await (await fetch(base+'/v1/ask',{method:'POST',body:JSON.stringify({question:'Should I move to Mars?'})})).json();assert.equal(result.status,'new_question');assert.deepEqual(result.books,[]);
  assert.equal((await fetch(base+'/v1/questions')).status,403);
 });

@@ -1,0 +1,47 @@
+{
+  "source_file": "/private/tmp/awb-upstream-eval-20261007/fixtures/chinese.md",
+  "filename": "chinese.md",
+  "format": "md",
+  "extraction_method": "plain-text",
+  "extraction_mode": "text",
+  "file_size_mb": 0.0,
+  "pages": 0,
+  "chars": 308,
+  "words": 14,
+  "estimated_tokens": 41,
+  "estimated_tokens_human": "~0K",
+  "images_dropped": 0,
+  "workdir": "/private/tmp/awb-upstream-eval-20261007/cases/chinese",
+  "output_text": "/private/tmp/awb-upstream-eval-20261007/cases/chinese/full_text.txt",
+  "total_sources": 1,
+  "sources": [
+    {
+      "source_file": "/private/tmp/awb-upstream-eval-20261007/fixtures/chinese.md",
+      "filename": "chinese.md",
+      "format": "md",
+      "extraction_method": "plain-text",
+      "file_size_mb": 0.0,
+      "sha256": "659ed1643a3d9b4aeaaf8825b5ea27f61b55ccc2bc52aa3a109c155a9d83a674",
+      "pages": 0,
+      "pages_label": "sections",
+      "chars": 58,
+      "words": 8,
+      "estimated_tokens": 33,
+      "images_dropped": null,
+      "chapters_detected": 2,
+      "chapters_method": "numeric",
+      "chapter_headings_sample": [
+        "# 第一章 观察",
+        "# 第二章 实验"
+      ],
+      "has_toc": false
+    }
+  ],
+  "chapters_detected": 2,
+  "chapters_method": "numeric",
+  "chapter_headings_sample": [
+    "# 第一章 观察",
+    "# 第二章 实验"
+  ],
+  "has_toc": false
+}

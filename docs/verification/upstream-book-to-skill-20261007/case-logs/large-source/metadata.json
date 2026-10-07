@@ -1,0 +1,47 @@
+{
+  "source_file": "/private/tmp/awb-upstream-eval-20261007/fixtures/long.txt",
+  "filename": "long.txt",
+  "format": "txt",
+  "extraction_method": "plain-text",
+  "extraction_mode": "text",
+  "file_size_mb": 1.87,
+  "pages": 0,
+  "chars": 1966305,
+  "words": 256013,
+  "estimated_tokens": 341350,
+  "estimated_tokens_human": "~341K",
+  "images_dropped": 0,
+  "workdir": "/private/tmp/awb-upstream-eval-20261007/cases/large-source",
+  "output_text": "/private/tmp/awb-upstream-eval-20261007/cases/large-source/full_text.txt",
+  "total_sources": 1,
+  "sources": [
+    {
+      "source_file": "/private/tmp/awb-upstream-eval-20261007/fixtures/long.txt",
+      "filename": "long.txt",
+      "format": "txt",
+      "extraction_method": "plain-text",
+      "file_size_mb": 1.87,
+      "sha256": "f73b5430c1e52b799cf956e7929d6c7fb6bdbcdf84280f1d651d286ee83844f2",
+      "pages": 0,
+      "pages_label": "sections",
+      "chars": 1966060,
+      "words": 256007,
+      "estimated_tokens": 341342,
+      "images_dropped": null,
+      "chapters_detected": 2,
+      "chapters_method": "numeric",
+      "chapter_headings_sample": [
+        "Chapter 1",
+        "Chapter 2"
+      ],
+      "has_toc": false
+    }
+  ],
+  "chapters_detected": 2,
+  "chapters_method": "numeric",
+  "chapter_headings_sample": [
+    "Chapter 1",
+    "Chapter 2"
+  ],
+  "has_toc": false
+}

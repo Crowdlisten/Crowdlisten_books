@@ -1,0 +1,11 @@
+book-to-skill · turns a document into a structured agent skill
+free and MIT-licensed · maintained in personal time · github.com/virgiliojr94/book-to-skill
+
+invalid pdf header: b'This '
+EOF marker not found
+  [warn] extract_with_pypdf failed: PdfStreamError: Stream has ended unexpectedly
+WARNING: Skipping corrupt.pdf: Could not extract text from PDF.
+Install one of: poppler-utils (pdftotext), pypdf, or pdfminer.six
+  sudo apt install poppler-utils
+  pip3 install pypdf
+  pip3 install pdfminer.six

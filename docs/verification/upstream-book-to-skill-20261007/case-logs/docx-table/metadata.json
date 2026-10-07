@@ -1,0 +1,41 @@
+{
+  "source_file": "/private/tmp/awb-upstream-eval-20261007/fixtures/table.docx",
+  "filename": "table.docx",
+  "format": "docx",
+  "extraction_method": "zipfile-docx",
+  "extraction_mode": "text",
+  "file_size_mb": 0.0,
+  "pages": 0,
+  "chars": 292,
+  "words": 10,
+  "estimated_tokens": 13,
+  "estimated_tokens_human": "~0K",
+  "images_dropped": 0,
+  "workdir": "/private/tmp/awb-upstream-eval-20261007/cases/docx-table",
+  "output_text": "/private/tmp/awb-upstream-eval-20261007/cases/docx-table/full_text.txt",
+  "total_sources": 1,
+  "sources": [
+    {
+      "source_file": "/private/tmp/awb-upstream-eval-20261007/fixtures/table.docx",
+      "filename": "table.docx",
+      "format": "docx",
+      "extraction_method": "zipfile-docx",
+      "file_size_mb": 0.0,
+      "sha256": "46e57cd29ff2a7200ff4ce9615f94840bcd6bbc03e0b62a44ac90a6dcba62cf5",
+      "pages": 0,
+      "pages_label": "sections",
+      "chars": 42,
+      "words": 4,
+      "estimated_tokens": 5,
+      "images_dropped": null,
+      "chapters_detected": 0,
+      "chapters_method": "none",
+      "chapter_headings_sample": [],
+      "has_toc": false
+    }
+  ],
+  "chapters_detected": 0,
+  "chapters_method": "none",
+  "chapter_headings_sample": [],
+  "has_toc": false
+}

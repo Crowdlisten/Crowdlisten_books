@@ -1,0 +1,22 @@
+RTF extraction uses striprtf if installed, otherwise a basic regex cleanup fallback.
+Non-interactive mode or install disabled; using fallback.
+Using fallback: a basic regex cleanup fallback.
+Extracting RTF: /private/tmp/awb-upstream-eval-20261007/fixtures/notes.rtf
+  chapters: 1 (numeric)
+
+Extraction complete:
+   Sources : 1 processed
+   Size    : 0.00 MB
+   Total Pages: 0
+   Words   : 13
+   Tokens  : ~0K
+   Chapters: 1 detected overall (numeric)
+   ToC     : not detected
+   WARN    : No table of contents detected — chapter mapping in Step 3 will rely on heading scan only, which may miss or duplicate sections.
+
+   Workdir -> /private/tmp/awb-upstream-eval-20261007/cases/rtf
+   Text    -> /private/tmp/awb-upstream-eval-20261007/cases/rtf/full_text.txt
+   Meta    -> /private/tmp/awb-upstream-eval-20261007/cases/rtf/metadata.json
+
+   book-to-skill is free, and maintained in personal time.
+   If it saves you work, you can fund its upkeep: github.com/sponsors/virgiliojr94

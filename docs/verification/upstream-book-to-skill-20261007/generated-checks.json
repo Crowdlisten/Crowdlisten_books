@@ -1,0 +1,49 @@
+[
+  {
+    "check": "validate_skill.py",
+    "passed": true,
+    "detail": "\u2713 /private/tmp/awb-upstream-eval-20261007/generated/bennett-time/SKILL.md [Claude Code]: no Claude Code-breaking issues (0 warning(s))"
+  },
+  {
+    "check": "scan_generated_skill.py",
+    "passed": true,
+    "detail": "Generated-skill scan passed: no known injection or authority patterns found."
+  },
+  {
+    "check": "relative-links",
+    "passed": true,
+    "detail": {
+      "count": 31,
+      "broken": []
+    }
+  },
+  {
+    "check": "chapter-map",
+    "passed": true,
+    "detail": {
+      "chapters": 12,
+      "preface_present": true
+    }
+  },
+  {
+    "check": "source-hash",
+    "passed": true,
+    "detail": "9b82d3168c476d0b5238768555ebd50a3cc7bbf199927e6f065d35a650ebfa16"
+  },
+  {
+    "check": "core-size",
+    "passed": true,
+    "detail": {
+      "estimated_tokens_word_heuristic": 1105,
+      "not_actual_model_tokens": true
+    }
+  },
+  {
+    "check": "zip-integrity",
+    "passed": true,
+    "detail": {
+      "files": 19,
+      "bytes": 56333
+    }
+  }
+]

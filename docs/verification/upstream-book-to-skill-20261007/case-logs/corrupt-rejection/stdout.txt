@@ -1,0 +1,5 @@
+Extracting PDF: /private/tmp/awb-upstream-eval-20261007/fixtures/corrupt.pdf
+Mode: text — using pdftotext...
+Trying pdftotext... not available
+Trying pypdf... not available
+Trying pdfminer.six... FAILED

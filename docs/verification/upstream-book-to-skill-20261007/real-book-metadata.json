@@ -1,0 +1,41 @@
+{
+  "source_file": "/private/tmp/awb-upstream-eval-20261007/bennett-source.txt",
+  "filename": "bennett-source.txt",
+  "format": "txt",
+  "extraction_method": "plain-text",
+  "extraction_mode": "text",
+  "file_size_mb": 0.09,
+  "pages": 0,
+  "chars": 93077,
+  "words": 15936,
+  "estimated_tokens": 21248,
+  "estimated_tokens_human": "~21K",
+  "images_dropped": 0,
+  "workdir": "/private/tmp/awb-upstream-eval-20261007/bennett-extracted",
+  "output_text": "/private/tmp/awb-upstream-eval-20261007/bennett-extracted/full_text.txt",
+  "total_sources": 1,
+  "sources": [
+    {
+      "source_file": "/private/tmp/awb-upstream-eval-20261007/bennett-source.txt",
+      "filename": "bennett-source.txt",
+      "format": "txt",
+      "extraction_method": "plain-text",
+      "file_size_mb": 0.09,
+      "sha256": "9b82d3168c476d0b5238768555ebd50a3cc7bbf199927e6f065d35a650ebfa16",
+      "pages": 0,
+      "pages_label": "sections",
+      "chars": 92826,
+      "words": 15930,
+      "estimated_tokens": 21240,
+      "images_dropped": null,
+      "chapters_detected": 0,
+      "chapters_method": "none",
+      "chapter_headings_sample": [],
+      "has_toc": true
+    }
+  ],
+  "chapters_detected": 0,
+  "chapters_method": "none",
+  "chapter_headings_sample": [],
+  "has_toc": true
+}

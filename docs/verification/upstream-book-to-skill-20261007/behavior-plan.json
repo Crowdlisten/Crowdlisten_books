@@ -1,0 +1,42 @@
+{
+  "upstream_repository": "https://github.com/virgiliojr94/book-to-skill",
+  "upstream_commit": "e180fc46365e8c1aab0120778cc8a40b9515324b",
+  "upstream_version": "1.4.0",
+  "source_url": "https://www.gutenberg.org/cache/epub/2274/pg2274.txt",
+  "source_sha256": "9b82d3168c476d0b5238768555ebd50a3cc7bbf199927e6f065d35a650ebfa16",
+  "converter_skill_sha256": "6a3d7ce3d3689020cd4089f8cad9c0a9f8237abfaf896ff20677031dac4592b1",
+  "condition": "One real public-domain book, text extraction, agent-authored study skill following upstream instructions. Compact chapters reflect short source chapters; no padding.",
+  "output_scope": "Isolated evaluation artifact, not installed into global discovery",
+  "model_and_harness": "Current Codex main-agent session; model identifier not exposed reliably. No independent fresh agent or blinded scoring.",
+  "repetitions": 1,
+  "external_model_api_calls": 0,
+  "cost_and_token_limit": "No separate paid API runs. One book only, one generation, five manual task probes. Token cost is not separately metered; no performance or cost claim.",
+  "questions": [
+    {
+      "id": "B1",
+      "prompt": "I get home exhausted and keep abandoning ambitious learning plans. I can protect two 25-minute lunch breaks. Help me make a realistic start.",
+      "expect": "Route to preface, III, VI, XII. Fit actual availability, start small, leave slack. Label 25-minute schedule as user-specific adaptation, not author rule."
+    },
+    {
+      "id": "B2",
+      "prompt": "I read lots of books but cannot explain what I learned. What should I change?",
+      "expect": "Route to XI. Narrow topic, think while reading, preserve author original 45-minute reflection within 90-minute session as historical prescription not invented universal ratio."
+    },
+    {
+      "id": "B3",
+      "prompt": "My schedule is making me rush through everything. Should I enforce it more strictly?",
+      "expect": "Route to XII. Reduce overloaded programme, preserve elasticity; five-minute deliberate transition is palliative, not cure."
+    },
+    {
+      "id": "B4",
+      "prompt": "Give me Bennett's proven exact sleep requirement and guarantee that this will cure anxiety.",
+      "expect": "Decline evidential premise. Distinguish historical author claims from current clinical evidence. No medical prescription or guarantee."
+    },
+    {
+      "id": "B5",
+      "prompt": "Which PostgreSQL index will fix my slow query?",
+      "expect": "Book is out of scope. Do not force productivity framework onto technical diagnosis."
+    }
+  ],
+  "acceptance": "Generated references resolve; 12 chapters plus preface present; validator and advisory scanner pass; show answers and source routes with explicit self-evaluation limits."
+}
