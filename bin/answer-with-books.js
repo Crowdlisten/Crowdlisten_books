@@ -10,6 +10,7 @@ import {installBook,syncLibrary} from '../src/book-install.js';
 import {bookOperation} from '../src/book-operations.js';
 const packageRoot=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const version=JSON.parse(readFileSync(join(packageRoot,'package.json'),'utf8')).version;
+const releasePackage=`https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v${version}/answer-with-books-${version}.tgz`;
 const args=process.argv.slice(2);
 try {
  if(!args.length||args.includes('--help')||args[0]==='help')printHelp();
@@ -127,7 +128,7 @@ function install(installArgs) {
 
   console.log('Answer with Books installed.');
   for (const item of installed) console.log(`- ${item}`);
-  console.log(`Ask without a server: npx --yes answer-with-books@${version} ask "YOUR QUESTION" --json`);
+  console.log(`Ask without a server: npx --yes ${releasePackage} ask "YOUR QUESTION" --json`);
   if (installApi) console.log('Optional local HTTP API: node .answer-with-books/runtime/src/server.js');
 }
 

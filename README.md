@@ -4,11 +4,11 @@ Give your agent a book’s methods, grounded in public editorial digests and sou
 
 ## One install path
 
-Node 20+ is required. Use the pinned npm release below; older npm 0.1.0 installations lack the runtime and ask command. From any empty directory:
+Node 20+ is required. Use the versioned GitHub release below. The npm registry remains at 0.2.0 until publication authentication is completed; this release includes the 0.3.0 account library commands. From any empty directory:
 
 ```sh
-npx --yes answer-with-books@0.3.0 install --skill --api
-npx --yes answer-with-books@0.3.0 ask "Am I validating this idea or collecting compliments?" --json
+npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.3.0/answer-with-books-0.3.0.tgz install --skill --api
+npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.3.0/answer-with-books-0.3.0.tgz ask "Am I validating this idea or collecting compliments?" --json
 ```
 
 No repository clone, npm install, account, API key, or running server is required to ask. The command retrieves from the bundled corpus in-process. The agent skill is installed to `$CODEX_HOME/skills/answer-with-books` (default `~/.codex/skills/answer-with-books`) together with its executable source and corpus. An existing installation at that path is updated. `npx` does not install a global command; keep the `npx` prefix, or use the bundled Node command documented in SKILL.md.
@@ -20,7 +20,7 @@ node .answer-with-books/runtime/src/server.js
 curl http://127.0.0.1:8787/health
 ```
 
-Alternatively use `npx --yes answer-with-books@0.3.0 serve`. The server binds to localhost. `ask` uses the bundled corpus unless you explicitly pass `--api-url` or `ANSWER_WITH_BOOKS_API_URL`; an unavailable explicit server is an error, not a silent fallback.
+Alternatively use `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.3.0/answer-with-books-0.3.0.tgz serve`. The server binds to localhost. `ask` uses the bundled corpus unless you explicitly pass `--api-url` or `ANSWER_WITH_BOOKS_API_URL`; an unavailable explicit server is an error, not a silent fallback.
 
 ## Commands
 
@@ -41,7 +41,7 @@ The skill can activate from ordinary book mentions or a relevant practical quest
 
 ## Semantic matching
 
-Version 0.3.0 adds `match "QUESTION" --public --json`. Run it using `npx --yes answer-with-books@0.3.0 match ...`, from this checkout, or from the installed skill runtime.
+Version 0.3.0 adds `match "QUESTION" --public --json`. Run it using `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.3.0/answer-with-books-0.3.0.tgz match ...`, from this checkout, or from the installed skill runtime.
 
 The flow is **semantic candidates → host-agent relevance judgment → selected book evidence → applied answer**. `match` uses a pinned multilingual E5 model locally, then returns a shortlist explicitly marked `needs_reasoning`. The agent chooses up to three sources by the user's intent, the relevant method, and its limits, reads each with `ask --book ID`, and can reject the entire shortlist. Cosine similarity is not confidence. The standalone matcher does not secretly call a second language model or pretend to have completed that reasoning.
 
@@ -57,7 +57,7 @@ Run `node scripts/evaluate-semantic-retrieval.mjs` for the small real-model smok
 
 ## Account book skills and revisions
 
-These commands require version 0.3.0 or a freshly installed runtime from this checkout. With npm, replace `node bin/answer-with-books.js` below with `npx --yes answer-with-books@0.3.0`.
+These commands require version 0.3.0 or a freshly installed runtime from this checkout. With the versioned release, replace `node bin/answer-with-books.js` below with `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.3.0/answer-with-books-0.3.0.tgz`.
 
 ```sh
 node bin/answer-with-books.js books --private --json
