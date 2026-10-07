@@ -1,35 +1,61 @@
 #!/usr/bin/env node
 import { cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { request as httpRequest } from 'node:http';
-import { request as httpsRequest } from 'node:https';
 import { homedir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { Readable } from 'node:stream';
-
-const packageRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const args = process.argv.slice(2);
-let localApp;
-
-if (args.includes('--help') || args.length === 0) {
-  printHelp();
-  process.exit(0);
-}
-
-const command = args[0];
-
-if (command === 'install') {
-  install(args.slice(1));
-} else if (command === 'serve') {
-  await import('../src/server.js');
-} else if (command === 'ask') {
-  await ask(args.slice(1));
-} else {
-  console.error(`Unknown command: ${command}`);
-  printHelp();
-  process.exit(1);
-}
-
+import {spawn} from 'node:child_process';
+import {commands,parseArgs} from '../src/commands.js';
+import {catalog,filterBooks,askBooks,publicBooks} from '../src/library-cli.js';
+import {credentials,privateCall,privateBooks,login,logout} from '../src/account.js';
+const packageRoot=resolve(dirname(fileURLToPath(import.meta.url)),'..');
+const version=JSON.parse(readFileSync(join(packageRoot,'package.json'),'utf8')).version;
+const args=process.argv.slice(2);
+try {
+ if(!args.length||args.includes('--help')||args[0]==='help')printHelp();
+ else {
+  const selected=commands.find(c=>c.name===args[0]||c.aliases?.includes(args[0]));
+  if(!selected)throw new Error('Unknown command: '+args[0]+'. Run --help for available commands.');
+  const {values,positionals}=parseArgs(args.slice(1));
+  switch(selected.name){
+   case 'install':install(args.slice(1));break;
+   case 'serve':await import('../src/server.js');break;
+   case 'login':await login(values);break;
+   case 'logout':await logout();break;
+   case 'books': {
+    const books=filterBooks(await catalog(values),positionals.join(' '),values.topic);
+    print({books,count:books.length},values,()=>books.length?books.map(b=>`${b.title} · ${b.author||'Unknown author'}\n  ${b.id} · ${b.visibility}${b.status?' · '+b.status:''}`).join('\n'):'No matching books. Try a different title or topic.');break;
+   }
+   case 'ask':{
+    const result=await askBooks(positionals.join(' '),values);
+    print(result,values,()=>`Question: ${result.question}\n${result.notice||''}\n`+(result.objects.books.map(m=>`- ${m.book.title} (${m.book.url||m.book.id})`).join('\n')||'No strongly matching books.')+'\n'+result.objects.answers.map(m=>`Published answer: ${m.answer?.title||m.content?.title||''}`).join('\n')+'\nYour agent applies the retrieved sources to your task. Use --json for the source notes.');break;
+   }
+   case 'status':{
+    const result=positionals[0]?await privateCall({action:'status',id:positionals[0]}):{books:await privateBooks(await credentials(true))};
+    print(result,values,()=> (result.job?[result.job]:result.books).map(b=>`${b.title}: ${b.status} · ${b.run_state} · ${b.cursor||0}${b.total_sections?'/'+b.total_sections:''} sections\n${b.error||''}\nhttps://answerwithbooks.com/your-book/?id=${b.id}`).join('\n')||'No private books yet. Use upload FILE.');break;
+   }
+   case 'upload':case 'download':{
+    // Copied skill runtimes stay small; npx supplies extraction/ZIP dependencies on demand.
+    try{await import('pyodide');await import('fflate');}catch{
+     const child=spawn(process.platform==='win32'?'npx.cmd':'npx',['--yes',`answer-with-books@${version}`,...args],{stdio:'inherit'});
+     process.exitCode=await new Promise((res,rej)=>{child.on('exit',code=>res(code??1));child.on('error',rej);});break;
+    }
+    await credentials(true);
+    const {uploadFiles,downloadBook}=await import('../src/upload.js');
+    if(selected.name==='upload'){
+     const results=await uploadFiles(positionals,{...values,publicBooks:publicBooks(),progress:message=>console.error(message)});
+     print({results},values,()=>results.map(r=>`${r.file}: ${r.status}${r.reused?' (reused)':''}\n${r.error||r.message||r.url}`).join('\n'));
+     if(results.some(r=>r.status==='error'))process.exitCode=1;
+    }else{
+     if(!positionals[0])throw new Error('Choose a book ID: download BOOK_ID');
+     const path=await downloadBook(positionals[0],values);print({path},values,()=>`Saved ${path}`);
+    }
+    break;
+   }
+  }
+ }
+}catch(error){console.error(error.message||'Command failed.');if(error.findings)console.error(JSON.stringify({findings:error.findings},null,2));process.exitCode=1;}
+function print(value,options,format){console.log(options.json?JSON.stringify(value,null,2):format());}
+function printHelp(){console.log(`Answer with Books ${version}\n\n`+commands.map(c=>`${c.usage}\n  ${c.description}${c.aliases?' Alias: '+c.aliases.join(', ')+'.':''}`).join('\n\n')+'\n\nPublic books and ask work without an account or server. Private commands require login.\nIn your agent: select the answer-with-books skill, then ask for books, ask, upload, or status.');}
 function install(installArgs) {
   const flags = new Set(installArgs.filter((arg) => arg.startsWith('--')));
   const installSkill = flags.has('--skill') || (!flags.has('--skill') && !flags.has('--api'));
@@ -47,7 +73,7 @@ function install(installArgs) {
 
     const targetDir = join(codexHome, 'skills', 'answer-with-books');
     mkdirSync(targetDir, { recursive: true });
-    writeFileSync(join(targetDir, 'SKILL.md'), readFileSync(source, 'utf8'));
+    cpSync(join(packageRoot, 'skill', 'answer-with-books'), targetDir, { recursive: true });
     copyRuntime(join(targetDir, 'runtime'));
     installed.push(`skill -> ${targetDir}`);
   }
@@ -78,198 +104,13 @@ function install(installArgs) {
 
   console.log('Answer with Books installed.');
   for (const item of installed) console.log(`- ${item}`);
-  console.log('Ask without a server: npx --yes answer-with-books@0.1.4 ask "YOUR QUESTION" --json');
+  console.log(`Ask without a server: npx --yes answer-with-books@${version} ask "YOUR QUESTION" --json`);
   if (installApi) console.log('Optional local HTTP API: node .answer-with-books/runtime/src/server.js');
 }
 
 function copyRuntime(target) {
   mkdirSync(target, { recursive: true });
-  for (const name of ['src', 'bin', 'package.json']) cpSync(join(packageRoot, name), join(target, name), { recursive: true });
+  for (const name of ['src', 'bin', 'assets', 'package.json']) cpSync(join(packageRoot, name), join(target, name), { recursive: true });
   mkdirSync(join(target, 'research'), { recursive: true });
   for (const name of ['book-corpus.json', 'retrieval-corpus.json']) cpSync(join(packageRoot, 'research', name), join(target, 'research', name));
-}
-
-async function ask(askArgs) {
-  const { values, positionals } = parseArgs(askArgs);
-  const question = positionals.join(' ').trim();
-  if (!question) {
-    console.error('Missing question.');
-    console.error('Example: answer-with-books ask "Am I validating this idea or collecting compliments?"');
-    process.exit(1);
-  }
-
-  const remote = values.apiUrl ?? process.env.ANSWER_WITH_BOOKS_API_URL;
-  const baseUrl = String(values.apiUrl ?? process.env.ANSWER_WITH_BOOKS_API_URL ?? 'http://127.0.0.1:8787')
-    .replace(/\/$/, '');
-  const sources = normalizeList(values.sources ?? values.source) ?? undefined;
-  const topOfMind = normalizeList(values.topOfMind);
-  const payload = {
-    question,
-    sources,
-    top_of_mind: topOfMind ?? [],
-    format: values.format ?? 'article',
-    audience: values.audience ?? 'operator with this top-of-mind question',
-    generate_if_missing: values.generate !== 'false',
-    compact: values.full !== true,
-  };
-
-  try {
-    const result = remote
-      ? await postJson(`${baseUrl}/v1/ask`, payload)
-      : await localPost('/v1/ask', payload);
-    if (values.json) {
-      console.log(JSON.stringify(result, null, 2));
-      return;
-    }
-    printAskResult(result);
-  } catch (error) {
-    const message = error instanceof Error ? error.message : String(error);
-    console.error(`Could not ask the books: ${message}`);
-    console.error('Default retrieval uses the bundled corpus. Check your input; use --api-url only for a server you trust.');
-    process.exit(1);
-  }
-}
-
-async function localPost(path, body) {
-  if (!localApp) {
-    const { createApp } = await import('../src/app.js');
-    localApp = createApp();
-  }
-  const req = Readable.from([JSON.stringify(body)]);
-  req.method = 'POST';
-  req.url = path;
-  const response = await localApp.route(req);
-  const payload = response.body ? JSON.parse(response.body) : {};
-  if (response.status < 200 || response.status >= 300) {
-    throw new Error(payload.error ?? `Local API returned ${response.status}`);
-  }
-  return payload;
-}
-
-async function postJson(url, body) {
-  const target = new URL(url);
-  const data = JSON.stringify(body);
-  if (!['http:', 'https:'].includes(target.protocol) || target.username || target.password) throw new Error('Invalid API URL');
-  const transport = target.protocol === 'https:' ? httpsRequest : httpRequest;
-
-  return new Promise((resolvePromise, reject) => {
-    const req = transport(
-      target,
-      {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-          'content-length': Buffer.byteLength(data),
-          connection: 'close',
-        },
-      },
-      (res) => {
-        const chunks = [];
-        res.on('data', (chunk) => chunks.push(chunk));
-        res.on('end', () => {
-          try {
-            const text = Buffer.concat(chunks).toString('utf8');
-            const payload = text ? JSON.parse(text) : {};
-            if (res.statusCode < 200 || res.statusCode >= 300) {
-              reject(new Error(payload.error ?? `${res.statusCode} ${res.statusMessage}`));
-              return;
-            }
-            resolvePromise(payload);
-          } catch (error) {
-            reject(error);
-          }
-        });
-      }
-    );
-    req.setTimeout(15000, () => req.destroy(new Error('API request timed out')));
-    req.on('error', reject);
-    req.end(data);
-  });
-}
-
-function printAskResult(result) {
-  const answers = result.objects?.answers ?? result.answers ?? [];
-  const books = result.objects?.books ?? result.books ?? [];
-  const newQuestion = result.objects?.new_question ?? result.new_question;
-
-  console.log(`Question: ${result.question}`);
-  console.log(`Retrieval status: ${result.status}`);
-  if (result.next_step) console.log(`Next step: ${result.next_step}`);
-  console.log('');
-
-  if (answers.length) {
-    console.log('Existing answers:');
-    for (const match of answers.slice(0, 3)) {
-      const answer = match.answer ?? match.content;
-      console.log(`- ${answer.title ?? answer.question} (${answer.url ?? answer.id})`);
-    }
-    console.log('');
-  }
-
-  if (books.length) {
-    console.log('Books:');
-    for (const match of books.slice(0, 5)) {
-      const book = match.book;
-      const detail = [book.author, book.one_liner ?? book.read_if].filter(Boolean).join(' — ');
-      console.log(`- ${book.title}${detail ? ` — ${detail}` : ''}`);
-    }
-    console.log('');
-  }
-
-  if (newQuestion) {
-    console.log(`New question: ${newQuestion.question}`);
-  }
-}
-
-function parseArgs(input) {
-  const values = {};
-  const positionals = [];
-  for (let index = 0; index < input.length; index += 1) {
-    const arg = input[index];
-    if (!arg.startsWith('--')) {
-      positionals.push(arg);
-      continue;
-    }
-    const [rawKey, inlineValue] = arg.slice(2).split(/=(.*)/s);
-    const key = rawKey.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
-    const next = input[index + 1];
-    if (inlineValue !== undefined) {
-      values[key] = inlineValue;
-    } else if (next && !next.startsWith('--')) {
-      values[key] = next;
-      index += 1;
-    } else {
-      values[key] = true;
-    }
-  }
-  return { values, positionals };
-}
-
-function normalizeList(value) {
-  if (Array.isArray(value)) return value;
-  if (!value || value === true) return null;
-  return String(value)
-    .split(',')
-    .map((item) => item.trim())
-    .filter(Boolean);
-}
-
-function printHelp() {
-  console.log(`Answer with Books CLI
-
-Usage:
-  npx --yes answer-with-books@0.1.4 install --skill --api
-  npx --yes answer-with-books@0.1.4 serve
-  npx --yes answer-with-books@0.1.4 ask "Am I validating this idea or collecting compliments?"
-
-Options:
-  --skill   Install the agent skill into $CODEX_HOME/skills/answer-with-books
-  --api     Install a self-contained local API in .answer-with-books/runtime
-  --api-url Override the local Answer with Books API URL for ask
-  --sources Optional comma-separated retrieval sources
-  --top-of-mind Use comma-separated context for this request only (never saved)
-  --json    Print the raw API response for ask
-  --full    Include full legacy answer bodies in --json output
-  --help    Show this help text
-`);
 }

@@ -1,7 +1,7 @@
 {
   "name": "answer-with-books",
-  "version": "0.1.4",
-  "description": "Open-source REST API and agent skill for turning books plus demand signals into book-grounded answers.",
+  "version": "0.2.0",
+  "description": "Book-grounded agent skills, public book retrieval, and private source processing.",
   "type": "module",
   "private": false,
   "license": "MIT",
@@ -17,7 +17,8 @@
     "src/",
     "README.md",
     "LICENSE",
-    "scripts/build-*.mjs"
+    "scripts/build-*.mjs",
+    "assets/"
   ],
   "scripts": {
     "dev": "node src/server.js",
@@ -31,7 +32,8 @@
     "enrich:concerns": "node scripts/enrich-demand-concerns.mjs",
     "sync:crowdlisten": "node scripts/sync-crowdlisten-demand.mjs",
     "import:crowdlisten-handoff": "node scripts/import-crowdlisten-handoff.mjs",
-    "draft:crowdlisten": "node scripts/materialize-crowdlisten-drafts.mjs"
+    "draft:crowdlisten": "node scripts/materialize-crowdlisten-drafts.mjs",
+    "sync:website": "node scripts/sync-website-release.mjs"
   },
   "keywords": [
     "books",
@@ -43,5 +45,10 @@
   ],
   "engines": {
     "node": ">=20"
+  },
+  "dependencies": {
+    "pyodide": "314.0.7",
+    "pdfjs-dist": "4.8.69",
+    "fflate": "0.8.2"
   }
 }

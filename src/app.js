@@ -1,3 +1,4 @@
+import packageInfo from '../package.json' with {type:'json'};
 import { timingSafeEqual } from 'node:crypto';
 import { retrieveBooks, retrieveContent } from './generator.js';
 import { createStore, makeId } from './store.js';
@@ -14,7 +15,7 @@ export function createApp({ store = createStore(), adminToken } = {}) {
       const authorized = typeof adminToken === 'string' && adminToken.length >= 24 && Buffer.byteLength(provided) === Buffer.byteLength(adminToken) && timingSafeEqual(Buffer.from(provided), Buffer.from(adminToken));
       if (privateRoute && !authorized) return problem(403, 'This operator route requires a configured AWB_ADMIN_TOKEN of at least 24 characters.');
       if (method === 'GET' && url.pathname === '/health') {
-        return json({ ok: true, service: 'answer-with-books', version: '0.1.4', retrieval_languages: ['en'], query_storage: 'off-by-default' });
+        return json({ ok: true, service: 'answer-with-books', version: packageInfo.version, retrieval_languages: ['en'], query_storage: 'off-by-default' });
       }
 
       if (method === 'GET' && url.pathname === '/v1/sources') {

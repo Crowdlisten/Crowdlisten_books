@@ -1,0 +1,11 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {commands} from '../src/commands.js';
+const index=process.argv.indexOf('--website'),root=process.argv[index+1];
+if(index<0||!root)throw new Error('Usage: node scripts/sync-website-release.mjs --website /path/to/website');
+const {version}=JSON.parse(await readFile(new URL('../package.json',import.meta.url),'utf8'));
+const entrypoints={codex:'$answer-with-books','claude-code':'/answer-with-books'};
+const primary=commands.filter(command=>['books','ask','upload','status'].includes(command.name)).map(command=>command.name);
+const output=resolve(root,'src/lib/book-cli-release.json');
+await writeFile(output,JSON.stringify({version,commands:primary,entrypoints},null,2)+'\n');
+console.log('Updated website command manifest: '+output);
