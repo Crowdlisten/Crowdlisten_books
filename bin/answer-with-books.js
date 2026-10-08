@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {searchHostedLibrary} from '../src/hosted-library.js';
 import { cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
@@ -27,7 +28,15 @@ try {
     const books=filterBooks(await catalog(values),positionals.join(' '),values.topic);
     print({books,count:books.length},values,()=>books.length?books.map(b=>`${b.title} · ${b.author||'Unknown author'}\n  ${b.id} · ${b.visibility}${b.status?' · '+b.status:''}`).join('\n'):'No matching books. Try a different title or topic.');break;
    }
+   case 'search': {
+    const result=await searchHostedLibrary(positionals.join(' '),values);
+    print(result,values,()=>`${result.method} · ${result.matches.length} chapter matches\n${result.semanticNotice||''}\n`+result.matches.map(m=>`- ${m.book.title} · ${m.section_id}\n  ${m.summary}`).join('\n')+'\nYour agent checks applicability and applies the cited methods. Use --json for evidence.');break;
+   }
    case 'match': {
+    if(values.private&&!values.catalog){
+     const result=await searchHostedLibrary(positionals.join(' '),values);
+     print(result,values,()=>`${result.method}\n`+result.matches.map(m=>`- ${m.book.title} (${m.book.book_id}) · ${m.section_id}`).join('\n')+'\nCandidates include cited chapter methods. Your agent must check applicability.');break;
+    }
     if(values.apiUrl || process.env.ANSWER_WITH_BOOKS_API_URL) throw new Error('match runs locally; unset ANSWER_WITH_BOOKS_API_URL or call POST /v1/books/match on your server.');
     const {matchBookCandidates}=await import('../src/semantic.js');
     const session=values.public?null:await credentials(values.private===true);
@@ -52,7 +61,7 @@ try {
     if(result.results?.some(r=>r.status==='error'))process.exitCode=1;
     break;
    }
-   case 'pause':case 'retry':case 'generate':case 'revisions':case 'activate':{
+   case 'usage':case 'retry-cover':case 'pause':case 'retry':case 'generate':case 'revisions':case 'activate':{
     if(positionals.length!==1)throw new Error('Choose one private book or revision ID.');
     const result=await bookOperation(selected.name,positionals[0],values);
     print(result,values,()=>JSON.stringify(result,null,2));break;
@@ -60,7 +69,7 @@ try {
    case 'upload':case 'download':{
     // Do not delegate development-only revision flags to an older npm release.
     const needsExtract=selected.name==='upload'&&values.extraction!=='technical'&&positionals.some(p=>! /\.(mobi|azw|azw3)$/i.test(p));
-    try{if(needsExtract)await import('pyodide');if(selected.name==='download')await import('fflate');}catch{throw new Error('Install this runtime’s dependencies with npm install --omit=dev in '+packageRoot+' before extracting or downloading sources.');}
+    try{if(selected.name==='download')await import('fflate');}catch{throw new Error('Install this runtime’s dependencies with npm install --omit=dev in '+packageRoot+' before extracting or downloading sources.');}
     const session=await credentials(true),call=body=>privateCall(body,session);
     const {uploadFiles,downloadBook}=await import('../src/upload.js');
     if(selected.name==='upload'){

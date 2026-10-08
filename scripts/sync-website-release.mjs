@@ -7,5 +7,5 @@ const {version}=JSON.parse(await readFile(new URL('../package.json',import.meta.
 const entrypoints={codex:'$answer-with-books','claude-code':'/answer-with-books'};
 const primary=commands.filter(command=>['books','ask','upload','status'].includes(command.name)).map(command=>command.name);
 const output=resolve(root,'src/lib/book-cli-release.json');
-await writeFile(output,JSON.stringify({version,commands:primary,entrypoints},null,2)+'\n');
+await writeFile(output,JSON.stringify({version,package:`https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v${version}/answer-with-books-${version}.tgz`,commands:primary,entrypoints},null,2)+'\n');
 console.log('Updated website command manifest: '+output);

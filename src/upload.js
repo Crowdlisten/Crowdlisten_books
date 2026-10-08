@@ -1,12 +1,13 @@
+import {expandSources,collectionText} from './source-selection.js';
 import {readFile,stat,writeFile} from 'node:fs/promises';
 import {basename,extname,resolve} from 'node:path';
 import {Worker} from 'node:worker_threads';
 import {hash,privateCall,nativeCall,credentials} from './account.js';
 import {exportFiles,checkExportReview} from './book-install.js';
 import limits from '../assets/upload-limits.json' with {type:'json'};
-export async function extractSource(bytes,extension) {
+export async function extractSource(bytes,extension,runtime) {
  return new Promise((resolve,reject)=>{
-  const worker=new Worker(new URL('./extract-worker.js',import.meta.url),{workerData:{bytes,extension},stdout:true,stderr:true});
+  const worker=new Worker(new URL('./extract-worker.js',import.meta.url),{workerData:{bytes,extension,runtime},execArgv:process.execArgv.filter(arg=>!arg.startsWith('--input-type')),stdout:true,stderr:true});
   const timer=setTimeout(()=>{void worker.terminate();reject(new Error('Source extraction timed out.'));},120000);
   const finish=()=>{clearTimeout(timer);void worker.terminate();};
   worker.on('message',data=>{finish();data.error?reject(new Error(data.error)):resolve(data.result);});
@@ -28,6 +29,7 @@ export function libraryMatch(filename,books) {
 }
 export async function uploadFiles(paths,options={},deps={}) {
  if(!paths.length)throw new Error('Choose at least one source: upload ./book.pdf');
+ paths=await expandSources(paths);
  if(paths.length>10)throw new Error('Choose up to ten files per batch.');
  if(options.book&&!options.revision||options.revision&&!options.book)throw new Error('Use --book ID together with --revision append or replace.');
  if(options.revision&&!['append','replace'].includes(options.revision))throw new Error('--revision must be append or replace.');
@@ -36,6 +38,29 @@ export async function uploadFiles(paths,options={},deps={}) {
  if(options.extraction&&!['text','technical'].includes(options.extraction))throw new Error('--extraction must be text or technical.');
  const session=deps.session||(!deps.call?await credentials(true):undefined);
  const call=deps.call||(body=>privateCall(body,session)),native=deps.nativeCall||(body=>nativeCall(body,session)),extract=deps.extract||extractSource,put=deps.put||putSource;
+ if(options.combine){
+  if(options.book||options.extraction==='technical')throw new Error('Combined collections support new books with local text extraction. Upload native or technical sources separately.');
+  if(typeof options.combine!=='string'||!options.combine.trim()||options.combine.length>200||/[\r\n]/.test(options.combine))throw new Error('Use --combine with a one-line collection title up to 200 characters.');
+  const parts=[];let bytesTotal=0;
+  for(const file of paths){
+   if(/\.(mobi|azw|azw3)$/i.test(file))throw new Error('Convert Kindle sources to EPUB first, or upload them separately.');
+   const info=await stat(file);bytesTotal+=info.size;if(!info.isFile()||info.size<1||bytesTotal>limits.maxFileBytes)throw new Error('Combined originals must be non-empty and total at most 50 MB.');
+   const bytes=await readFile(file);parts.push({file,bytes,sha:hash(bytes),report:await extract(bytes,extname(file).toLowerCase())});
+  }
+  const report=collectionText(parts,options.combine.trim());
+  if(report.text.length<100||report.text.length>limits.maxTextCharacters)throw new Error('Combined text must contain 100 to six million characters.');
+  const {zipSync,strToU8}=await import('fflate');const entries=Object.create(null);
+  parts.forEach((part,index)=>{entries[`sources/${index+1}-${basename(part.file)}`]=[new Uint8Array(part.bytes),{mtime:new Date(1980,0,1)}];});
+  entries['collection.txt']=[strToU8(report.text),{mtime:new Date(1980,0,1)}];
+  entries['manifest.json']=[strToU8(JSON.stringify({title:options.combine,sources:report.sources},null,2)),{mtime:new Date(1980,0,1)}];
+  const bytes=zipSync(entries),sha=hash(bytes),text=Buffer.from(report.text);
+  if(bytes.length>limits.maxFileBytes)throw new Error('Combined source archive exceeds 50 MB.');
+  const cached=await call({action:'lookup',sha});
+  if(cached.reused)return [{file:options.combine,id:cached.job.id,status:cached.job.status,reused:true}];
+  const prepared=await call({action:'prepare',name:options.combine.trim()+'.collection.zip',size:bytes.length,sha,textSha:hash(text),textBytes:text.length,extraction:{method:'combined-collection',sources:report.sources,headings:report.sources.map(source=>({line:source.startLine,title:source.name}))},options:{mode:options.mode||'full',depth:options.depth||'study',purpose:options.purpose||'apply'}});
+  if(!prepared.reused){await put(prepared.upload,bytes);await put(prepared.textUpload,text);await call({action:'finalize',id:prepared.job.id});}
+  return [{file:options.combine,id:prepared.job.id,status:prepared.reused?prepared.job.status:'queued',reused:!!prepared.reused,sources:report.sources.length,url:`https://answerwithbooks.com/your-book/?id=${prepared.job.id}`}];
+ }
  const results=[];
  for(const file of paths) {
   try {

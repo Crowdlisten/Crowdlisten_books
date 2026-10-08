@@ -1,6 +1,6 @@
 import {credentials,privateCall,nativeCall,resolvePrivateId} from './account.js';
 export async function bookOperation(action,id,options={},deps={}){
- if(!['pause','retry','generate','revisions','activate','status'].includes(action))throw new Error('Unsupported book operation.');
+ if(!['pause','retry','generate','revisions','activate','status','usage','retry-cover'].includes(action))throw new Error('Unsupported book operation.');
  if(!id)throw new Error('Choose a private book or revision ID.');
  if(action==='activate'&&options.acceptReview!==true)throw new Error('Review this ready revision, then use activate ID --accept-review.');
  const session=deps.session||await credentials(true);
