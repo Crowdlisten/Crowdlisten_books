@@ -125,3 +125,9 @@ The corpus is already bundled. Build commands validate it when source Markdown i
 Uploads use the existing hosted processing worker. The CLI bundles source extraction and connects to the worker through your authorized book session. It does not use the retired research API keys.
 
 MIT. See LICENSE.
+
+## Hosted private-library search (next release)
+
+The development runtime adds `search "YOUR QUESTION" --json`, `match --private`, and `ask --private [--book ID]`. One local Answer With Books guide retrieves a small set of chapter methods and exact citations from the connected account's current ready books. Individual installed book skills remain optional; a library question does not require downloading or installing every book. Your agent checks applicability and writes the answer.
+
+This requires the companion `book-library` backend and is not available in published v0.3.0. Until deployment and a new release, use the existing local `match`, then `ask --book ID` workflow. Hosted private retrieval sends the query to the embedding provider; the service does not save questions. Public `match` retains its local embedding behavior. An unavailable or expired private endpoint is reported explicitly. See the [backend architecture, benchmark, and rollout notes](https://github.com/terrylinhaochen/answerwithbooks/blob/codex/book-pipeline-quality/docs/HOSTED_BOOK_LIBRARY.md).

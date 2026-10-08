@@ -1,3 +1,4 @@
+import {searchHostedLibrary,hostedAskResult} from './hosted-library.js';
 import {semanticBookEvidence} from './book-evidence.js';
 import {validateMatchQuestion} from './semantic.js';
 import {Readable} from 'node:stream';
@@ -20,6 +21,7 @@ export function filterBooks(books,search='',topic='') {
 }
 export async function askBooks(question,options={}) {
  validateMatchQuestion(question);
+ if(options.private&&!options.full&&!options.chapters)return hostedAskResult(await searchHostedLibrary(question,options));
  if(options.chapters&&!options.book)throw new Error('--chapters requires a private --book ID.');
  const store=createStore();
  let chosen;

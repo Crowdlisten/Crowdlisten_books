@@ -1,7 +1,8 @@
 export const commands=[
+ {name:'search',usage:'search \"QUESTION\" [--book ID] [--json]',description:'Search relevant chapter methods across your connected private library. Requires the hosted retrieval service; does not download or install books.'},
  {name:'books',aliases:['list'],usage:'books [search] [--topic TOPIC] [--private | --public] [--json]',description:'List and search the public shelf and your connected private books.'},
- {name:'match',usage:'match "QUESTION" [--public | --private] [--catalog] [--json]',description:'Find books by meaning, then let your agent check applicability. --catalog uses agent reasoning over the complete catalog without downloading a model.'},
- {name:'ask',aliases:['answer'],usage:'ask "QUESTION" [--book ID] [--chapters PATH,PATH] [--top-of-mind "CONTEXT"] [--private | --public] [--json]',description:'Read a selected book for your agent to apply, or use legacy public keyword retrieval without --book.'},
+ {name:'match',usage:'match "QUESTION" [--public | --private] [--catalog] [--json]',description:'Find books by meaning, then let your agent check applicability. --private uses hosted chapter retrieval. --catalog uses agent reasoning over the complete catalog without downloading a model.'},
+ {name:'ask',aliases:['answer'],usage:'ask "QUESTION" [--book ID] [--chapters PATH,PATH] [--top-of-mind "CONTEXT"] [--private | --public] [--json]',description:'Retrieve evidence for your agent. --private searches hosted chapter methods across the library or a selected --book; public retrieval stays local.'},
  {name:'upload',usage:'upload FILE [FILE ...] [--book ID --revision append|replace] [--mode analysis|full] [--extraction text|technical] [--process-file] [--json]',description:'Upload a new source or prepare a new revision for a private book.'},
  {name:'status',usage:'status [BOOK_ID] [--json]',description:'Check your private processing queue or one book.'},
  {name:'download',usage:'download BOOK_ID [--output FILE.zip] [--accept-review]',description:'Download a completed book and skill, including citation sources.'},
