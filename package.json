@@ -1,6 +1,6 @@
 {
   "name": "answer-with-books",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Book-grounded agent skills, public book retrieval, and private source processing.",
   "type": "module",
   "private": false,

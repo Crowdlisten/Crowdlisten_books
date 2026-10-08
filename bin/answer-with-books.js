@@ -61,7 +61,7 @@ try {
     if(result.results?.some(r=>r.status==='error'))process.exitCode=1;
     break;
    }
-   case 'pause':case 'retry':case 'generate':case 'revisions':case 'activate':{
+   case 'usage':case 'retry-cover':case 'pause':case 'retry':case 'generate':case 'revisions':case 'activate':{
     if(positionals.length!==1)throw new Error('Choose one private book or revision ID.');
     const result=await bookOperation(selected.name,positionals[0],values);
     print(result,values,()=>JSON.stringify(result,null,2));break;
@@ -69,7 +69,7 @@ try {
    case 'upload':case 'download':{
     // Do not delegate development-only revision flags to an older npm release.
     const needsExtract=selected.name==='upload'&&values.extraction!=='technical'&&positionals.some(p=>! /\.(mobi|azw|azw3)$/i.test(p));
-    try{if(needsExtract)await import('pyodide');if(selected.name==='download')await import('fflate');}catch{throw new Error('Install this runtime’s dependencies with npm install --omit=dev in '+packageRoot+' before extracting or downloading sources.');}
+    try{if(selected.name==='download')await import('fflate');}catch{throw new Error('Install this runtime’s dependencies with npm install --omit=dev in '+packageRoot+' before extracting or downloading sources.');}
     const session=await credentials(true),call=body=>privateCall(body,session);
     const {uploadFiles,downloadBook}=await import('../src/upload.js');
     if(selected.name==='upload'){

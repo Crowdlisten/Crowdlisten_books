@@ -7,8 +7,8 @@ Give your agent a book’s methods, grounded in public editorial digests and sou
 Node 20+ is required. Use the versioned GitHub release below. The npm registry remains at 0.2.0 until publication authentication is completed; this release includes the 0.3.0 account library commands. From any empty directory:
 
 ```sh
-npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.3.0/answer-with-books-0.3.0.tgz install --skill --api
-npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.3.0/answer-with-books-0.3.0.tgz ask "Am I validating this idea or collecting compliments?" --json
+npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.4.0/answer-with-books-0.4.0.tgz install --skill --api
+npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.4.0/answer-with-books-0.4.0.tgz ask "Am I validating this idea or collecting compliments?" --json
 ```
 
 No repository clone, npm install, account, API key, or running server is required to ask. The command retrieves from the bundled corpus in-process. The agent skill is installed to `$CODEX_HOME/skills/answer-with-books` (default `~/.codex/skills/answer-with-books`) together with its executable source and corpus. An existing installation at that path is updated. `npx` does not install a global command; keep the `npx` prefix, or use the bundled Node command documented in SKILL.md.
@@ -20,7 +20,7 @@ node .answer-with-books/runtime/src/server.js
 curl http://127.0.0.1:8787/health
 ```
 
-Alternatively use `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.3.0/answer-with-books-0.3.0.tgz serve`. The server binds to localhost. `ask` uses the bundled corpus unless you explicitly pass `--api-url` or `ANSWER_WITH_BOOKS_API_URL`; an unavailable explicit server is an error, not a silent fallback.
+Alternatively use `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.4.0/answer-with-books-0.4.0.tgz serve`. The server binds to localhost. `ask` uses the bundled corpus unless you explicitly pass `--api-url` or `ANSWER_WITH_BOOKS_API_URL`; an unavailable explicit server is an error, not a silent fallback.
 
 ## Commands
 
@@ -41,7 +41,7 @@ The skill can activate from ordinary book mentions or a relevant practical quest
 
 ## Semantic matching
 
-Version 0.3.0 adds `match "QUESTION" --public --json`. Run it using `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.3.0/answer-with-books-0.3.0.tgz match ...`, from this checkout, or from the installed skill runtime.
+Version 0.3.0 adds `match "QUESTION" --public --json`. Run it using `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.4.0/answer-with-books-0.4.0.tgz match ...`, from this checkout, or from the installed skill runtime.
 
 The flow is **semantic candidates → host-agent relevance judgment → selected book evidence → applied answer**. `match` uses a pinned multilingual E5 model locally, then returns a shortlist explicitly marked `needs_reasoning`. The agent chooses up to three sources by the user's intent, the relevant method, and its limits, reads each with `ask --book ID`, and can reject the entire shortlist. Cosine similarity is not confidence. The standalone matcher does not secretly call a second language model or pretend to have completed that reasoning.
 
@@ -57,7 +57,7 @@ Run `node scripts/evaluate-semantic-retrieval.mjs` for the small real-model smok
 
 ## Account book skills and revisions
 
-These commands require version 0.3.0 or a freshly installed runtime from this checkout. With the versioned release, replace `node bin/answer-with-books.js` below with `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.3.0/answer-with-books-0.3.0.tgz`.
+These commands require version 0.3.0 or a freshly installed runtime from this checkout. With the versioned release, replace `node bin/answer-with-books.js` below with `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.4.0/answer-with-books-0.4.0.tgz`.
 
 ```sh
 node bin/answer-with-books.js books --private --json
@@ -126,8 +126,13 @@ Uploads use the existing hosted processing worker. The CLI bundles source extrac
 
 MIT. See LICENSE.
 
-## Hosted private-library search (next release)
+## Hosted private-library search (0.4.0)
 
 The development runtime adds `search "YOUR QUESTION" --json`, `match --private`, and `ask --private [--book ID]`. One local Answer With Books guide retrieves a small set of chapter methods and exact citations from the connected account's current ready books. Individual installed book skills remain optional; a library question does not require downloading or installing every book. Your agent checks applicability and writes the answer.
 
-This requires the companion `book-library` backend and is not available in published v0.3.0. Until deployment and a new release, use the existing local `match`, then `ask --book ID` workflow. Hosted private retrieval sends the query to the embedding provider; the service does not save questions. Public `match` retains its local embedding behavior. An unavailable or expired private endpoint is reported explicitly. See the [backend architecture, benchmark, and rollout notes](https://github.com/terrylinhaochen/answerwithbooks/blob/codex/book-pipeline-quality/docs/HOSTED_BOOK_LIBRARY.md).
+Version 0.4.0 connects to the companion `book-library` backend. Older clients can use local `match`, then `ask --book ID`. Hosted private retrieval sends the query to the embedding provider; the service does not save questions. Public `match` retains its local embedding behavior. An unavailable or expired private endpoint is reported explicitly. See the [backend architecture, benchmark, and rollout notes](https://github.com/terrylinhaochen/answerwithbooks/blob/codex/book-pipeline-quality/docs/HOSTED_BOOK_LIBRARY.md).
+
+
+Files, directories and quoted globs can be uploaded: `upload "./reading/**/*.epub" --process-file`. They become separate books. Add `--combine "Research collection"` only for an intentional collection with preserved originals and explicit source boundaries (up to ten sources, 50 MB combined). Local Python speeds up the same pinned extraction logic when available; no Python installation is required because the WebAssembly fallback remains bundled.
+
+Generation uses saved targeted review repairs. Covers run separately: `retry-cover ID` cannot regenerate the text package. `usage ID --json` reports recorded provider estimates and unpriced calls; customer charges are not configured by this CLI.

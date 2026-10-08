@@ -12,7 +12,7 @@ test('npm tarball installs a self-contained skill and HTTP API in an empty direc
  }
  const server=spawn(process.execPath,[join(temp,'.answer-with-books/runtime/src/server.js')],{cwd:temp,env:{...env,PORT:'0'},stdio:['ignore','pipe','pipe']});
  t.after(()=>server.kill());let out='',stderr='';server.stderr.on('data',x=>stderr+=x);const base=await new Promise((res,rej)=>{const timer=setTimeout(()=>rej(Error('server timeout: '+stderr)),30000);server.stdout.on('data',x=>{out+=x;const m=out.match(/http:\/\/127\.0\.0\.1:(\d+)/);if(m){clearTimeout(timer);res(m[0]);}});server.on('error',error=>{clearTimeout(timer);rej(error);});server.on('exit',code=>{clearTimeout(timer);rej(Error('server exited '+code+': '+stderr));});});
- assert.equal((await (await fetch(base+'/health')).json()).version,'0.3.0');
+ assert.equal((await (await fetch(base+'/health')).json()).version,JSON.parse(readFileSync(resolve('package.json'),'utf8')).version);
  const result=await (await fetch(base+'/v1/ask',{method:'POST',body:JSON.stringify({question:'Should I move to Mars?'})})).json();assert.equal(result.status,'new_question');assert.deepEqual(result.books,[]);
  assert.equal((await fetch(base+'/v1/questions')).status,403);
 });
