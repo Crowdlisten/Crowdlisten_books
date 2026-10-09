@@ -88,7 +88,7 @@ export async function uploadFiles(paths,options={},deps={}) {
    const sourceText=Buffer.from(report.text),{text,...extraction}=report;
    // Always stage bytes, avoiding Edge Function JSON request-size limits.
    const prepared=await call({action:'prepare',name:basename(file),size:bytes.length,sha,textSha:hash(sourceText),textBytes:sourceText.length,extraction,options:processing,...revision});
-   if(!prepared.reused){if(prepared.upload)await put(prepared.upload,bytes);if(prepared.textUpload)await put(prepared.textUpload,sourceText);await call({action:prepared.textUpload?'finalize':'enqueue',id:prepared.job.id});}
+   if(!prepared.reused){if(prepared.upload)await put(prepared.upload,bytes);if(prepared.textUpload)await put(prepared.textUpload,sourceText);if(prepared.textUpload)await call({action:'finalize',id:prepared.job.id});else if(!prepared.job.billing_required)await call({action:'enqueue',id:prepared.job.id});}
    results.push({file,id:prepared.job.id,status:prepared.reused?prepared.job.status:prepared.job.billing_required?'awaiting_price_acceptance':'queued',reused:!!prepared.reused,url:`https://answerwithbooks.com/your-book/?id=${prepared.job.id}`});
   }catch(error){results.push({file,status:'error',error:error.message});}
  }

@@ -50,3 +50,12 @@ test('private evidence limits long sources and preserves exact citation line num
  const evidence=bookEvidence({'skill/SKILL.md':'# Skill\nRead S1:L2-L3.','skill/chapters/01.md':'Interview customers about past behavior. [S1:L2-L3]','skill/chapters/02.md':'Unrelated astronomy.','skill/source.txt':'line one\nPast behavior\nObserve the details\n'+'other\n'.repeat(10000)},'Interview customers');
  assert.equal(evidence.citations[0].start_line,2);assert.equal(evidence.citations[0].text,'2: Past behavior\n3: Observe the details');assert.equal(evidence.files['skill/source.txt'],undefined);assert.equal(evidence.available_chapters.length,2);assert.equal(evidence.complete,false);
 });
+
+test('paid upload finalizes staged text but never enqueues before price acceptance',async t=>{
+ const dir=await mkdtemp(join(tmpdir(),'awb-paid-upload-'));t.after(()=>rm(dir,{recursive:true,force:true}));
+ const file=join(dir,'source.txt');await writeFile(file,'Source observation. '.repeat(20));
+ for(const staged of [false,true]){
+  const calls=[];const results=await uploadFiles([file],{},{call:async b=>{calls.push(b.action);return b.action==='lookup'?{reused:false}:{job:{id:'paid',billing_required:true},...(staged?{textUpload:{}}:{})};},extract:async()=>({text:'Source observation. '.repeat(20)}),put:async()=>{}});
+  assert.equal(results[0].status,'awaiting_price_acceptance');assert.equal(calls.includes('enqueue'),false);assert.equal(calls.includes('finalize'),staged);
+ }
+});
