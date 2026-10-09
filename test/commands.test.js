@@ -66,7 +66,7 @@ test('metered book operations bind the explicit policy and maximum additional sp
  const deps={session:{},resolve:async x=>x,call:async x=>{calls.push(x);return {};}};
  await bookOperation('quote',id,{ceilingCents:250},deps);
  await bookOperation('accept-price',id,{quote:id,ceilingCents:250},deps);
- assert.deepEqual(calls,[{action:'quote',id,ceilingCents:250},{action:'accept-price',id,quoteId:id,acceptedCeilingCents:250,pricingModel:'metered-4x'}]);
+ assert.deepEqual(calls,[{action:'quote',id,ceilingCents:250},{action:'accept-price',id,quoteId:id,acceptedCeilingCents:250,pricingModel:'token-usage-v1'}]);
  assert.equal(parseArgs(['--ceiling-cents','250']).values.ceilingCents,'250');
  await assert.rejects(bookOperation('quote',id,{ceilingCents:-1},deps),/positive integer/);
 });

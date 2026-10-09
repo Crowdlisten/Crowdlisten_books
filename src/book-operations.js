@@ -18,5 +18,5 @@ export async function bookOperation(action,id,options={},deps={}){
    throw new Error('Native source extraction must finish before generating the skill. Use retry for a failed extraction.');
   }
  }
- return call({action,id:resolved,...(action==='activate'?{reviewAccepted:true}:action==='accept-price'?{quoteId:options.quote,acceptedCeilingCents:Number(ceiling),pricingModel:'metered-4x'}:action==='quote'&&ceiling!==undefined?{ceilingCents:Number(ceiling)}:{})},session);
+ return call({action,id:resolved,...(action==='activate'?{reviewAccepted:true}:action==='accept-price'?{quoteId:options.quote,acceptedCeilingCents:Number(ceiling),pricingModel:'token-usage-v1'}:action==='quote'&&ceiling!==undefined?{ceilingCents:Number(ceiling)}:{})},session);
 }
