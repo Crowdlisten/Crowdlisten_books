@@ -1,0 +1,19 @@
+{
+  "source": "Answer With Books hosted text pipeline",
+  "files": {
+    "book-skill-review.mjs": "d54105019a430cda3f22701448e47d05bc8d4a5587e00192efc5022c1379632b",
+    "upstream-sanitize.mjs": "33402b6ceb32e32dadc91decf0db864a460be5730bceebb4f7213febda26c560",
+    "book-options.mjs": "676c76166325ccbe9f43c26cd2e5fb14ee63f6ec77443784a35a3857eb10476f",
+    "book-sections.mjs": "9ea657f17ba5edfd3d023b7deb3cb38c50e0fd55354863e7ff508c5a00d15f0d",
+    "book-upload-limits.json": "4a46cc69b71f008c857955b0cc3e3a895479c7470c901f6345116b6c4ed3244e",
+    "book-overview.mjs": "2347bc9ad758919596b2f7890efcad801deec04110dd418386811137794bc55d",
+    "book-schemas.mjs": "9e94d7cedeebcb3b252890cbb1a81bf5989b270d37deed27c79d9ed1683fa27c",
+    "book-fidelity.mjs": "2d11eecfaf77e68a5901da04ff52f51e8d087a8c394402a52424e3c0bd0078f8",
+    "book-distillation.mjs": "8e871e5eb9b0fea1c43e08243ac463fa010d42ea3fb036b4cbde0144cf30d908",
+    "book-artifacts.mjs": "86491d5946e784d7b65e9fab430c4f07f791c041b9fa7024267c47e8cebd3a9a",
+    "upstream-guidance.mjs": "458de1cd96455b0be57706b2c01adfc649fa396fd51d6b67bbc5f64ee0a60f86",
+    "book-export.mjs": "62c13f085d0f6ec0ee4fa5d6d5002a52c59f6b99b21690852af2083f3084efd2",
+    "book-review-status.mjs": "345868841bb5ed49751eeb41344566ca6c7cc69c2a33ffc4355ae7d9946c452a",
+    "book-revisions.mjs": "5492e29cd8d115814eccd8751ab73cc8e3db0eeb8b85c777527768845540b0fc"
+  }
+}

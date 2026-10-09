@@ -1,4 +1,5 @@
 export const commands=[
+ {name:'local',usage:'local prepare SOURCE --output DIR | local next DIR | local respond DIR --input RESPONSE.json --request ID | local install DIR',description:'Create a book and skill with your own agent. No account, source upload, or Answer With Books generation charge.'},
  {name:'search',usage:'search \"QUESTION\" [--book ID] [--json]',description:'Search relevant chapter methods across your connected private library. Requires the hosted retrieval service; does not download or install books.'},
  {name:'books',aliases:['list'],usage:'books [search] [--topic TOPIC] [--private | --public] [--json]',description:'List and search the public shelf and your connected private books.'},
  {name:'match',usage:'match "QUESTION" [--public | --private] [--catalog] [--json]',description:'Find books by meaning, then let your agent check applicability. --private uses hosted chapter retrieval. --catalog uses agent reasoning over the complete catalog without downloading a model.'},
@@ -8,7 +9,7 @@ export const commands=[
  {name:'download',usage:'download BOOK_ID [--output FILE.zip] [--accept-review]',description:'Download a completed book and skill, including citation sources.'},
  {name:'library',usage:'library sync | library install-book BOOK_ID [--accept-review] [--json]',description:'Install ready current full-source packages from the connected account as individual book skills.'},
  {name:'install-book',usage:'install-book BOOK_ID [--accept-review] [--json]',description:'Install or update one private book skill; alias for library install-book.'},
- ...['pause','retry','generate','revisions','activate','usage','retry-cover'].map(name=>({name,usage:name+' BOOK_ID'+(name==='activate'?' --accept-review':'')+' [--json]',description:({usage:'Show saved provider usage estimates for this book.', 'retry-cover':'Retry its illustration without regenerating the book or skill.',pause:'Pause book processing.',retry:'Retry failed book processing.',generate:'Generate the full skill after source analysis.',revisions:'List the revisions of a private book.',activate:'Make a reviewed ready revision current.'})[name]})),
+ ...['cancel','quote','accept-price','pause','retry','generate','revisions','activate','usage','retry-cover'].map(name=>({name,usage:name+' BOOK_ID'+(name==='activate'?' --accept-review':'')+' [--json]',description:({cancel:'Cancel an unfinished reserved conversion and release its held funds.',quote:'Get a fixed quote for a new hosted conversion.', 'accept-price':'Start a hosted conversion using --quote ID --price-cents N after accepting that exact quote.',usage:'Show saved provider usage estimates for this book.', 'retry-cover':'Retry its illustration without regenerating the book or skill.',pause:'Pause book processing.',retry:'Retry failed book processing.',generate:'Generate the full skill after source analysis.',revisions:'List the revisions of a private book.',activate:'Make a reviewed ready revision current.'})[name]})),
  {name:'login',usage:'login [--no-browser]',description:'Connect your account through browser sign-in.'},
  {name:'logout',usage:'logout',description:'Revoke this agent’s account access.'},
  {name:'install',usage:'install [--skill] [--api]',description:'Install the Codex skill and optional local API.'},
@@ -16,7 +17,7 @@ export const commands=[
 ];
 export function parseArgs(args) {
  const bool=new Set(['json','full','private','public','noBrowser','processFile','acceptReview','help','skill','api','catalog']);
- const valueFlags=new Set(['topic','book','chapters','topOfMind','sources','source','apiUrl','format','audience','generate','output','depth','purpose','revision','mode','extraction','combine']);
+ const valueFlags=new Set(['quote','priceCents','input','request','title','author','topic','book','chapters','topOfMind','sources','source','apiUrl','format','audience','generate','output','depth','purpose','revision','mode','extraction','combine']);
  const values={},positionals=[];let positional=false;
  for(let i=0;i<args.length;i++){
   const arg=args[i];if(arg==='--'){positional=true;continue;}
