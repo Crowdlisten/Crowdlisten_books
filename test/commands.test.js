@@ -59,3 +59,14 @@ test('paid upload finalizes staged text but never enqueues before price acceptan
   assert.equal(results[0].status,'awaiting_price_acceptance');assert.equal(calls.includes('enqueue'),false);assert.equal(calls.includes('finalize'),staged);
  }
 });
+
+
+test('metered book operations bind the explicit policy and maximum additional spend',async()=>{
+ const {bookOperation}=await import('../src/book-operations.js');const calls=[],id='10000000-0000-4000-8000-000000000001';
+ const deps={session:{},resolve:async x=>x,call:async x=>{calls.push(x);return {};}};
+ await bookOperation('quote',id,{ceilingCents:250},deps);
+ await bookOperation('accept-price',id,{quote:id,ceilingCents:250},deps);
+ assert.deepEqual(calls,[{action:'quote',id,ceilingCents:250},{action:'accept-price',id,quoteId:id,acceptedCeilingCents:250,pricingModel:'metered-4x'}]);
+ assert.equal(parseArgs(['--ceiling-cents','250']).values.ceilingCents,'250');
+ await assert.rejects(bookOperation('quote',id,{ceilingCents:-1},deps),/positive integer/);
+});

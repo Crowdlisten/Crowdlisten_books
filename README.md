@@ -139,7 +139,7 @@ Generation uses saved targeted review repairs. Covers run separately: `retry-cov
 
 ## Choose a generation route
 
-Existing public digests and your completed private results remain free to reuse. For a new book, let your own agent create a local package with no Answer with Books generation charge, or upload it for a one-time hosted quote. Private books stay private.
+Existing public digests and your completed private results remain free to reuse. For a new book, let your own agent create a local package with no Answer with Books generation charge, or upload it for metered hosted generation within an approved spending limit. Private books stay private.
 
 ```sh
 answer-with-books local prepare ./book.pdf --output ./my-book
@@ -152,6 +152,6 @@ answer-with-books local install ./my-book
 
 The current agent supplies both generation and source review through its own plan. Progress is saved, repair findings preserve accepted notes, and no login or AWB model API is used. A complete package contains the readable book, skill, chapter notes, glossary, patterns, cheatsheet, and citation source. This route does not create a hosted library entry or AI cover. First use may download the local extractor runtime; scanned sources need OCR first.
 
-Hosted intake saves a new source before starting generation. With the matched paid-processing server, use `quote BOOK_ID --json`, obtain the user's acceptance of the exact returned price, then `accept-price BOOK_ID --quote QUOTE_ID --price-cents EXACT_CENTS`. `status` and `usage` show delivery and the separate customer charge. `cancel BOOK_ID` releases an unfinished reservation after any current worker step finishes. Existing completed books can be read or installed without another conversion charge. No retail tariff is enabled by this CLI release.
+Hosted intake saves the source before generation. Use `quote BOOK_ID --ceiling-cents MAX_CENTS --json`, show the returned maximum additional spend and 4× provider-token rates, and obtain explicit acceptance. Then run `accept-price BOOK_ID --quote QUOTE_ID --ceiling-cents EXACT_CENTS`. The ceiling is not a fixed price or a completion estimate. Generation, reviews, repairs and covers count toward actual usage; consumed usage is charged even on failure or cancellation. Unused funds are released. `usage` shows durable operation receipts and actual settlement. Missing receipts require reconciliation rather than a guessed charge. A new limit requires fresh acceptance. Existing results and own-agent generation remain free from AWB. This CLI does not enable production charging.
 
 See [the agent workflow](skill/answer-with-books/references/processing-routes.md).

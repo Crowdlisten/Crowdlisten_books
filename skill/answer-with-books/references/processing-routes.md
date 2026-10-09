@@ -5,7 +5,7 @@ Existing public shelf results and the user's own completed private books are fre
 After the user selects a new book and wants conversion, present a native multiple-choice question and WAIT for their selection unless they already chose a route:
 
 - Use my agent: generation and checks run through the current agent's existing plan. No AWB generation charge; no upload to AWB.
-- Hosted conversion: upload the source, show the returned one-time quote, and start only after the user accepts that exact price. Processing continues in the background.
+- Hosted conversion: upload the source, show the token rates and spending ceiling, and start only after the user accepts that exact maximum spend. Processing continues in the background.
 - Keep the recommendation for now.
 
 The user can supply their file or authorize finding a downloadable copy. Preserve existing book/file selections and explicit approvals. Source consent alone is not acceptance of a new monetary quote. Do not silently consume another provider key for the customer-agent route.
@@ -24,6 +24,10 @@ Local generation uses the user's agent subscription or configured model and may 
 
 ## Hosted route
 
-Upload the chosen file. New sources wait for price acceptance; existing saved results are reused without another conversion charge. Run `quote BOOK_ID --json`, show the returned amount/currency, scope, and expiration, then use the native multiple-choice feature for acceptance. Wait for the answer. After acceptance run `accept-price BOOK_ID --quote QUOTE_ID --price-cents EXACT_CENTS`. Do not infer a price, use provider estimates as a customer bill, or accept a changed/expired quote automatically. If funds are insufficient, provide `https://answerwithbooks.com/billing/?book=BOOK_ID` for this book; adding funds does not itself start this book.
+Upload the chosen file. New sources wait for spending-limit acceptance; existing saved results are reused without another generation charge. Run `quote BOOK_ID --ceiling-cents MAXIMUM_CENTS --json` (the server returns its suggested ceiling if omitted). Show the maximum additional spend, model input/cached/output rates, and expiration. This ceiling is not an estimate or a promise to finish the book. Use a native multiple-choice question and wait for explicit acceptance unless this exact limit and policy were already authorized.
 
-Use `status` and `usage` to distinguish pending, running, failed, and delivered work. Funds are reserved at acceptance and charged when the book and skill are ready. Failed work releases its hold; an optional failed cover does not withhold the ready text. No second conversion charge applies to reading or installing the result. Keep the generic AWB skill to route across the hosted library; local installation of each hosted book is optional.
+After acceptance, run `accept-price BOOK_ID --quote QUOTE_ID --ceiling-cents EXACT_CENTS`. Actual provider usage is charged at 4× list cost, including generation, review, repair and cover tokens, rounded up once over the accumulated run. Consumed usage is charged even if processing fails or is cancelled. Unused reserved funds return to the balance. Do not turn an old fixed-price approval into permission for the new failure-charging policy. Do not accept a changed/expired ceiling automatically.
+
+If funds are insufficient, provide `https://answerwithbooks.com/billing/?book=BOOK_ID`; adding funds does not start this book. Use `status` and `usage` to show saved work and the durable operation receipts. Missing usage requires reconciliation and blocks more paid calls; never treat missing receipts as zero or re-upload to evade that block. A budget pause preserves progress. The user may cancel to settle recorded usage, then approve a new additional limit to resume; do not raise limits yourself.
+
+The book can be read while its optional cover finishes; financial settlement waits for included generation to end. Retrieving, reading or installing saved results is free from AWB. Keep the generic AWB skill to route across the hosted library; local installation of each hosted book is optional.
