@@ -20,6 +20,12 @@ try {
   if(!selected)throw new Error('Unknown command: '+args[0]+'. Run --help for available commands.');
   const {values,positionals}=parseArgs(args.slice(1));
   switch(selected.name){
+   case 'local': {
+    const {prepareLocal,nextLocal,respondLocal,installLocal}=await import('../src/local-processing.js');
+    const [operation,path]=positionals;if(!path||positionals.length!==2)throw new Error('Use local prepare SOURCE --output DIR, local next DIR, or local respond DIR --input FILE --request ID.');
+    const result=operation==='prepare'?await prepareLocal(path,values):operation==='next'?await nextLocal(path):operation==='respond'?await respondLocal(path,values):operation==='install'?await installLocal(path,values):null;
+    if(!result)throw new Error('Unknown local operation.');console.log(JSON.stringify(result,null,2));break;
+   }
    case 'install':install(args.slice(1));break;
    case 'serve':await import('../src/server.js');break;
    case 'login':await login(values);break;
@@ -61,7 +67,7 @@ try {
     if(result.results?.some(r=>r.status==='error'))process.exitCode=1;
     break;
    }
-   case 'usage':case 'retry-cover':case 'pause':case 'retry':case 'generate':case 'revisions':case 'activate':{
+   case 'cancel':case 'quote':case 'accept-price':case 'usage':case 'retry-cover':case 'pause':case 'retry':case 'generate':case 'revisions':case 'activate':{
     if(positionals.length!==1)throw new Error('Choose one private book or revision ID.');
     const result=await bookOperation(selected.name,positionals[0],values);
     print(result,values,()=>JSON.stringify(result,null,2));break;

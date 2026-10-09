@@ -1,6 +1,6 @@
 {
   "name": "answer-with-books",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Book-grounded agent skills, public book retrieval, and private source processing.",
   "type": "module",
   "private": false,
@@ -24,7 +24,7 @@
     "dev": "node src/server.js",
     "start": "node src/server.js",
     "test": "node --test",
-    "check": "node --check src/server.js && node --check src/app.js && node --check src/generator.js && node --check bin/answer-with-books.js && node --check scripts/discover-reddit-questions.mjs && node --check scripts/enrich-demand-concerns.mjs && node --check scripts/sync-crowdlisten-demand.mjs && node --check scripts/build-book-corpus.mjs && node --check scripts/build-retrieval-corpus.mjs && node --check scripts/import-crowdlisten-handoff.mjs && node --check scripts/materialize-crowdlisten-drafts.mjs && node --check scripts/skill-e2e.mjs && node --check src/account.js && node --check src/upload.js && node --check src/book-install.js && node --check src/book-operations.js && node --check src/semantic.js",
+    "check": "node --check src/server.js && node --check src/app.js && node --check src/generator.js && node --check bin/answer-with-books.js && node --check scripts/discover-reddit-questions.mjs && node --check scripts/enrich-demand-concerns.mjs && node --check scripts/sync-crowdlisten-demand.mjs && node --check scripts/build-book-corpus.mjs && node --check scripts/build-retrieval-corpus.mjs && node --check scripts/import-crowdlisten-handoff.mjs && node --check scripts/materialize-crowdlisten-drafts.mjs && node --check scripts/skill-e2e.mjs && node --check src/account.js && node --check src/upload.js && node --check src/book-install.js && node --check src/book-operations.js && node --check src/semantic.js && node --check src/local-processing.js",
     "test:skill": "node --test test/install.test.js",
     "build:book-corpus": "node scripts/build-book-corpus.mjs",
     "build:retrieval-corpus": "node scripts/build-retrieval-corpus.mjs",

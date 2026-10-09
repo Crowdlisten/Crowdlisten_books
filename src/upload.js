@@ -59,7 +59,7 @@ export async function uploadFiles(paths,options={},deps={}) {
   if(cached.reused)return [{file:options.combine,id:cached.job.id,status:cached.job.status,reused:true}];
   const prepared=await call({action:'prepare',name:options.combine.trim()+'.collection.zip',size:bytes.length,sha,textSha:hash(text),textBytes:text.length,extraction:{method:'combined-collection',sources:report.sources,headings:report.sources.map(source=>({line:source.startLine,title:source.name}))},options:{mode:options.mode||'full',depth:options.depth||'study',purpose:options.purpose||'apply'}});
   if(!prepared.reused){await put(prepared.upload,bytes);await put(prepared.textUpload,text);await call({action:'finalize',id:prepared.job.id});}
-  return [{file:options.combine,id:prepared.job.id,status:prepared.reused?prepared.job.status:'queued',reused:!!prepared.reused,sources:report.sources.length,url:`https://answerwithbooks.com/your-book/?id=${prepared.job.id}`}];
+  return [{file:options.combine,id:prepared.job.id,status:prepared.reused?prepared.job.status:prepared.job.billing_required?'awaiting_price_acceptance':'queued',reused:!!prepared.reused,sources:report.sources.length,url:`https://answerwithbooks.com/your-book/?id=${prepared.job.id}`}];
  }
  const results=[];
  for(const file of paths) {
@@ -80,7 +80,7 @@ export async function uploadFiles(paths,options={},deps={}) {
    if(useNative){
     const prepared=await native({action:'prepare',name:basename(file),size:bytes.length,sha,extractionMode:options.extraction||'text',options:processing,...revision});
     if(!prepared.reused){if(!prepared.upload)throw new Error('Native extraction did not provide an upload destination.');await put(prepared.upload,bytes);await native({action:'finalize',id:prepared.job.id});}
-    results.push({file,id:prepared.job.id,status:prepared.reused?prepared.job.status:'queued',reused:!!prepared.reused,url:`https://answerwithbooks.com/your-book/?id=${prepared.job.id}`});continue;
+    results.push({file,id:prepared.job.id,status:prepared.reused?prepared.job.status:prepared.job.billing_required?'awaiting_price_acceptance':'queued',reused:!!prepared.reused,url:`https://answerwithbooks.com/your-book/?id=${prepared.job.id}`});continue;
    }
    options.progress?.(`Reading ${basename(file)}…`);
    const report=await extract(bytes,extension);
@@ -88,8 +88,8 @@ export async function uploadFiles(paths,options={},deps={}) {
    const sourceText=Buffer.from(report.text),{text,...extraction}=report;
    // Always stage bytes, avoiding Edge Function JSON request-size limits.
    const prepared=await call({action:'prepare',name:basename(file),size:bytes.length,sha,textSha:hash(sourceText),textBytes:sourceText.length,extraction,options:processing,...revision});
-   if(!prepared.reused){if(prepared.upload)await put(prepared.upload,bytes);if(prepared.textUpload)await put(prepared.textUpload,sourceText);await call({action:prepared.textUpload?'finalize':'enqueue',id:prepared.job.id});}
-   results.push({file,id:prepared.job.id,status:prepared.reused?prepared.job.status:'queued',reused:!!prepared.reused,url:`https://answerwithbooks.com/your-book/?id=${prepared.job.id}`});
+   if(!prepared.reused){if(prepared.upload)await put(prepared.upload,bytes);if(prepared.textUpload)await put(prepared.textUpload,sourceText);if(prepared.textUpload)await call({action:'finalize',id:prepared.job.id});else if(!prepared.job.billing_required)await call({action:'enqueue',id:prepared.job.id});}
+   results.push({file,id:prepared.job.id,status:prepared.reused?prepared.job.status:prepared.job.billing_required?'awaiting_price_acceptance':'queued',reused:!!prepared.reused,url:`https://answerwithbooks.com/your-book/?id=${prepared.job.id}`});
   }catch(error){results.push({file,status:'error',error:error.message});}
  }
  return results;

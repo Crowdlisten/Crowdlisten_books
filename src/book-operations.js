@@ -1,8 +1,11 @@
 import {credentials,privateCall,nativeCall,resolvePrivateId} from './account.js';
 export async function bookOperation(action,id,options={},deps={}){
- if(!['pause','retry','generate','revisions','activate','status','usage','retry-cover'].includes(action))throw new Error('Unsupported book operation.');
+ if(!['cancel','quote','accept-price','pause','retry','generate','revisions','activate','status','usage','retry-cover'].includes(action))throw new Error('Unsupported book operation.');
  if(!id)throw new Error('Choose a private book or revision ID.');
  if(action==='activate'&&options.acceptReview!==true)throw new Error('Review this ready revision, then use activate ID --accept-review.');
+ const ceiling=options.ceilingCents??options.priceCents;
+ if(action==='quote'&&ceiling!==undefined&&(!/^\d+$/.test(String(ceiling))||Number(ceiling)<1))throw Error('Use a positive integer --ceiling-cents spending limit.');
+ if(action==='accept-price'&&(!/^[a-f0-9-]{36}$/i.test(options.quote||'')||!/^\d+$/.test(String(ceiling))||Number(ceiling)<1))throw new Error('Review the quote, then use --quote QUOTE_ID --ceiling-cents EXACT_CENTS.');
  const session=deps.session||await credentials(true);
  const resolved=await (deps.resolve||resolvePrivateId)(id,session);
  const call=deps.call||privateCall;
@@ -15,5 +18,5 @@ export async function bookOperation(action,id,options={},deps={}){
    throw new Error('Native source extraction must finish before generating the skill. Use retry for a failed extraction.');
   }
  }
- return call({action,id:resolved,...(action==='activate'?{reviewAccepted:true}:{})},session);
+ return call({action,id:resolved,...(action==='activate'?{reviewAccepted:true}:action==='accept-price'?{quoteId:options.quote,acceptedCeilingCents:Number(ceiling),pricingModel:'token-usage-v1'}:action==='quote'&&ceiling!==undefined?{ceilingCents:Number(ceiling)}:{})},session);
 }

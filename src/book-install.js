@@ -101,7 +101,7 @@ export async function installBook(id,options={},deps={}){
  const skillName=`awb-${key.slice(0,24)}-${book.book_id.replaceAll('-','')}`;
  // Match the host skill name to its collision-safe directory. Preserve the
  // original generated entrypoint with the unmodified exported artifacts.
- files['exported/skill/SKILL.md']=files['SKILL.md'];
+ files['exported/skill/ORIGINAL-SKILL.txt']=files['SKILL.md'];
  files['SKILL.md']=skillEntrypoint(files['SKILL.md'],skillName);
  const hashes=Object.fromEntries(Object.entries(files).map(([path,text])=>[path,hash(text)]));
  const digest=hash(JSON.stringify(Object.entries(hashes).sort()));
