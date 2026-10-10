@@ -4,11 +4,11 @@ Give your agent a book’s methods, grounded in public editorial digests and sou
 
 ## One install path
 
-Node 20+ is required. Use the versioned GitHub release below. The npm registry remains at 0.2.0 until publication authentication is completed; this release includes the 0.3.0 account library commands. From any empty directory:
+Node 20+ is required. Use the versioned GitHub release below. The GitHub release is the current distribution; an older npm registry package may not contain the same commands. From any empty directory:
 
 ```sh
-npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.7.0/answer-with-books-0.7.0.tgz install --skill --api
-npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.7.0/answer-with-books-0.7.0.tgz ask "Am I validating this idea or collecting compliments?" --json
+npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.7.1/answer-with-books-0.7.1.tgz install --skill
+npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.7.1/answer-with-books-0.7.1.tgz ask "Am I validating this idea or collecting compliments?" --json
 ```
 
 No repository clone, npm install, account, API key, or running server is required to ask. The command retrieves from the bundled corpus in-process. The agent skill is installed to `$CODEX_HOME/skills/answer-with-books` (default `~/.codex/skills/answer-with-books`) together with its executable source and corpus. An existing installation at that path is updated. `npx` does not install a global command; keep the `npx` prefix, or use the bundled Node command documented in SKILL.md.
@@ -20,7 +20,7 @@ node .answer-with-books/runtime/src/server.js
 curl http://127.0.0.1:8787/health
 ```
 
-Alternatively use `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.7.0/answer-with-books-0.7.0.tgz serve`. The server binds to localhost. `ask` uses the bundled corpus unless you explicitly pass `--api-url` or `ANSWER_WITH_BOOKS_API_URL`; an unavailable explicit server is an error, not a silent fallback.
+Alternatively use `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.7.1/answer-with-books-0.7.1.tgz serve`. The server binds to localhost. `ask` uses the bundled corpus unless you explicitly pass `--api-url` or `ANSWER_WITH_BOOKS_API_URL`; an unavailable explicit server is an error, not a silent fallback.
 
 ## Commands
 
@@ -30,7 +30,7 @@ Alternatively use `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/re
 | `ask "question" --json` | Retrieve public methods and citations for your agent. `answer` is an alias. |
 | `ask "question" --book ID --json` | Focus on one public or private book. |
 | `login` | Connect your account through browser sign-in and a terminal code. |
-| `upload book.pdf notes.docx --json` | Process separate private books, skills, and covers in the background. |
+| `upload book.pdf notes.docx --json` | Prepare separate private books; hosted processing starts after spending-limit approval. |
 | `status [ID] --json` | Check the private queue or one book. |
 | `download ID --output book.zip` | Save the digest, skill, and cited source files. |
 | `logout` | Revoke this agent's account access. |
@@ -41,7 +41,7 @@ The skill can activate from ordinary book mentions or a relevant practical quest
 
 ## Semantic matching
 
-Version 0.3.0 adds `match "QUESTION" --public --json`. Run it using `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.7.0/answer-with-books-0.7.0.tgz match ...`, from this checkout, or from the installed skill runtime.
+Version 0.3.0 adds `match "QUESTION" --public --json`. Run it using `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.7.1/answer-with-books-0.7.1.tgz match ...`, from this checkout, or from the installed skill runtime.
 
 The flow is **semantic candidates → host-agent relevance judgment → selected book evidence → applied answer**. `match` uses a pinned multilingual E5 model locally, then returns a shortlist explicitly marked `needs_reasoning`. The agent chooses up to three sources by the user's intent, the relevant method, and its limits, reads each with `ask --book ID`, and can reject the entire shortlist. Cosine similarity is not confidence. The standalone matcher does not secretly call a second language model or pretend to have completed that reasoning.
 
@@ -57,7 +57,7 @@ Run `node scripts/evaluate-semantic-retrieval.mjs` for the small real-model smok
 
 ## Account book skills and revisions
 
-These commands require version 0.3.0 or a freshly installed runtime from this checkout. With the versioned release, replace `node bin/answer-with-books.js` below with `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.7.0/answer-with-books-0.7.0.tgz`.
+These commands require version 0.3.0 or a freshly installed runtime from this checkout. With the versioned release, replace `node bin/answer-with-books.js` below with `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.7.1/answer-with-books-0.7.1.tgz`.
 
 ```sh
 node bin/answer-with-books.js books --private --json
@@ -165,6 +165,6 @@ A new local workspace can choose `--destination library` after login; completion
 To grow a local guide: `local add ./guide ./new-source.pdf --output ./guide-v2`, finish the next/respond cycle, then `local install ./guide-v2`. Earlier notes and citations are preserved; the same installed skill is updated. Later local revisions stay local. External skill packages are not imported.
 
 
-## Editorial reader output (0.7.0)
+## Editorial reader output (introduced in 0.7.0)
 
 Local generation now writes a separate editorial digest after the reusable skill. Both managed and own-agent routes share the versioned `book-reader-prompt.json`, evidence selection, structured output and paragraph-specific source review. Accepted skills survive an editorial retry. Selected initial private-library sync includes the reader artifacts; later local revisions remain local. The website uses hosted retrieval and a copyable prompt by default; CLI exports and offline installation remain optional.
