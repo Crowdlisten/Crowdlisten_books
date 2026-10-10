@@ -67,16 +67,16 @@ node <skill-directory>/runtime/bin/answer-with-books.js ask "QUESTION" --book BO
 For shared-installer deployments that contain only this skill, and for uploads/downloads requiring extractor dependencies, use the published CLI:
 
 ```sh
-npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.6.0/answer-with-books-0.6.0.tgz books --json
-npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.6.0/answer-with-books-0.6.0.tgz ask "QUESTION" --book BOOK_ID --json
-npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.6.0/answer-with-books-0.6.0.tgz login
-npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.6.0/answer-with-books-0.6.0.tgz upload "/path/to/book.pdf" --json
-npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.6.0/answer-with-books-0.6.0.tgz status --json
-npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.6.0/answer-with-books-0.6.0.tgz download BOOK_ID --output ./book-and-skill.zip
-npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.6.0/answer-with-books-0.6.0.tgz logout
+npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.7.0/answer-with-books-0.7.0.tgz books --json
+npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.7.0/answer-with-books-0.7.0.tgz ask "QUESTION" --book BOOK_ID --json
+npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.7.0/answer-with-books-0.7.0.tgz login
+npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.7.0/answer-with-books-0.7.0.tgz upload "/path/to/book.pdf" --json
+npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.7.0/answer-with-books-0.7.0.tgz status --json
+npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.7.0/answer-with-books-0.7.0.tgz download BOOK_ID --output ./book-and-skill.zip
+npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.7.0/answer-with-books-0.7.0.tgz logout
 ```
 
-Node 20+ is required. No repository clone, Python setup, account, API key, or running server is needed for public retrieval. The agent produces the applied answer; `ask` retrieves evidence and does not itself call a language model. `list` aliases `books`; `answer` aliases `ask`. The `match` workflow requires version 0.3.0 or newer. With an older runtime, read its `books --json` catalog and reason over those entries, or use the pinned 0.6.0 CLI.
+Node 20+ is required. No repository clone, Python setup, account, API key, or running server is needed for public retrieval. The agent produces the applied answer; `ask` retrieves evidence and does not itself call a language model. `list` aliases `books`; `answer` aliases `ask`. The `match` workflow requires version 0.3.0 or newer. With an older runtime, read its `books --json` catalog and reason over those entries, or use the pinned 0.7.0 CLI.
 
 - **books**: list or search by title/topic (`books "habits"`, `books --topic "customer research"`). Signed-in sessions include private book metadata; `--public` and `--private` select a library. Use returned IDs exactly.
 - **match**: public and legacy local discovery for questions; current `--private` uses hosted retrieval unless `--catalog` is requested. For public and legacy local discovery, a multilingual embedding model ranks candidate books by meaning; first use downloads approximately 130 MB of model data. Those local queries and sources are not sent to an embedding provider. Hosted private retrieval sends the question for embedding as described below. `--catalog` skips the model and returns the complete catalog for your own reasoning; it is also the disclosed fallback if the optional model runtime is unavailable. Private entries require an existing account connection. A candidate and its cosine similarity are not a relevance decision: compare the user's intent, the applicable method, and the limits; select up to three genuinely useful books, or none. Read selected evidence before answering. Do not present an unreviewed shortlist as a recommendation.
@@ -105,7 +105,7 @@ Results are bounded and may shorten notes or citations. When needed, fetch more 
 
 ### Account book skills and revisions
 
-The commands below require version 0.3.0 or this skill's current bundled runtime. Use `node <skill-directory>/runtime/bin/answer-with-books.js` or `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.6.0/answer-with-books-0.6.0.tgz` as the executable. If local extraction or ZIP dependencies are missing, install the runtime's declared dependencies in its runtime directory; do not silently delegate revision commands to an older published CLI.
+The commands below require version 0.3.0 or this skill's current bundled runtime. Use `node <skill-directory>/runtime/bin/answer-with-books.js` or `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.7.0/answer-with-books-0.7.0.tgz` as the executable. If local extraction or ZIP dependencies are missing, install the runtime's declared dependencies in its runtime directory; do not silently delegate revision commands to an older published CLI.
 
 - `library install-book BOOK_ID` (alias `install-book BOOK_ID`) installs one ready, current, full-source book from the connected account. `library sync` installs or updates all eligible current books, reporting a result for each. Only run these writes when the user asks to install or sync. Retain the generic discovery skill alongside individual book skills.
 - Each installation has a stable account-and-book folder name and includes every exported chapter and citation-source file. Read the returned path's `SKILL.md`, select relevant references from its chapter index, and check the cited source before applying a method. Installed packages are local copies, so they remain on disk after logout; only the connected account's packages are eligible for subsequent sync. Do not treat another account's installed folders as its current library.

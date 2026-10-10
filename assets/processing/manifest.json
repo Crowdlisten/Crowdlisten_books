@@ -15,6 +15,8 @@
     "book-collections.mjs": "4f40028543a43b12a4facc31c25ee9f24560a4d78fb602e602451e90d9ded7a6",
     "book-export.mjs": "62c13f085d0f6ec0ee4fa5d6d5002a52c59f6b99b21690852af2083f3084efd2",
     "book-review-status.mjs": "345868841bb5ed49751eeb41344566ca6c7cc69c2a33ffc4355ae7d9946c452a",
-    "book-revisions.mjs": "c959c2c93e4aef0bdc9a8ea1645367e877933c84b76c3b84f70bc07bbb5eb0f8"
+    "book-revisions.mjs": "c959c2c93e4aef0bdc9a8ea1645367e877933c84b76c3b84f70bc07bbb5eb0f8",
+    "book-reader.mjs": "315e75e88d5f9f01e9e5184b9de507e53d1cd75d5bda736f937c8d051f950ff1",
+    "book-reader-prompt.json": "9ac647bf3e0cf92a21acdaad230dfd695908ae0b2118846bada8678214110fcf"
   }
 }

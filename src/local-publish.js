@@ -2,6 +2,7 @@ import {readFile,writeFile,rename,lstat} from 'node:fs/promises';
 import {join,resolve} from 'node:path';
 import {createHash,randomUUID} from 'node:crypto';
 import {credentials,serviceCall,accountKey} from './account.js';
+import {validateReader} from '../assets/processing/book-reader.mjs';
 import {compileDistillation} from '../assets/processing/book-distillation.mjs';
 const hash=x=>createHash('sha256').update(x).digest('hex');
 export async function localImportPayload(directory){
@@ -13,8 +14,10 @@ export async function localImportPayload(directory){
  let book;
  // Replay cached responses through the existing compiler; never call a model or re-extract.
  const replay=async(system,input,options)=>{const id=hash(JSON.stringify({system,input,options,attempts:state.attempts}));if(!Object.hasOwn(state.responses,id))throw Error('This workspace lacks a completed cached response. Use the CLI version that generated it.');const value=state.responses[id];if(options.name==='book_synthesis')book=value;return value;};
- await compileDistillation(state,state.notes,replay,async bytes=>hash(bytes));
- return {schemaVersion:1,title:state.title,author:state.author,sourceText:state.source_text,...(state.source_import?.sources?{sources:state.source_import.sources}:{}),book,chapters:state.notes,glossary:book.glossary||[]};
+ if(state.bookSynthesis)book=state.bookSynthesis;else await compileDistillation(state,state.notes,replay,async bytes=>hash(bytes));
+ let reader;
+ if(state.readerDraft)reader=validateReader(state.readerDraft,state);
+ return {...(reader?{reader}:{}),schemaVersion:1,title:state.title,author:state.author,sourceText:state.source_text,...(state.source_import?.sources?{sources:state.source_import.sources}:{}),book,chapters:state.notes,glossary:book.glossary||[]};
 }
 export async function publishLocal(directory,options={},deps={}){
  const session=deps.session||await credentials(true),dir=resolve(directory);
