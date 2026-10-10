@@ -21,9 +21,10 @@ try {
   const {values,positionals}=parseArgs(args.slice(1));
   switch(selected.name){
    case 'local': {
-    const {prepareLocal,nextLocal,respondLocal,installLocal}=await import('../src/local-processing.js');
-    const [operation,path]=positionals;if(!path||positionals.length!==2)throw new Error('Use local prepare SOURCE --output DIR, local next DIR, or local respond DIR --input FILE --request ID.');
-    const result=operation==='prepare'?await prepareLocal(path,values):operation==='next'?await nextLocal(path):operation==='respond'?await respondLocal(path,values):operation==='install'?await installLocal(path,values):null;
+    const {prepareLocal,addLocal,nextLocal,respondLocal,installLocal}=await import('../src/local-processing.js');
+    const {publishLocal}=await import('../src/local-publish.js');
+    const [operation,path]=positionals;if(!path||(operation==='prepare'?false:operation==='add'?positionals.length!==3:positionals.length!==2))throw new Error('Use local prepare SOURCE --output DIR [--destination device|library], local next DIR, local respond DIR --input FILE --request ID, or local publish DIR.');
+    const result=operation==='prepare'?await prepareLocal(positionals.slice(1),values):operation==='add'?await addLocal(path,positionals[2],values):operation==='next'?await nextLocal(path):operation==='respond'?await respondLocal(path,values):operation==='install'?await installLocal(path,values):operation==='publish'?await publishLocal(path,values):null;
     if(!result)throw new Error('Unknown local operation.');console.log(JSON.stringify(result,null,2));break;
    }
    case 'install':install(args.slice(1));break;

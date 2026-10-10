@@ -7,8 +7,8 @@ Give your agent a book’s methods, grounded in public editorial digests and sou
 Node 20+ is required. Use the versioned GitHub release below. The npm registry remains at 0.2.0 until publication authentication is completed; this release includes the 0.3.0 account library commands. From any empty directory:
 
 ```sh
-npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.5.0/answer-with-books-0.5.0.tgz install --skill --api
-npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.5.0/answer-with-books-0.5.0.tgz ask "Am I validating this idea or collecting compliments?" --json
+npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.6.0/answer-with-books-0.6.0.tgz install --skill --api
+npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.6.0/answer-with-books-0.6.0.tgz ask "Am I validating this idea or collecting compliments?" --json
 ```
 
 No repository clone, npm install, account, API key, or running server is required to ask. The command retrieves from the bundled corpus in-process. The agent skill is installed to `$CODEX_HOME/skills/answer-with-books` (default `~/.codex/skills/answer-with-books`) together with its executable source and corpus. An existing installation at that path is updated. `npx` does not install a global command; keep the `npx` prefix, or use the bundled Node command documented in SKILL.md.
@@ -20,7 +20,7 @@ node .answer-with-books/runtime/src/server.js
 curl http://127.0.0.1:8787/health
 ```
 
-Alternatively use `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.5.0/answer-with-books-0.5.0.tgz serve`. The server binds to localhost. `ask` uses the bundled corpus unless you explicitly pass `--api-url` or `ANSWER_WITH_BOOKS_API_URL`; an unavailable explicit server is an error, not a silent fallback.
+Alternatively use `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.6.0/answer-with-books-0.6.0.tgz serve`. The server binds to localhost. `ask` uses the bundled corpus unless you explicitly pass `--api-url` or `ANSWER_WITH_BOOKS_API_URL`; an unavailable explicit server is an error, not a silent fallback.
 
 ## Commands
 
@@ -41,7 +41,7 @@ The skill can activate from ordinary book mentions or a relevant practical quest
 
 ## Semantic matching
 
-Version 0.3.0 adds `match "QUESTION" --public --json`. Run it using `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.5.0/answer-with-books-0.5.0.tgz match ...`, from this checkout, or from the installed skill runtime.
+Version 0.3.0 adds `match "QUESTION" --public --json`. Run it using `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.6.0/answer-with-books-0.6.0.tgz match ...`, from this checkout, or from the installed skill runtime.
 
 The flow is **semantic candidates → host-agent relevance judgment → selected book evidence → applied answer**. `match` uses a pinned multilingual E5 model locally, then returns a shortlist explicitly marked `needs_reasoning`. The agent chooses up to three sources by the user's intent, the relevant method, and its limits, reads each with `ask --book ID`, and can reject the entire shortlist. Cosine similarity is not confidence. The standalone matcher does not secretly call a second language model or pretend to have completed that reasoning.
 
@@ -57,7 +57,7 @@ Run `node scripts/evaluate-semantic-retrieval.mjs` for the small real-model smok
 
 ## Account book skills and revisions
 
-These commands require version 0.3.0 or a freshly installed runtime from this checkout. With the versioned release, replace `node bin/answer-with-books.js` below with `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.5.0/answer-with-books-0.5.0.tgz`.
+These commands require version 0.3.0 or a freshly installed runtime from this checkout. With the versioned release, replace `node bin/answer-with-books.js` below with `npx --yes https://github.com/Crowdlisten/Crowdlisten_books/releases/download/v0.6.0/answer-with-books-0.6.0.tgz`.
 
 ```sh
 node bin/answer-with-books.js books --private --json
@@ -155,3 +155,11 @@ The current agent supplies both generation and source review through its own pla
 Hosted intake saves the source before generation. Use `quote BOOK_ID --ceiling-cents MAX_CENTS --json`, show the returned maximum additional spend and customer token rates, and obtain explicit acceptance. Then run `accept-price BOOK_ID --quote QUOTE_ID --ceiling-cents EXACT_CENTS`. The ceiling is not a fixed price or a completion estimate. Generation, reviews, repairs and covers count toward actual usage; consumed usage is charged even on failure or cancellation. Unused funds are released. `usage` shows durable operation receipts and actual settlement. Missing receipts require reconciliation rather than a guessed charge. A new limit requires fresh acceptance. Existing results and own-agent generation remain free from AWB. This CLI does not enable production charging.
 
 See [the agent workflow](skill/answer-with-books/references/processing-routes.md).
+
+## Combined guides and private sync (0.6.0)
+
+Use `upload ./sources --combine "Guide title"` for managed processing, or `local prepare ./sources --combine "Guide title" --output ./guide` for your own agent. One guide retains each source's references. Without `--combine`, hosted batches create separate books; local multi-file preparation asks for an explicit guide title.
+
+A new local workspace can choose `--destination library` after login; completion automatically syncs its source and structured results to your private library. `local publish ./guide` sends a completed first version later. Retries do not regenerate content. Uploaded guides use the same hosted retrieval as managed books; no hosted text generation or cover is added by sync.
+
+To grow a local guide: `local add ./guide ./new-source.pdf --output ./guide-v2`, finish the next/respond cycle, then `local install ./guide-v2`. Earlier notes and citations are preserved; the same installed skill is updated. Later local revisions stay local. External skill packages are not imported.

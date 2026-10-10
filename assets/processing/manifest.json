@@ -9,11 +9,12 @@
     "book-overview.mjs": "2347bc9ad758919596b2f7890efcad801deec04110dd418386811137794bc55d",
     "book-schemas.mjs": "9e94d7cedeebcb3b252890cbb1a81bf5989b270d37deed27c79d9ed1683fa27c",
     "book-fidelity.mjs": "2d11eecfaf77e68a5901da04ff52f51e8d087a8c394402a52424e3c0bd0078f8",
-    "book-distillation.mjs": "8e871e5eb9b0fea1c43e08243ac463fa010d42ea3fb036b4cbde0144cf30d908",
+    "book-distillation.mjs": "8a380f670ddc2099303015a73fd6a4750a067843264f3be3ac21ffc6ed2f72a0",
     "book-artifacts.mjs": "86491d5946e784d7b65e9fab430c4f07f791c041b9fa7024267c47e8cebd3a9a",
     "upstream-guidance.mjs": "458de1cd96455b0be57706b2c01adfc649fa396fd51d6b67bbc5f64ee0a60f86",
+    "book-collections.mjs": "4f40028543a43b12a4facc31c25ee9f24560a4d78fb602e602451e90d9ded7a6",
     "book-export.mjs": "62c13f085d0f6ec0ee4fa5d6d5002a52c59f6b99b21690852af2083f3084efd2",
     "book-review-status.mjs": "345868841bb5ed49751eeb41344566ca6c7cc69c2a33ffc4355ae7d9946c452a",
-    "book-revisions.mjs": "5492e29cd8d115814eccd8751ab73cc8e3db0eeb8b85c777527768845540b0fc"
+    "book-revisions.mjs": "c959c2c93e4aef0bdc9a8ea1645367e877933c84b76c3b84f70bc07bbb5eb0f8"
   }
 }

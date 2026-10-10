@@ -1,5 +1,5 @@
 export const commands=[
- {name:'local',usage:'local prepare SOURCE --output DIR | local next DIR | local respond DIR --input RESPONSE.json --request ID | local install DIR',description:'Create a book and skill with your own agent. No account, source upload, or Answer With Books generation charge.'},
+ {name:'local',usage:'local prepare SOURCE [...] [--combine TITLE] --output DIR [--destination device|library] | local add DIR SOURCE --output NEW_DIR | local next DIR | local respond DIR --input RESPONSE.json --request ID | local install DIR | local publish DIR',description:'Generate with your own agent; optionally publish to your private library. Device-only use needs no account; no hosted text-generation charge.'},
  {name:'search',usage:'search \"QUESTION\" [--book ID] [--json]',description:'Search relevant chapter methods across your connected private library. Requires the hosted retrieval service; does not download or install books.'},
  {name:'books',aliases:['list'],usage:'books [search] [--topic TOPIC] [--private | --public] [--json]',description:'List and search the public shelf and your connected private books.'},
  {name:'match',usage:'match "QUESTION" [--public | --private] [--catalog] [--json]',description:'Find books by meaning, then let your agent check applicability. --private uses hosted chapter retrieval. --catalog uses agent reasoning over the complete catalog without downloading a model.'},
@@ -17,7 +17,7 @@ export const commands=[
 ];
 export function parseArgs(args) {
  const bool=new Set(['json','full','private','public','noBrowser','processFile','acceptReview','help','skill','api','catalog']);
- const valueFlags=new Set(['quote','ceilingCents','priceCents','input','request','title','author','topic','book','chapters','topOfMind','sources','source','apiUrl','format','audience','generate','output','depth','purpose','revision','mode','extraction','combine']);
+ const valueFlags=new Set(['destination','quote','ceilingCents','priceCents','input','request','title','author','topic','book','chapters','topOfMind','sources','source','apiUrl','format','audience','generate','output','depth','purpose','revision','mode','extraction','combine']);
  const values={},positionals=[];let positional=false;
  for(let i=0;i<args.length;i++){
   const arg=args[i];if(arg==='--'){positional=true;continue;}

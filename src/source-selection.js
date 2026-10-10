@@ -1,3 +1,4 @@
+import {buildSourceCollection} from '../assets/processing/book-collections.mjs';
 import {lstat,readdir} from 'node:fs/promises';
 import {resolve,join,extname,dirname,basename,sep} from 'node:path';
 export const supportedSource=path=>/^\.(pdf|epub|docx|html|htm|xhtml|rtf|txt|text|md|markdown|rst|adoc|asciidoc|mobi|azw|azw3)$/i.test(extname(path));
@@ -31,11 +32,5 @@ export async function expandSources(inputs){
  return [...found];
 }
 export function collectionText(parts,title){
- let text=`# ${title}\n\nThis is a collection of separate sources. Keep author claims and document boundaries distinct.\n`,sources=[];
- for(const part of parts){
-  const startLine=text.split('\n').length+1;
-  text+=`\n# SOURCE: ${basename(part.file)}\nSource SHA-256: ${part.sha}\n\n${part.report.text.trim()}\n`;
-  sources.push({name:basename(part.file),sha256:part.sha,startLine,endLine:text.split('\n').length-1});
- }
- return {text,sources};
+ return buildSourceCollection(parts.map(p=>({name:basename(p.file),sha256:p.sha,text:p.report.text})),title);
 }

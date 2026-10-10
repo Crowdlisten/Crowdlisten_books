@@ -57,7 +57,7 @@ export async function uploadFiles(paths,options={},deps={}) {
   if(bytes.length>limits.maxFileBytes)throw new Error('Combined source archive exceeds 50 MB.');
   const cached=await call({action:'lookup',sha});
   if(cached.reused)return [{file:options.combine,id:cached.job.id,status:cached.job.status,reused:true}];
-  const prepared=await call({action:'prepare',name:options.combine.trim()+'.collection.zip',size:bytes.length,sha,textSha:hash(text),textBytes:text.length,extraction:{method:'combined-collection',sources:report.sources,headings:report.sources.map(source=>({line:source.startLine,title:source.name}))},options:{mode:options.mode||'full',depth:options.depth||'study',purpose:options.purpose||'apply'}});
+  const prepared=await call({action:'prepare',name:options.combine.trim()+'.collection.zip',size:bytes.length,sha,textSha:hash(text),textBytes:text.length,extraction:{method:'combined-collection',sources:report.sources,headings:report.headings},options:{mode:options.mode||'full',depth:options.depth||'study',purpose:options.purpose||'apply'}});
   if(!prepared.reused){await put(prepared.upload,bytes);await put(prepared.textUpload,text);await call({action:'finalize',id:prepared.job.id});}
   return [{file:options.combine,id:prepared.job.id,status:prepared.reused?prepared.job.status:prepared.job.billing_required?'awaiting_price_acceptance':'queued',reused:!!prepared.reused,sources:report.sources.length,url:`https://answerwithbooks.com/your-book/?id=${prepared.job.id}`}];
  }
