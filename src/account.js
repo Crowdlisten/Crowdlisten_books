@@ -57,7 +57,7 @@ export async function login({noBrowser=false}={}) {
  while(Date.now()<expiry) {
   await new Promise(resolve=>setTimeout(resolve,3000));
   const result=await serviceCall('book-cli-auth',{action:'poll'},token);
-  if(result.status==='authorized') {await saveCredentials({token,user_id:result.user_id,expires_at:result.expires_at});console.log('Signed in. Your private books are available to this agent.');return;}
+  if(result.status==='authorized') {await saveCredentials({token,user_id:result.user_id,expires_at:result.expires_at});console.log('Signed in. Your guides and subscription are available to this agent.');return;}
   if(result.status==='expired')break;
  }
  throw new Error('Sign-in expired. Run login again.');

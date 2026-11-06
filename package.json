@@ -1,7 +1,7 @@
 {
   "name": "answer-with-books",
-  "version": "0.7.1",
-  "description": "Book-grounded agent skills, public book retrieval, and private source processing.",
+  "version": "0.8.0",
+  "description": "Question-led reading guides from original book passages, with hosted shared-library processing.",
   "type": "module",
   "private": false,
   "license": "MIT",
@@ -10,48 +10,26 @@
   },
   "files": [
     "bin/",
-    "docs/",
-    "research/book-corpus.json",
-    "research/retrieval-corpus.json",
-    "skill/",
-    "src/",
+    "src/account.js",
+    "src/commands.js",
+    "src/reader.js",
+    "skill/answer-with-books/",
     "README.md",
     "LICENSE",
-    "scripts/build-*.mjs",
-    "assets/"
+    "src/installer.js"
   ],
   "scripts": {
-    "dev": "node src/server.js",
-    "start": "node src/server.js",
-    "test": "node --test",
-    "check": "node --check src/server.js && node --check src/app.js && node --check src/generator.js && node --check bin/answer-with-books.js && node --check scripts/discover-reddit-questions.mjs && node --check scripts/enrich-demand-concerns.mjs && node --check scripts/sync-crowdlisten-demand.mjs && node --check scripts/build-book-corpus.mjs && node --check scripts/build-retrieval-corpus.mjs && node --check scripts/import-crowdlisten-handoff.mjs && node --check scripts/materialize-crowdlisten-drafts.mjs && node --check scripts/skill-e2e.mjs && node --check src/account.js && node --check src/upload.js && node --check src/book-install.js && node --check src/book-operations.js && node --check src/semantic.js && node --check src/local-processing.js",
-    "test:skill": "node --test test/install.test.js",
-    "build:book-corpus": "node scripts/build-book-corpus.mjs",
-    "build:retrieval-corpus": "node scripts/build-retrieval-corpus.mjs",
-    "discover:reddit": "node scripts/discover-reddit-questions.mjs",
-    "enrich:concerns": "node scripts/enrich-demand-concerns.mjs",
-    "sync:crowdlisten": "node scripts/sync-crowdlisten-demand.mjs",
-    "import:crowdlisten-handoff": "node scripts/import-crowdlisten-handoff.mjs",
-    "draft:crowdlisten": "node scripts/materialize-crowdlisten-drafts.mjs",
-    "sync:website": "node scripts/sync-website-release.mjs"
+    "test": "node --test test/reader.test.js",
+    "check": "node --check bin/answer-with-books.js && node --check src/reader.js && node --check src/commands.js && node --check src/installer.js",
+    "test:skill": "node --test test/reader.test.js"
   },
   "keywords": [
     "books",
-    "crowdlisten",
-    "rest-api",
-    "agent-skill",
-    "content-strategy",
-    "knowledge"
+    "reading",
+    "guides",
+    "agent-skill"
   ],
   "engines": {
     "node": ">=20"
-  },
-  "dependencies": {
-    "fflate": "0.8.2",
-    "pdfjs-dist": "4.8.69",
-    "pyodide": "314.0.7"
-  },
-  "optionalDependencies": {
-    "@huggingface/transformers": "4.3.1"
   }
 }
